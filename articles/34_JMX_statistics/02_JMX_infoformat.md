@@ -1,25 +1,25 @@
 ## JMX Fabric Built-In Statistics
 
-JMX statistics is presented as a single web page that displays each of the relevant statistics extracted from Fabric systems during runtime execution.
+JMX statistics are displayed in a web page that presents information extracted from Fabric systems during runtime.
 
 
 
 ### Access JMX Statistics
 
-To access the Admin panel, click the **Globe** icon on the top left corner of the **Fabric Studio**. 
 
-<img src="/articles/34_JMX_statistics/images/JMX-pic2.png">
+1. Click the **Globe** icon in the top left corner of the **Fabric Studio** to access the Admin panel.
 
-Enter your Admin credentials in the Admin panel home page and then click **Statistics** in the left panel.
+   <img src="/articles/34_JMX_statistics/images/JMX-pic2.png">
 
-<img src="/articles/34_JMX_statistics/images/JMX-pic1.PNG">
+2.  Enter the **Admin credentials** and then click **Statistics** in the left panel.
 
-The following statistics sections can be viewed:
+   <img src="/articles/34_JMX_statistics/images/JMX-pic1.PNG">
 
+The following statistics are displayed.
 #### Processes
 
-The information provided will feature statistics about the **Loading phase** of each of the components running in the current sessions:
-
+This section displays statistics about the **Loading phase** of each component running in the current sessions:
+ 
 ``` Fabric Launch Sequence ```
     
 
@@ -37,7 +37,7 @@ The information provided will feature statistics about the **Loading phase** of 
 
 #### Actions
 
-In this section, statistics information like project deployment or Fabric commands are displayed:
+This section displays statistical information like project deployment or Fabric commands:
 
 ```Deployment count for a specific LU```
 
@@ -72,7 +72,7 @@ In this section, statistics information like project deployment or Fabric comman
 
 #### Transactions
 
-Statistics about Fabric jobs, **get** performances, Web Services, LUI queries and LU population sync are  available in this section:
+This section displays statistics about Fabric jobs, **get** performances, Web Services, LUI queries and LU population syncs:
 
 ``` GET Duration```
 
@@ -97,7 +97,7 @@ Executions as well as authentications statistics are also provided.
 
 #### Resources 
 
-Statistics about general information on systems resources are displayed:
+This section displays statistics about general information on system resources:
 
 ``` Number of LU in the systems```
  
@@ -119,7 +119,7 @@ Statistics about general information on systems resources are displayed:
 
 #### MicroDBs
 
-Very useful information such as number of LUIs sync-ed, fetching times and sizes can be viewed here:
+This section displays very useful information like the number of LUIs synced, fetch times and sizes:
 
 ```mdb Cache Count```
 
