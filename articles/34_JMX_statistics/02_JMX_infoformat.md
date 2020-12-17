@@ -18,7 +18,7 @@ JMX statistics are displayed in a web page that presents information extracted f
 The following statistics are displayed.
 #### Processes
 
-This section displays statistics about the **Loading phase** of each component running in the current sessions:
+This section displays statistics about the **Loading phase** of each component running in the current session:
  
 ``` Fabric Launch Sequence ```
     
@@ -85,7 +85,7 @@ This section displays statistics about Fabric jobs, **get** performances, Web Se
 
 ```Web Services Calls```
 
-Executions as well as authentications statistics are also provided.
+Statistics on executions and authentications are also provided.
 
     count				10							The number of times this event has occured
     total				0:00:04.684					The accumulated total of this event value
