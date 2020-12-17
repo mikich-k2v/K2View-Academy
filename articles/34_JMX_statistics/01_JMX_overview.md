@@ -4,7 +4,7 @@ Fabric arrives tightly pre-integrated with JMX [Java Management eXtensions](http
 
 ### Why would I want to enable JMX monitoring in Fabric?
 
-When working with large clusters of Fabric nodes, enabling JMX allows you to more easily monitor the consumption of resources per services used. This enables you to make better decisions about how to maintain your implementation and optimize the machine resources allocated to your project.
+When working with large clusters of Fabric nodes, enabling JMX allows you to monitor the consumption of resources per services used more efficiently. This enables you to make better decisions about how to maintain your implementation and optimize the machine resources allocated to your project.
 
 Using the JMX Report page will also provide you with valuable information about the behavior of specific objects in your project, including LUIs, Web Services, Jobs and other functions that you might deem necessary to monitor.
 
@@ -14,11 +14,11 @@ Using the JMX Report page will also provide you with valuable information about 
 Various statistics using JMX counters in Fabric can be gathered. The following is a list of the main Statistics fields that can be monitored:
 
 - Processes, provides information about the major services running in Fabric during execution. 
-- Actions, like schema maintenances and Fabric commands.
+- Actions, like schema maintenance and Fabric commands.
 - Transactions, Web Services statistics.
 - Resources, like Cassandra, tasks and JDBC or mdb sessions.
 - iidFinder, messages related to iidFinder queries and events. 
-- Custom, provides statistics to the MBeans you would have manually added to the Java code.
+- Custom, provides statistics to the MBeans that have been manually added to the Java code.
 
 Note that all JMX metrics can be accessed using monitoring tools such as Grafana or Kibana.
 
