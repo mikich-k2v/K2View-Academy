@@ -18,7 +18,7 @@ public static void statsCount(String entry, String key, long value)
 
 `value`, the measured value of the statistics.
 
-The statistic method uses this value to calculate total, last and average values for this measurement. In addition, this function also counts the number of times the function has been called and provide a timestamp for the last call.
+In this method, the value is used to calculate total, last and average values for this measurement. In addition, this function also counts the number of times the function has been called and provides a timestamp for the last call.
 
 #### statsDuration
 
@@ -26,11 +26,11 @@ The statistic method uses this value to calculate total, last and average values
 public static AutoCloseable statsDuration(String entry, String key)
 ```
 
-The purpose of this method is to measure the duration of the function's call between the method invocation and the invocation of the ```.close()``` function on the return object.
+The purpose of this method is to measure the duration of the function's call between its invocation and the invocation of the ```.close()``` function on the return object.
 
 `entry`, designates the primary key for the statistics.
 
-`key`, designates the sub-key for thes statistics.
+`key`, designates the sub-key for the  statistics.
 
 This method is returned by calling ```.close()``` on this object to indicate the end of the measurement's duration. 
 
