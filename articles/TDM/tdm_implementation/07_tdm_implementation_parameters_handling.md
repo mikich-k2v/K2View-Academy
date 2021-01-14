@@ -1,23 +1,22 @@
 # TDM - Parameters Handling
 
 
-
 ## TDM Task - Parameters Selection Method
 
-The Parameters selection method enables the user to process a subset of entities based on selected parameters. For example, copy ten business customers that belong to billing cycle 1 and located in NY.  
+The Parameters selection method enables a user to process a subset of entities based on selected parameters. For example, copy ten business customers that belong to billing cycle 1 and located in NY.  
 
-The available parameters of the task are the ones attached to the LUs of the task's [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md). The definition of parameters is set on the LU level. 
+The available parameters of the task are attached to the LUs of the task's [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md). The definition of parameters is set on the LU level. 
 
 ## TDM Parameters Tables
 
-The [sync](/articles/14_sync_LU_instance/01_sync_LUI_overview.md) of the LUIs creates and updates the parameters table on the TDM DB. A separate parameters table is created on each LU.  The naming convention of the parameters tables is `<LU Name>_<params>`. 
+The [sync](/articles/14_sync_LU_instance/01_sync_LUI_overview.md) of the LUIs creates and updates the Parameters table in the TDM DB. A separate parameters table is created for each LU. The naming convention of the parameters tables is `<LU Name>_<params>`. 
 
 The parameters tables are used for the following:
 
-- Get the list of available parameters per task.
-- Get the number of matching entities for the selected parameters of the task.
-- Create the entity list (entity inclusion) for the task if the task's selection method is based on parameters.
-- Create the entity list (entity inclusion) for the task if the the user asks to have a random selection of entities. The entities are randomly selected from the parameters table of the task's root LU.  
+- Getting the list of available parameters per task.
+- Getting the number of matching entities for the selected parameters of the task.
+- Creating the entity list (entity inclusion) for the task if the task's selection method is based on parameters.
+- Creating the entity list (entity inclusion) for the task if a random selection of entities is used whereby the entities are randomly selected from the Parameters table in the task's root LU.  
 
 ## TDM Parameters Implementation Guidelines
 
@@ -34,31 +33,29 @@ The parameters tables are used for the following:
 
   ### Add Parameters to the Logical Unit
 
-- If you wish to add parameters to the LU, do the following:
+1. Deploy the LU to the Fabric debug server.
 
-  - Deploy your LU to Fabric debug server.
+2. Copy the **trnLuParams** translation object from the TDM_LIBRARY LU to the LU. 
 
-  - Copy the **trnLuParams** translation object from the TDM_LIBRARY LU to the LU. 
-
-  - Edit the **trnLuParams**.  Populate  the parameter name and the SQL query of each parameter. The SQL query runs on the LU.  The query must  return only one column to be populated into the parameter column of LU_PARAMS table.  Note that you can validate each SQL query by clicking on the SQL button for each record to open the [Query Builder](/articles/11_query_builder/02_query_builder_window.md) where you can populate the DB connection **fabric** and select your LU. See the example below:
+3. Edit the **trnLuParams**. Populate  the parameter name and the SQL query of each parameter. The SQL query runs on the LU.  The query must  return only one column to be populated into the parameter column of the LU_PARAMS table. To validate an QL query, click the SQL button on the record to open the [Query Builder](/articles/11_query_builder/02_query_builder_window.md) where you can populate the **Fbric** DB connection and select the LU. For example:
 
     ![trnLuParams](images/trnLuParams_example.png)
 
-  - Edit the **LU_PARAMS** table. Each parameter defined for **trnLuParams**, must be added to the LU table as a separate column.  Set the type of all columns to be **text**. See the example below:
+4. Edit the **LU_PARAMS** table. Each parameter defined for the **trnLuParams** must be added to the LU table as a separate column.  Set the type of all columns to **text**. For example:
 
     ![Lu_Params](images/lu_params_example.png)
 
-- The **fnEnrichmentLuParams** enrichment function runs the SQL queries of the **trnLuParams** and populates each column of the LU_PARAMS by the results of its related SQL query.  Each parameter's column contains a JSON with the values of the parameter. Each parameter can contain several values, separated by a comma. See example below:
+5. The **fnEnrichmentLuParams** enrichment function runs the SQL queries of the **trnLuParams** and populates each column of the LU_PARAMS by the results of its related SQL query. Each parameter's column contains a JSON with the values of the parameter. Each parameter can contain several values, separated by a comma. For example:
 
   ![lu params](images/populated_lu_params_example.png)
 
-- **Notes:**
+**Notes:**
 
-  - The COLUMN_NAME value of the trnLuParams must be identical to the column_name added to LU_PARAMS table.
-  - The COLUMN_NAME value is displayed by the TDM GUI when the user selects parameters for the task.
-  - Do not include spaces or special characters in the parameter names.
+- The COLUMN_NAME value of the trnLuParams must be identical to the column_name added to LU_PARAMS table.
+- The COLUMN_NAME value is displayed by the TDM GUI when the user selects parameters for the task.
+- Do not include spaces or special characters in the parameter names.
   
-    If you do not need to define parameters on  an LU, you need to add to your LU LU_PARAMS table with two fields only: ENTITY_ID and SOURCE_ENVIRONMENT.
+If you do not need to define parameters on an LU, add the LU LU_PARAMS table with the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
 
 
