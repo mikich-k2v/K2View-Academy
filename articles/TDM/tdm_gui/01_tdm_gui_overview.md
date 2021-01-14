@@ -1,65 +1,67 @@
 # TDM GUI Overview
 
-The TDM GUI is a web-based application that helps users easily control and administrate a testing data.
+The TDM GUI is a web-based application that helps users to easily control and manage test data.
 
-The K2view TDM GUI application consists of two main functions:
+The K2view TDM GUI application has two main functions:
 
-- TDM Administrative activities (TDM definitions), setting TDM Business Entities, environments, roles and permissions.
+- TDM administrative activities, defining TDM Business Entities, environments, roles and permissions.
+- TDM copy activities, creating and executing TDM tasks that provide a selected subset of entities or Reference tables to a selected environment.
 
-- TDM Copy Activities, creation and execution of TDM tasks that provide a selected subset of entities or Reference tables to the selected environment.
+TDM settings and tasks are saved in the [TDM PostgreSQL DB](/articles/TDM/tdm_architecture/02_tdm_database.md).  Each TDM activity created by the user via the TDM GUI, updates the TDM DB. 
 
-The TDM settings and tasks are kept in the [TDM PostgreSQL DB](/articles/TDM/tdm_architecture/02_tdm_database.md).  Every TDM activity, created by the user via the TDM GUI, updates the TDM DB. 
+The TDM GUI uses APIs to connect to the TDM DB to retrieve and update TDM settings and tasks.
 
-The TDM GUI connects the TDM DB using APIs to retrieve and update the TDM settings and tasks.
+## TDM - Operational Modes
 
-## TDM - Working Modes
+TDM can operate in two modes:
 
-The TDM can work in two modes:
+- DataFlux mode, which enables the following [Data Flux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) features:
+  - Creating extract tasks.
+  - Adding a versioning mode to load tasks. 
 
-- DataFlux mode: enables the [Data Flux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) features:
-  - Creating extract tasks
-  - Adding a mode of versioning to load tasks 
+- Regular mode, which enables creating regular load tasks without versioning by marking extracted entities with a Task Name and Extraction Timestamp.
 
-- Regular mode: enables creating regular load tasks without versioning (marking extracted entities with task name and extract timestamp).
+The TDM operational mode is set in **fluxMode** field in the [config.js] file in the TDM GUI server (/usr/local/k2view/TDM/k2vtdmbe location):   
 
-The following parameter of [config.js] file of the TDM GUI server (/usr/local/k2view/TDM/k2vtdmbe location) controls the TDM working mode:
+- **fluxMode** = **True** (default). 
+- **fluxMode** = **False**.   
 
-- **fluxMode** – valid values are **true** or **false**.  **Default** value is **true**. 
+## TDM GUI - Login
 
-## TDM GUI - Log In
-
-Connect to TDM GUI by the following URL: `http://<TDM server>:4001/#/login.`
+Connect to the TDM GUI using the following URL: `http://<TDM server>:4001/#/login.`
 
 Populate the username and password. 
 
-Note: all users must be defined in the LDAP system. The TDM authenticates the user and password with the LDAP.
+Note that since the TDM authenticates users and passwords via LDAP, all users must be defined in the LDAP system. 
 
-## TDM GUI Navigation- General
+## TDM GUI Navigation - General
 
-### TDM Project Pane Tree
+### TDM Project Navigation Tree
 
-The TDM navigation pane displays different the TDM areas on the left side of the screen:
+The TDM navigation tree displays different TDM sections on the left of the screen:
 
 ![tdm navigation](images/tdm_gui_navigation_pane.png)
 
-​                                
+                             
 
-You can move from one area to another by clicking on the associated option in the pane tree.
+To move between sections, click the option in the TDM navigation tree.
 
-Click on the Tooltip icon ![tooltip](images/tdm_gui_tooltip_icon.png) in the upper left side of TDM window to display or hide the labels next to the icons of the TDM pane tree. 
+Click the Tooltip icon ![tooltip](images/tdm_gui_tooltip_icon.png) in the upper left of the TDM window to display or hide the labels next to the icons in the TDM navigation tree. 
 
 ## TDM Breadcrumbs 
 
-The TDM GUI uses breadcrumbs as a graphical control element to aid navigation across the user interfaces. The breadcrumbs allow users to keep track of their location within the TDM screens. For example, view the details of a given task execution: 
+The TDM GUI uses breadcrumbs as a graphical control element to aid navigation across user interfaces whereby users can track their position in the TDM screens. For example, to display the details of a given task's execution: 
 
 ![breadcrumbs](images/breadcrumbs_example.png)
 
-You can either click the **Task Execution Summary - load2Roots** to view all task executions of **load2Roots** task, click **Tasks** to view all tasks, or click **Home** to got back to the TDM home page.
+- Click **Task Execution Summary - load2Roots** to display an executed **load2Roots** task. 
+- Click **Tasks** to display all executed tasks.
+- Click **Home** to return to the TDM home page.
 
 ### TDM Soft Delete
 
-In most cases, a delete activity does not delete the selected object from TDM DB but changes the status of the selected item to **Inactive**. The object is still kept in the TDM DB and can be viewed in the TDM GUI to enable the view of the history.
+A Delete activity generally changes the status of a selected object to **Inactive** and does not delete the object from the TDM DB. The object remains in the TDM DB and its history can be displayed in the TDM GUI.
 
-Inactive object cannot be repaired.
+Inactive objects cannot be repaired.
 
 [<img align="right" width="60" height="54" src="/articles/images/Next.png">](02_tdm_gui_user_types.md)
