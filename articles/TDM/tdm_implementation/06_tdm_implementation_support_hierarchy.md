@@ -1,12 +1,12 @@
-# TDM - LU Implementation - Support Hierarchy 
+# TDM LU Implementation - Support Hierarchy 
 
 ## TDM Relation Tables
 
-To support  hierarchy of LUs and extracting or copying the selected business entities and their related data, the TDM must "know" that are the children entities related to each parent entity.
+To support LUs hierarchy and extracting or copying selected business entities and their related data, the TDM must understand which child entities are related to each parent entity.
 
-For example, if the uses asks to copy Customer 1 from Production environment, the TDM must "know" what are the IDs of the Billing Accounts and the Orders of Customer 1 to copy them as well. 
+For example, to copy Customer 1 from the Production environment, the TDM must know which Customer 1 IDs are in Billing Accounts and Orders and to copy them also. 
 
-The TDM relation tables keep the link between the parent ID to its children IDs. There are two TDM relation tables in the TDM DB:
+TDM relationship tables hold the links between the parent ID and their children IDs. There are two TDM relationship tables in the TDM DB:
 
 1. TDM_LU_TYPE_RELATION_EID.
 2. TDM_LU_TYPE_REL_TAR_EID.
@@ -15,15 +15,15 @@ The TDM relation tables keep the link between the parent ID to its children IDs.
 
 #### Overview
 
-This table keeps the link between the parent-child **source IDs**. The relation is kept per source environment. In addition, each [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) extract task creates separate records in the TDM_LU_TYPE_RELATION_EID table with the version name and version date time of the extracted version of entities.
+This table keeps the link between the parent-child **source IDs**. The relationship is saved per source environment. In addition, each [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) extract task creates separate records in the TDM_LU_TYPE_RELATION_EID table with the version name and version date time of the extracted version of entities.
 
 This table is used for the following:
-- Build the list of entities (entity inclusion) on the child LUs when executing the task (Extract or Load tasks). The TDM execution process gets the children entities of the parent entities, processed successfully by the task execution.
-- Display the hierarchy of the processed entities by the task execution. 
+- Building the list of entities (entity inclusion) on child LUs when executing extract or load tasks. The TDM execution process gets the children entities of the parent entities that have been successfully processed by the task execution.
+- Displays the hierarchy of the processed entities by the task execution. 
 
 #### Which Process Populates the TDM_LU_TYPE_RELATION_EID? 
 
-The TDM_TYPE_RELATION_EID is populated by the Sync on the parent LUI:  **fnEnrichmentChildLink** enrichment function is attached to each parent LU, and populates TDM_TYPE_RELATION_EID table.  This function runs on the parent LU the sql queries that are populated in [trnChildLink](/articles/TDM/tdm_implementation/05_tdm_lu_implementation_general.md#trnchildlink) translation to get the child IDs of each parent LUI.
+The TDM_TYPE_RELATION_EID is populated by the sync on the parent LUI:  The **fnEnrichmentChildLink** enrichment function is attached to each parent LU and populates the TDM_TYPE_RELATION_EID table.  This function runs on the parent LU. The SQL queries are populated in the [trnChildLink](/articles/TDM/tdm_implementation/05_tdm_lu_implementation_general.md#trnchildlink) translation to get the child IDs of each parent LUI.
 
 #### TDM_LU_TYPE_RELATION_EID Structure
 
@@ -47,11 +47,11 @@ The TDM_TYPE_RELATION_EID is populated by the Sync on the parent LUI:  **fnEnric
 </tr>
 <tr>
 <td valign="top" width="200pxl">lu_type1_eid</td>
-<td valign="top" width="700pxl">The entity id (IID) of the parent LU. For example, 1.</td>
+<td valign="top" width="700pxl">The Entity ID (IID) of the parent LU. For example, 1.</td>
 </tr>
 <tr>
 <td valign="top" width="200pxl">lu_type2_eid</td>
-<td valign="top" width="700pxl">The entity id (IID) of the child LU. For example, 12.</td>
+<td valign="top" width="700pxl">The Entity ID (IID) of the child LU. For example, 12.</td>
 </tr>
 <tr>
 <td valign="top" width="200pxl">creation_date</td>
@@ -59,16 +59,16 @@ The TDM_TYPE_RELATION_EID is populated by the Sync on the parent LUI:  **fnEnric
 </tr>
 <tr>
 <td valign="top" width="200pxl">version_name</td>
-<td valign="top" width="700pxl">Populated by the task name (version name) of DataFlux extract tasks. On regular extract tasks, this column is populated by an empty String.</td>
+<td valign="top" width="700pxl">Populated by the task name (version name) of DataFlux extract tasks. During regular extract tasks, this column is populated by an empty string.</td>
 </tr>
 <tr>
 <td valign="top" width="200pxl">version_datetime</td>
-<td valign="top" width="700pxl">Populated by the execution time (version DateTime) of DataFlux extract tasks. On regular extract tasks, this&nbsp; column is populated by a default value: 1/1/1970.</td>
+<td valign="top" width="700pxl">Populated by the execution time (version DateTime) of DataFlux extract tasks. During regular extract tasks, this&nbsp; column is populated by a default value: 1/1/1970.</td>
 </tr>
 </tbody>
 </table>
 
-**Example1:**
+**Example 1:**
 
 - Customer 1 has Orders 10, 12, and 13 in Production environment. The **LUI** of Customer 1 is **Production_1**.The Sync of **Production_1** LUI of Customer LU populates the TDM_LU_TYPE_RELATION_EID by the following records:
 
@@ -117,10 +117,10 @@ The TDM_TYPE_RELATION_EID is populated by the Sync on the parent LUI:  **fnEnric
 </tbody>
 </table>
 
-**Example2:**
+**Example 2:**
 
-- Customer 1 has Orders 10, 12, and 13 in Production environment. The user creates and executes a TDM extract [DataFlux task](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) to save a version of Customer 1 on Production. The execution time is 8-Jan-2021 at 14:15:30 PM.  The **LUI** of Customer 1 is **Production_1_saveCust1_20210108141530**.
-- The Sync of **Production_1_saveCust1_20210108141530** LUI of Customer LU populates the TDM_LU_TYPE_RELATION_EID by the following records:
+- Customer 1 has Orders 10, 12, and 13 in the Production environment. The user creates and executes a TDM extract [DataFlux task](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) to save a version of Customer 1 in Production. The execution time is 8-Jan-2021 at 14:15:30 PM. The **LUI** of Customer 1 is **Production_1_saveCust1_20210108141530**.
+- The sync of the **Production_1_saveCust1_20210108141530** LUI of the Customer LU populates the TDM_LU_TYPE_RELATION_EID using the following records:
 
 <table width="900pxl">
 <tbody>
@@ -173,13 +173,13 @@ The TDM_TYPE_RELATION_EID is populated by the Sync on the parent LUI:  **fnEnric
 
 #### Overview
 
-This table keeps the link between the parent-child **target IDs**. The relation is kept per target environment. 
+This table holds the link between the parent-child **target IDs**. The relationship is maintained per target environment. 
 
 This table is used to build a list of entities (entity inclusion) on the child LUs when executing a delete task. 
 
 #### Which Process Populates the TDM_LU_TYPE_REL_TAR_EID? 
 
-The TDM_TYPE_REL_TAR_EID is populated by [Broadway Flow] of the parent LU: this flow populates the related child IDs on each parent entity before deleting the parent entity  from the target environment. 
+The TDM_TYPE_REL_TAR_EID is populated by the [Broadway Flow] of the parent LU. This flow populates the related child IDs on each parent entity before deleting the parent entity  from the target environment. 
 
 #### TDM_LU_TYPE_RELATION_EID Structure
 
@@ -203,11 +203,11 @@ The TDM_TYPE_REL_TAR_EID is populated by [Broadway Flow] of the parent LU: this 
 </tr>
 <tr>
 <td valign="top" width="200pxl">lu_type1_eid</td>
-<td valign="top" width="700pxl">The target entity id (IID) of the parent LU. For example, 30.</td>
+<td valign="top" width="700pxl">The target Entity ID (IID) of the parent LU. For example, 30.</td>
 </tr>
 <tr>
 <td valign="top" width="200pxl">lu_type2_eid</td>
-<td valign="top" width="700pxl">The target entity id (IID) of the child LU. For example, 101.</td>
+<td valign="top" width="700pxl">The target Entity ID (IID) of the child LU. For example, 101.</td>
 </tr>
 <tr>
 <td valign="top" width="200pxl">creation_date</td>
@@ -218,10 +218,10 @@ The TDM_TYPE_REL_TAR_EID is populated by [Broadway Flow] of the parent LU: this 
 
 ## Parent LU - Implementation Guidelines 
 
-Although the definition of the Business Entities is implemented in the TDM GUI, you must fulfill the following guidelines to support the parent-child LU hierarchy:
+Although the Business Entities are defined in the TDM GUI, the following guidelines must be implemented to support the parent-child LU hierarchy:
 
-- Populate [trnChildLink](/articles/TDM/tdm_implementation/05_tdm_lu_implementation_general.md#trnchildlink) [translation object](/articles/09_translations/01_translations_overview_and_use_cases.md). Note that a parent LU can have several children LUs. Populate a separate record on each child LU. 
--  Add the **fnEnrichmentChildLink** function as enrichment function (in addition to **fnCheckInsFound**) to the root LU table: FABRIC_TDM_ROOT. The enrichment function runs the sql queries populated in the **trnChildLink** translation, on the LU data an  populates [TDM_LU_TYPE_RELATION_EID](#tdm_lu_type_relation_eid)  table in the TDM DB by the link of the parent IID to its children IIDs.
+- Populate [trnChildLink](/articles/TDM/tdm_implementation/05_tdm_lu_implementation_general.md#trnchildlink) [translation object](/articles/09_translations/01_translations_overview_and_use_cases.md). Note that a parent LU can have several children LUs. Populate a separate record for each child LU. 
+-  Add the **fnEnrichmentChildLink** function as an enrichment function (in addition to **fnCheckInsFound**) to the root LU table: FABRIC_TDM_ROOT. The enrichment function runs the SQL queries populated in the **trnChildLink** translation on the LU data and populates [TDM_LU_TYPE_RELATION_EID](#tdm_lu_type_relation_eid)  table in the TDM DB using the link of the parent IID to its children IIDs.
 
 
 
