@@ -25,9 +25,9 @@ Fabric acts as a staging DB for the provisioned entities and ETL layer for extra
 
 #### Fabric as a Staging Repository
 
-When running a TDM task, data from the selected entities is stored and synchronized in Fabric according to its LU definitions. Fabric creates and maintains a separate [MicroDB](/articles/01_fabric_overview/02_fabric_glossary.md#mdb--microdb) for each entity ([LUI](/articles/01_fabric_overview/02_fabric_glossary.md#lui)). This has several advantages:
+When running a TDM task, data from the selected entities is stored and synchronized in Fabric according to the definitions of its LUs. Fabric creates and maintains a separate [MicroDB](/articles/01_fabric_overview/02_fabric_glossary.md#mdb--microdb) for each entity ([LUI](/articles/01_fabric_overview/02_fabric_glossary.md#lui)). This has several advantages:
 
--  Encapsulating the data of a business entity like a customer, usually residing in many data sources, into one place so that it can be queried by consumers. 
+-  Encapsulating the data of a business entity like a customer usually residing in many data sources, into one place so that it can be queried by consumers. 
 -  Security, individual encryption on MicroDB or field levels.
 -  Masking capabilities, masking sensitive data when storing entities.
 -  Flexible [sync](/articles/14_sync_LU_instance/01_sync_LUI_overview.md) policies based on business needs, including:
