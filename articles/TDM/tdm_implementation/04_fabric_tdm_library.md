@@ -1,13 +1,11 @@
 # Fabric TDM Library
 
-The TDM Library contains all the utilities, required to implement a TDM project and run the TDM execution processes.
+The TDM Library contains all the utilities required to implement a TDM project and run TDM execution processes.
 
-The TDM Library must be imported to the Fabric project, created for the TDM.
+The TDM Library must be imported to the Fabric project created for the TDM and contains the following:
 
-The TDM Library contains the following:
-
-- Shared Objects
-- TDM LU
+- Shared Objects.
+- TDM LU.
 - TDM_LIBRARY LU.
 
 ### TDM Library - Shared Objects
@@ -25,12 +23,12 @@ The TDM Library contains the following:
 <p><strong>Location&nbsp;</strong></p>
 </td>
 <td valign="top" width="300pxl">
-<p><strong>Special instructions&nbsp;</strong></p>
+<p><strong>Instructions&nbsp;</strong></p>
 </td>
 </tr>
 <tr>
 <td valign="top" width="150pxl">
-<p>TDM Web services</p>
+<p>TDM Web Services</p>
 </td>
 <td valign="top" width="250pxl">
 <p>TDM Web Services utilities.&nbsp;</p>
@@ -39,8 +37,8 @@ The TDM Library contains the following:
 <p>Web Services&nbsp;&nbsp;</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Import and deploy the Web Services to Fabric. Define the <strong>tdm-WS</strong> token in your Fabric for the WS.</p>
-<p>Note that it is recommended to add the project&rsquo;s Web Services to a separate Category to simplify the upgrade of the TDM version since the TDM category contains the product&rsquo;s Web Services. &nbsp;</p>
+<p>Import and deploy the Web Services to Fabric. Define the <strong>tdm-WS</strong> token in Fabric for the WS.</p>
+<p>Note that it is recommended to add the project's Web Services to a separate category to simplify upgrading the TDM version since the TDM category contains the product's Web Services. &nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -48,13 +46,13 @@ The TDM Library contains the following:
 <p>DB_CASSANDRA&nbsp;</p>
 </td>
 <td valign="top" width="250pxl">
-<p>Connection to Cassandra DB.&nbsp; This interface is used by the TDM utilities.</p>
+<p>Connection to the Cassandra DB.&nbsp; This interface is used by TDM utilities.</p>
 </td>
 <td valign="top" width="200pxl">
 <p>Shared Objects/Interfaces&nbsp;</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Edit the IP address according to your environment.&nbsp;</p>
+<p>Edit the IP address according to the environment.&nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -62,13 +60,13 @@ The TDM Library contains the following:
 <p>TDM&nbsp;</p>
 </td>
 <td valign="top" width="250pxl">
-<p>The connection for the TDMDB PostgreSQL DB.&nbsp;</p>
+<p>Connection to the TDMDB PostgreSQL DB.&nbsp;</p>
 </td>
 <td valign="top" width="200pxl">
 <p>Shared Objects/Interfaces&nbsp;</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Edit the IP address according to your environment.&nbsp;</p>
+<p>Edit the IP address according to the environment.&nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -82,8 +80,8 @@ The TDM Library contains the following:
 <p>Shared Objects/Interfaces&nbsp;</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Edit the IP address- populate it with the IP address of the TDM server.&nbsp;</p>
-<p>Edit the password- populate it with the Redis password on the TDM server.&nbsp;</p>
+<p>Edit the IP address, populate it with the IP address of the TDM server.&nbsp;</p>
+<p>Edit the password, populate it with the Redis password of the TDM server.&nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -91,7 +89,7 @@ The TDM Library contains the following:
 <p>SharedGlobals&nbsp;</p>
 </td>
 <td valign="top" width="250pxl">
-<p>A list of shard global variables, required for the TDM execution&nbsp;</p>
+<p>List of shared global variables required to execute the TDM.</p>
 </td>
 <td valign="top" width="250pxl">
 <p>SharedObjects/Java/src/com/</p>
@@ -105,7 +103,7 @@ The TDM Library contains the following:
 <p>Shared TDM Functions</p>
 </td>
 <td valign="top" width="250pxl">
-<p>A list of TDM functions and utilities</p>
+<p>List of TDM functions and utilities.</p>
 </td>
 <td valign="top" width="250pxl">
 <p>SharedObjects/Java/src/com/</p>
@@ -121,20 +119,19 @@ The TDM Library contains the following:
 <p>trnMigrateList</p>
 </td>
 <td valign="top" width="250pxl">
-<p>Define the query + Interface name to run <strong>extract task</strong> for all entities for each LU. One record per LU.</p>
+<p>Define the query and interface name to run the <strong>extract task</strong> on all entities of each LU. One record per LU.</p>
 </td>
 <td valign="top" width="250pxl">
 <p>SharedObjects/Translations</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Populate this translation for each one of your logical units. A separate record must be created for each logical unit in the Fabric project, except for TDM, TDM_LIBRARY, and the dummy LU of the post-execution processes. &nbsp;</p>
-<p>If it is required to define a query per source environment, populate the source environment name and create a separate record for each combination of logical unit +_source_env_name. &nbsp;Otherwise, leave the source environment empty.</p>
-<p>Examples:</p>
-<p>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
+<p>Populate this translation for each Logical Unit. A separate record must be created for each Logical Unit in the Fabric project apart from TDM, TDM_LIBRARY and the dummy LU of the post-execution processes. &nbsp;</p>
+<p>If there is a need to define a query per source environment, populate the source environment name and create a separate record for each Logical Unit and _source_env_name combination. Otherwise, leave the source environment empty.</p>
+<p>Example 1:</p>
 <p>LU_NAME= ORDER</p>
 <p>SOURCE_ENV_NAME = ENV1 INTERFACE_NAME = TDM</p>
 <p>&nbsp;IG_SQL = Select lu_type2_eid from tdm_lu_type_relation_eid where lu_type_2 = &lsquo;ORDER&rsquo; and source_env = 'ENV1';</p>
-<p>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
+<p>Example 2:</p>
 <p>LU_NAME= CUSTOMER</p>
 <p>SOURCE_ENV_NAME &nbsp;is empty INTERFACE_NAME = CRM_DN</p>
 <p>&nbsp;IG_SQL = Select customer_id from customer limit 1000;</p>
@@ -145,21 +142,20 @@ The TDM Library contains the following:
 <p>trnMigrateListQueryFormats</p>
 </td>
 <td valign="top" width="250pxl">
-<p>Supports special syntax for <strong>extract tasks </strong>when creating the LU instance query based on the trnMigrateList translation. Each LUI consists of a concatenation of source environment, IID, version name, and version datetime.</p>
-<p><a href="01_tdm_set_instance_per_env_and_version.md">Click to read more about the LUI structure on TDM implementation</a>.</p>
-<p>This translation is required for DBs that do not support the standard syntax of &lsquo;||&rsquo; to concatenate Strings. For example- sqlServer.</p>
+<p>Supports special syntax for <strong>extract tasks </strong>when creating the LU instance query based on the trnMigrateList translation. Each LUI consists of a concatenation of source environment, IID, version name and version datetime.</p>
+<p>Click to read more about <a href="01_tdm_set_instance_per_env_and_version.md">LUI structure for TDM implementation</a>.</p>
+<p>This translation is required for DBs that do not support the standard &lsquo;||&rsquo; syntax for concatenated strings. For example- sqlServer.</p>
 </td>
 <td valign="top" width="250pxl">
 <p>SharedObjects/Translations</p>
 </td>
 <td valign="top" width="300pxl">
 <p>Populate two records for each DB: one record with version_ind&nbsp;&lsquo;true&rsquo; and another one with&nbsp;version_ind&nbsp;&lsquo;false&rsquo;.&nbsp;</p>
-<p>See the examples below:&nbsp;</p>
-<p> 1. </p>
+<p> Example 1: </p>
 <p> <strong>interface_type</strong> = sqlserver </p>
 <p> <strong>version_ind</strong> = true </p>
 <p> <strong>query_format</strong> = CONCAT(&lt;source_env_name&gt;,'_',&lt;entity_id&gt;,'_',&lt;task_name&gt;,'_',&lt;timestamp&gt;)</p> 
-<p> 2. </p>
+<p> Example 2:</p>
 <p> <strong>interface_type</strong> = sqlserver </p>
 <p> <strong>version_ind</strong> = false </p>
 <p> <strong>query_format</strong> = CONCAT(&lt;source_env_name&gt;,'_',&lt;entity_id&gt;)</p>    
@@ -176,7 +172,7 @@ The TDM Library contains the following:
 <p>SharedObjects/Translations</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Populate this translation for each one of the LUs. A separate record must be created for each reference table.</p>
+<p>Populate this translation for each LU. A separate record must be created for each reference table.</p>
 </td>
 </tr>
 <tr>
@@ -184,14 +180,14 @@ The TDM Library contains the following:
 <p>trnPostProcessList</p>
 </td>
 <td valign="top" width="250pxl">
-<p>Define the list of post-processes to run at the end of the task execution. For example, a process that sends a mail to notify the user when the task execution ends.</p>
+<p>Define the list of post-processes to run at the end of the task's execution. For example, a process that sends a mail to notify the user when the task's execution ends.</p>
 <p>Each process is implemented as a Broadway flow.</p>
 </td>
 <td valign="top" width="200pxl">
 <p>&nbsp;</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Populate the list of the Broadway flows and the LU of the Broadway flow.</p>
+<p>Populate the list of Broadway flows and the LU of the Broadway flow.</p>
 </td>
 </tr>
 </tbody>
@@ -199,13 +195,12 @@ The TDM Library contains the following:
 
 ### TDM LU
 
-The TDM logical unit must be added to the Fabric project and serves the following:
+The TDM Logical Unit must be deployed to the Fabric project. It has the following tasks:
 
-- Keep the execution information for the TDM task executions. The TDM GUI provides the execution statistics and reports based on the data of the TDM LU. The LUI of the TDM LU is the unique task_Execution_id, generated by the TDM GUI on each task execution. 
+- Saves information about executed TDM tasks. The TDM GUI provides execution statistics and reports based on the data in the TDM LU. The LUI of the TDM LU is a unique task_Execution_id generated by the TDM GUI for each executed task. 
 - Task execution utilities are defined and run under the TDM LU.
-- TDM cleanup job which cleans the TDM DB is defined under the TDM LU. 
+- The TDM cleanup job that cleans the TDM DB and is defined under the TDM LU. 
 
-The TDM LU must be deployed to Fabric.
 
 ### TDM_LIBRARY LU
 
@@ -224,7 +219,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p><strong>Location&nbsp;</strong></p>
 </td>
 <td valign="top" width="300pxl">
-<p><strong>Special instructions&nbsp;</strong></p>
+<p><strong>Instructions&nbsp;</strong></p>
 </td>
 </tr>
 <tr>
@@ -277,7 +272,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p>FABRIC_TDM_ROOT&nbsp;</p>
 </td>
 <td valign="top" width="250pxl">
-<p>Root table for each LU. Contains the entityID which has the source environment + IID, the source environment, and the IID.&nbsp;</p>
+<p>Root table for each LU. Contains the entityID which has the source environment and IID.&nbsp;</p>
 </td>
 <td valign="top" width="200pxl">
 <p>Tables&nbsp;</p>
@@ -312,7 +307,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p>Tables&nbsp;</p>
 </td>
 <td valign="top" width="300pxl">
-<p>This table must be added to each LU. Each parameter, populated in the trnLuParams, must be added as a column to LU_PARAMS table.&nbsp;</p>
+<p>This table must be added to each LU. Each parameter populated in the trnLuParams must be added as a column to LU_PARAMS table.&nbsp;</p>
 <p>&nbsp;</p>
 </td>
 </tr>
@@ -327,7 +322,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p>Translations&nbsp;</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Copy the translation to your LU if needed&rsquo; and populate it with the list of the large parsers.&nbsp;</p>
+<p>Copy the translation to the LU if needed&rsquo; and populate it with the list of large parsers.&nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -335,13 +330,13 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p>parExecuteJob&nbsp;</p>
 </td>
 <td valign="top" width="250pxl">
-<p>Split large files. The main parser that runs other parsers and split them to run in parallel trnParsList: a translation that holds the "large" parsers names that you wish to split.&nbsp;</p>
+<p>Split large files. The main parser that runs other parsers and splits them to run in parallel.  trnParsList, a translation that holds the large parser names to be split.&nbsp;</p>
 </td>
 <td valign="top" width="200pxl">
 <p>Parser&nbsp;</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Copy this parser to your LU if needed.&nbsp;</p>
+<p>Copy this parser to the LU if needed.&nbsp;</p>
 </td>
 </tr>
 </tbody>
