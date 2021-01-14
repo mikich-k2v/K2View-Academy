@@ -95,22 +95,22 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>task_execution_entities</td>
-<td>Detailed list of entities and their execution status of each task execution.</td>
+<td>Detailed list of entities and the execution status of each task's execution.</td>
 <td>Task Execution</td>
 </tr>
 <tr>
 <td><h4>task_execution_list</td>
-<td>Holds the list of execution requests of each task execution. A separate record is created for each LU and post-execution process.&nbsp;</td>
+<td>Holds the list of execution requests for each task's execution. A separate record is created for each LU and post-execution process.&nbsp;</td>
 <td>Task Execution</td>
 </tr>
 <tr>
 <td><h4>task_execution_summary</td>
-<td>Summary information of each task execution. A record is created for each task execution.</td>
+<td>Summary information of each task's execution. A record is created for each task's execution.</td>
 <td>Task Execution</td>
 </tr>
 <tr>
 <td><h4>task_ref_exe_stats</td>
-<td>List of reference tables to be processed by a given task execution.</td>
+<td>List of reference tables to be processed by the execution of a given task.</td>
 <td>Task Execution</td>
 </tr>
 <tr>
@@ -130,7 +130,7 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>activities</td>
-<td>TDM activities log. A new record is created on each TDM activity and specifies the activity datetime, user, activity type (create or update), impacted TDM component and activity description.  </td>
+<td>TDM activities log. A new record is created for each TDM activity specifying its datetime, user, type (create or update), impacted TDM component and description.  </td>
 <td>TDM Activities</td>
 </tr>
 <tr>
@@ -145,7 +145,7 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>environment_products</td>
-<td>List of products (applications) attached to each LU. The connection details of the environments interfaces are defined and saved in Fabric.</td>
+<td>List of products (applications) attached to each LU. The connection details of an environment's interfaces are defined and saved in Fabric.</td>
 <td>TDM Environments</td>
 </tr>
 <tr>
@@ -171,7 +171,7 @@ The following table lists the TDM tables and their description.
 <tr>
 <td><h4>tdm_general_parameters</td>
 <td>TDM general parameters.</td>
-<td>General TDM parameters</td>
+<td>General TDM Parameters</td>
 </tr>
 </tbody>
 </table>
