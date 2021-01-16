@@ -3,7 +3,7 @@
 
 ## TDM Task - Parameters Selection Method
 
-The method that parameters are selected defines how a subset of entities is processed. For example, copy ten business customers that belong to Billing Cycle 1 and located in NY.  
+The method that parameters are selected defines how a subset of entities is processed. For example, copy ten business customers that belong to Billing Cycle 1 and that are located in NY.  
 The parameters that are available for the task are attached to the LUs of the task's [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md). Parameters are defined at an LU level. 
 
 ## TDM Parameters Tables
@@ -34,7 +34,7 @@ The LU_PARAMS table that has been copied from the TDM_LIBRARY holds the followin
 
 2. Copy the **trnLuParams** translation object from the TDM_LIBRARY LU to the LU. 
 
-3. Edit the **trnLuParams**. Populate  the parameter name and the SQL query of each parameter. The SQL query runs on the LU. The query must return only one column to be populated into the parameter column of the LU_PARAMS table. To validate an SQL query, click the SQL button on the record to open the [Query Builder](/articles/11_query_builder/02_query_builder_window.md) where you can populate the **Fbric** DB connection and select the LU. For example:
+3. Edit the **trnLuParams**. Populate  the parameter name and the SQL query of each parameter. The SQL query runs on the LU. The query must return only one column to be populated into the parameter column of the LU_PARAMS table. To validate an SQL query, click the SQL button on the record to open the [Query Builder](/articles/11_query_builder/02_query_builder_window.md) where you can populate the **Fabric** DB connection and select the LU. For example:
 
     ![trnLuParams](images/trnLuParams_example.png)
 
@@ -42,7 +42,7 @@ The LU_PARAMS table that has been copied from the TDM_LIBRARY holds the followin
 
     ![Lu_Params](images/lu_params_example.png)
 
-5. The **fnEnrichmentLuParams** enrichment function runs the SQL queries of the **trnLuParams** and populates each column of the LU_PARAMS with the results of its related SQL query. Each parameter's column contains a JSON with the values of the parameter. Each parameter can contain several values which are separated by a comma. For example:
+5. The **fnEnrichmentLuParams** enrichment function runs the SQL queries of the **trnLuParams** and populates each column of the LU_PARAMS with the results of its related SQL query. Each parameter's column contains a JSON with the values of the parameter. Each parameter can contain several values that are separated by a comma. For example:
 
   ![lu params](images/populated_lu_params_example.png)
 
@@ -52,7 +52,7 @@ The LU_PARAMS table that has been copied from the TDM_LIBRARY holds the followin
 - The COLUMN_NAME value is displayed by the TDM GUI when the user selects parameters for the task.
 - Do not include spaces or special characters in the parameter names.
   
-If parameters do not need to be defined on an LU, add the LU LU_PARAMS table with the ENTITY_ID and SOURCE_ENVIRONMENT fields.
+If parameters do not need to be defined for an LU, add the LU LU_PARAMS table with the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
 
 
