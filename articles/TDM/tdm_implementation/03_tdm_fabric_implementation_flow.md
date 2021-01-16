@@ -8,7 +8,7 @@ A Fabric TDM project has the following:
 
 - TDM Utilities, TDM Web Services and [TDM LU](04_fabric_tdm_library.md#tdm-lu).
 - Logical Units that model TDM entities and their related data to LUs such as Customer, Billing, Ordering, etc.
-- Broadway Flows that are defined under each LU to delete or load the entities from the target environment.
+- Broadway flows that are defined under each LU to delete or load entities from the target environment.
 - Handles special cases, references, post-execution processes like sending mail at the end of a task's execution or masking sensitive data.
 - Environment setup, defining the source and target environments of the TDM. Setting the connection details of interfaces and the Globals in each environment.
 
