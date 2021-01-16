@@ -13,12 +13,10 @@ TDM relationship tables hold the links between the parent ID and their children 
 
 ### TDM_LU_TYPE_RELATION_EID
 
-#### Overview
-
 This table keeps the link between the parent-child **source IDs**. The relationship is saved per source environment. In addition, each [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) extract task creates separate records in the TDM_LU_TYPE_RELATION_EID table with the version name, date and the time of the extracted version of entities.
 
 This table is used for the following:
-- Building the list of entities (entity inclusion) of child LUs when executing extract or load tasks. The TDM execution process gets the children entities of the parent entities that have been successfully processed by the task execution.
+- Building the list of entities (entity inclusion) of child LUs when executing extract or load tasks. The TDM execution process gets the children entities of the parent entities that have been successfully processed by the executed task.
 - Displays the hierarchy of the processed entities by the executed task.
 
 #### Which Process Populates the TDM_LU_TYPE_RELATION_EID? 
@@ -170,8 +168,6 @@ Customer 1 has orders 10, 12 and 13 in the Production environment. The user crea
 
 ### TDM_LU_TYPE_REL_TAR_EID
 
-#### Overview
-
 This table holds the link between the parent-child **target IDs**. The relationship is maintained per target environment. The table is used to build a list of entities (entity inclusion) of child LUs when executing a delete task. 
 
 #### Which Process Populates the TDM_LU_TYPE_REL_TAR_EID? 
@@ -215,7 +211,7 @@ The TDM_TYPE_REL_TAR_EID is populated by the [Broadway flow] of the parent LU wh
 
 ## Parent LU - Implementation Guidelines 
 
-Although Business Entities are defined in the TDM GUI, the following guidelines must be implemented to support the parent-child LU hierarchy:
+Although Business Entities are defined in the TDM GUI, the following guidelines must be implemented to support parent-child LU hierarchy:
 
 - Populate the [trnChildLink](/articles/TDM/tdm_implementation/05_tdm_lu_implementation_general.md#trnchildlink) [translation object](/articles/09_translations/01_translations_overview_and_use_cases.md). Note that a parent LU can have several child LUs. Populate a separate record for each child LU. 
 -  Add the **fnEnrichmentChildLink** function as an enrichment function in addition to **fnCheckInsFound** to the FABRIC_TDM_ROOT root LU table. The enrichment function runs the SQL queries populated in the **trnChildLink** translation on the LU data and populates the [TDM_LU_TYPE_RELATION_EID](#tdm_lu_type_relation_eid) table in the TDM DB using the link of the parent IID to its children IIDs.
