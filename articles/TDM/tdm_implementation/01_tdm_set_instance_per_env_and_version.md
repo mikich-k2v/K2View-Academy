@@ -34,7 +34,7 @@ To delete an entity from a selected target environment, the target environment i
 
 ### DataFlux Tasks
 
-When the version indicator is set that is, to save a separate version of the entity, the LUI format is as follows: 
+When the version indicator is set, that is, to save a separate version of the entity, the LUI format is as follows: 
 
 ```
 <Source Env><separator><entity id><separator><version name><separator><version datetime>
