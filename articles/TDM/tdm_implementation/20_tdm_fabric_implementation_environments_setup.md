@@ -23,4 +23,4 @@ The TDM execution process sets the active environment as follows:
 
 To save a separate LUI for each source environment, since the [TDM concatenates the source environment to each LUI](01_tdm_set_instance_per_env_and_version.md), the TDM implementation must include the creation and deployment of all the TDM environments with their connection details to enable the execution of the TDM tasks. 
 
-[Click for more information about Fabric environments](/articles/25_environments/02_create_new_environment.md).
+Click for more information about [Fabric environments](/articles/25_environments/02_create_new_environment.md).
