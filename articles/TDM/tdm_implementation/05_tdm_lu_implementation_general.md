@@ -1,6 +1,6 @@
 # TDM LU Implementation - Generic Guidelines
 
-The TDM task copies a selected [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) from the selected source environment to the selected target environment. A Business Entity can have multiple [LUs](/articles/TDM/tdm_overview/(/articles/03_logical_units/01_LU_overview.md)) with a flat or a hierarchical structure. For example, a Customer Business Entity consists of Customer Care, Billing, Ordering and Usage LUs. The ability to break a BE up into several LUs enables maximum flexibility and avoiding duplicate development. In addition, defining a hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
+The TDM task copies a selected [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) from the selected source environment to the selected target environment. A Business Entity can have multiple [LUs](/articles/TDM/tdm_overview/(/articles/03_logical_units/01_LU_overview.md)) with a flat or a hierarchical structure. For example, a Customer Business Entity can consist of Customer Care, Billing, Ordering and Usage LUs. The ability to break a BE up into several LUs enables maximum flexibility and avoiding duplicate development. In addition, defining a hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
 
 Each LU in the TDM project must have additional components to support TDM functionality.
 
@@ -29,7 +29,7 @@ Copy the following objects from the [TDM_LIBRARY LU](/articles/TDM/tdm_implement
 <p>TDM LU level globals.</p>
 </td>
 <td valign="top" width="450pxl">
-<p>Populate ROOT_TABLE_NAME by the main source table or tables. It is possible to populate several source tables separated by a comma. For example: CUSTOMER, ACCOUNT.</p>
+<p>Populate the ROOT_TABLE_NAME using the main source table or tables. Several source tables can be populated when separated by a comma. For example: CUSTOMER, ACCOUNT.</p>
   <p>The <strong>fnCheckInsFound</strong> enrichment function (attached to the root LU table) validates the source data and verifies that the entity (IID) exists in the main source tables. If the entity is not found in the main source tables, this function throws an Exception.</p>
 </td>
 </tr>
@@ -80,7 +80,7 @@ Copy the following objects from the [TDM_LIBRARY LU](/articles/TDM/tdm_implement
 <p>Root table of each LU. Contains the LUI, source environment, IID, task_name (version_name), and timestamp (version_datetime). The version_name and version_datetime are populated on <a href="/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux">DataFlux tasks</a>.</p>
 </td>
 <td valign="top" width="450pxl">
-<p>This table must be added to each LU. Verify that fnCheckInsFound enrichment function (under Shared Objects) is attached to this LU table.</p>
+<p>This table must be added to each LU. Verify that the fnCheckInsFound enrichment function under Shared Objects is attached to this LU table.</p>
 </td>
 </tr>
 <tr>
@@ -109,15 +109,15 @@ Copy the following objects from the [TDM_LIBRARY LU](/articles/TDM/tdm_implement
 </table>
 
 
-- Add the **FABRIC_TDM_ROOT** LU table to the LU schema and set it as a [Root table](/articles/03_logical_units/08_define_root_table_and_instance_ID_LU_schema.md). Set the **Instance PK Column** to **k2_tdm_eid** column.
+- Add the **FABRIC_TDM_ROOT** LU table to the LU Schema and set it as a [Root table](/articles/03_logical_units/08_define_root_table_and_instance_ID_LU_schema.md). Set the **Instance PK Column** to **k2_tdm_eid** column.
 
-- Add the **LU_PARAMS**, **INSTANCE_TABLE_COUNT** and **TDM_LU_TYPE_RELATION_EID** to the LU schema. Connect these tables to the Entity ID column of the main source LU table. For example, the main source LU table of Customer LU is Customer. CUSTOMER.CUSTOMER_ID is linked to the FABRIC_ROOT_TABLE.IID column. Link the LU_PARAMS, INSTANCE_TABLE_COUNT  and TDM_LU_TYPE_RELATION_EID to the CUSTOMER.CUSTOMER_ID column:
+- Add the **LU_PARAMS**, **INSTANCE_TABLE_COUNT** and **TDM_LU_TYPE_RELATION_EID** to the LU Schema. Connect these tables to the Entity ID column of the main source LU table. For example, the main source LU table of Customer LU is Customer. CUSTOMER.CUSTOMER_ID is linked to the FABRIC_ROOT_TABLE.IID column. Link the LU_PARAMS, INSTANCE_TABLE_COUNT  and TDM_LU_TYPE_RELATION_EID to the CUSTOMER.CUSTOMER_ID column:
 
   ![tdm lu example](images/tdm_lu_example1.png)
 
   
 
-- The LU_PARAMS LU table must be added to each LU schema, even when it is not required for defining parameters on the LU. In this case, the LU_PARAM table only contains the ENTITY_ID and SOURCE_ENVIRONMENT fields.
+- The LU_PARAMS LU table must be added to each LU Schema, even when it is not required for defining parameters on the LU. In this case, the LU_PARAM table only contains the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
 - Edit the trnLuParams and LU_PARAMS to add selection parameters to the LU. 
 
