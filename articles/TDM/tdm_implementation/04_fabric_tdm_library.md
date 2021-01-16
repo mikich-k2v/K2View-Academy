@@ -1,12 +1,12 @@
 # Fabric TDM Library
 
-The TDM Library contains all the utilities required to implement a TDM project and run TDM execution processes.
-
-The TDM Library must be imported to the Fabric project created for the TDM and contains the following:
+The TDM Library contains all the utilities required to implement a TDM project and to run TDM execution processes.  It holds the following:
 
 - Shared Objects.
 - TDM LU.
 - TDM_LIBRARY LU.
+
+Note that the TDM Library must be imported to the Fabric project created for the TDM.
 
 ### TDM Library - Shared Objects
 
@@ -144,7 +144,7 @@ The TDM Library must be imported to the Fabric project created for the TDM and c
 <td valign="top" width="250pxl">
 <p>Supports special syntax for <strong>extract tasks </strong>when creating the LU instance query based on the trnMigrateList translation. Each LUI consists of a concatenation of source environment, IID, version name and version datetime.</p>
 <p>Click to read more about <a href="01_tdm_set_instance_per_env_and_version.md">LUI structure for TDM implementation</a>.</p>
-<p>This translation is required for DBs that do not support the standard &lsquo;||&rsquo; syntax for concatenated strings. For example- sqlServer.</p>
+<p>This translation is required for DBs that do not support the standard &lsquo;||&rsquo; syntax for concatenated strings. For example, sqlServer.</p>
 </td>
 <td valign="top" width="250pxl">
 <p>SharedObjects/Translations</p>
@@ -227,7 +227,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p>trnChildLink&nbsp;</p>
 </td>
 <td valign="top" width="250pxl">
-<p>Translation for the mapping of parent and child IDs.&nbsp;</p>
+<p>Translation for mapping parent and child IDs.&nbsp;</p>
 <p>Click for more information about TDM business entities and how to support a hierarchy when implementing the LUs.</p>
 </td>
 <td valign="top" width="200pxl">
@@ -244,7 +244,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p>trnLuParams&nbsp;</p>
 </td>
 <td valign="top" width="250pxl">
-<p>Translation for the population of LU_PARAMS table.&nbsp;</p>
+<p>Translation for population of the LU_PARAMS table.&nbsp;</p>
 </td>
 <td valign="top" width="200pxl">
 <p> Translations&nbsp;</p>
@@ -301,7 +301,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 </td>
 <td valign="top" width="250pxl">
 <p>Parameters table.</p>
-<p>Click for more information about the TDM parameters setup.</p>
+<p>Click for more information about TDM parameters setup.</p>
 </td>
 <td valign="top" width="200pxl">
 <p>Tables&nbsp;</p>
@@ -316,13 +316,13 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p>trnParsList&nbsp;</p>
 </td>
 <td valign="top" width="250pxl">
-<p>Translation for the split of large files.&nbsp;</p>
+<p>Translation for splitting large files.&nbsp;</p>
 </td>
 <td valign="top" width="200pxl">
 <p>Translations&nbsp;</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Copy the translation to the LU if needed&rsquo; and populate it with the list of large parsers.&nbsp;</p>
+<p>Copy the translation to the LU if needed and populate it with the list of large parsers.&nbsp;</p>
 </td>
 </tr>
 <tr>
