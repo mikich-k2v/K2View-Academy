@@ -21,10 +21,10 @@ Parameter tables are used for the following:
 
 1.  Import the [TDM Library](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md) into the Fabric project and copy the **LU_PARAMS** LU table from the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#tdm_library-lu) to each of the project's LUs apart from the TDM LU. 
 The LU_PARAMS table that has been copied from the TDM_LIBRARY holds the following columns:
-   -  ENTITY_ID 
-   -  SOURCE_ENVIRONMENT
+    -  ENTITY_ID 
+    -  SOURCE_ENVIRONMENT
 
-  The **fnEnrichmentLuParams** [enrichment function](/articles/10_enrichment_function/01_enrichment_function_overview.md) is attached to the LU_PARAMS table. This function populates the LU_PARAMS table and creates a record on each entity ID. 
+    The **fnEnrichmentLuParams** [enrichment function](/articles/10_enrichment_function/01_enrichment_function_overview.md) is attached to the LU_PARAMS table and populates the LU_PARAMS table and then creates a record on each entity ID. 
 
 2. Add the LU_PARAMS to the LU Schema and link the ENTITY_ID to the main source table. For example: Link the CUSTOMER LU table to the FABRIC_TDM_ROOT.IID column and link the LU_PARAMS.ENTITY_ID to the CUSTOMER.CUSTOMER_ID.
 
