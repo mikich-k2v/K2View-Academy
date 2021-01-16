@@ -13,7 +13,7 @@ The K2View patented [Digital Entity](/articles/01_fabric_overview/02_fabric_glos
 - Built-in self-service web application where testers can request data to be provisioned on-demand and in real-time. 
 - Central storage of provisioned entities in Fabric.
 - Copying data into live testing environments. 
-- Partial data requests, re-deployments of data and data appending: 
+- Partial data requests, re-deployment of data and data appending: 
   - Provisioning predefined lists of Business Entities from a selected source environment to a selected target environment. All data related to the selected entities is extracted and copied to the relevant data systems.
   - Copying a sub-set of entities based on predefined parameters. For example, copying 10 customers in NY and using small business packages.
 - Synthetic data generation, cloning a given entity into the target environment. TDM replaces the sequences of each clone to avoid sequence duplication.
@@ -30,7 +30,7 @@ The K2View patented [Digital Entity](/articles/01_fabric_overview/02_fabric_glos
 
 ### Getting Started
 
-Learn about the main TDM platform modules:
+Learn about the TDM platform's main modules:
 
 - [TDM Architecture](/articles/TDM/tdm_overview/01_tdm_overview.md).
 - [TDM Implementation and Setup](/articles/TDM/tdm_implementation/02_tdm_implementation_flow.md).
