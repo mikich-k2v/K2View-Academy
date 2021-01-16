@@ -10,10 +10,10 @@ The ability to break a BE up into several LUs enables maximum flexibility and av
 
 **Example**
 
-- Customer's LU root entity = Customer ID.
-- Ordering LU's root entity = Order ID.
-- Network element LU's root entity = Element ID.
-- Device LU's root entity = Device ID.
+- Customer LU root entity = Customer ID.
+- Ordering LU root entity = Order ID.
+- Network element LU root entity = Element ID.
+- Device LU root entity = Device ID.
 - Ordering, Network and Device LUs are attached to two BEs:
   - Customer. 
   - Ordering.
