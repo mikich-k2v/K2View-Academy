@@ -10,7 +10,7 @@ The K2View patented [Digital Entity](/articles/01_fabric_overview/02_fabric_glos
 
 ### Key TDM Features
 
-- Built-in self-service web application, where testers can request data to be provisioned on-demand and in real-time. 
+- Built-in self-service web application where testers can request data to be provisioned on-demand and in real-time. 
 - Central storage of provisioned entities in Fabric.
 - Copying data into live testing environments. 
 - Partial data requests, re-deployments of data and data appending: 
@@ -19,12 +19,12 @@ The K2View patented [Digital Entity](/articles/01_fabric_overview/02_fabric_glos
 - Synthetic data generation, cloning a given entity into the target environment. TDM replaces the sequences of each clone to avoid sequence duplication.
 - Replacement of sequences of provisioned entities to avoid duplication in the target DB. 
 - Automatic data security and masking on an entity-by-entity basis.
-- Supports updated data of selected entities.
+- Updating data from selected entities.
 - Cross-application integrity.
 - Data Flux features:
-  - Enables users to save (extract) specific versions of a selected list of entities or selected list of metadata (reference) tables.
-  - Enables users to load a selected version of entities or metadata tables to the selected target environment.
--  Supports the provisioning of data on-demand or automatic provisioning based on scheduling parameters. For example, provisioning the data automatically every week.
+  - Users can save (extract) specific versions of a selected list of entities or selected list of metadata (reference) tables.
+  - Users can load a selected version of entities or metadata tables to the selected target environment.
+-  Provisioning of data on-demand or automatic provisioning based on scheduling parameters. For example, provisioning the data automatically every week.
 
 
 
