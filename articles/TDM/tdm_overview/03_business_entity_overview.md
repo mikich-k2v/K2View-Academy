@@ -2,7 +2,7 @@
 
 ### What is a Business Entity? 
 
-A Business Entity (BE) represents the main entity of the selected data to be provisioned by TDM.  A Business Entity can have multiple [LUs]((/articles/03_logical_units/01_LU_overview.md)) with a flat or a hierarchical structure. For example, a Customer Business Entity consists of Customer Care, Billing, Ordering  and Usage LUs.
+A Business Entity (BE) represents the main entity of the selected data to be provisioned by TDM.  Business Entities can have multiple [LUs]((/articles/03_logical_units/01_LU_overview.md)) with a flat or a hierarchical structure. For example, a Customer Business Entity can have Customer Care, Billing, Ordering  and Usage LUs.
 
 Each LU can be attached to multiple BEs.
 
@@ -12,9 +12,9 @@ The ability to break a BE up into several LUs enables maximum flexibility and av
 
 - Customer's LU root entity = Customer ID.
 - Ordering LU's root entity = Order ID.
-- Network Element LU's root entity = Element ID.
+- Network element LU's root entity = Element ID.
 - Device LU's root entity = Device ID.
-- Ordering, Network, and Device LUs are attached to two BEs:
+- Ordering, Network and Device LUs are attached to two BEs:
   - Customer. 
   - Ordering.
 
@@ -22,16 +22,16 @@ The ability to break a BE up into several LUs enables maximum flexibility and av
 
 ![Multiple BEs for one LU](images/using_lu_in_multiple_BEs.png) 
 
-Users can request to copy a list of selected Customer IDs. The TDM task also copies the related ordering, network elements and device data of the selected customers.
+Users can request to copy a list of selected Customer IDs, whereby the TDM task also copies the related ordering, network elements and device data of the selected customers.
 Alternatively, users can request to copy a list of selected Order IDs whereby the TDM task also copies the related network elements and device data of the selected orders.
 
-The BEs are defined via the TDM GUI and are saved in the [TDM DB](/articles/TDM/tdm_architecture/02_tdm_database.md).
+BEs are defined via the TDM GUI and are saved in the [TDM DB](/articles/TDM/tdm_architecture/02_tdm_database.md).
 
 ### Building an LU Hierarchy in a BE
 
 A parent-child hierarchy of LUs can also be defined under a BE. The relationship between the **parent and child** LUs is **one to many**. Each parent LUI can have many child LUIs. 
 
-If an LU in a BE has no parent LU, it is named **Root LU** whereby the root entity of this LU equals the root entity of the BE. 
+If an LU in a BE has no parent LU, it is named **Root LU** whereby its root entity equals the root entity of the BE. 
 
 **Customer #1 Hierarchy Example**
 
@@ -119,7 +119,7 @@ PROD_1000, PROD_1001, PROD_1002, PROD_1003, PROD_1004, PROD_1005
 
 #### TDM Hierarchy with Several Root LUs 
 
-A TDM BE may include several Root LUs with the same list of entities. For example, if the entity ID of both the Customer and Billing LUs is Customer ID, then the BE hierarchy may be:
+A TDM BE may include several root LUs with the same list of entities. For example, if the entity ID of both the Customer and Billing LUs is Customer ID, then the BE hierarchy may be:
 
 ![BE with several roots](images/be_hierarchy_with_several_root_lu.png) 
 
