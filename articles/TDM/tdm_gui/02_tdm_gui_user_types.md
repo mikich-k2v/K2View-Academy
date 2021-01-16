@@ -16,7 +16,7 @@ Admins usually also define the [TDM implementation in Fabric](/articles/TDM/tdm_
 - Create, edit or delete [Business Entities](/articles/TDM/tdm_overview/03_business_entity_overview.md) and attach Logical Units or [post execution processes] to each Business Entity.
 - Create, edit or delete [environments].
 - Attach environment owners to each environment.
-- Define [roles] on each environment and define permissions per role.
+- Define [roles] in each environment and define permissions per role.
 
 ## Environment Owner 
 
@@ -27,7 +27,7 @@ The TDM application identifies users with Environment Owners permissions by thei
 
 Environment Owners can execute the following activities in their environment:
 
-- Edit environment details.
+- Edit details.
 - Add or remove [products].
 - Add or remove [Globals].
 - Add, edit or remove [Exclusion Lists].
