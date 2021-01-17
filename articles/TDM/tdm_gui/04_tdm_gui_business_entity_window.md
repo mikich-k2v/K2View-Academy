@@ -6,7 +6,7 @@ A [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (
 
 The **Business Entities** window displays a list of all Business Entities defined in the TDM. 
 
--   To create a new Business Entity, Admin users can click the **New Business Entity** icon.
+-   To create a new Business Entity, Admin users click the **New Business Entity** icon.
 
 -   To open a selected Business Entity, click the **Name** value of the Business Entity.
 
