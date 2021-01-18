@@ -23,6 +23,8 @@ The TDM execution process sets the active environment as follows:
 1. Set the active environment to Production before synchronizing the entity from the data source.
 2. Set the active environment to UAT before loading the entity to the target.
 
-To save a separate LUI for each source environment,  the [TDM concatenates the source environment to each LUI](01_tdm_set_instance_per_env_and_version.md). 
+To save a separate LUI for each source environment, the TDM concatenates the source environment to each LUI.
+
+[Click for more information about the TDM LUI format](01_tdm_set_instance_per_env_and_version.md). 
 
 Click for more information about [Fabric environments](/articles/25_environments/02_create_new_environment.md).
