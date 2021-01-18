@@ -2,9 +2,9 @@
 
 The TDM Library contains all the utilities required to implement a TDM project and to run TDM execution processes.  It holds the following:
 
-- [Shared Objects].
-- [TDM LU].
-- [TDM_LIBRARY LU].
+- [Shared Objects](#tdm-library---shared-objects).
+- [TDM LU](#tdm-lu).
+- [TDM_LIBRARY LU](#tdm_library-lu).
 
 Note that the TDM Library must be imported to the Fabric project created for the TDM.
 
