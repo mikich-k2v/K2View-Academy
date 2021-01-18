@@ -24,7 +24,7 @@ Note that the TDM Library must be imported to the Fabric project created for the
 
 ### Shared Globals
 
-- Import the list of shared global variables required to execute the TDM to your project.
+- Import the list of shared [global variables](/articles/08_globals/01_globals_overview.md) required to execute the TDM to your project.
 
 ### Shared Functions
 
@@ -55,14 +55,16 @@ Note that the TDM Library must be imported to the Fabric project created for the
 <td valign="top" width="400pxl">
 <p>Populate this translation for each Logical Unit. A separate record must be created for each Logical Unit in the Fabric project apart from TDM, TDM_LIBRARY and the dummy LU of the post-execution processes. &nbsp;</p>
 <p>If there is a need to define a query per source environment, populate the source environment name and create a separate record for each Logical Unit and _source_env_name combination. Otherwise, leave the source environment empty.</p>
-<p>Example 1:</p>
-<p>LU_NAME= ORDER</p>
-<p>SOURCE_ENV_NAME = ENV1 INTERFACE_NAME = TDM</p>
-<p>&nbsp;IG_SQL = Select lu_type2_eid from tdm_lu_type_relation_eid where lu_type_2 = &lsquo;ORDER&rsquo; and source_env = 'ENV1';</p>
-<p>Example 2:</p>
-<p>LU_NAME= CUSTOMER</p>
-<p>SOURCE_ENV_NAME &nbsp;is empty INTERFACE_NAME = CRM_DN</p>
-<p>&nbsp;IG_SQL = Select customer_id from customer limit 1000;</p>
+  <p><strong>Example 1:</strong></p>
+  <ul><li>LU_NAME= ORDER</li>
+    <li>SOURCE_ENV_NAME = ENV1</li>
+    <li>INTERFACE_NAME = TDM</li>
+<li>IG_SQL = Select lu_type2_eid from tdm_lu_type_relation_eid where lu_type_2 = &lsquo;ORDER&rsquo; and source_env = 'ENV1';</li></ul>
+  <p><strong>Example 2:</strong></p>
+  <ul><li>LU_NAME= CUSTOMER</li>
+    <li>SOURCE_ENV_NAME is empty</li>
+    <li>INTERFACE_NAME = CRM_DB</li>
+    <li>IG_SQL = Select customer_id from customer limit 1000;</li></ul>
 </td>
 </tr>
 <tr>
@@ -76,14 +78,16 @@ Note that the TDM Library must be imported to the Fabric project created for the
 </td>
 <td valign="top" width="400pxl">
 <p>Populate two records for each DB: one record with version_ind&nbsp;&lsquo;true&rsquo; and another one with&nbsp;version_ind&nbsp;&lsquo;false&rsquo;.&nbsp;</p>
-<p> Example 1: </p>
-<p> <strong>interface_type</strong> = sqlserver </p>
-<p> <strong>version_ind</strong> = true </p>
-<p> <strong>query_format</strong> = CONCAT(&lt;source_env_name&gt;,'_',&lt;entity_id&gt;,'_',&lt;task_name&gt;,'_',&lt;timestamp&gt;)</p> 
-<p> Example 2:</p>
-<p> <strong>interface_type</strong> = sqlserver </p>
-<p> <strong>version_ind</strong> = false </p>
-<p> <strong>query_format</strong> = CONCAT(&lt;source_env_name&gt;,'_',&lt;entity_id&gt;)</p>    
+  <p><strong>Example 1:</strong> </p>
+<ul> <li>interface_type = sqlserver </li>
+<li>version_ind = true </li>
+<li>query_format = CONCAT(&lt;source_env_name&gt;,'_',&lt;entity_id&gt;,'_',&lt;task_name&gt;,'_',&lt;timestamp&gt;)</li>
+</ul>
+<p><strong> Example 2:</strong></p>
+<ul><li>interface_type = sqlserver </li>
+<li>version_ind = false </li>
+<li>query_format = CONCAT(&lt;source_env_name&gt;,'_',&lt;entity_id&gt;)</li>
+  </ul>
 </td>
 </tr>
 <tr>
@@ -131,7 +135,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 - LU level [Globals](/articles/08_globals/01_globals_overview.md). Populate the **ROOT_TABLE_NAME**  Global using the main source table or tables. Several source tables can be populated when separated by a comma. For example: CUSTOMER, ACCOUNT.
 - The **fnCheckInsFound** [enrichment function](/articles/10_enrichment_function/01_enrichment_function_overview.md) (attached to the root LU table) validates the source data and verifies that the entity (IID) exists in the main source tables. If the entity is not found in the main source tables, this function throws an Exception and the entity is rejected.
 
-### TDM LU Tables
+### LU Tables
 
 - **FABRIC_TDM_ROOT** - this is the Root table of each LU. This table contains the following columns:
 
@@ -208,7 +212,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 
 - **INSTANCE_TABLE_COUNT** - this table holds the number of records, populated on each LU tables and is used to populate the [TDM execution Report](). 
 
-### TDM LU Translations
+### LU Level Translations
 
 <table width="900pxl">
 <tbody>
