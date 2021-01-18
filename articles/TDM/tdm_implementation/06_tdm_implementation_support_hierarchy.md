@@ -21,7 +21,7 @@ This table is used for the following:
 
 #### Which Process Populates the TDM_LU_TYPE_RELATION_EID? 
 
-The TDM_TYPE_RELATION_EID is populated by the sync on the parent LUI. The **fnEnrichmentChildLink** enrichment function is attached to each parent LU and populates the TDM_TYPE_RELATION_EID table. This function runs on the parent LU. The SQL queries are populated in the [trnChildLink](/articles/TDM/tdm_implementation/05_tdm_lu_implementation_general.md#trnchildlink) translation to get the child IDs of each parent LUI.
+The TDM_TYPE_RELATION_EID is populated by the sync on the parent LUI. The **fnEnrichmentChildLink** enrichment function is attached to each parent LU and populates the TDM_TYPE_RELATION_EID table. This function runs on the parent LU. The SQL queries are populated in the [trnChildLink](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnchildlink) translation to get the child IDs of each parent LUI.
 
 #### TDM_LU_TYPE_RELATION_EID Structure
 
@@ -213,7 +213,7 @@ The TDM_TYPE_REL_TAR_EID is populated by the sync of the parent LU which populat
 
 Although Business Entities are defined in the TDM GUI, the following guidelines must be implemented to support parent-child LU hierarchy:
 
-- Populate the [trnChildLink](/articles/TDM/tdm_implementation/05_tdm_lu_implementation_general.md#trnchildlink) [translation object](/articles/09_translations/01_translations_overview_and_use_cases.md). Note that a parent LU can have several child LUs. Populate a separate record for each child LU. 
+- Populate the [trnChildLink](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnchildlink) translation object. Note that a parent LU can have several child LUs. Populate a separate record for each child LU. 
 -  Add the **fnEnrichmentChildLink** function as an enrichment function in addition to **fnCheckInsFound** to the FABRIC_TDM_ROOT root LU table. The enrichment function runs the SQL queries populated in the **trnChildLink** translation on the LU data and populates the [TDM_LU_TYPE_RELATION_EID](#tdm_lu_type_relation_eid) table in the TDM DB using the link of the parent IID to its children IIDs.
 
 
