@@ -4,9 +4,11 @@
 
 A Business Entity (BE) represents the main entity of the selected data to be provisioned by TDM.  Business Entities can have multiple [LUs]((/articles/03_logical_units/01_LU_overview.md)) with a flat or a hierarchical structure. For example, a Customer Business Entity can have Customer Care, Billing, Ordering  and Usage LUs.
 
-Each LU can be attached to multiple BEs.
+BEs are defined in the TDM GUI and are saved in the [TDM DB](https://github.com/k2view-academy/K2View-Academy/blob/Academy_6.4_TDM_BCK/articles/TDM/tdm_architecture/02_tdm_database.md).
 
-The ability to break a BE up into several LUs enables maximum flexibility and avoiding duplicate development. In addition, defining a hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
+Each LU can be attached to multiple BEs. 
+
+Breaking the BE into several LUs enables maximum flexibility and avoiding duplicate development. The hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
 
 **Example**
 
@@ -18,14 +20,18 @@ The ability to break a BE up into several LUs enables maximum flexibility and av
   - Customer. 
   - Ordering.
 
- 
+ The following BEs are defined in the TDM: 
 
-![Multiple BEs for one LU](images/using_lu_in_multiple_BEs.png) 
+![Customer BE](images/customer_be.png) 
 
-Users can request to copy a list of selected Customer IDs, whereby the TDM task also copies the related ordering, network elements and device data of the selected customers.
-Alternatively, users can request to copy a list of selected Order IDs whereby the TDM task also copies the related network elements and device data of the selected orders.
 
-BEs are defined via the TDM GUI and are saved in the [TDM DB](/articles/TDM/tdm_architecture/02_tdm_database.md).
+
+![Customer BE](images/order_be.png)
+
+
+
+You can request to copy a list of selected Customer IDs, whereby the TDM task also copies the related ordering, network elements and device data of the selected customers.
+Alternatively, you can request to copy a list of selected Order IDs whereby the TDM task also copies the related network elements and device data of the selected orders.
 
 ### Building an LU Hierarchy in a BE
 
