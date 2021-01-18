@@ -30,7 +30,7 @@ Copy Customer 1 from the PROD source env. The LUI is PROD_1.
 
 #### Delete Only Load Tasks
 
-To delete an entity from a selected target environment, the target environment is concatenated to the LUI instead of the source environment.
+When the TDM task only deletes the entity from the target environment and does not copy it to the target, the target environment is concatenated to the LUI instead of the source environment.
 
 ### DataFlux Tasks
 
