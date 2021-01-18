@@ -3,7 +3,7 @@
 
 ## TDM Task - Parameters Selection Method
 
-The method that parameters are selected defines how a subset of entities is processed. For example, copy ten business customers that belong to Billing Cycle 1 and that are located in NY.  
+The TDM task enables you to select a subset of entities based on a predefined list of parameters. For example, copy ten business customers that belong to Billing Cycle 1 and that are located in NY.  
 The parameters that are available for the task are attached to the LUs of the task's [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md). Parameters are defined at an LU level. 
 
 ## TDM Parameters Tables
@@ -14,8 +14,8 @@ Parameter tables are used for the following:
 
 - Getting the list of available parameters per task.
 - Getting the number of matching entities for the selected parameters of the task.
-- Creating the entity list (entity inclusion) for the task if the task's selection method is based on parameters.
-- Creating the entity list (entity inclusion) for the task if a random selection of entities is used whereby the entities are randomly selected from the parameters table in the task's root LU.  
+- Creating the entity list for the task if the task's selection method is based on parameters.
+- Creating the entity list for the task if a random selection of entities is used whereby the entities are randomly selected from the parameters table in the task's root LU.  
 
 ## TDM Parameters Implementation Guidelines
 
@@ -24,7 +24,7 @@ The LU_PARAMS table that has been copied from the TDM_LIBRARY holds the followin
     -  ENTITY_ID 
     -  SOURCE_ENVIRONMENT
 
-    The **fnEnrichmentLuParams** [enrichment function](/articles/10_enrichment_function/01_enrichment_function_overview.md) is attached to the LU_PARAMS table and populates the LU_PARAMS table and then creates a record on each entity ID. 
+    The **fnEnrichmentLuParams** [enrichment function](/articles/10_enrichment_function/01_enrichment_function_overview.md) is attached to the LU_PARAMS table and populates the LU_PARAMS table and then creates a record on each LUI (Entity ID). 
 
 2. Add the LU_PARAMS to the LU Schema and link the ENTITY_ID to the main source table. For example: Link the CUSTOMER LU table to the FABRIC_TDM_ROOT.IID column and link the LU_PARAMS.ENTITY_ID to the CUSTOMER.CUSTOMER_ID.
 
@@ -52,6 +52,7 @@ The LU_PARAMS table that has been copied from the TDM_LIBRARY holds the followin
 - The COLUMN_NAME value is displayed by the TDM GUI when the user selects parameters for the task.
 - Do not include spaces or special characters in the parameter names.
   
+
 If parameters do not need to be defined for an LU, add the LU LU_PARAMS table with the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
 
