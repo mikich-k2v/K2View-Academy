@@ -2,9 +2,9 @@
 
 ## TDM Relation Tables
 
-To support LU hierarchy and extracting or copying selected business entities and their related data, the TDM must know which child entities are related to each parent entity.
+To support LU hierarchy and extracting or copying selected business entities and their related data, the TDM must identify which child entities are related to each parent entity.
 
-For example, to copy Customer 1 from the Production environment, the TDM must know which Customer 1 IDs are in Billing Accounts and Orders. 
+For example, to copy Customer 1 from the Production environment, the TDM must identify the Billing Accounts and the Orders of Customer 1. 
 
 TDM relationship tables hold the links between the parent ID and their children IDs. There are two TDM relationship tables in the TDM DB:
 
@@ -68,7 +68,7 @@ The TDM_TYPE_RELATION_EID is populated by the sync on the parent LUI. The **fnEn
 
 **Example 1:**
 
-Customer 1 has orders 10, 12, and 13 in the Production environment. The **LUI** of Customer 1 is **Production_1**. The Sync of the **Production_1** LUI of the Customer LU populates the TDM_LU_TYPE_RELATION_EID using the following records:
+Customer 1 has orders 10, 12, and 13 in the Production environment. The **LUI** of Customer 1 is **Production_1**. The Sync of the **Production_1** LUI of the Customer LU populates the TDM_LU_TYPE_RELATION_EID with the following records:
 
 <table width="900pxl">
 <tbody>
@@ -117,7 +117,7 @@ Customer 1 has orders 10, 12, and 13 in the Production environment. The **LUI** 
 
 **Example 2:**
 
-Customer 1 has orders 10, 12 and 13 in the Production environment. The user creates and executes a TDM extract [DataFlux task](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) to save a version of Customer 1 in Production. The execution date and time is 8-Jan-2021 at 14:15:30 PM. The **LUI** of Customer 1 is **Production_1_saveCust1_20210108141530**. The sync of the **Production_1_saveCust1_20210108141530** LUI of the Customer LU populates the TDM_LU_TYPE_RELATION_EID using the following records:
+Customer 1 has orders 10, 12 and 13 in the Production environment. The user creates and executes a TDM extract [DataFlux task](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) to save a version of Customer 1 in Production. The execution date and time is 8-Jan-2021 at 14:15:30 PM. The **LUI** of Customer 1 is **Production_1_saveCust1_20210108141530**. The sync of the **Production_1_saveCust1_20210108141530** LUI of the Customer LU populates the TDM_LU_TYPE_RELATION_EID with the following records:
 
 <table width="900pxl">
 <tbody>
@@ -172,7 +172,7 @@ This table holds the link between the parent-child **target IDs**. The relations
 
 #### Which Process Populates the TDM_LU_TYPE_REL_TAR_EID? 
 
-The TDM_TYPE_REL_TAR_EID is populated by the [Broadway flow] of the parent LU which populates the related child IDs on each parent entity before deleting the parent entity from the target environment. 
+The TDM_TYPE_REL_TAR_EID is populated by the sync of the parent LU which populates the related child IDs on each parent entity before deleting the parent entity from the target environment. 
 
 #### TDM_LU_TYPE_RELATION_EID Structure
 
