@@ -150,7 +150,7 @@ A TDM task can include a BE with a hierarchical structure of several LUs. The TD
 2. **Customers' related entities:**
 
 - **Customer 1:** 
-  - Orders 4 : 
+  - Order 4 : 
     - Network elements 90 and 91.
   - Order 5:
     - Network element 92.
