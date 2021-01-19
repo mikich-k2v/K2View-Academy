@@ -236,12 +236,13 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p>Click for more information about <a href="/articles/TDM/tdm_overview/03_business_entity_overview.md">TDM business entities</a> and how to <a href="/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md">support a hierarchy</a> when implementing the LUs.</p>
 </td>
 <td valign="top" width="400pxl">
-<p>This translation must be added and populated on each <strong>parent LU</strong>. The child_lu field must be populated by the name of the child LU.</p>
-<p>The child_lu_eid_sql field must be populated by the SQL which runs on the parent LU and gets the child IDs for each parent ID.</p>
+<p>This translation must be added and populated on each <strong>parent LU</strong> and is used to populate the TDM relationship tables. The child_lu field must be populated by the name of the child LU.</p>
+<p>Both SQLs populated in child_lu_eid_sql and child_lu_tar_eid_Sql fields must run on the parent LU and gets the source and target child IDs for each parent ID.</p>
 <p><strong>Example:</strong><u><br /></u>Customer LU is the parent of the Order LU. <br />trnChildLink of the Customer LU must be populated as follows:</p>
 <ul>
 <li><strong>Child_lu = </strong>Customer</li>
 <li><strong>Child_lu_eid_sql = </strong>select order_id from subscriber</li>
+<li><strong>Child_lu_tar_eid_sql = </strong>select order_id from tar_subscriber</li>    
 </ul>
 </td>
 </tr>
@@ -270,6 +271,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 </tr>
 </tbody>
 </table>
+
 
 ### Split Large Files
 
