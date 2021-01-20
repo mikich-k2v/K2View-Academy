@@ -6,30 +6,32 @@ The TDM Library contains all the utilities required to implement a TDM project a
 - [TDM LU](#tdm-lu).
 - [TDM_LIBRARY LU](#tdm_library-lu).
 
-Note that the TDM Library must be imported to the Fabric project created for the TDM.
+Note that the TDM Library must be imported to the Fabric project created for TDM.
 
 ## TDM Library - Shared Objects
 
 ### TDM Web Services
 
-- Import and deploy the Web Services to Fabric. Define the **tdm-WS** token in Fabric for the WS.
-- Note that it is recommended to add the project's Web Services to a separate category to simplify upgrading the TDM version since the TDM category contains the product's Web Services.
+Import and deploy the Web Services to Fabric and then define the **tdm-WS** token in Fabric for the WS.
+
+Note that it is recommended to add the project's Web Services to a separate category to simplify upgrading the TDM version since the TDM category contains the product's Web Services.
 
 ### TDM Generic Interfaces
 
-- Import and deploy the following [interfaces](/articles/05_DB_interfaces/01_interfaces_overview.md) into your the **Shared Objects** of your project:
-  - **DB_CASSANDRA** -  the connection to the Cassandra DB.  This interface is used by TDM utilities. Edit the IP address according to your environment.
-  - **TDM** - the connection to the [TDM PosgreSQL DB](/articles/TDM/tdm_architecture/02_tdm_database.md). Edit the IP address according to your environment.
-  - **FabricRedis** - this [Redis interface](/articles/24_non_DB_interfaces/09_redis_interface.md) connects the **Redis** storage of your environment. Edit the IP address and populate it with the IP address of the TDM server. 
+Import and deploy the following [interfaces](/articles/05_DB_interfaces/01_interfaces_overview.md) into the project's **Shared Objects**:
+-  **DB_CASSANDRA**, the connection to the Cassandra DB.  This interface is used by TDM utilities. Edit the IP address according to the environment.
+-  **TDM**, the connection to the [TDM PosgreSQL DB](/articles/TDM/tdm_architecture/02_tdm_database.md). Edit the IP address according to the environment.
+-  **FabricRedis**, the [Redis interface](/articles/24_non_DB_interfaces/09_redis_interface.md) that connects to the environment's **Redis** storage. Edit the IP address and populate it with the IP address of the TDM server. 
 
 ### Shared Globals
 
-- Import the list of shared [global variables](/articles/08_globals/01_globals_overview.md) required to execute the TDM to your project.
+Import the list of shared [global variables](/articles/08_globals/01_globals_overview.md) required to execute the TDM to your project.
 
 ### Shared Functions
 
-- The TDM shared functions are located in the **TDM** [Logic file](/articles/04_fabric_studio/09_logic_files_and_categories.md).
-- Import the TDM shared functions to your project. Note that it is recommended to add the project's shared functions to a separate category (Logic file) to simplify upgrading the TDM version since the TDM category contains the product's functions.
+TDM shared functions are located in the **TDM** [Logic file](/articles/04_fabric_studio/09_logic_files_and_categories.md). 
+
+Import the TDM shared functions to your project. Note that it is recommended to add the project's shared functions to a separate category (Logic file) to simplify upgrading the TDM version since the TDM category contains the product's functions.
 
 ### Shared Translations
 
@@ -128,7 +130,7 @@ The TDM Logical Unit must be deployed to the Fabric project. It has the followin
 
 ## TDM_LIBRARY LU
 
-The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.  Below is the list of the LU level utilities:
+The TDM_LIBRARY LU holds utilities that must be copied to the project's LUs, as follows:
 
 ### Globals
 
@@ -137,13 +139,13 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 
 ### LU Tables
 
-- **FABRIC_TDM_ROOT** - this is the Root table of each LU. This table contains the following columns:
+- **FABRIC_TDM_ROOT**, the Root table of each LU. This table contains the following columns:
 
-  - K2_TDM_EID - populated by the LU instance ID. 
-  - IID - populated by the entity ID without the concatenation of the source environment, version name and version datetime.
-  - SOURCE_ENV - population by the source environment name of the TDM task.
-  - TASK_NAME - version name. Populated by a [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) task by the task name.
-  - TIMESTAMP - version datetime. Populated by a [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) task. 
+  - K2_TDM_EID, populated by the LU instance ID. 
+  - IID, populated by the entity ID without the concatenation of the source environment, version name and version datetime.
+  - SOURCE_ENV, populated by the source environment name of the TDM task.
+  - TASK_NAME, version name. Populated by a [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) task by the task name.
+  - TIMESTAMP, version datetime. Populated by a [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) task. 
 
   **Example:** 
 
@@ -202,15 +204,15 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
   </tr>
   </table>
 
-- **LU_PARAMS** - parameters table.  Must be added to each LU schema even when it is not required for defining parameters on the LU. In this case, the LU_PARAM table only contains the ENTITY_ID and SOURCE_ENVIRONMENT fields.
+- **LU_PARAMS**, parameters table.  Must be added to each LU schema even when it is not required for defining parameters on the LU whereby the LU_PARAM table only holds the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
   Click for more information about [TDM parameters handling](articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md).
 
-- **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** - TDM relationship tables to map the parent to child IDs. Note that these tables are also created in the TDM DB.
+- **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID**, TDM relationship tables that map the parent to child IDs. Note that these tables are also created in the TDM DB.
 
   Click for more information about [TDM Hierarchy implementation](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md).
 
-- **INSTANCE_TABLE_COUNT** - this table holds the number of records, populated on each LU tables and is used to populate the [TDM execution Report](). 
+- **INSTANCE_TABLE_COUNT**, this table holds the number of records populated on each LU tables and is used to populate the [TDM execution Report](). 
 
 ### LU Level Translations
 
@@ -236,7 +238,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 <p>Click for more information about <a href="/articles/TDM/tdm_overview/03_business_entity_overview.md">TDM business entities</a> and how to <a href="/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md">support a hierarchy</a> when implementing the LUs.</p>
 </td>
 <td valign="top" width="400pxl">
-<p>This translation must be added and populated on each <strong>parent LU</strong> and is used to populate the TDM relationship tables. The child_lu field must be populated by the name of the child LU.</p>
+<p>This translation must be added and populated on each <strong>parent LU</strong> and is used to populate TDM relationship tables. The child_lu field must be populated by the name of the child LU.</p>
 <p>Both SQLs populated in child_lu_eid_sql and child_lu_tar_eid_Sql fields must run on the parent LU and gets the source and target child IDs for each parent ID.</p>
 <p><strong>Example:</strong><u><br /></u>Customer LU is the parent of the Order LU. <br />trnChildLink of the Customer LU must be populated as follows:</p>
 <ul>
@@ -255,7 +257,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 </td>
 <td valign="top" width="400pxl">
 <p>The COLUMN_NAME is populated by the name of the parameter and the SQL is populated by the SQL query that gets the values for the defined parameter.</p>
-<p>Click for more information about <a href="/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md">parameters handling</a>. </p>
+<p>Click for more information about <a href="/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md">handling parameters</a>. </p>
 </td>
 </tr>
 <tr>
@@ -275,7 +277,7 @@ The TDM_LIBRARY LU contains utilities that need to be copied to the project LUs.
 
 ### Split Large Files
 
-- **parExecuteJob** - The main parser that runs other parsers and splits them to run in parallel. The **trnParsList** translation object holds the large parser names to be split. Copy this parser to the LU if needed. 
+**parExecuteJob**, the main parser that runs other parsers and splits them to run in parallel. The **trnParsList** translation object holds the large parser names to be split. Copy this parser to the LU if needed. 
 
 
 
