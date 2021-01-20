@@ -144,7 +144,7 @@ Note that if execution of the parent LU fails, the child LU is not processed and
 
 **Example:**
 
-1. Create a TDM task to copy **Customers 1, 2 and 3** and with their orders and related network elements. 
+1. Create a TDM task to copy **Customers 1, 2 and 3**, their orders and related network elements. 
 
 2. **Customers' related entities:**
 
