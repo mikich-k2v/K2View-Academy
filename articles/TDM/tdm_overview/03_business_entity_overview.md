@@ -38,7 +38,7 @@ A parent-child hierarchy of LUs can also be defined under a BE. The relationship
 
 If an LU in a BE has no parent LU, it is named **Root LU** whereby its root entity equals the root entity of the BE. 
 
-**Customer #1 Hierarchy Example**
+**Example of Customer #1 Hierarchy**
 
  ![Customer example](images/customer_data_example.png)
                                 
@@ -132,15 +132,15 @@ A TDM BE may include several root LUs with the same list of entities. For exampl
 
 ### Task Execution of Hierarchical Business Entities
 
-A TDM task can include a BE with a hierarchical structure of several LUs. The TDM task execution process must execute all the related LUs of the task by from parent to child LUs:
+A TDM task can include a BE with a hierarchical structure of several LUs. When processing the TDM task, all related LUs from parent and child LUs must also be processed:
 
-- Start with the execution of the Root LUs on all entities of the task.
+1. Execute the Root LUs on all task entities.
 
-- After the execution of the parent LU ends, start the execution of the child LUs of the Root LUs on all entities. Execute the each child LU on the related entity IDs of the parent's entities that have been processed successfully by the task.
+2. After the parent LUs have been processed, execute the child LUs of the Root LUs on all entities, as follows:
+   -  Execute each child LU on the related entity IDs of the parent's entities that have been successfully processed by the task.
+   -  Execute their child LUs.
 
-- Then execute their child LUs etc..
-
-  Note that if the parent LU execution fails, then the child LU is not being executed and is also marked as failed.
+Note that if execution of the parent LU fails, the child LU is not processed and is marked as failed.
 
 **Example:**
 
@@ -172,9 +172,9 @@ A TDM task can include a BE with a hierarchical structure of several LUs. The TD
   - Customers 1 and 2 are processed successfully. Customer 3 fails.
 - **Step 2:**
   - Run Order LU on entities related to Customers 1 and 2, i.e. order IDs 4, 5 and 9. The execution of Order 4 failed. The remaining Orders have been processed successfully. 
-  - Note that Order LU is not executed on the orders of Customer 3, since it failed.
+  - Note that Order LU is not executed on Customer 3 orders, since it failed.
 - **Step 3:**
-  - Run Network Element LU on the entities related to the successfully processed Orders, i.e. Network Element IDs 92 and 98.
+  - Run the Network Element LU on the entities related to the successfully processed Orders, i.e. Network Element IDs 92 and 98.
 
  
 
