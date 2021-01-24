@@ -8,8 +8,8 @@ For example, to copy Customer 1 from the Production environment, the TDM must id
 
 TDM relationship tables hold the links between the parent ID and their children IDs. There are two TDM relationship tables in the TDM DB:
 
-1. TDM_LU_TYPE_RELATION_EID.
-2. TDM_LU_TYPE_REL_TAR_EID.
+1. [TDM_LU_TYPE_RELATION_EID](#tdm_lu_type_relation_eid).
+2. [TDM_LU_TYPE_REL_TAR_EID](#tdm_lu_type_rel_tar_eid).
 
 ### TDM_LU_TYPE_RELATION_EID
 
@@ -21,7 +21,9 @@ This table is used for the following:
 
 #### Which Process Populates the TDM_LU_TYPE_RELATION_EID? 
 
-The TDM_TYPE_RELATION_EID is populated by the sync on the parent LUI. The **fnEnrichmentChildLink** enrichment function is attached to each parent LU and populates the TDM_TYPE_RELATION_EID table. This function runs on the parent LU. The SQL queries are populated in the [trnChildLink](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnchildlink) translation to get the child IDs of each parent LUI.
+The TDM_LU_TYPE_RELATION_EID is populated by the sync on the parent LUI. The **fnEnrichmentChildLink** enrichment function is attached to each parent LU and populates the TDM_LU_TYPE_RELATION_EID table if the TDM task copies (inserts) entities to the target environment. This function runs on the parent LU. The SQL queries are populated in the [trnChildLink](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnchildlink) translation to get the child IDs of each parent LUI.
+
+Click for more information about the [TDM task operation modes].
 
 #### TDM_LU_TYPE_RELATION_EID Structure
 
@@ -172,7 +174,9 @@ This table holds the link between the parent-child **target IDs**. The relations
 
 #### Which Process Populates the TDM_LU_TYPE_REL_TAR_EID? 
 
-The TDM_TYPE_REL_TAR_EID is populated by the sync of the parent LU which populates the related child IDs on each parent entity before deleting the parent entity from the target environment. 
+The TDM_LU_TYPE_REL_TAR_EID is populated by the sync of the parent LU which populates the related child IDs on each parent entity before deleting the parent entity from the target environment.  The **fnEnrichmentChildLink** enrichment function is attached to each parent LU and populates the TDM_LU_TYPE_REL_TAR_EID table if the TDM task deletes entities from the target environment. This function runs on the parent LU. The SQL queries are populated in the [trnChildLink](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnchildlink) translation to get the target child IDs of each parent LUI.
+
+Click for more information about the [TDM task operation modes]. 
 
 #### TDM_LU_TYPE_RELATION_EID Structure
 
@@ -213,7 +217,7 @@ The TDM_TYPE_REL_TAR_EID is populated by the sync of the parent LU which populat
 
 Although Business Entities are defined in the TDM GUI, the following guidelines must be implemented to support parent-child LU hierarchy:
 
-- Populate the [trnChildLink](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnchildlink) translation object. Note that a parent LU can have several child LUs. Populate a separate record for each child LU. 
+- Populate the [trnChildLink](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnchildlink) translation object. Note that a parent LU can have several child LUs. Populate a separate record for each child LU with the SQL queries to select the source and the target child IDs.
 -  Add the **fnEnrichmentChildLink** function as an enrichment function in addition to **fnCheckInsFound** to the FABRIC_TDM_ROOT root LU table. The enrichment function runs the SQL queries populated in the **trnChildLink** translation on the LU data and populates the [TDM_LU_TYPE_RELATION_EID](#tdm_lu_type_relation_eid) table in the TDM DB using the link of the parent IID to its children IIDs.
 
 
