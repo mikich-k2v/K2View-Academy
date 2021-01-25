@@ -112,7 +112,7 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 <p>Each process is implemented as a Broadway flow.</p>
 </td>
 <td valign="top" width="400pxl">
-<p>Populate the list of Broadway flows and the LU of the Broadway flow.</p>
+<p>Populate the list of Broadway flows and the LU of the Broadway flow. The LU can be empty if the post processes are defined under the Shared Objects. In this case the TDM task execution process will set the LU name parameter to TDM when running the BATCH commands to executte the post execution processes. </p>
 </td>
 </tr>
 </tbody>
