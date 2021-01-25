@@ -42,7 +42,7 @@ Each BE must have one or more LUs assigned to to enable using this BE on TDM tas
   - Check **All Logical Units** to attach all the LUs that are deployed to Fabric and are not attached to the BE.
   - Check **Select** option and select one of the available LUs in the **Logical Unit** drop-down. This drop-down displays all the LUs that are deployed to Fabric and are not attached to the BE. Click the ![be_plus](images/plus_icon.png) or the ![be_delete](images/delete_icon.png) icons to add or remove LUs to the BE. Populate the following optional settings on each selected LU:
     - **Logical Unit Description**
-    - **Parent Logical Unit**,  set a parent LU to build a [hierarchy in the BE](/articles/TDM/tdm_overview/03_business_entity_overview.md#building-an-lu-hierarchy-in-a-be). 
+    - **Parent Logical Unit**,  set a parent LU to build a [hierarchy in the BE](/articles/TDM/tdm_overview/03_business_entity_overview.md). 
     - **Data Center**, can be attached to each LU in a Business Entity if the LU instances are saved under a specific Data Center (DC) in Fabric.
   - Notes:
     - Both Parent and Child LUs must be attached to the same BE.
