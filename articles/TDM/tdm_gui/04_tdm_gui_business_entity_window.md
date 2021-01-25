@@ -1,6 +1,6 @@
 # Business Entity Windows 
 
-A [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (BE) represents the main entity of the data to be provisioned by TDM. A Business Entity can have multiple [LUs](https://github.com/k2view-academy/K2View-Academy/blob/Academy_6.4_TDM/articles/TDM/tdm_overview/(/articles/03_logical_units/01_LU_overview.md)) with a flat or  hierarchical structure. For example, a Customer Business Entity can have Customer Care, Billing, Ordering and Usage LUs. Each LU can be attached to multiple BEs.
+A [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (BE) represents the main entity of the data to be provisioned by TDM. A Business Entity can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md)) with a flat or  hierarchical structure. For example, a Customer Business Entity can have Customer Care, Billing, Ordering and Usage LUs. Each LU can be attached to multiple BEs.
 
 ## Business Entities Window
 
@@ -40,7 +40,7 @@ Each BE must have one or more LUs assigned to to enable using this BE on TDM tas
 
 - Use the following options to add an LU to a BE and then click the **Add Logical Units** button to add the selected LUs  to the BE:
   - Check **All Logical Units** to attach all the LUs that are deployed to Fabric and are not attached to the BE.
-  - Check **Select** option and select one of the available LUs in the **Logical Unit** drop-down. This drop-down displays all the LUs that are deployed to Fabric and are not attached to the BE. Click the ![be_Example](images/plus_icon.png)or the ![be_Example](images/delete_icon.png)icons to add or remove LUs to the BE.  Populate the following optional settings on each selected LU:
+  - Check **Select** option and select one of the available LUs in the **Logical Unit** drop-down. This drop-down displays all the LUs that are deployed to Fabric and are not attached to the BE. Click the ![be_plus](images/plus_icon.png) or the ![be_delete](images/delete_icon.png) icons to add or remove LUs to the BE. Populate the following optional settings on each selected LU:
     - **Logical Unit Description**
     - **Parent Logical Unit**,  set a parent LU to build a [hierarchy in the BE](/articles/TDM/tdm_overview/03_business_entity_overview.md#building-an-lu-hierarchy-in-a-be). 
     - **Data Center**, can be attached to each LU in a Business Entity if the LU instances are saved under a specific Data Center (DC) in Fabric.
@@ -52,7 +52,7 @@ Each BE must have one or more LUs assigned to to enable using this BE on TDM tas
 
 #### Editing the LU Settings
 
-Click the ![be_Example](images/be_edit_icon.png) or ![be_Example](images/be_delete_icon.png)to edit or delete the LU from the BE. Note that the delete activity physically deletes the LU from the BE in the TDB DB. 
+Click the ![be_edit](images/be_edit_icon.png) or ![be_delete](images/be_delete_icon.png)to edit or delete the LU from the BE. Note that the delete activity physically deletes the LU from the BE in the TDB DB. 
 
 [Click for more information about the TDM DB tables of the BE  and LU relationship].
 
@@ -64,7 +64,7 @@ This tab enables adding post execution processes that need to run in the end of 
 
 The post execution processes are [Broadway flows] defined in Fabric by the TDM implementer. The relationship between a post execution process and a BE is many to many, i.e. a BE can have several post execution processes, and a post execution process can be attached to multiple BEs. 
 
-The [task execution process] executes the [BATCH command]()  on each one of the the post execution processes attached to the BE of the task. The execution order is set according the execution order defined in the BE.
+The [task execution process] executes the [BATCH command](/articles/20_jobs_and_batch_services/15_batch_broadway_commands.md)  on each one of the the post execution processes attached to the BE of the task. The execution order is set according the execution order defined in the BE.
 
 Unlike the LUs, the post execution processes and optional. A BE can be defined without any post execution process.
 
