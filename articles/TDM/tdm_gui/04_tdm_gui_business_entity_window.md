@@ -2,7 +2,7 @@
 
 A [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (BE) represents the main entity of the data to be provisioned by TDM. A Business Entity can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md)) with a flat or  hierarchical structure. For example, a Customer Business Entity can have Customer Care, Billing, Ordering and Usage LUs. Each LU can be attached to multiple BEs.
 
-## Business Entities Window
+## Business Entities List Window
 
 The **Business Entities** window displays a list of all Business Entities defined in the TDM.  Only **Admin users** can create, edit, or delete a Business Entity. Other users can open the Business Entities for view.
 
