@@ -37,7 +37,7 @@ Adding an LU to a BE creates a new record in this table. Each record is marked b
 - **LU relationship in the BE** - lu_parent_id and lu_parent_name columns  that hold the ID and name of the [parent LU](/articles/TDM/tdm_overview/03_business_entity_overview.md#building-an-lu-hierarchy-in-a-be) if exists. 
 - **Product information** - product_id and product_name columns. The product_id is the linkage to **Products** table.  The product information is updated when the LU is attached to the Product. If the LU is not attached to a Product, the product_id is populated by -1 and the product_name is NULL.
 
-### TDM_Be_Post_Exe_Process
+### TDM_BE_Post_Exe_Process
 
 This table holds the list of [Post Execution Processes](/articles/TDM/tdm_gui/04_tdm_gui_business_entity_window.md#post-execution-processes-tab) attached to each BE. A separate record is created on each post execution process. Each record is marked by a unique sequence: **process_id**. This is the PK of this table.
 
