@@ -35,7 +35,7 @@ Adding an LU to a BE creates a new record in this table. Each record is marked b
 - **LU information** - lu_id, lu_name, lu_description, and lu_dc_name columns. 
 - **BE information** - be_id column.  This is the linkage to **business_entities** table.
 - **LU relationship in the BE** - lu_parent_id and lu_parent_name columns  that hold the ID and name of the [parent LU](/articles/TDM/tdm_overview/03_business_entity_overview.md#building-an-lu-hierarchy-in-a-be) if exists. 
-- **Product information** - product_id and product_name columns. The product_id is the linkage to **Products** table.  The product information is updated when the LU is attached to the Product. If the LU is not attached to a Product, the product_id is populated by -1 and the product_name is NULL.
+- **Product information** - product_id and product_name columns. The product_id is the linkage to **Products** table. The product_id is populated by -1 and the product_name is set to NULL when the record is created.  The product information is set when the LU is attached to the Product. If the LU is deleted from the Product, the product columns are updated back to their default values.
 
 ### TDM_BE_Post_Exe_Process
 
