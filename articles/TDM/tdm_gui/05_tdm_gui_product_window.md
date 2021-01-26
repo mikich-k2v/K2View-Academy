@@ -23,8 +23,8 @@ The following example displays the relationship between the BE, LU, and Product:
 
 The **Products** window displays a list of all Products defined in the TDM.  Only **Admin users** can create, edit, or delete a Product. Other users can open the Products for a view.
 
--   To create a new Product, click the **Add Product** icon.
--   To open a selected Product, click the **Name** value of the Business Entity.
+-   To create a new Product, click the **Add Product** button.
+-   To open a selected Product, click the Product's **Name**.
 -   To delete a Product, click the ![delete](images/delete_icon.png) icon in the right corner of the Product window.
 
 ## Product Window
@@ -71,5 +71,4 @@ The general information section contains the following settings:
 
   [Click for more information about the Product related TDM DB tables](/articles/TDM/tdm_gui/06_be_product_tdmdb_tables.md).
 
-
-     [![Previous](/articles/images/Previous.png)](04_tdm_gui_business_entity_window.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](06_be_product_tdmdb_tables.md)
+ [![Previous](/articles/images/Previous.png)](04_tdm_gui_business_entity_window.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](06_be_product_tdmdb_tables.md)
