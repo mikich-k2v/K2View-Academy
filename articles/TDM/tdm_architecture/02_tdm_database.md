@@ -46,9 +46,9 @@ The following table lists the TDM tables and their description.
 <td><h4>product_logical_units</td>
 <td valign="top" width="500 pxl">
 <ul>
-<li>Maps a list of LUs to each Business Entity.</li>
-<li>Maps the relationship of LUs in parallel LUs or parent-child LUs in a Business Entity.</li>
-<li>Maps the combined Business Entity and LU to a product.</li>
+<li>Maps a list of LUs in each Business Entity.</li>
+<li>Maps the relationship of the LUs in a Business Entity.</li>
+<li>Maps the link of the combined Business Entity and LU to a product.</li>
 </ul>
 </td>
 <td>Business Entity/Product</td>
