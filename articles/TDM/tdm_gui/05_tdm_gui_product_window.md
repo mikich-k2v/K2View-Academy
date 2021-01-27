@@ -4,16 +4,16 @@ A TDM Product represents a system or application installed in the source or targ
 
 A TDM Product contains the following components:
 
-- Product name - a logical name to identify the product (system). For example, CRM.
-- Product versions - the versions of the product, as defined in the testing environments. For example, Production and Development.
+- Product name, a logical name that identifies the product (system). For example, CRM.
+- Product versions, the versions of the product, as defined in the testing environments. For example, Production and Development.
 
 - Logical Units (LUs).
 
-## BE - LU - Product Relationship
+## The BE - LU Product Relationship
 
-Each combination of BE and LU can be attached to one product only. However, a product can have LUs that belong to different BEs.
+Each BE and LU combination can be attached to one product only. However, a product can have LUs belonging to different BEs.
 
-The following example displays the relationship between the BE, LU, and Product:
+The following example displays the relationship between a BE, LU, and Product:
 
 ![be-prod-lu](images/be_lu_product_relation.png)
 
@@ -21,7 +21,7 @@ The following example displays the relationship between the BE, LU, and Product:
 
 ## Products List Window
 
-The **Products** window displays a list of all Products defined in the TDM.  Only **Admin users** can create, edit, or delete a Product. Other users can open the Products for a view.
+The **Products** window displays a list of all Products defined in the TDM.  Only **Admin users** can create, edit, or delete a Product. Other users can open Products for   view only purposes.
 
 -   To create a new Product, click the **Add Product** button.
 -   To open a selected Product, click the Product's **Name**.
@@ -29,27 +29,28 @@ The **Products** window displays a list of all Products defined in the TDM.  Onl
 
 ## Product Window
 
-The Product window displays information about a selected Product. It has two main sections:
+The Product window displays information about a selected Product. It has two main sections: 
 
 - General Information.
 - Logical Units.
 
 ### General Information
 
-The general information section contains the following settings:
+The General Information section has the following settings:
 
-- Name  - product name
+- Name, product name
 
-- Vendor and Description - optional settings
+- Vendor and Description, optional settings
 
-- Versions - product versions:
+- Versions, product versions which enable the TDM implementation to support multiple versions of the product.
 
-  -  The product versions enable the TDM implementation to support multiple versions of the product when each product version may have a different data source structure. For example , a development environment may have new tables and fields comparing the production environment. 
-  - At least one version must be set on the Product. It is possible to set multiple product versions. 
-  - The relevant product version must be selected when adding an Product to an [Environment].
-  - To add a version to the Product, click the  ![delete](images/plus_icon_prod_version.png) icon next to the Product Versions setting. A popup window is opened. Type the version value. The version value is the logical identifier of the product version,  for example 1, 1.5, dev or prod. The values must be aligned to the TDM Fabric implementation. 
+  -  Each product version may have a different data source structure. For example, a development environment may have new tables and fields compared to the production environment. 
+  - At least one version must be set on the Product and multiple product versions can be set 
+  - The relevant product version must be selected when adding a Product to an [Environment].
 
-  [Click for more information about supporting multiple Product versions by TDM].
+To add a version to a Product, click the  ![delete](images/plus_icon_prod_version.png) icon next to the Product Versions setting. A popup window is opened. Type the version value. The version value is the logical identifier of the product version,  for example 1, 1.5, dev or prod. The values must be aligned to the TDM Fabric implementation. 
+
+  [Click for more information about supporting multiple Product versions via TDM].
 
 ### Logical Units
 
