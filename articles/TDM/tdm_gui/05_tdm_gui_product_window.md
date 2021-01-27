@@ -5,11 +5,11 @@ A TDM Product represents a system or application installed in the source or targ
 A TDM Product contains the following components:
 
 - Product name, a logical name that identifies the product (system). For example, CRM.
-- Product versions, the versions of the product, as defined in the testing environments. For example, Production and Development.
+- Product versions, the versions of the product as defined in testing environments. For example, Production and Development.
 
 - Logical Units (LUs).
 
-## The BE - LU Product Relationship
+## BE and LU Product Relationship
 
 Each BE and LU combination can be attached to one product only. However, a product can have LUs belonging to different BEs.
 
@@ -44,7 +44,7 @@ The General Information section has the following settings:
 
 - Versions, product versions which enable the TDM implementation to support multiple versions of the product.
 
-  -  Each product version may have a different data source structure. For example, a development environment may have new tables and fields compared to the production environment. 
+  -  Each product version may have a different data source structure. For example, a development environment may have new tables and fields that are not in the production environment. 
   - At least one version must be set for a Product. Multiple product versions can also be set. 
   - The relevant product version must be selected when adding a Product to an [Environment].
 
@@ -56,19 +56,19 @@ To add a version to a Product, click ![delete](images/plus_icon_prod_version.png
 
 #### How Do I Add an LU to a Product?
 
-Click ![plus](images/plus_icon.png) to add an LU to the Product to open the **Add Logical Unit** dialog box.
+Click ![plus](images/plus_icon.png) to open the **Add Logical Unit** dialog box.
 
   ![add_lu](images/prod_add_lu.png)
 
-- The **Business Entities** setting displays the list of BEs which have available LUs that are not attached to any product.
+- The **Business Entities** setting displays a list of BEs with available LUs that are not attached to any product.
 
-- The **Logical Unit Name** setting displays the list of available LUs (not attached to any product) of the selected BE.
+- The **Logical Unit Name** setting displays the list of available LUs that are not attached to any product of the selected BE.
 
   
 
 #### How Do I Delete an LU from a Product ? 
 
-- Click ![be_delete](images/delete_icon.png) to  delete the selected LU from the Product.
+Click ![be_delete](images/delete_icon.png) to delete the selected LU from the Product.
 
   [Click for more information about the Product related TDM DB tables](/articles/TDM/tdm_gui/06_be_product_tdmdb_tables.md).
 
