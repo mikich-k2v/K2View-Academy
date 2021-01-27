@@ -25,7 +25,7 @@ The **Products** window displays a list of all Products defined in the TDM.  Onl
 
 -   To create a new Product, click the **Add Product** button.
 -   To open a selected Product, click the Product's **Name**.
--   To delete a Product, click the ![delete](images/delete_icon.png) icon in the right corner of the Product window.
+-   To delete a Product, click ![delete](images/delete_icon.png) in the right corner of the Product window.
 
 ## Product Window
 
@@ -45,18 +45,18 @@ The General Information section has the following settings:
 - Versions, product versions which enable the TDM implementation to support multiple versions of the product.
 
   -  Each product version may have a different data source structure. For example, a development environment may have new tables and fields compared to the production environment. 
-  - At least one version must be set on the Product and multiple product versions can be set 
+  - At least one version must be set for a Product. Multiple product versions can also be set. 
   - The relevant product version must be selected when adding a Product to an [Environment].
 
-To add a version to a Product, click the  ![delete](images/plus_icon_prod_version.png) icon next to the Product Versions setting. A popup window is opened. Type the version value. The version value is the logical identifier of the product version,  for example 1, 1.5, dev or prod. The values must be aligned to the TDM Fabric implementation. 
+To add a version to a Product, click ![delete](images/plus_icon_prod_version.png) next to the Product Versions setting and enter the version value which is a logical identifier of the product version. For example 1, 1.5, dev or prod. The values must be aligned to the TDM Fabric implementation. 
 
   [Click for more information about supporting multiple Product versions via TDM].
 
 ### Logical Units
 
-#### How to add an LU to a Product ?
+#### How Do I Add an LU to a Product?
 
-- Click the ![plus](images/plus_icon.png) icon to add an LU to the Product.  A popup window is opened:
+Click ![plus](images/plus_icon.png) to add an LU to the Product to open the **Add Logical Unit** dialog box.
 
   ![add_lu](images/prod_add_lu.png)
 
@@ -66,9 +66,9 @@ To add a version to a Product, click the  ![delete](images/plus_icon_prod_versio
 
   
 
-#### How to Delete an LU from a Product ? 
+#### How Do I Delete an LU from a Product ? 
 
-- Click the ![be_delete](images/delete_icon.png) icon to  delete the selected LU from the Product.
+- Click ![be_delete](images/delete_icon.png) to  delete the selected LU from the Product.
 
   [Click for more information about the Product related TDM DB tables](/articles/TDM/tdm_gui/06_be_product_tdmdb_tables.md).
 
