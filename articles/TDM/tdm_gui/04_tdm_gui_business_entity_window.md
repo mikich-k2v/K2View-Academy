@@ -38,9 +38,12 @@ To use a BE in a TDM task, it must have one or more LUs assigned.
 
 ![be_Example](images/BE_add_lu_window.png)
 
-2. Do the following: 
-   - Check **All Logical Units** to attach all LUs that are deployed to Fabric and that are not attached to the BE.
-   - Check **Select** and select the available LUs from the **Logical Unit** dropdown list.
+2. You can add LUs to the BE using one of the following methods: 
+
+   2.1 Check **All Logical Units** to attach all LUs that are deployed to Fabric and that are not attached to the BE. All the LUs are attached to the BE in a flat structure, i.e. the Parent Logical Unit is empty. You can edit the LUs to populate the Parent Logical Unit and the Data Center settings if needed.
+
+   2.2 Check **Select** and select one of the available LUs from the **Logical Unit** dropdown list:
+
    - Click ![be_plus](images/plus_icon.png) or ![be_delete](images/delete_icon.png) to add or remove LUs to / from the BE. 
    - Populate the following optional settings on each selected LU:
      - **Logical Unit Description**
@@ -58,7 +61,7 @@ Notes:
 
 Click ![be_edit](images/be_edit_icon.png) or ![be_delete](images/be_delete_icon.png) to edit or delete the LU from the BE. Note that the LU is deleted from the BE in the TDB DB. 
 
-[Click for more information about TDM DB tables in a BE  and LU relationship].
+Click for more information about [TDM DB tables in a BE  and LU relationship](06_be_product_tdmdb_tables.md).
 
 
 
@@ -78,17 +81,15 @@ Unlike for LUs, post-execution processes are optional. A BE can be defined witho
 
 ![be_Example](images/be_post_execution_processes_window.png)
 
-2. Click the **Process Name** and select the post-execution processes from the dropdown list holding all post-execution processes deployed to Fabric.
-
+2. Click the **Process Name** and select one of the post-execution processes from the dropdown list holding all post-execution processes deployed to Fabric.
 3. Populate the **Execution Order** setting with a numeric value to set the execution order. The processes with execution order 1 run first followed by the process with execution order 2 etc. Note that an execution order can be set for several post-execution processes that are executing simultaneously.
-
 4. Populate the **Description** (optional).
-
 5. Click the **Add Post Execution Process** button to add the post-execution process to the BE.
+6. Repeat steps 1-5 to attach additional post-execution processes if needed.
 
   
 
-[Click for more information about BE TDM DB tables and the post-execution processes relationship].
+Click for more information about [BE TDM DB tables and the post-execution processes relationship](06_be_product_tdmdb_tables.md).
 
  
 
