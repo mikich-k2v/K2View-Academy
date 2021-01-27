@@ -1,19 +1,18 @@
 # TDM LU Implementation - Hierarchy Support 
 
-## TDM Relation Tables
+## TDM Relationship Tables
 
 To support LU hierarchy and extracting or copying selected business entities and their related data, the TDM must identify which child entities are related to each parent entity.
 
 For example, to copy Customer 1 from the Production environment, the TDM must identify the Billing Accounts and the Orders of Customer 1. 
 
 TDM relationship tables hold the links between the parent ID and their children IDs. There are two TDM relationship tables in the TDM DB:
-
-1. [TDM_LU_TYPE_RELATION_EID](#tdm_lu_type_relation_eid).
-2. [TDM_LU_TYPE_REL_TAR_EID](#tdm_lu_type_rel_tar_eid).
+- [TDM_LU_TYPE_RELATION_EID](#tdm_lu_type_relation_eid).
+- [TDM_LU_TYPE_REL_TAR_EID](#tdm_lu_type_rel_tar_eid).
 
 ### TDM_LU_TYPE_RELATION_EID
 
-This table keeps the link between the parent-child **source IDs**. The relationship is saved per source environment. In addition, each [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) extract task creates separate records in the TDM_LU_TYPE_RELATION_EID table with the version name, date and the time of the extracted version of entities.
+This table holds the link between the parent-child **source IDs**. The relationship is saved per source environment. In addition, each [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) extract task creates separate records in the TDM_LU_TYPE_RELATION_EID table with the version name, date and the time of the extracted version of entities.
 
 This table is used for the following:
 - Building the list of entities (entity inclusion) of child LUs when executing extract or load tasks. The TDM execution process gets the children entities of the parent entities that have been successfully processed by the executed task.
