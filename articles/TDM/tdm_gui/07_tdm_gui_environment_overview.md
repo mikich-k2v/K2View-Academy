@@ -25,7 +25,7 @@ Other users can open the Environments for a view.
 
 -   To create a new Environment, click the **New Environment** button.
 -   To open a selected Environment, click the environment's **Name**.
--   To delete an environment, click the ![delete](D:/K2View-Academy/articles/TDM/tdm_gui/images/delete_icon.png) icon in the Environment window.
+-   To delete an environment, click the ![delete](images/delete_icon.png) icon in the Environment window.
 
 
 
