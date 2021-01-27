@@ -21,7 +21,7 @@ The following example displays the relationship between a BE, LU, and Product:
 
 ## Products List Window
 
-The **Products** window displays a list of all Products defined in the TDM.  Only **Admin users** can create, edit, or delete a Product. Other users can open Products for   view only purposes.
+The **Products** window displays a list of all Products defined in the TDM.  Only **Admin users** can create, edit, or delete a Product. Other users can open Products for view only purposes.
 
 -   To create a new Product, click the **Add Product** button.
 -   To open a selected Product, click the Product's **Name**.
@@ -38,9 +38,9 @@ The Product window displays information about a selected Product. It has two mai
 
 The General Information section has the following settings:
 
-- Name, product name
+- Name. Populated by the product name.
 
-- Vendor and Description, optional settings
+- Vendor and Description, optional settings.
 
 - Versions, product versions which enable the TDM implementation to support multiple versions of the product.
 
@@ -62,7 +62,7 @@ Click ![plus](images/plus_icon.png) to open the **Add Logical Unit** dialog box.
 
 - The **Business Entities** setting displays a list of BEs with available LUs that are not attached to any product.
 
-- The **Logical Unit Name** setting displays the list of available LUs that are not attached to any product of the selected BE.
+- The **Logical Unit Name** setting displays the list of available LUs that are not attached to any product and belong to the selected BE.
 
   
 
