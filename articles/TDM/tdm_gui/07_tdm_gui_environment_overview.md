@@ -5,8 +5,8 @@ To be enabled for TDM tasks all environments must be defined in the TDM and each
 - Fabric, set the interface connection details for each environment. 
 - TDM GUI, set the following for each environment:
 
-  - [General information] like environment name, contact person, environment type (source, target or both).
-  - [Environment owners], add environment owners to setup and maintain an environment.
+  - [General information](08_environment_window_general_information.md) like environment name, contact person, environment type (source, target or both).
+  - [Environment owners](08_environment_window_general_information.md#environment-owners), add environment owners to setup and maintain an environment.
   - [Environments Products], attach [TDM Products](05_tdm_gui_product_window.md) to each environment.
   - [Environment Roles], define roles with permissions to the environment and attach [test users](02_tdm_gui_user_types.md) to the environment to enable them to create TDM tasks for the environment.
   - [Environment Globals], override Globals on an environment.
@@ -29,9 +29,9 @@ The **Environments** window displays a list of all environments defined in the T
 
 The Environment window has the following sections:
 
-- [General Information](08_environment_window_general_information.md)
+- [General Information](08_environment_window_general_information.md).
 
-- [Execution Summary]
+- [Environment Summary](09_environment_window_summary_section.md)
 
 - Environments tabs:
 

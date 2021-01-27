@@ -69,7 +69,7 @@ The group name must be also defined in the **TDM GUI configuration file**: [conf
 
 Note that the TDM GUI installation includes an internal LDAP for development. The environment owners group name in the internal LDAP is **k2venvownerg**. Therefore the default value of the **ownersGroupName** attribute in the config.js file is **k2venvownerg**.
 
-#### How to Add or Remove Environment Owners to an Environment? 
+#### How Do I Add or Remove Environment Owners to an Environment? 
 
 - Click the Environment Owners setting. A list of permitted users is displayed. Select one of the users in the list. 
 
