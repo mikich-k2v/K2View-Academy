@@ -1,6 +1,6 @@
 # TDM LU Implementation - Generic Guidelines
 
-A TDM task copies a selected [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) from the selected source environment to the selected target environment. A Business Entity can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md) with a flat or a hierarchical structure. For example, a Customer Business Entity can consist of Customer Care, Billing, Ordering and Usage LUs. The ability to break a BE up into several LUs enables maximum flexibility and avoiding duplicate development. In addition, defining a hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
+A TDM task copies a selected [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) from a selected source environment to a selected target environment. A Business Entity can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md) with a flat or a hierarchical structure. For example, a Customer Business Entity can consist of Customer Care, Billing, Ordering and Usage LUs. The ability to break a BE up into several LUs enables maximum flexibility and avoiding duplicate development. In addition, defining a hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
 
 Each LU in a TDM project must have additional components to support TDM functionality.
 
@@ -30,7 +30,7 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 2.  Set the **Instance PK** column to **k2_tdm_eid** and verify that the **fnCheckInsFound** enrichment function under Shared Objects is attached to the LU table. 
     This function only runs if the TDM task inserts the entity to the target, and therefore must extract its data from the data source. It validates that the entity (IID) exists in the main source LU tables. If the entity is not found in the source table, the entity is rejected. 
-3. Add the **LU_PARAMS**, **INSTANCE_TABLE_COUNT**, **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** to the LU Schema and link the tables to the **FABRIC_TDM_ROOT.IID** :
+3. Add the **LU_PARAMS**, **INSTANCE_TABLE_COUNT**, **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** to the LU Schema and link the tables to the **FABRIC_TDM_ROOT.IID**.
 
 ![tdm lu example](images/tdm_lu_example1.png)
 
@@ -62,7 +62,7 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 5. Edit the Root function of the main source LU tables based on the [TBD- add the template when its ready] template. The updated Root function checks the above conditions.  
 
-6. Link the remaining source LU tables to the main LU tables so that if the main source LU table is not populated, the remaining source LU table also remains empty.
+6. Link the remaining source LU tables to the main LU tables so that if the main source LU table is not populated the remaining source LU table also remains empty.
 
 ### Step 4 - Add the Target LU Tables to the LU Schema
 
@@ -74,7 +74,7 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 4. Link the remaining target LU tables to the main target LU table.
 
-   Click for more information about [deleting entities] from target environment via a TDM task.
+Click for more information about [deleting entities] from a target environment using a TDM task.
 
 ### LU Debug
 
