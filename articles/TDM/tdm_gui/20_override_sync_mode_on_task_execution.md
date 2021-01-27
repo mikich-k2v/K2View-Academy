@@ -1,4 +1,4 @@
-# Override Sync Mode on Task Execution
+# Override Sync Mode by Task Execution
 
 TDM task execution process must to set the Sync mode based on the environment and the task's Override Sync mode and based on the task's operation mode as described in the following table:
 
