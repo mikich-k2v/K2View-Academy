@@ -14,7 +14,7 @@ Each LU in a TDM project has the following structure:
 
 - Two main branches linked to the root table:
 
-  - **Source branch**, LU tables that extract an entity's source data.  Source LU tables are populated when a TDM task needs to copy (insert) entities to a target environment and therefore must extract the source data of these entities.
+  - **Source branch**, LU tables that extract an entity's source data.  Source LU tables are populated when a TDM task needs to load (insert) entities to a target environment and therefore must extract the source data of these entities.
 
   - **Target branch**, LU tables that extract the target keys of an entity. The keys are extracted from the target environment to enable deleting an entity from a target environment if required by the TDM task.
 
@@ -24,7 +24,7 @@ Each LU in a TDM project has the following structure:
 
 Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#tdm_library-lu) from the **TDM Library** to your project and copy the LU level objects in the TDM_LIBRARY to your LU.
 
-### Step 2 - Add the TDM Root Table to the LU Schema
+### Step 2 - Add the TDM Root Table and the TDM Generic Tables to the LU Schema
 
 1. Add the **FABRIC_TDM_ROOT** LU table to the LU Schema and set it as a [Root table](/articles/03_logical_units/08_define_root_table_and_instance_ID_LU_schema.md). 
 
@@ -38,7 +38,7 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 4. Add the LU_PARAMS LU table to each LU Schema (also when it is not required for defining LU parameters) whereby the LU_PARAM table only holds the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
-5. Edit **trnLuParams** and **LU_PARAMS** and add selection parameters to the LU. 
+5. Edit **trnLuParams** and **LU_PARAMS** to enable a subsetting of entities by selected parameters on this LU. 
 
    Click for more information about [Handling TDM Parameters](07_tdm_implementation_parameters_handling.md).
 
@@ -52,17 +52,15 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 2. Verify that the main source LU tables are also populated in [ROOT_TABLE_NAME Global](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#globals).
 
-3. When populating the main source LU tables, comply with the following conditions. 
-   - The TDM task must [copy (insert) the entities] to the target environment.
-   - Do not request to [avoid synchronizing] the entities from the source.  
+3. Create the population of the main source LU tables based on the [Root function](/articles/07_table_population/11_1_creating_or_editing_a_root_function.md).  
 
-   Note that an exception is thrown when the Sync Mode is set to Off before the first sync since the LUI does not yet exist in Fabric and Fabric cannot extract the data from its source.
+4. Edit the Root function of the main source LU tables based on the [TBD- add the template when its ready] template. The updated Root function populates the main source LU table under the following conditions:
+   - The TDM task loads (inserts) the entities to the target environment.
+   - The user does not set the Override Sync Mode to avoid synchronizing the entities from the source.  
+   
+   Click to view the [Override Sync Mode summary table].
 
-4. Create the population of the main source LU tables based on the [Root function](/articles/07_table_population/11_1_creating_or_editing_a_root_function.md). 
-
-5. Edit the Root function of the main source LU tables based on the [TBD- add the template when its ready] template. The updated Root function checks the above conditions.  
-
-6. Link the remaining source LU tables to the main LU tables so that if the main source LU table is not populated the remaining source LU table also remains empty.
+5. Link the remaining source LU tables to the main LU tables so that if the main source LU table is not populated the remaining source LU table also remains empty.
 
 ### Step 4 - Add the Target LU Tables to the LU Schema
 
@@ -78,11 +76,9 @@ Click for more information about [deleting entities] from a target environment u
 
 ### LU Debug
 
-The LUI must include the source environment which must be set as the [active environment](/articles/25_environments/01_environments_overview.md) in Fabric. When debugging the TDM implementation in Fabric, the debug server either:
+The LUI must include the source environment which must be set as the [active environment](/articles/25_environments/01_environments_overview.md) in Fabric. When running a [Data Viewer](/articles/13_LUDB_viewer_and_studio_debug_capabilities/01_data_viewer.md) on the LU to debug its implementation, do either:
 
-- Populates the source environment using `_dev_`. For example, **_dev_1**.
-- Creates and deploys the environment to the Fabric Debug server.
-
-Set the source environment as an active environment and concatenate this source environment to the Entity ID (IID). For example, **UAT_1**.  
+- Populate the source environment of the LUI using `_dev_`. For example, **_dev_1**.
+- Create and deploy the environment to the Fabric Debug server, set the source environment as an active environment in Fabric Debug server, and populate the deployed environment name in the LUI. For example, **UAT_1**.  
 
 [![Previous](/articles/images/Previous.png)](04_fabric_tdm_library.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](06_tdm_implementation_support_hierarchy.md)
