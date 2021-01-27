@@ -6,7 +6,7 @@ Business Entity (BE) and Product definitions update the following TDM DB tables:
 
 ### Business_Entities
 
-This tables holds all [BEs](/articles/TDM/tdm_gui/04_tdm_gui_business_entity_window.md) defined in the TDM GUI. 
+This tables holds all [BEs](04_tdm_gui_business_entity_window.md) defined in the TDM GUI. 
 
 -  A new record is created for each BE. 
 -  Each BE is created in **Active** status and gets a unique **be_id** sequence which is the table's PK.
@@ -17,7 +17,7 @@ Note that to prevent creating several active BEs with the same name, the **be_na
 
 ### Products
 
-This table holds all [Products] defined in the TDM GUI.
+This table holds all [Products](05_tdm_gui_product_window.md) defined in the TDM GUI.
 -  A new record is created for each Product.  
 -  Each Product is created in **Active** status and gets a unique **product_id** sequence which is the table's PK. 
 -  **Deleted Products** have an **Inactive** status and are not physically deleted from this table.
@@ -27,7 +27,7 @@ Note that to prevent creating several active Products with the same name, the **
 ### Product_Logical_Units
 
 This table holds the BE - LU - Product links, as follows:
-- Holds the links of the LUs to each [BE].
+- Holds the links of the LUs to each [BE](04_tdm_gui_business_entity_window.md).
 - Holds the parent-child relationship of the LUs in a BE.
 - Holds the link of the combined BE and LU to a product. Each BE and LU combination can be attached to a [Product](05_tdm_gui_product_window.md).
 
