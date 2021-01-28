@@ -1,6 +1,6 @@
 # Override Sync Mode by Task Execution
 
-TDM task execution process must to set the Sync mode based on the environment and the task's Override Sync mode and based on the task's operation mode as described in the following table:
+When executing a TDM task on an environment, set the sync mode according to the following table:
 
 <table width="900pxl">
 <tbody>
@@ -12,7 +12,7 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p><strong>Override Sync - Task Level&nbsp;</strong></p>
 </td>
 <td valign="top" width="130pxl">
-<p><strong>Task Operation Mode</strong></p>
+<p><strong>Task Op Mode</strong></p>
 </td>
 <td valign="top" width="130pxl">
 <p><strong>Task Execution Sync Mode</strong></p>
@@ -35,7 +35,7 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>On</p>
 </td>
 <td valign="top" width="380pxl">
-<p>The LUIs are synced according its sync method.</p>
+<p>LUIs are synced according to their sync method.</p>
 <p>See <a href="/articles/14_sync_LU_instance/10_sync_behavior_summary.md">Sync Behavior Summary table</a>.</p>
 </td>
 </tr>
@@ -44,7 +44,7 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>None</p>
 </td>
 <td style="width: 150px;">
-<p>Request Up to Date Entity&nbsp;</p>
+<p>Request up-to-date entity</p>
 </td>
 <td valign="top" width="130pxl">
 <p>All</p>
@@ -53,12 +53,12 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>Force</p>
 </td>
 <td style="width: 210px;">
-<p>The LUI are synced from the source.</p>
+<p>LUI are synced from the source.</p>
 </td>
 </tr>
 <tr>
 <td valign="top" width="130pxl">
-<p>Always Sync</p>
+<p>Always sync</p>
 </td>
 <td valign="top" width="130pxl">
 <p>None</p>
@@ -70,15 +70,15 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>Force</p>
 </td>
 <td valign="top" width="380pxl">
-<p>The LUI are synced from the source.</p>
+<p>LUI are synced from the source.</p>
 </td>
 </tr>
 <tr>
 <td style="width: 150px;">
-<p>Always Sync</p>
+<p>Always sync</p>
 </td>
 <td style="width: 150px;">
-<p>Request Up to Date Entity&nbsp;</p>
+<p>Request up-to-date entity</p>
 </td>
 <td valign="top" width="130pxl">
 <p>All</p>
@@ -87,15 +87,15 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>Force</p>
 </td>
 <td style="width: 210px;">
-<p>The LUI are synced from the source.</p>
+<p>LUI are synced from the source.</p>
 </td>
 </tr>
 <tr>
 <td style="width: 150px;">
-<p>Do not Sync</p>
+<p>Do not sync</p>
 </td>
 <td style="width: 150px;">
-<p>Request Up to Date Entity&nbsp;</p>
+<p>Request up-to-date entity</p>
 </td>
 <td valign="top" width="130pxl">
 <p>All</p>
@@ -104,12 +104,12 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>Force</p>
 </td>
 <td style="width: 210px;">
-<p>The LUI are synced from the source.</p>
+<p>LUI are synced from the source.</p>
 </td>
 </tr>
 <tr>
 <td style="width: 150px;" rowspan="3" valign="top" width="150pxl">
-<p>Do not Sync</p>
+<p>Do not sync</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </td>
@@ -126,8 +126,8 @@ TDM task execution process must to set the Sync mode based on the environment an
 </td>
 <td valign="top" width="380pxl">
 <ul>
-<li>First sync - return an error.</li>
-<li>If the LUIs exist in Fabric - get the data from Fabric.&nbsp;</li>
+<li>First sync, return an error.</li>
+<li>If the LUIs exist in Fabric, get the data from Fabric.&nbsp;</li>
 </ul>
 </td>
 </tr>
@@ -140,11 +140,11 @@ TDM task execution process must to set the Sync mode based on the environment an
 </td>
 <td valign="top" width="380pxl">
 <ul>
-<li>First sync - return an error.</li>
+<li>First sync, return an error.</li>
 <li>If the LUIs exist in Fabric:
 <ul>
-<li>Source LU tables - get the data from Fabric.</li>
-<li>Target LU tables -&nbsp; sync the data from the target environment.</li>
+<li>Source LU tables, get the data from Fabric.</li>
+<li>Target LU tables, sync the data from the target environment.</li>
 </ul>
 </li>
 </ul>
@@ -158,17 +158,17 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>On</p>
 </td>
 <td valign="top" width="380pxl">
-<p>The target LU tables are synced from the target environment.&nbsp;</p>
+<p>Target LU tables are synced from the target environment.&nbsp;</p>
 </td>
 </tr>
 <tr>
 <td style="width: 150px;" rowspan="3" valign="top" width="150pxl">
-<p>Do not Sync</p>
+<p>Do not sync</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </td>
-<td style="width: 150px;" rowspan="3" valign="top" width="150pxl">
-<p>Do not Sync Source Data</p>
+<td style="width: 150px;"a rowspan="3" valign="top" width="150pxl">
+<p>Do not sync source data</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </td>
@@ -180,8 +180,8 @@ TDM task execution process must to set the Sync mode based on the environment an
 </td>
 <td valign="top" width="380pxl">
 <ul>
-<li>First sync - return an error.</li>
-<li>If the LUIs exist in Fabric - get the data from Fabric.&nbsp;</li>
+<li>First sync, return an error.</li>
+<li>If the LUIs exist in Fabric, get the data from Fabric.&nbsp;</li>
 </ul>
 </td>
 </tr>
@@ -194,11 +194,11 @@ TDM task execution process must to set the Sync mode based on the environment an
 </td>
 <td valign="top" width="380pxl">
 <ul>
-<li>First sync - return an error.</li>
+<li>First sync, return an error.</li>
 <li>If the LUIs exist in Fabric:
 <ul>
-<li>Source LU tables - get the data from Fabric.</li>
-<li>Target LU tables -&nbsp; get the data from the target environment.</li>
+<li>Source LU tables, get the data from Fabric.</li>
+<li>Target LU tables, get the data from the target environment.</li>
 </ul>
 </li>
 </ul>
@@ -212,7 +212,7 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>On</p>
 </td>
 <td valign="top" width="380pxl">
-<p>The target LU tables are synced from the target environment.&nbsp;</p>
+<p>Target LU tables are synced from the target environment.&nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -222,7 +222,7 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>&nbsp;</p>
 </td>
 <td style="width: 150px;" rowspan="3" valign="top" width="150pxl">
-<p>Do not Sync Source Data</p>
+<p>Do not sync source data</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </td>
@@ -234,8 +234,8 @@ TDM task execution process must to set the Sync mode based on the environment an
 </td>
 <td valign="top" width="380pxl">
 <ul>
-<li>First sync - return an error.</li>
-<li>If the LUIs exist in Fabric - get the data from Fabric.&nbsp;</li>
+<li>First sync, return an error.</li>
+<li>If the LUIs exist in Fabric, get the data from Fabric.&nbsp;</li>
 </ul>
 </td>
 </tr>
@@ -248,11 +248,11 @@ TDM task execution process must to set the Sync mode based on the environment an
 </td>
 <td valign="top" width="380pxl">
 <ul>
-<li>First sync - return an error.</li>
+<li>First sync, return an error.</li>
 <li>If the LUIs exist in Fabric:
 <ul>
-<li>Source LU tables - get the data from Fabric.</li>
-<li>Target LU tables -&nbsp; get the data from the target environment.</li>
+<li>Source LU tables, get the data from Fabric.</li>
+<li>Target LU tables, get the data from the target environment.</li>
 </ul>
 </li>
 </ul>
@@ -266,7 +266,7 @@ TDM task execution process must to set the Sync mode based on the environment an
 <p>On</p>
 </td>
 <td valign="top" width="380pxl">
-<p>The target LU tables are synced from the target environment.&nbsp;</p>
+<p>Target LU tables are synced from the target environment.&nbsp;</p>
 </td>
 </tr>
 </tbody>
