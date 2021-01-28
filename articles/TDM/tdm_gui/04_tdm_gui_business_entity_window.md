@@ -81,7 +81,7 @@ Unlike for LUs, post-execution processes are optional. A BE can be defined witho
 
 ![be_Example](images/be_post_execution_processes_window.png)
 
-2. Click the **Process Name** and select one of the post-execution processes from the dropdown list holding all post-execution processes deployed to Fabric.
+2. Click the **Process Name** and select a post-execution process from the dropdown list holding all post-execution processes deployed to Fabric.
 3. Populate the **Execution Order** setting with a numeric value to set the execution order. The processes with execution order 1 run first followed by the process with execution order 2 etc. Note that an execution order can be set for several post-execution processes that are executing simultaneously.
 4. Populate the **Description** (optional).
 5. Click the **Add Post Execution Process** button to add the post-execution process to the BE.
