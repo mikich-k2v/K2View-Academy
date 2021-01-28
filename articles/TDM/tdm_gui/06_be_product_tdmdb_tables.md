@@ -26,10 +26,10 @@ Note that to prevent creating several active Products with the same name, the **
 
 ### Product_Logical_Units
 
-This table holds the BE - LU - Product links, as follows:
-- Holds the links of the LUs to each [BE](04_tdm_gui_business_entity_window.md).
-- Holds the parent-child relationship of the LUs in a BE.
-- Holds the link of the combined BE and LU to a product. Each BE and LU combination can be attached to a [Product](05_tdm_gui_product_window.md).
+This table holds the links between a BE, LU and Product, as follows:
+- Links between LUs and a [BE](04_tdm_gui_business_entity_window.md).
+- Links between parent-child LU relationships in a BE.
+- Links between a BE and its LUs to a product. Each BE and LU combination can be attached to a [Product](05_tdm_gui_product_window.md).
 
 Adding an LU to a BE creates a new record in this table. Each record is marked by a unique **lu_id** sequence which is the table's PK. The table contains the following information:
 
