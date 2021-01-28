@@ -1,20 +1,20 @@
 # Business Entity Windows 
 
-A [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (BE) represents the main entity of the data to be provisioned by TDM. A Business Entity can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md) with a flat or  hierarchical structure. For example, a Customer Business Entity can have Customer Care, Billing, Ordering and Usage LUs. Each LU can be attached to multiple BEs.
+A [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (BE) represents the main entity of the data to be provisioned by TDM. A BE can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md) with a flat or  hierarchical structure. For example, a Customer BE can have Customer Care, Billing, Ordering and Usage LUs. Each LU can be attached to multiple BEs.
 
 ## Business Entities List Window  
 
-The **Business Entities** window displays a list of all Business Entities defined in the TDM.  Only **Admin users** can create, edit, or delete a Business Entity. Other users can open the Business Entities for view only purposes.
+The **Business Entities** window displays a list of all BEs defined in the TDM.  Only **Admin users** can create, edit, or delete a BE. Other users can open BEs for view only purposes.
 
--   To create a new Business Entity, click the **New Business Entity** icon.
--   To open a selected Business Entity, click the **Name** value of the Business Entity.
--   To delete a Business Entity, click the ![be_Example](images/delete_icon.png) icon in the right corner of the Business Entity window.
+-   To create a new BE, click the **New Business Entity** icon.
+-   To open a selected BE, click the **Name** value of the BE.
+-   To delete a BE, click the ![be_Example](images/delete_icon.png) icon in the right corner of the Business Entity window.
 
 ## Business Entity Window    
 
-The Business Entity window displays information about a selected Business Entity. It has three main sections:
+The Business Entity window displays information about a selected BE. It has three main sections:
 
-- General Information holding the Business Entity Name and Description fields.
+- General Information holding the BE Name and Description fields.
 - Logical Units tab.
 - Post Execution Processes tab.
 
@@ -38,17 +38,17 @@ To use a BE in a TDM task, it must have one or more LUs assigned.
 
 ![be_Example](images/BE_add_lu_window.png)
 
-2. You can add LUs to the BE using one of the following methods: 
+2. Do either: 
 
-   2.1 Check **All Logical Units** to attach all LUs that are deployed to Fabric and that are not attached to the BE. All the LUs are attached to the BE in a flat structure, i.e. the Parent Logical Unit is empty. You can edit the LUs to populate the Parent Logical Unit and the Data Center settings if needed.
+   - Check **All Logical Units** to attach all LUs that are deployed to Fabric and that are not attached to the BE. The LUs are attached to the BE in a flat structure whereby the Parent LU is empty. When needed, the LUs can be edited to populate the Parent LU and the Data Center settings.
 
-   2.2 Check **Select** and select one of the available LUs from the **Logical Unit** dropdown list:
+   - Check **Select** and select an LU from the **Logical Unit** dropdown list:
 
-   - Click ![be_plus](images/plus_icon.png) or ![be_delete](images/delete_icon.png) to add or remove LUs to / from the BE. 
-   - Populate the following optional settings on each selected LU:
-     - **Logical Unit Description**
-     - **Parent Logical Unit**,  set a parent LU to build a [hierarchy in the BE](/articles/TDM/tdm_overview/03_business_entity_overview.md). 
-     - **Data Center**, which can be attached to each LU in a Business Entity if the LU instances are saved under a specific Data Center (DC) in Fabric.
+     - Click ![be_plus](images/plus_icon.png) or ![be_delete](images/delete_icon.png) to add or remove LUs to / from the BE. 
+     - Populate the following optional settings for each selected LU:
+       - **Logical Unit Description**.
+       - **Parent Logical Unit**, set a parent LU to build a [hierarchy in the BE](/articles/TDM/tdm_overview/03_business_entity_overview.md). 
+       - **Data Center**, which can be attached to each LU in a BE if the LU instances are saved under a specific Data Center (DC) in Fabric.
  3. Click **Add Logical Units** to add the selected LUs to the BE.
 
 Notes:
@@ -69,20 +69,20 @@ Click for more information about [TDM DB tables in a BE  and LU relationship](06
 
 This tab enables adding post-execution processes that must run at the end of the task's execution after all the related LUs have been executed. For example, sending a mail to the tester to notify them that the execution of a task has ended. 
 
-Post-execution processes are [Broadway flows] defined in Fabric by the TDM implementer. The relationship between a post-execution process and a BE is many to many, i.e. a BE can have several post-execution processes, and a post-execution process can be attached to multiple BEs. 
+Post-execution processes are [Broadway flows] defined in Fabric by the TDM implementer. The relationship between a post-execution process and a BE is many to many, that is, a BE can have several post-execution processes, and a post-execution process can be attached to multiple BEs. 
 
-The [task execution process] executes the [BATCH command](/articles/20_jobs_and_batch_services/15_batch_broadway_commands.md) on each post-execution process attached to task's BE. The execution order is set according the execution order defined in the BE.
+The [task execution process] executes the [BATCH command](/articles/20_jobs_and_batch_services/15_batch_broadway_commands.md) on each post-execution process attached to the task's BE. The execution order is set according the execution order defined in the BE.
 
 Unlike for LUs, post-execution processes are optional. A BE can be defined without any post-execution processes.
 
-#### How Do I Add a Post Execution Process to a BE? 
+#### How Do I Add a Post-Execution Process to a BE? 
 
 1. Open the **Post Execution Processes** tab and click the **Add Post Execution Processes** button to open the **Post Execution Process** dialog box.  
 
 ![be_Example](images/be_post_execution_processes_window.png)
 
 2. Click the **Process Name** and select a post-execution process from the dropdown list holding all post-execution processes deployed to Fabric.
-3. Populate the **Execution Order** setting with a numeric value to set the execution order. The processes with execution order 1 run first followed by the process with execution order 2 etc. Note that an execution order can be set for several post-execution processes that are executing simultaneously.
+3. Populate the **Execution Order** setting with a numeric value to set the execution order. Processes with Execution Order 1 run first followed by processes with Execution Order 2 etc. Note that an execution order can be set for several post-execution processes that are executed simultaneously.
 4. Populate the **Description** (optional).
 5. Click the **Add Post Execution Process** button to add the post-execution process to the BE.
 6. Repeat steps 1-5 to attach additional post-execution processes if needed.
