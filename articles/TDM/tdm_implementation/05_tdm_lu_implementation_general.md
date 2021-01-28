@@ -1,8 +1,8 @@
 # TDM LU Implementation - Generic Guidelines
 
-A TDM task copies a selected [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) from a selected source environment to a selected target environment. A Business Entity can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md) with a flat or a hierarchical structure. For example, a Customer Business Entity can consist of Customer Care, Billing, Ordering and Usage LUs. The ability to break a BE up into several LUs enables maximum flexibility and avoiding duplicate development. In addition, defining a hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
+A TDM task copies a selected [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (BE) from a selected source environment to a selected target environment. A BE can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md) with a flat or a hierarchical structure. For example, a Customer BE can consist of Customer Care, Billing, Ordering and Usage LUs. The ability to break a BE up into several LUs enables maximum flexibility and avoiding duplicate development. In addition, defining a hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
 
-Each LU in a TDM project must have additional components to support TDM functionality.
+Each LU in a TDM project must have additional components to support TDM functionality.  
 
 ## LU Basic Structure
 
@@ -10,9 +10,9 @@ Each LU in a TDM project has the following structure:
 
 - Dummy root table: FABRIC_TDM_ROOT. 
 
-- TDM generic LU tables linked to the root table. 
+- TDM generic LU tables that are linked to the root table. 
 
-- Two main branches linked to the root table:
+- Two main branches that are linked to the root table:
 
   - **Source branch**, LU tables that extract an entity's source data.  Source LU tables are populated when a TDM task needs to load (insert) entities to a target environment and therefore must extract the source data of these entities.
 
@@ -38,7 +38,7 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 4. Add the LU_PARAMS LU table to each LU Schema (also when it is not required for defining LU parameters) whereby the LU_PARAM table only holds the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
-5. Edit **trnLuParams** and **LU_PARAMS** to enable a subsetting of entities by selected parameters on this LU. 
+5. Edit **trnLuParams** and **LU_PARAMS** to enable a subsetting of entities from selected parameters on this LU. 
 
    Click for more information about [Handling TDM Parameters](07_tdm_implementation_parameters_handling.md).
 
@@ -79,6 +79,6 @@ Click for more information about [deleting entities] from a target environment u
 The LUI must include the source environment which must be set as the [active environment](/articles/25_environments/01_environments_overview.md) in Fabric. When running a [Data Viewer](/articles/13_LUDB_viewer_and_studio_debug_capabilities/01_data_viewer.md) on the LU to debug its implementation, do either:
 
 - Populate the source environment of the LUI using `_dev_`. For example, **_dev_1**.
-- Create and deploy the environment to the Fabric Debug server, set the source environment as an active environment in Fabric Debug server, and populate the deployed environment name in the LUI. For example, **UAT_1**.  
+- Create and deploy the environment to the Fabric Debug server, set the source environment as an active environment in the Fabric Debug server, and populate the deployed environment name in the LUI. For example, **UAT_1**.  
 
 [![Previous](/articles/images/Previous.png)](04_fabric_tdm_library.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](06_tdm_implementation_support_hierarchy.md)
