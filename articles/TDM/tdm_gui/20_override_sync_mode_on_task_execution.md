@@ -6,7 +6,7 @@ TDM task execution process must to set the Sync mode based on the environment an
 <tbody>
 <tr>
 <td valign="top" width="150pxl">
-<p><strong>Override Sync - Source Environment Level</strong></p>
+<p><strong>Override Sync - Env Level</strong></p>
 </td>
 <td valign="top" width="130pxl">
 <p><strong>Override Sync - Task Level&nbsp;</strong></p>
