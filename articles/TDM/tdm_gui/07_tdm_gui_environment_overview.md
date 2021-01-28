@@ -7,10 +7,10 @@ The TDM can create and execute tasks only for environments, defined in the TDM. 
 
   - [General information](08_environment_window_general_information.md) like environment name, contact person, environment type (source, target or both).
   - [Environment owners](08_environment_window_general_information.md#environment-owners), add environment owners to setup and maintain an environment.
-  - [Environments Products], attach [TDM Products](05_tdm_gui_product_window.md) to each environment.
-  - [Environment Roles], define roles with permissions to the environment and attach [test users](02_tdm_gui_user_types.md) to the environment to enable them to create TDM tasks for the environment.
-  - [Environment Globals], override Globals on an environment.
-  - [Exclusion Lists], add lists of entities to be excluded from the TDM tasks in an environment.
+  - [Environments Products](11_environment_products_tab.md), attach [TDM Products](05_tdm_gui_product_window.md) to each environment.
+  - [Environment Roles](10_environment_roles_tab.md), define roles with permissions to the environment and attach [test users](02_tdm_gui_user_types.md) to the environment to enable them to create TDM tasks for the environment.
+  - [Environment Globals](12_environment_globals_tab.md), override Globals on an environment.
+  - [Exclusion Lists](13_environment_exclusion_lists.md), add lists of entities to be excluded from the TDM tasks in an environment.
 
 Click to read more about [TDM environment setup in Fabric](/articles/TDM/tdm_implementation/20_tdm_fabric_implementation_environments_setup.md).
   ## Environments List Window
@@ -33,10 +33,10 @@ The Environment window has the following sections:
 
 - Environments tabs:
 
-  - [Roles]
-  - [Products]
-  - [Environment Globals]
-  - [Exclusion Lists]
+  - [Roles](10_environment_roles_tab.md)
+  - [Products](11_environment_products_tab.md)
+  - [Environment Globals](12_environment_globals_tab.md)
+  - [Exclusion Lists](13_environment_exclusion_lists.md)
 
  The following is an example of an Environment window:
 

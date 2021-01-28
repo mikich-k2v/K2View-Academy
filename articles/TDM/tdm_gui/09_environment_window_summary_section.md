@@ -9,7 +9,7 @@ The Environment Summary section on the right side of the Environment window disp
 - Tasks, the number of active tasks on the environment per [task execution status] which can be either **Active** or **On hold**. 
 - Testers, the number of testers that are [attached to a role] in the environment.
 - Execution Status, the number of tasks executed on an environment over last month per execution status. 
- 
+
 See the example below: 
 
 ![env summary](images/environment_summary.png)
@@ -17,8 +17,8 @@ See the example below:
 The displayed data is view only and cannot be edited. 
 
  
- 
 
 
-  [![Previous](/articles/images/Previous.png)](08_environment_window_general_information.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
+
+  [![Previous](/articles/images/Previous.png)](08_environment_window_general_information.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](10_environment_roles_tab.md)
 
