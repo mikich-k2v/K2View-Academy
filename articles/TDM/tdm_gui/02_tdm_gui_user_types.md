@@ -13,7 +13,7 @@ The Admin can execute all activities in the TDM GUI application. Admins are defi
 Admins usually also define the [TDM implementation in Fabric](/articles/TDM/tdm_implementation/03_tdm_fabric_implementation_flow.md). They can execute all activities in the TDM GUI and are responsible for the following activities:
 
 - Create, edit or delete [products].
-- Create, edit or delete [Business Entities](/articles/TDM/tdm_overview/03_business_entity_overview.md) and attach Logical Units or [post execution processes] to each Business Entity.
+- Create, edit or delete [Business Entities](/articles/TDM/tdm_overview/03_business_entity_overview.md) and attach Logical Units or [post-execution processes] to each Business Entity.
 - Create, edit or delete [environments].
 - Attach environment owners to each environment.
 - Define [roles] in each environment and define permissions per role.
