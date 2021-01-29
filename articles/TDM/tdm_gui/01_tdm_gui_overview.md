@@ -19,7 +19,7 @@ TDM can operate in two modes:
 
 - Regular mode, which enables creating regular load tasks without versioning by marking extracted entities with a Task Name and Extraction Timestamp.
 
-The TDM operational mode is set in **fluxMode** field in the [config.js] file in the TDM GUI server (/usr/local/k2view/TDM/k2vtdmbe location):   
+The TDM operational mode is set in the **fluxMode** field in the [config.js] file in the TDM GUI server (/usr/local/k2view/TDM/k2vtdmbe location):   
 
 - **fluxMode** = **True** (default). 
 - **fluxMode** = **False**.   
