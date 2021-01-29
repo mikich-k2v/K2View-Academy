@@ -1,6 +1,6 @@
 # TDM Environments Overview
 
-The TDM can create and execute tasks only for environments, defined in the TDM. Each environment must be defined in the following TDM components:
+The TDM can create and execute tasks only for environments defined in the TDM. Each environment must be defined in the following TDM components:
 
 - Fabric, set the [interfaces connection details and Globals values](/articles/25_environments/01_environments_overview.md) for each environment. 
 - TDM GUI, set the following for each environment:
