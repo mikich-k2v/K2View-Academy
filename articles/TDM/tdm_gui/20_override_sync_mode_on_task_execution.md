@@ -35,8 +35,7 @@ When executing a TDM task on an environment, set the sync mode according to the 
 <p>On</p>
 </td>
 <td valign="top" width="380pxl">
-<p>LUIs are synced according to their sync method.</p>
-<p>See <a href="/articles/14_sync_LU_instance/10_sync_behavior_summary.md">Sync Behavior Summary table</a>.</p>
+<p>LUIs are synced according to their sync method. See the <a href="/articles/14_sync_LU_instance/10_sync_behavior_summary.md">Sync Behavior Summary table</a>.</p>
 </td>
 </tr>
 <tr>
