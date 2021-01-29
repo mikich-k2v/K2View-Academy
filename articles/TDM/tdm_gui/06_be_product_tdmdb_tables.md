@@ -29,14 +29,14 @@ Note that to prevent creating several active Products with the same name, the **
 This table holds the links between a BE, LU and Product, as follows:
 - Links between LUs and a [BE](04_tdm_gui_business_entity_window.md).
 - Links between parent-child LU relationships in a BE.
-- Links between a BE and its LUs to a product. Each BE and LU combination can be attached to a [Product](05_tdm_gui_product_window.md).
+- Links between a BE and its LUs to a Product. Each BE and LU combination can be attached to a [Product](05_tdm_gui_product_window.md).
 
-Adding an LU to a BE creates a new record in this table. Each record is marked by a unique **lu_id** sequence which is the table's PK. The table contains the following information:
+Adding an LU to a BE creates a new record in this table. Each record is marked with a unique **lu_id** sequence which is the table's PK. The table contains the following information:
 
-- **LU information** - lu_id, lu_name, lu_description, and lu_dc_name columns. 
+- **LU information** - lu_id, lu_name, lu_description and lu_dc_name columns. 
 - **BE information** - be_id column. This is the link to the **business_entities** table.
 - **LU relationship in the BE** - lu_parent_id and lu_parent_name columns holding the ID and name of the [parent LU](/articles/TDM/tdm_overview/03_business_entity_overview.md#building-an-lu-hierarchy-in-a-be) if it exists. 
-- **Product information** - product_id and product_name columns. The product_id links to the **Products** table.  The product_id and product_name columns set to -1 and NULL default values when the record is created. Product information is set when the LU is attached to the Product. If the LU is deleted in the Product, the product columns return to their default values.
+- **Product information** - product_id and product_name columns. The product_id links to the **Products** table.  The product_id and product_name columns are set to -1 and NULL default values when the record is created. Product information is set when the LU is attached to the Product. If the LU is deleted in the Product, the product columns return to their default values.
 
 ### TDM_BE_Post_Exe_Process
 
