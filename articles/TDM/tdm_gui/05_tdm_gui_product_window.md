@@ -1,8 +1,8 @@
 # Product Windows
 
-A TDM Product represents a system or application installed in the source or target environment. For example, the UAT1 environment contains CRM and Billing Products. Each Product can have multiple data sources (interfaces). For example, the Billing Product has the Billing and Usage DBs.
+A TDM Product represents a system or application installed in a source or target environment. For example, the UAT1 environment contains CRM and Billing Products. Each Product can have multiple data sources (interfaces). For example, the Billing Product has the Billing and Usage DBs.
 
-A TDM Product contains the following components:
+A TDM Product has the following components:
 
 - Product name, a logical name that identifies the Product (system). For example, CRM.
 - Product versions, the versions of the Product as defined in testing environments. For example, Production and Development.
@@ -23,7 +23,7 @@ The following example displays the relationship between a BE, LU and Product:
 
 The **Products** window displays a list of all Products defined in the TDM.  Only **Admin users** can create, edit, or delete a Product. Other users can open Products for view only purposes.
 
--   To create a new Product, click the **Add Product** button.
+-   To create a new Product, click **Add Product**.
 -   To open a selected Product, click the Product's **Name**.
 -   To delete a Product, click ![delete](images/delete_icon.png) in the right corner of the Product window.
 
@@ -66,10 +66,10 @@ Click ![plus](images/plus_icon.png) to open the **Add Logical Unit** dialog box.
 
   
 
-#### How Do I Delete an LU from a Product ? 
+#### How Do I Delete an LU from a Product? 
 
 Click ![be_delete](images/delete_icon.png) to delete the selected LU from the Product.
 
-  [Click for more information about the Product related TDM DB tables](/articles/TDM/tdm_gui/06_be_product_tdmdb_tables.md).
+  [Click for more information about Product related TDM DB tables](/articles/TDM/tdm_gui/06_be_product_tdmdb_tables.md).
 
  [![Previous](/articles/images/Previous.png)](04_tdm_gui_business_entity_window.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](06_be_product_tdmdb_tables.md)
