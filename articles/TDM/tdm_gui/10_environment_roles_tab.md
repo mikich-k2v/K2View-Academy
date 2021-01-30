@@ -2,7 +2,7 @@
 
 Roles are set on an environment level and are assigned to testers. Roles define a list of permissions related to the creation and execution of TDM tasks in an environment. Testers can only create and execute a TDM task if they are assigned to a role that is assigned to the environment. 
 
-A Role is an **optional setting** in an environment and can be created, edited or deleted by an Admin user or the [Environment Owner](08_environment_window_general_information.md#environment-owners).  An environment without a role or without testers attached to a role, can be used only by Admin users or by the Environment Owners.
+A Role is an **optional setting** in an environment and can be created, edited or deleted by an Admin user or the [Environment Owner](08_environment_window_general_information.md#environment-owners).  An environment without a role or without testers attached to a role, can be used only by Admin users or by  Environment Owners.
 
 An environment's roles are displayed in the **Roles tab** in the Environment window:
 
@@ -41,7 +41,7 @@ When an Environment Type is Both it can have both read and write access to both 
     - Role2, enables Write only access. Testers with this role can only select this environment as a target environment in a TDM task.
     - Role3, enables both Read and Write access. Testers with this role can select this environment as a source and/or target environment in a TDM task.
 
-- The **Number of Entities** indicates the maximum number of entities processed by a task and must be set together for each access type. The Number of Entities is set on both **Read** and **Write** access types.  A different number of entities can be set for each access type. 
+- The **Number of Entities** indicates the maximum number of entities processed by a task and must be set for each access type. The Number of Entities is set on both **Read** and **Write** access types.  A different number of entities can be set for each access type. 
 
   **Example:**
   - Read Number of Entities = 1000. Write Number of Entities = 10. 
@@ -57,7 +57,7 @@ When an Environment Type is Both it can have both read and write access to both 
 
 - A role can be attached to a selected list of testers or to all TDM users.
 
-Note that although a role without testers is not usable, the **Testers** setting is optional and enables creating roles and then adding them testers at a later stage.
+Note that although a role without testers is not usable, the **Testers** setting is optional and enables creating roles and then adding them to testers at a later stage.
 
   #### Adding all TDM Users to the Role
 
@@ -80,7 +80,7 @@ A list of permissions that can be assigned to a role. Check to grant one or more
 
 ##### **Ignore Test Connection**  
 
-TDM tests the connections of the source and target environments at the beginning of the task execution.  If the connection's test  fails, the user is asked whether to ignore the failure and continue the execution or to stop the execution.  When unchecked, the task execution stops when the connection's test fails without an option to ignore the failure and continue the execution.
+TDM tests the connections of the source and target environments at the beginning of the task's execution.  If the connection  fails, the user is asked whether to ignore the failure and continue the execution or to stop the execution.  When unchecked, the task execution stops when the connection fails without an option to ignore the failure and continue the execution.
 
 ##### **Delete Entity from Target** 
 
