@@ -80,7 +80,7 @@ A list of permissions that can be assigned to a role. Check to grant one or more
 
 ##### **Ignore Test Connection**  
 
-TDM tests the connections of the source and target environments at the beginning of the task's execution.  If the connection  fails, the user is asked whether to ignore the failure and continue the execution or to stop the execution.  When unchecked, the task execution stops when the connection fails without an option to ignore the failure and continue the execution.
+TDM tests the connections of the source and target environments at the beginning of the task's execution.  If the connection  fails, the user is asked whether to ignore the failure and continue the execution or to stop the execution.  When unchecked, the task's execution stops when the connection fails without an option to ignore the failure and continue the execution.
 
 ##### **Delete Entity from Target** 
 
