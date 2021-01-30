@@ -26,7 +26,7 @@ Mandatory setting.
 
 Set the environment type to one of the following:
 
-- **Source** this can only be defined as a source environment in a TDM task. For example, in a Production environment a TDM task can extract entities but cannot insert entities.
+- **Source**, this can only be defined as a source environment in a TDM task. For example, in a Production environment a TDM task can extract entities but cannot insert entities.
 
 - **Target**, this environment can only be used as a target environment in a TDM task.
 
@@ -41,7 +41,7 @@ Set the environment type to one of the following:
 
 Optional setting. 
 
-Override mode can be set if the **Environment Type** is **Source or Both**. This setting overrides the default Fabric [Sync mode](/articles/14_sync_LU_instance/02_sync_modes.md)  when extracting the selected entities from the source environment and sets another Sync mode which can be overridden on both the environment and [task] levels. 
+Override mode can be set if the **Environment Type** is **Source** or **Both**. This setting overrides the default Fabric [Sync mode](/articles/14_sync_LU_instance/02_sync_modes.md)  when extracting the selected entities from the source environment and sets another Sync mode which can be overridden on both the environment and [task] levels. 
 
 The following values can be set in Override Sync Mode settings:
 
@@ -65,7 +65,7 @@ Click for more information on [how overriding the sync mode impacts the task exe
 - Admin users can add or remove one or several environment owner users to or from an environment.  An environment owner user can be added to several environments.
 - An environment owner user can be attached to an environment with tester permissions. For example, a user is attached to ENV1 as the environment owner and attached to ENV2 as a tester.
 - The environment owner can edit an environment except for adding or removing environment owner users. Only Admin users can add or remove environment owners.
-- The environment owner can create and execute TDM tasks on their environment without limitations, unlike test users who can define a task on the environment based on their permissions.
+- The environment owner can create and execute TDM tasks on their environment without limitations, unlike tester users who can define a task on an environment based on their permissions.
 
 Click for more information about [environment roles and permissions].
 
@@ -73,11 +73,11 @@ Click for more information about [environment roles and permissions].
 
 Environment owner users are usually Testing Team leaders and are defined under a dedicated group in the **LDAP** system.
 
-To enable setting authorised users as environment owners in the TDM GUI, the Group Name must be also defined in the **TDM GUI configuration file** [config.js] in **ownersGroupName**.
+To enable setting authorized users as environment owners in the TDM GUI, the Group Name must be also defined in the **TDM GUI configuration file** [config.js] in **ownersGroupName**.
 
 Note that the TDM GUI installation includes an internal LDAP for development. The environment owners Group Name in the internal LDAP is **k2venvownerg**. Therefore the default value of **ownersGroupName** in the config.js file is **k2venvownerg**.
 
-#### How Do I Add or Remove Environment Owners to an Environment? 
+#### How Do I Add or Remove Environment Owners To or From an Environment? 
 
 - Click Environment Owners and select a user from the list. 
 
