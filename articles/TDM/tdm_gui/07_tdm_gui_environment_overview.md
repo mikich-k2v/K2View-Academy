@@ -1,6 +1,6 @@
 # TDM Environments Overview
 
-The TDM can create and execute tasks only for environments defined in the TDM. Each environment must be defined in the following TDM components:
+The TDM can create tasks that are executed on environments defined in the TDM. Each environment must be defined in the following TDM components:
 
 - Fabric, set the [interfaces connection details and Globals values](/articles/25_environments/01_environments_overview.md) for each environment. 
 - TDM GUI, set the following for each environment:
@@ -17,7 +17,7 @@ Click to read more about [TDM environment setup in Fabric](/articles/TDM/tdm_imp
 
 The **Environments** window displays a list of all environments defined in the TDM. Only **Admin users** can create, add or remove environment owners or delete an environment. Environment owners can edit their environment. Other users can open environments for view only purposes.
 
--   To create a new environment, click the **New Environment** button.
+-   To create a new environment, click **New Environment**.
 -   To open a selected environment, click the environment's **Name**.
 -   To delete an environment, click ![delete](images/delete_icon.png) in the Environment window.
 
