@@ -10,7 +10,7 @@ A Data Center can be attached to the following TDM objects:
 
 **Example:**
 
-The CRM product is in NY while the Billing Product is in TX. The batch process related to the CRM LU runs on NY DC while the batch process related to the Billing LU runs on TX DC.
+The CRM product is in NY while the Billing Product is in TX. The batch process related to the CRM LU runs on the NY DC while the batch process related to the Billing LU runs on the TX DC.
 
   
 
