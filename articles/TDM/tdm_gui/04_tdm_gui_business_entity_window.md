@@ -4,7 +4,7 @@ A [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (
 
 ## Business Entities List Window  
 
-The **Business Entities** window displays a list of all BEs defined in the TDM.  Only **Admin users** can create, edit, or delete a BE. Other users can open BEs for view only purposes.
+The **Business Entities** window displays a list of all BEs defined in the TDM.  Only **Admin users** can create, edit or delete a BE. Other users can open BEs for view only purposes.
 
 -   To create a new BE, click the **New Business Entity** icon.
 -   To open a selected BE, click the **Name** value of the BE.
@@ -34,7 +34,7 @@ To use a BE in a TDM task, it must have one or more LUs assigned.
 
 #### How Do I Add an LU to a BE? 
 
-1. Click the **Add Logical Unit** button to display the **Add Logical Units** dialog box:
+1. Click **Add Logical Unit** to display the **Add Logical Units** dialog box:
 
 ![be_Example](images/BE_add_lu_window.png)
 
@@ -69,7 +69,7 @@ Click for more information about [TDM DB tables in a BE  and LU relationship](06
 
 This tab enables adding post-execution processes that must run at the end of the task's execution after all the related LUs have been executed. For example, sending a mail to the tester to notify them that the execution of a task has ended. 
 
-Post-execution processes are [Broadway flows] defined in Fabric by the TDM implementer. The relationship between a post-execution process and a BE is many to many, that is, a BE can have several post-execution processes, and a post-execution process can be attached to multiple BEs. 
+Post-execution processes are [Broadway flows] defined in Fabric by the TDM implementer. The relationship between a post-execution process and a BE is many to many. That is, a BE can have several post-execution processes, and a post-execution process can be attached to multiple BEs. 
 
 The [task execution process] executes the [BATCH command](/articles/20_jobs_and_batch_services/15_batch_broadway_commands.md) on each post-execution process attached to the task's BE. The execution order is set according the execution order defined in the BE.
 
@@ -77,14 +77,14 @@ Unlike for LUs, post-execution processes are optional. A BE can be defined witho
 
 #### How Do I Add a Post-Execution Process to a BE? 
 
-1. Open the **Post Execution Processes** tab and click the **Add Post Execution Processes** button to open the **Post Execution Process** dialog box.  
+1. Open the **Post Execution Processes** tab and click **Add Post Execution Processes** to open the **Post Execution Process** dialog box.  
 
 ![be_Example](images/be_post_execution_processes_window.png)
 
 2. Click the **Process Name** and select a post-execution process from the dropdown list holding all post-execution processes deployed to Fabric.
 3. Populate the **Execution Order** setting with a numeric value to set the execution order. Processes with Execution Order 1 run first followed by processes with Execution Order 2 etc. Note that an execution order can be set for several post-execution processes that are executed simultaneously.
 4. Populate the **Description** (optional).
-5. Click the **Add Post Execution Process** button to add the post-execution process to the BE.
+5. Click **Add Post Execution Process** to add the post-execution process to the BE.
 6. Repeat steps 1-5 to attach additional post-execution processes if needed.
 
   
