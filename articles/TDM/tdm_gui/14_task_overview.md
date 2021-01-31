@@ -1,8 +1,8 @@
 # TDM Task Overview
 
-Data provisioning is implemented by creating and executing TDM tasks. TDM tasks are created via the TDM interface. 
+Data provisioning is implemented by creating and executing TDM tasks. 
 
-A TDM task holds a list of instructions and settings that define the type and subset of processed entities, the source and target environments and additional information. For example, create a task to copy 5 customers with small and medium business plans from Production into the UAT1 target environment.
+A TDM task is created in the TDM interface. It holds a list of instructions and settings that define the type and subset of processed entities, the source and target environments and additional information. For example, create a task to copy 5 customers with small and medium business plans from Production into the UAT1 target environment.
 
 The actual data provisioning is performed by the task execution where each task can be executed multiple times.
 
@@ -20,7 +20,7 @@ A task type can have either of the following task modes:
 
 ## Who Can Create a Task?
 -  Admin users.
--  Environment owner users who can create a TDM task for their environment.
+-  Environment owners who can create a TDM task for their environment.
 -  Testers who can create a TDM task for the environments they are attached to by a [role](/articles/TDM/tdm_gui/10_environment_roles_tab.md):
    - Source environment, testers must be attached to the source environment by a role with [Read](/articles/TDM/tdm_gui/10_environment_roles_tab.md#read-and-write-and-number-of-entities) access.
    - Target environment, testers must be attached to the target environment by a role with [Write](/articles/TDM/tdm_gui/10_environment_roles_tab.md#read-and-write-and-number-of-entities) access.
