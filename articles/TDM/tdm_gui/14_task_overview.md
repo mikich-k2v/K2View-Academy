@@ -25,9 +25,9 @@ The following user types can create a TDM task:
 
 1. Admin users
 2. Environment owner users can create a TDM task on their environment
-3. Other users (testers) can create a TDM task on the environments they are attached to be a [role](/articles/TDM/tdm_gui/10_environment_roles_tab.md):
+3. Other users (testers) can create a TDM task on the environments they are attached to by a [role](/articles/TDM/tdm_gui/10_environment_roles_tab.md):
    - Source environment, the user must be attached to the source environment by a role with a [Read](/articles/TDM/tdm_gui/10_environment_roles_tab.md#read-and-write-and-number-of-entities) access.
-   - Target enironment, the user must be attached to teh target envirobment by a role with a [Write](/articles/TDM/tdm_gui/10_environment_roles_tab.md#read-and-write-and-number-of-entities) access.
+   - Target environment, the user must be attached to the target environment by a role with a [Write](/articles/TDM/tdm_gui/10_environment_roles_tab.md#read-and-write-and-number-of-entities) access.
 
 
 

@@ -112,7 +112,7 @@ Add [scheduling settings] in the TDM task to automatically execute it based on t
 
 ##### Entity Versioning 
 
-Create [Data Flux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) tasks.
+Create [Data Flux](15_data_flux_task.md) tasks.
 
 
 
