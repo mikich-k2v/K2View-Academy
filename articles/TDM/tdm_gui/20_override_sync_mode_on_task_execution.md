@@ -12,7 +12,7 @@ When executing a TDM task on an environment, set the sync mode according to the 
 <p><strong>Override Sync - Task Level&nbsp;</strong></p>
 </td>
 <td valign="top" width="130pxl">
-<p><strong>Task Op Mode</strong></p>
+<p><strong>Task Operation Mode</strong></p>
 </td>
 <td valign="top" width="130pxl">
 <p><strong>Task Execution Sync Mode</strong></p>
