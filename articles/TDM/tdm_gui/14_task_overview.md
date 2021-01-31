@@ -72,5 +72,12 @@ The TDM GUI displays a list of icons next to each task record:
 
 
 
+### How Can I Create or Edit a Task?
+
+Click on the **New Task** button on the right corner of the Tasks list window.
+
+- To create a new task, click **New Task** on the right corner of the Tasks list window.
+- To open a selected task, click the **Task Title**(task name) of the task.
+
  [![Previous](/articles/images/Previous.png)](13_environment_exclusion_lists.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](15_data_flux_task.md)
 
