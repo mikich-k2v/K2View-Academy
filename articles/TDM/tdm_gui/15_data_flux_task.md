@@ -2,7 +2,7 @@
 
 Data Flux mode enables saving backup versions of data during Functional tests and to reload the latest saved version to the target environment if the testing environment becomes corrupted. Once created, an extract task can be executed multiple times to create different backup versions where each version is saved in Fabric.   
  
-This functionality is useful when running a complex testing calendar in a testing environment. Backing up data every X steps or every X times enables testers to reload the latest version to their environment and repair data without returning to the original environment and loosing their updates. 
+This functionality is useful when running a complex testing calendar in a testing environment. Backing up data every X steps or every X times enables testers to reload the latest version to their environment and repair data without returning to the original environment and losing their updates. 
 
 Note that the testing environment is often used as a source and target environment for Data Flux tasks. Therefore, the [Environment Type](/articles/TDM/tdm_gui/08_environment_window_general_information.md#environment-type) must be set to **Both** to enable Data Flux in an environment.
 
