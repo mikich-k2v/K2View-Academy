@@ -36,7 +36,8 @@ Alternatively, you can request to copy a list of selected Order IDs whereby the 
 
 A parent-child hierarchy of LUs can also be defined under a BE. The relationship between the **parent and child** LUs is **one to many**. Each parent LUI can have many child LUIs. 
 
-If an LU in a BE has no parent LU, it is named **Root LU** whereby its root entity equals the root entity of the BE. 
+#### Root LU 
+If an LU in a BE has no parent LU, it is named **Root LU** whereby its root entity equals the root entity of the BE. A BE must have at least one Root LU. 
 
 **Example of Customer #1 Hierarchy**
 
