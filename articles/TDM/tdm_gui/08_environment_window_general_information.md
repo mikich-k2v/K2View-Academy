@@ -30,18 +30,18 @@ Set the environment type to one of the following:
 
 - **Target**, this environment can only be used as a target environment in a TDM task.
 
-- **Both**, this environment can be used as both a source and target environment in the TDM task. This mode is useful for [Data Flux tasks]. 
+- **Both**, this environment can be used as both a source and target environment in the TDM task. This mode is useful for [Data Flux tasks](15_data_flux_task.md). 
 
   Example: 
 
-  - A tester backs up data in a testing environment before running functional tests by creating and executing an [Extract Data Flux task] on the testing environment. The testing environment is set as a source environment. During the execution of the Extract task data is saved in the TDM Fabric repository.
+  - A tester backs up data in a testing environment before running functional tests by creating and executing an [Extract Data Flux task](16_extract_task.md#entity-versioning) on the testing environment. The testing environment is set as a source environment. During the execution of the Extract task data is saved in the TDM Fabric repository.
   - During functional tests the data in the testing environment becomes corrupted and needs to be replaced with the last backed up version created in the testing environment. The tester creates a [Load Data Flux task] and sets the testing environment to be both source and target. 
 
 ### Override Sync Mode
 
 Optional setting. 
 
-Override mode can be set if the **Environment Type** is **Source** or **Both**. This setting overrides the default Fabric [Sync mode](/articles/14_sync_LU_instance/02_sync_modes.md)  when extracting the selected entities from the source environment and sets another Sync mode which can be overridden on both the environment and [task] levels. 
+Override mode can be set if the **Environment Type** is **Source** or **Both**. This setting overrides the default Fabric [Sync mode](/articles/14_sync_LU_instance/02_sync_modes.md)  when extracting the selected entities from the source environment and sets another Sync mode which can be overridden on both the [environment and task] levels. 
 
 The following values can be set in Override Sync Mode settings:
 
@@ -52,7 +52,7 @@ Do not sync the entities from the source when running a TDM task with the enviro
 **Example**:
 
 - The Production team allocates a predefined window to extract a subset of entities from Production. Access to Production is restricted apart from to the predefined window.
-- An [Extract task] must be created and run to extract a large subset of entities from Production and to migrate them into Fabric. The **Override Sync Mode** in the **Production** TDM environment must be set to **Do not Sync** to avoid additional access to Production. Other TDM tasks in the Production source environment get data entities from Fabric. 
+- An [Extract task](16_extract_task.md) must be created and run to extract a large subset of entities from Production and to migrate them into Fabric. The **Override Sync Mode** in the **Production** TDM environment must be set to **Do not Sync** to avoid additional access to Production. Other TDM tasks in the Production source environment get data entities from Fabric. 
 
 #### Always Sync  
 
@@ -67,7 +67,7 @@ Click for more information on [how overriding the sync mode impacts the task exe
 - The environment owner can edit an environment except for adding or removing environment owner users. Only Admin users can add or remove environment owners.
 - The environment owner can create and execute TDM tasks on their environment without limitations, unlike tester users who can define a task on an environment based on their permissions.
 
-Click for more information about [environment roles and permissions].
+Click for more information about [environment roles and permissions](10_environment_roles_tab.md).
 
 #### Who is an Environment Owner?  
 
