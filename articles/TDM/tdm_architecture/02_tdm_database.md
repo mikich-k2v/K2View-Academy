@@ -52,6 +52,7 @@ The following table lists the TDM tables and their description.
 <li>Maps the relationship of the LUs in a Business Entity.</li>
 <li>Maps the link of the combined Business Entity and LU to a product.</li>
 </ul>
+  <p><a href="/articles/TDM/tdm_gui/06_be_product_tdmdb_tables.md#product_logical_units">Click for more information about this table.</a></p>  
 </td>
 <td>Business Entity/Product</td>
 </tr>
