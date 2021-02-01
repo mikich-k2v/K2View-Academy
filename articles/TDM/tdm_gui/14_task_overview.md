@@ -2,7 +2,7 @@
 
 Data provisioning is implemented by creating and executing TDM tasks. 
 
-A TDM task is created in the TDM interface. It holds a list of instructions and settings that define the type and subset of processed entities, the source and target environments and additional information. For example, create a task to copy 5 customers with small and medium business plans from Production into the UAT1 target environment.
+A TDM task is created in the TDM GUI. It holds a list of instructions and settings that define the type and subset of processed entities, the source and target environments and additional information. For example, create a task to copy 5 customers with small and medium business plans from Production into the UAT1 target environment.
 
 The actual data provisioning is performed by the task execution where each task can be executed multiple times.
 
@@ -14,16 +14,16 @@ The following task types are supported by TDM:
 
 A task type can have either of the following task modes:
 
-- [Data Flux], whereby users can backup versions of data and reload it to the testing environment. To do so, check **Entity Versioning** to create a Data Flux task. 
+- [Data Flux](15_data_flux_task.md), whereby users can backup versions of data and reload it to the testing environment. To do so, check **Entity Versioning** to create a Data Flux task. 
 - Regular, the default mode.
 
 
 ## Who Can Create a Task?
 -  Admin users.
 -  Environment owners who can create a TDM task for their environment.
--  Testers who can create a TDM task for the environments they are attached to by a [role](/articles/TDM/tdm_gui/10_environment_roles_tab.md):
-   - Source environment, testers must be attached to the source environment by a role with [Read](/articles/TDM/tdm_gui/10_environment_roles_tab.md#read-and-write-and-number-of-entities) access.
-   - Target environment, testers must be attached to the target environment by a role with [Write](/articles/TDM/tdm_gui/10_environment_roles_tab.md#read-and-write-and-number-of-entities) access.
+-  Testers who can create a TDM task for the environments they are attached to by a [role](/10_environment_roles_tab.md):
+   - Source environment, testers must be attached to the source environment by a role with [Read](10_environment_roles_tab.md#read-and-write-and-number-of-entities) access.
+   - Target environment, testers must be attached to the target environment by a role with [Write](10_environment_roles_tab.md#read-and-write-and-number-of-entities) access.
 
 
 
@@ -35,7 +35,7 @@ The TDM Task List displays the following:
 
 - Task Type, Load / Extract.
 
-- [Entity Versioning], true / false.
+- [Entity Versioning](15_data_flux_task.md), true / false.
 
 - BE name.
 
@@ -61,7 +61,7 @@ The following screenshot shows an example of the TDM Task List.
 
 4. To find a field, click **Search** and filter the displayed tasks using the filters.
 
-The TDM interface displays a list of icons next to each task record:
+The TDM GUI displays a list of icons next to each task record:
 
 - ![task icon](images/execute_task_icon.png)[Execute Task]. 
 - ![task icon](images/hold_task_icon.png) [Hold Task], set the task on-hold temporarily.
