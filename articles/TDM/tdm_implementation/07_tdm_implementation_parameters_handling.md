@@ -45,6 +45,8 @@ The LU_PARAMS table that has been copied from the TDM_LIBRARY holds the followin
 5. The **fnEnrichmentLuParams** enrichment function runs the SQL queries of the **trnLuParams** and populates each column of the LU_PARAMS with the results of its related SQL query. Each parameter's column contains a JSON with the values of the parameter. Each parameter can contain several values that are separated by a comma. For example:
 
   ![lu params](images/populated_lu_params_example.png)
+  
+ 6. The **fnEnrichmentLuParams** enrichment function also creates and populates the `<LU Name>_PARAMS` table in the TDM DB.
 
 **Notes:**
 
@@ -53,7 +55,7 @@ The LU_PARAMS table that has been copied from the TDM_LIBRARY holds the followin
 - Do not include spaces or special characters in the parameter names.
   
 
-If parameters do not need to be defined for an LU, add the LU LU_PARAMS table with the ENTITY_ID and SOURCE_ENVIRONMENT fields.
+If parameters do not need to be defined for an LU, add the LU_PARAMS table with the ENTITY_ID and SOURCE_ENVIRONMENT fields to the LU schema.
 
 
 
