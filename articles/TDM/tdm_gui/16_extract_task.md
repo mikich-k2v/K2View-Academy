@@ -110,13 +110,13 @@ Notes:
 - The number of entities, populated by the tester user, is [limited by their role](10_environment_roles_tab.md#read-and-write-and-number-of-entities). 
 - Populate they entity ID as populated in the source environment. For example, populate the Entities List by 1, 2 to extract Customers 1 and 2. The TDM execution process will [concatenate the required components](/articles/TDM/tdm_implementation/01_tdm_set_instance_per_env_and_version.md) to each entity ID when building its LUI.
 
-### Request Parameters
+## Request Parameters
 
 This tab is only displayed on a regular mode task, i.e. the **Entity Versioning** setting is unchecked.  This tab holds the following **optional setting: Request Up to Date Entity**. 
 
 By default, the Requested Up to Date Entity is unchecked. You can check this setting to [override the Sync mode] on the task level and set the Sync mode of the task execution to [Force](articles/14_sync_LU_instance/02_sync_modes.md).
 
-### Execution Timing
+## Execution Timing
 
 This is the last tab of the Task window and is available for all task types and modes.
 
