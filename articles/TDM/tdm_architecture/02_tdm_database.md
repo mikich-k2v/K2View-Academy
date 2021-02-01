@@ -41,7 +41,7 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>tdm_be_post_exe_process</td>
-<td>List of post-execution processes attached to each Business Entity. A post-execution process is executed at the end of the task execution process. For example, sending a mail to a user.</td>
+<td>List of <a href = "/articles/TDM/tdm_gui/04_tdm_gui_business_entity_window.md#post-execution-processes-tab">post-execution processes</a> attached to each Business Entity. A post-execution process is executed at the end of the task execution process. For example, sending a mail to a user.</td>
 <td>Business Entity</td>
 </tr>
 <tr>
