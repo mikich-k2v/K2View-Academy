@@ -61,7 +61,7 @@ Notes:
 
 Click ![be_edit](images/be_edit_icon.png) or ![be_delete](images/be_delete_icon.png) to edit or delete the LU from the BE. Note that the LU is deleted from the BE in the TDB DB. 
 
-Click for more information about [TDM DB tables in a BE  and LU relationship](06_be_product_tdmdb_tables.md).
+Click for more information about [TDM DB tables that hold the BE and LU relationship](06_be_product_tdmdb_tables.md).
 
 
 
@@ -89,7 +89,7 @@ Unlike for LUs, post-execution processes are optional. A BE can be defined witho
 
   
 
-Click for more information about [BE TDM DB tables and the post-execution processes relationship](06_be_product_tdmdb_tables.md).
+Click for more information about [BE TDM DB tables and hold the BE and post-execution processes relationship](06_be_product_tdmdb_tables.md).
 
  
 
