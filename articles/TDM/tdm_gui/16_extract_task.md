@@ -1,5 +1,7 @@
 # TDM Extract Task
 
+An Extract task extracts the selected entities or Reference tables from the selected source environment and saves this data in Fabric for later use.
+
 An Extract task contains the following tabs:
 
 - [General](#general)
@@ -130,5 +132,5 @@ Click for more information about [TDM task scheduling].
 
 
 
- [![Previous](/articles/images/Previous.png)](15_data_flux_task.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
+ [![Previous](/articles/images/Previous.png)](15_data_flux_task.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](17_load_task_regular_mode.md)
 
