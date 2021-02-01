@@ -2,16 +2,16 @@
 
 An Extract task contains the following tabs:
 
-- [General tab]
-- [Request Entities tab]
-- [Request Parameters]
-- [Execution Timing tab]
+- [General](#general)
+- [Request Entities](#requested-entities)
+- [Request Parameters](#request-parameters)
+- [Execution Timing](#execution-timing)
 
 When checking the **Set Global Variables** setting, a new tab is opened: [Task Globals].
 
 When setting the **Reference** setting to **Reference Only** or **Both - reference and entities**, a new tab is opened: [Reference].
 
-## General Tab
+## General
 
 This is the first tab of the TDM task and holds a general information of the task. See example below:
 
@@ -97,7 +97,7 @@ Click for additional [examples of BE's hierarchies](/articles/TDM/tdm_overview/0
 
 Select all, partial, or one [post execution process](04_tdm_gui_business_entity_window.md#post-execution-processes-tab) of the selected BE.
 
-## Requested Entities Tab
+## Requested Entities
 
 This tab is displayed when the **Select All Entities** setting is unchecked. See example below:
 
