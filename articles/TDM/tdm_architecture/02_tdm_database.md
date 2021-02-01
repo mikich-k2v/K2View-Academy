@@ -56,47 +56,47 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>products</td>
-<td>Products (applications) list.</td>
+  <td><a href = "/articles/TDM/tdm_gui/05_tdm_gui_product_window.md">Products</a> (applications) list.</td>
 <td>Product</td>
 </tr>
 <tr>
 <td><h4>environments</td>
-<td>TDM source and target environments. Each record contains the environment name, environment type (source, target, or both), and the environment name in Fabric.</td>
+<td>TDM <a href="/articles/TDM/tdm_gui/07_tdm_gui_environment_overview.md">source and target environments</a>. Each record contains the environment name, environment type (source, target, or both), and the environment name in Fabric.</td>
 <td>TDM Environments</td>
 </tr>
 <tr>
 <td><h4>environment_owners</td>
-<td>List of environment owner users of each TDM environment.</td>
+<td>List of <a href="/articles/TDM/tdm_gui/08_environment_window_general_information.md#environment-owners">environment owner users</a> of each TDM environment.</td>
 <td>TDM Environments</td>
 </tr>
 <tr>
 <td><h4>environment_products</td>
-<td>List of products (applications) attached to each LU. The connection details of an environment's interfaces are defined and saved in Fabric.</td>
+<td>List of products (applications) attached to each <a href="/articles/TDM/tdm_gui/11_environment_products_tab.md">environment</a>. The connection details of an environment's interfaces are defined and saved in Fabric.</td>
 <td>TDM Environments</td>
 </tr>
 <tr>
 <td><h4>environment_roles</td>
-<td>List of roles and their permissions per TDM environment.</td>
+<td>List of <a href="/articles/TDM/tdm_gui/10_environment_roles_tab.md">roles and their permissions</a> per TDM environment.</td>
 <td>TDM Environments</td>
 </tr>
 <tr>
 <td><h4>environment_role_users</td>
-<td>List of users attached to a role.</td>
+<td>List of <a href="/articles/TDM/tdm_gui/10_environment_roles_tab.md#testers">users attached to a role</a>.</td>
 <td>TDM Environments</td>
 </tr>
 <tr>
 <td><h4>tdm_be_env_exclusion_list</td>
-<td>Exclusion lists per Business Entities and TDM environment.</td>
+  <td><a href="/articles/TDM/tdm_gui/13_environment_exclusion_lists.md">Exclusion lists</a> per Business Entities and TDM environment.</td>
 <td>TDM Environments</td>
 </tr>
 <tr>
 <td><h4>tdm_env_globals</td>
-<td>List of Global parameters set on an environment level.</td>
+  <td>List of <a href="/articles/TDM/tdm_gui/12_environment_globals_tab.md">Global parameters</a> set on an environment level.</td>
 <td>TDM Environments</td>
 </tr>
 <tr>
 <td><h4>tasks</td>
-<td>Tasks list.&nbsp;</td>
+  <td><a href="/articles/TDM/tdm_gui/14_task_overview.md#tdm-tasks-list-window">Tasks list</a></td>
 <td>Task</td>
 </tr>
 <tr>
