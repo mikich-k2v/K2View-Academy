@@ -100,5 +100,5 @@ The following users can create a Data Flux task:
 
 
 
- [![Previous](/articles/images/Previous.png)](14_task_overview.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
+ [![Previous](/articles/images/Previous.png)](14_task_overview.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](16_extract_task.md)
 
