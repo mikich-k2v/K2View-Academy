@@ -10,7 +10,7 @@ The following task types are supported by TDM:
 
 - Extract task, extracts the selected entities or Reference tables from the selected source environment and saves this data in Fabric for later use.
 
-- Load task, extracts the selected entities or Reference tables from the selected source environment and copies them to the selected target environment.
+- Load task, extracts the selected entities or Reference tables from the selected source environment and loads them to the selected target environment.
 
 A task type can have either of the following task modes:
 
