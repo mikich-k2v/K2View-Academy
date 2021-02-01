@@ -206,7 +206,7 @@ The TDM_LIBRARY LU holds utilities that must be copied to the project's LUs, as 
 
 - **LU_PARAMS**, parameters table.  Must be added to each LU schema even when it is not required for defining parameters on the LU whereby the LU_PARAM table only holds the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
-  Click for more information about [TDM parameters handling](articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md).
+  Click for more information about [TDM parameters handling](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md).
 
 - **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID**, TDM relationship tables that map the parent to child IDs. Note that these tables are also created in the TDM DB.
 
