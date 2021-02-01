@@ -1,28 +1,26 @@
 # TDM Data Flux Tasks
 
-The Data Flux mode enables users to keep versions (backups) of data during functional tests and reload the to the latest saved version on the target environment when needed:
+Data Flux mode enables saving backup versions of data during Functional tests and to reload the latest saved version to the target environment if the testing environment becomes corrupted. Once created, an extract task can be executed multiple times to create different backup versions where each version is saved in Fabric.   
+ 
+This functionality is useful when running a complex testing calendar in a testing environment. Backing up data every X steps or every X times enables testers to reload the latest version to their environment and repair data without returning to the original environment and losing their updates. 
 
-A User can create an Extract task and execute it multiple times to create different versions (backups) of the entities and save each version in Fabric.  Then the user can get the one of the extracted version and reload it into the testing environment if the testing environment gets corrupted by the functional tests. 
-
-This functionality is useful when a tester runs a complex testing calendar on their testing environment. Taking backups of their entities' data every X steps or every X time enables the tester to reload the latest backup on their environment and repair its data if something goes wrong and the data gets corrupted by the functional tests. This way the tester does not have to go back to the original state of their environment and loose the updates, made by the testing calendar. 
-
-Note that the testing environment is often used as a source and target environment on Data Flux tasks. Therefore, the [environment type](/articles/TDM/tdm_gui/08_environment_window_general_information.md#environment-type) must be set to **Both** to enable the Data Flux on a given environment.
+Note that the testing environment is often used as a source and target environment for Data Flux tasks. Therefore, the [Environment Type](/articles/TDM/tdm_gui/08_environment_window_general_information.md#environment-type) must be set to **Both** to enable Data Flux in an environment.
 
 
 
-## How do I Create a Data Flux Task ?
+## How do I Create a Data Flux Task?
 
-Check the **Entity Versioning** setting in the **General tab** of the task window.
+Go to the **Task** window, select **General tab** and then check **Entity Versioning**.
 
 
 
-## Who Can Create a Data Flux Task ?
+## Who Can Create a Data Flux Task?
 
 The following users can create a Data Flux task:
 
-1. Admin users
-2. Environment owner users can create a Data Flux task on their environment
-3. Other users (testers) can create a TDM task on the environments they are attached to by a [role](/articles/TDM/tdm_gui/10_environment_roles_tab.md) which has an **Entity Versioning permission**.
+1. Admin users.
+2. Environment owner users who can create a Data Flux task for their environment.
+3. Testers who can create a TDM task for environments with **Entity Versioning** permissions that are attached to their [role](/articles/TDM/tdm_gui/10_environment_roles_tab.md).  
 
 
 
@@ -49,8 +47,8 @@ The following users can create a Data Flux task:
 <p>true</p>
 </td>
 <td valign="top" width="600pxl">
-<p>Extract the data of the selected entities from the source environment and save it as a separate version in the Fabric.</p>
-<p>The extract gets the execution datetime and each entity gets the following instance ID in Fabric:</p>
+<p>Extract the data of the selected entities from the source environment and save it as a separate version in Fabric.</p>
+<p>The extracted data gets the execution datetime. Each entity gets the following Instance ID in Fabric:</p>
 <p>&lt;Source env name&gt;_&lt;entity id&gt;_&lt;task title&gt;_&lt;datetime&gt;</p>
 <p>For example, ENV1_100_extractTest3_20210218082453</p>
 <p>Since the execution datetime is concatenated to the LUI, each task execution creates a different set of LUIs.&nbsp;</p>
@@ -64,10 +62,10 @@ The following users can create a Data Flux task:
 <p>false</p>
 </td>
 <td valign="top" width="600pxl">
-<p>Extract the data of the selected entities from the source environment and save it in the Fabric.</p>
-<p>Each entity is kept in Fabric with the following instance:</p>
+<p>Extract the data of the selected entities from the source environment and save it in Fabric.</p>
+<p>Each entity is saved in Fabric with the following instance:</p>
 <p>&lt;Source env name&gt;_&lt;entity id&gt;</p>
-<p>For example, ENV1_100</p>
+<p>For example, ENV1_100.</p>
 <p>Note that each task execution may update the LUIs in Fabric.</p>
 </td>
 </tr>
@@ -79,7 +77,7 @@ The following users can create a Data Flux task:
 <p>true</p>
 </td>
 <td valign="top" width="600pxl">
-<p>Load a selected version created on the task's LUs and source environment, into the selected target environment. The required entities will be deleted from the target and reloaded based on the selected version.</p>
+<p>Load a selected version created on the task's LUs and source environment into the selected target environment. The required entities are deleted from the target and reloaded according to the selected version.</p>
 </td>
 </tr>
 <tr>
