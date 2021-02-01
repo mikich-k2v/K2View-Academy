@@ -34,7 +34,9 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>[LU_NAME]_params</td>
-<td>Parameters table. Contains the list of all entities migrated into Fabric per LU. Each combination of an entity and source environment has a specific record which holds the Entity ID (IID), source environment name and the list of parameters defined for the LU. For example, Customer Type. This table is created by a Fabric sync on each LU and is used to support random selection and select by parameters task selection methods.</td>
+<td><p>Parameters table. Contains the list of all entities migrated into Fabric per LU. Each combination of an entity and source environment has a specific record which holds the Entity ID (IID), source environment name and the list of parameters defined for the LU. For example, Customer Type. This table is created by a Fabric sync on each LU and is used to support random selection and select by parameters task selection methods.</p>
+ <p><a href="/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md">Click for more information about parameters handling.</a></p>
+</td>
 <td>Business Entity</td>
 </tr>
 <tr>
