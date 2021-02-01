@@ -32,19 +32,12 @@ A task type can have either of the following task modes:
 The TDM Task List displays the following:
 
 - Task Title, task name.
-
 - Task Type, Load / Extract.
-
 - [Entity Versioning](15_data_flux_task.md), true / false.
-
 - BE name.
-
 - Source and Target environments. 
-
 - Selection criteria for entities.
-
 - Number of processed entities.
-
 - General parameters like created by user and update date. 
 
 The following screenshot shows an example of the TDM Task List. 
