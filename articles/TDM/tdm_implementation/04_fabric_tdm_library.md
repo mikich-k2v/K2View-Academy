@@ -56,7 +56,7 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 </td>
 <td valign="top" width="400pxl">
 <p>Populate this translation for each Logical Unit. A separate record must be created for each Logical Unit in the Fabric project apart from TDM, TDM_LIBRARY and the dummy LU of the post-execution processes. &nbsp;</p>
-<p>If there is a need to define a query per source environment, populate the source environment name and create a separate record for each Logical Unit and _source_env_name combination. Otherwise, leave the source environment empty.</p>
+<p>If there is a need to define a query per source environment, populate the source environment name and create a separate record for each Logical Unit and source_env_name combination. Otherwise, leave the source environment empty.</p>
   <p><strong>Example 1:</strong></p>
   <ul><li>LU_NAME= ORDER</li>
     <li>SOURCE_ENV_NAME = ENV1</li>
@@ -100,7 +100,7 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 <p>Define the list of available reference tables for <strong>extract tasks</strong>.</p>
 </td>
 <td valign="top" width="400pxl">
-<p>Populate this translation for each LU. A separate record must be created for each reference table.</p>
+<p>Populate this translation for each reference table. A separate record must be created for each reference table. Set the LU name on each record.</p>
 </td>
 </tr>
 <tr>
@@ -112,7 +112,7 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 <p>Each process is implemented as a Broadway flow.</p>
 </td>
 <td valign="top" width="400pxl">
-<p>Populate the list of Broadway flows and the LU of the Broadway flow. The LU can be empty if the post processes are defined under the Shared Objects. In this case the TDM task execution process will set the LU name parameter to TDM when running the BATCH commands to executte the post execution processes. </p>
+<p>Populate the list of Broadway flows and the LU of the Broadway flow. The LU can be empty if the post processes are defined under the Shared Objects. In this case the TDM task execution process will set the LU name parameter to TDM when running the BATCH commands to execute the post execution processes. </p>
 </td>
 </tr>
 </tbody>
