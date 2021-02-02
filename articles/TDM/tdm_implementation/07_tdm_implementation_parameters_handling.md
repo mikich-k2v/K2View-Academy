@@ -28,6 +28,8 @@ The LU_PARAMS table that has been copied from the TDM_LIBRARY holds the followin
 
 2. Add the LU_PARAMS to the LU Schema and link the ENTITY_ID to the main source table. For example: Link the CUSTOMER LU table to the FABRIC_TDM_ROOT.IID column and link the LU_PARAMS.ENTITY_ID to the CUSTOMER.CUSTOMER_ID.
 
+3. Edit the **COMBO_MAX_COUNT** shared Global imported from the TDM Library if needed. By default this Global is populated by 49. This Global is checked when creating a TDM task with a [Parameters selection method]. If the number of possible values in the [TDM Parameters tables](#tdm-parameters-tables) is smaller or equal to the COMBO_MAX_COUNT value, the parameter is handled as a **combo** parameter and the TDM GUI displays a dropdown of all possible values on this parameter. The user needs to select a value from the dropdown list. Else, if the parameter have a larger set of values than the threshold defined in COMBO_MAX_COUNT, the user needs to populate the value on the paramter.
+
   ### Add Parameters to the Logical Unit
 
 1. Deploy the LU to the Fabric debug server.
