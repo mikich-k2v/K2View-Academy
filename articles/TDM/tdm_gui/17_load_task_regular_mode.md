@@ -7,12 +7,11 @@ A Load task contains the following tabs:
 - [General](#general)
 - [Requested Entities](18_load_task_requested_entities_regular_mode.md)
 - [Request Parameters](19_load_task_request_parameters_regular_mode.md)
-- [Execution Timing]():  this is the last tab of the Task window and is available for all task types and modes. The following options are available  for the task execution:
+- [Execution Timing]():   this is the last tab of the Task window and is available for all task types and modes. The following options are available  for the task execution:
 
   - **Execution by Request**: the default option.
   - **Scheduled execution**: set scheduling parameters to automatically execute the task based on the scheduling parameters. Note that a tester can select this option only is its role has a scheduling permission.
 
-  Click for more information about [TDM task scheduling].
 
 When checking the **Set Global Variables** setting, a new tab is opened: [Task Globals].
 
