@@ -92,9 +92,15 @@ A tester can select this option only if his permitted to select this method by t
 
   - Click the **Add Group** button.
 
+  Note that you can add nested groups of parameters, i.e. define an inner group inside an outer group.
+
+  See the example below:
+
+  -------------------(((((((((((((((())))))))))))))))
+
   #### How Do I Remove A Parameter or a Parameters Group?
 
-  - Click the Remove icon located on the right side of the parameter to delete a parameter.
+  - Click the ![remove parameter](images/delete_parameters_icon.png) icon located on the right side of the parameter to delete a parameter.
   - Click the **Remove Group** button to remove a parameters group.
 
 #### Getting the Number of Matching Entities
