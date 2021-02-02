@@ -67,40 +67,39 @@ A tester can select this option only if his permitted to select this method by t
   -  Click the **Add Condition** button. 
   - Select the required parameter and the operator from the dropdown lists, and populate the value of the parameter.
   - Add **AND/OR** operator to connect the parameter to the previous parameters or group.
+- The TDM GUI  displays the SQL query, built based on the selected parameters.
+  
+##### How Do I Populate the Parameter's Value?
+  
+There are several types of parameters:
+  
+- **Combo**: parameters with a limited number of values. The task window displays a dropdown list of the parameters values. Select a value from the dropdown list.
+  
+  Click for more information about the [setting of a parameter as a combo parameter](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md#tdm-parameters-implementation-guidelines).
+  
+- **Number**: the TDM GUI displays the minimum and maximum values on this parameter. If the populated values exceeds the parameter's range, an error message is displayed.
+  
+- **Date**: populate the value using the following format: **YYYYMMDD**.
+  
+- **Text**: populate the value by a free text.
+  
+#### How Do I Add a Group of Parameters?
+  
+To add a group of parameters: 
+  
+- Click the **Add Group** button.
+  
+Note that you can add nested groups of parameters, i.e. define an inner group inside an outer group.
+  
+See the example below:
+  
 
-  ##### How Do I Populate the Parameter's Value?
-
-  There are several types of parameters:
-
-  - **Combo**: parameters with a limited number of values. The task window displays a dropdown list of the parameters values. Select a value from the dropdown list.
-
-    Click for more information about the [setting of a parameter as a combo parameter](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md#tdm-parameters-implementation-guidelines).
-
-  - **Number**: the TDM GUI displays the minimum and maximum values on this parameter. If the populated values exceeds the parameter's range, an error message is displayed.
-
-  - **Date**: populate the value using the following format: **YYYYMMDD**.
-
-  - **Text**: populate the value by a free text.
-
-  See the example below: 
-
-  -------------------(((((((((((((((())))))))))))))))
-
-  #### How Do I Add a Group of Parameters?
-
-  To add a group of parameters: 
-
-  - Click the **Add Group** button.
-
-  Note that you can add nested groups of parameters, i.e. define an inner group inside an outer group.
-
-  See the example below:
-
-  -------------------(((((((((((((((())))))))))))))))
-
-  #### How Do I Remove A Parameter or a Parameters Group?
-
-  - Click the ![remove parameter](images/delete_parameters_icon.png) icon located on the right side of the parameter to delete a parameter.
+  
+![params example](images/parameters_example1.png)
+  
+#### How Do I Remove A Parameter or a Parameters Group?
+  
+- Click the ![remove parameter](images/delete_parameters_icon.png) icon located on the right side of the parameter to delete a parameter.
   - Click the **Remove Group** button to remove a parameters group.
 
 #### Getting the Number of Matching Entities
@@ -108,11 +107,11 @@ A tester can select this option only if his permitted to select this method by t
 - Click the Refresh icon next to the **Entities Matched** to calculate the number of entities that match the selected parameters.
 - The Parameters selection supports the parent-child hierarchy relationship between the LUs of the selected BE. It can crosscheck the matching entities of parameters selective combination, taking into consideration parameters from different LUs on the same BE with hierarchy structure. For example, if the user selects Customers that live in New York and have scheduled visits (see the screenshot below), the TDM checks the related visits for each patient which lives in New York and checks for their status.
 
-- When clicking the Refresh button, it brings up the number of matching entities according to the parameters’ conditions and displays the SQL query, built based on the selected parameters.
+- Clicking the ![refesh](images/parameters_refresh_icon.png) icon brings up the number of matching entities according to the parameters’ conditions.
 
 See the example below:
 
--------------------(((((((((((((((())))))))))))))))
+![params example](images/parameters_example2.png)
 
 
 
