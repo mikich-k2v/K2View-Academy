@@ -4,17 +4,17 @@ A TDM task copies a selected [Business Entity](/articles/TDM/tdm_overview/03_bus
 
 Each LU in a TDM project must have additional components to support TDM functionality.  
 
-## LU Basic Structure
+## Basic LU Structure
 
 Each LU in a TDM project has the following structure:
 
 - Dummy root table: FABRIC_TDM_ROOT. 
 
-- TDM generic LU tables that are linked to the root table. 
+- Generic TDM LU tables that are linked to the root table. 
 
 - Two main branches that are linked to the root table:
 
-  - **Source branch**, LU tables that extract an entity's source data.  Source LU tables are populated when a TDM task needs to load (insert) entities to a target environment and therefore must extract the source data of these entities.
+  - **Source branch**, LU tables that extract an entity's source data. Source LU tables are populated when a TDM task needs to load (insert) entities to a target environment and therefore must extract the source data of these entities.
 
   - **Target branch**, LU tables that extract the target keys of an entity. The keys are extracted from the target environment to enable deleting an entity from a target environment if required by the TDM task.
 
@@ -24,12 +24,12 @@ Each LU in a TDM project has the following structure:
 
 Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#tdm_library-lu) from the **TDM Library** to your project and copy the LU level objects in the TDM_LIBRARY to your LU.
 
-### Step 2 - Add the TDM Root Table and the TDM Generic Tables to the LU Schema
+### Step 2 - Add the TDM Root Table and the Generic TDM Tables to the LU Schema
 
 1. Add the **FABRIC_TDM_ROOT** LU table to the LU Schema and set it as a [Root table](/articles/03_logical_units/08_define_root_table_and_instance_ID_LU_schema.md). 
 
 2.  Set the **Instance PK** column to **k2_tdm_eid** and verify that the **fnCheckInsFound** enrichment function under Shared Objects is attached to the LU table. 
-    This function validates that entity (IID) exists in the main source LU tables if the TDM task inserts the entity to the target, and therefore must extract its data from the data source. If the validation fails and entity is not found in the source table, the entity is rejected. 
+    This function validates that the entity (IID) exists in the main source LU tables if the TDM task inserts the entity to the target, and therefore must extract its data from the data source. If the validation fails and entity is not found in the source table, the entity is rejected. 
 3. Add the **LU_PARAMS**, **INSTANCE_TABLE_COUNT**, **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** to the LU Schema and link the tables to the **FABRIC_TDM_ROOT.IID**.
 
 ![tdm lu example](images/tdm_lu_example1.png)
@@ -38,7 +38,7 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 4. Add the LU_PARAMS LU table to each LU Schema (also when it is not required for defining LU parameters) whereby the LU_PARAM table only holds the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
-5. Edit **trnLuParams** and **LU_PARAMS** to enable a subsetting of entities from selected parameters on this LU. 
+5. Edit **trnLuParams** and **LU_PARAMS** to enable a sub-set of entities from selected parameters for this LU. 
 
    Click for more information about [Handling TDM Parameters](07_tdm_implementation_parameters_handling.md).
 
@@ -79,6 +79,6 @@ Click for more information about [deleting entities] from a target environment u
 The LUI must include the source environment which must be set as the [active environment](/articles/25_environments/01_environments_overview.md) in Fabric. When running a [Data Viewer](/articles/13_LUDB_viewer_and_studio_debug_capabilities/01_data_viewer.md) on the LU to debug its implementation, do either:
 
 - Populate the source environment of the LUI using `_dev_`. For example, **_dev_1**.
-- Create and deploy the environment to the Fabric Debug server, set the source environment as an active environment in the Fabric Debug server, and populate the deployed environment name in the LUI. For example, **UAT_1**.  
+- Create and deploy the environment to the Fabric Debug server, set the source environment as an active environment in the Fabric Debug server and populate the deployed environment name in the LUI. For example, **UAT_1**.  
 
 [![Previous](/articles/images/Previous.png)](04_fabric_tdm_library.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](06_tdm_implementation_support_hierarchy.md)
