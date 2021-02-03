@@ -39,3 +39,10 @@ Select the required version and click on the Next button. When clicking the Next
 - The  **Version Type** setting indicates if the extract task has been created for all entities, or for a selected list of entities.
 - You can sort or filter the table of the available versions.
 - You can get the updated list of available versions clicking on the refresh icon.
+
+
+
+
+
+ [![Previous](/articles/images/Previous.png)](20_load_task_dataflux_mode.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](21_task_globals_tab.md)
+
