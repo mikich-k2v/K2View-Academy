@@ -60,5 +60,5 @@ Notes:
 
 
 
- [![Previous](/articles/images/Previous.png)](18_load_task_requested_entities_regular_mode.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
+ [![Previous](/articles/images/Previous.png)](18_load_task_requested_entities_regular_mode.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](20_load_task_dataflux_mode.md)
 
