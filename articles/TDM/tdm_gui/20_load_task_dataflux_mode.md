@@ -15,7 +15,7 @@ A Load Data Flux task contains the following tabs:
   - **Scheduled execution**: set scheduling parameters to automatically execute the task based on the scheduling parameters. Note that a tester can select this option only is its role has a scheduling permission.
 
 
-When checking the **Set Global Variables** setting, a new tab is opened: [Task Globals].
+When checking the **Set Global Variables** setting, a new tab is opened: [Task Globals](22_task_globals_tab.md).
 
 When setting the **Reference** setting to **Reference Only** or **Both - reference and entities**, a new tab is opened: [Reference].
 
