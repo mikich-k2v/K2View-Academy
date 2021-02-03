@@ -9,7 +9,7 @@ An Extract task contains the following tabs:
 - [Request Parameters](#request-parameters)
 - [Execution Timing](#execution-timing)
 
-When checking the **Set Global Variables** setting, a new tab is opened: [Task Globals].
+When checking the **Set Global Variables** setting, a new tab is opened: [Task Globals](22_task_globals_tab.md).
 
 When setting the **Reference** setting to **Reference Only** or **Both - reference and entities**, a new tab is opened: [Reference].
 
