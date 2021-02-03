@@ -37,8 +37,7 @@ This is the first tab of the TDM task and holds a general information of the tas
 - Leave the Entity Versioning unchecked to create a regular mode task.
 
 ### Set Global Variables 
-
-- Check to [override Globals on a task level].
+- Check to [override Globals on a task level](22_task_globals_tab.md).
 
 ### Reference 
 
