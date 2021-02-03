@@ -44,5 +44,5 @@ Select the required version and click on the Next button. When clicking the Next
 
 
 
- [![Previous](/articles/images/Previous.png)](20_load_task_dataflux_mode.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](21_task_globals_tab.md)
+ [![Previous](/articles/images/Previous.png)](20_load_task_dataflux_mode.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](22_task_execution_timing_tab.md)
 

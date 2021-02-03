@@ -27,5 +27,5 @@ Click **Add Global** to add a Global to the task. A popup window is opened:
 
 
 
- [![Previous](/articles/images/Previous.png)](21_load_task_requested_entities_dataflux_mode.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
+ [![Previous](/articles/images/Previous.png)](22_task_execution_timing_tab.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
 

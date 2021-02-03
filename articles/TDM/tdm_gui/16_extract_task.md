@@ -47,7 +47,7 @@ This is the first tab of the TDM task and holds a general information of the tas
 ### Select All Entities 
 
 - When checked, the list of entities will be retrieved from the query defined in [trnMigList](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnmigratelist) shared translation for the root LU of the task's BE, and the [Requested Entities] tab is removed from the task.
-- Only Admin and Environment owner users can check the **Select All Entities** settings. Other users can only define a list of entities in the [Requested Entities] tab.
+- Only Admin and Environment owner users can check the **Select All Entities** settings. Other users can only define a list of entities in the [Requested Entities](#requested-entities) tab.
 
 ### Environment Name
 

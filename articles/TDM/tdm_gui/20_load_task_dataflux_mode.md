@@ -35,7 +35,7 @@ This is the first tab of the TDM task and holds a general information of the tas
 
 ### Entity Versioning
 
-- Check to set the task mode to [Data Flux](15_data_flux_task.md).  A tester can create check this setting and create a Data Flux load task only if his permitted to select this method by their [role](10_environment_roles_tab.md#role-permissions) on the target environment.
+- Check to set the task mode to [Data Flux](15_data_flux_task.md).  A tester can create check this setting and create a Data Flux load task only if is permitted to select this method by their [role](10_environment_roles_tab.md#role-permissions) on the target environment.
 
   
 
