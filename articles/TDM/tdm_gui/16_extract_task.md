@@ -128,7 +128,7 @@ The following options are available  for the task execution:
 
 - **Scheduled execution**: set scheduling parameters to automatically execute the task based on the scheduling parameters. Note that a tester can select this option only is its role has a scheduling permission.
 
-Click for more information about [TDM task scheduling].
+Click for more information about [TDM task scheduling](22_task_execution_timing_tab.md).
 
 
 
