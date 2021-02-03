@@ -16,7 +16,7 @@ Import and deploy the Web Services to Fabric and then define the **tdm-WS** toke
 
 Note that it is recommended to add the project's Web Services to a separate category to simplify upgrading the TDM version since the TDM category contains the product's Web Services.
 
-### TDM Generic Interfaces
+### Generic TDM Interfaces
 
 Import and deploy the following [interfaces](/articles/05_DB_interfaces/01_interfaces_overview.md) into the project's **Shared Objects**:
 -  **DB_CASSANDRA**, the connection to the Cassandra DB.  This interface is used by TDM utilities. Edit the IP address according to the environment.
@@ -25,11 +25,11 @@ Import and deploy the following [interfaces](/articles/05_DB_interfaces/01_inter
 
 ### Shared Globals
 
-Import the list of shared [global variables](/articles/08_globals/01_globals_overview.md) required to execute the TDM to your project.
+Import the list of shared [global variables](/articles/08_globals/01_globals_overview.md) required to execute TDM on your project.
 
 ### Shared Functions
 
-TDM shared functions are located in the **TDM** [Logic file](/articles/04_fabric_studio/09_logic_files_and_categories.md). 
+TDM shared functions are saved in the **TDM** [Logic file](/articles/04_fabric_studio/09_logic_files_and_categories.md). 
 
 Import the TDM shared functions to your project. Note that it is recommended to add the project's shared functions to a separate category (Logic file) to simplify upgrading the TDM version since the TDM category contains the product's functions.
 
@@ -79,7 +79,7 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 <p>This translation is required for DBs that do not support the standard &lsquo;||&rsquo; syntax for concatenated strings. For example, sqlServer.</p>
 </td>
 <td valign="top" width="400pxl">
-<p>Populate two records for each DB: one record with version_ind&nbsp;&lsquo;true&rsquo; and another one with&nbsp;version_ind&nbsp;&lsquo;false&rsquo;.&nbsp;</p>
+<p>Populate two records for each DB, one record with version_ind&nbsp;&lsquo;true&rsquo; and another with&nbsp;version_ind&nbsp;&lsquo;false&rsquo;.&nbsp;</p>
   <p><strong>Example 1:</strong> </p>
 <ul> <li>interface_type = sqlserver </li>
 <li>version_ind = true </li>
@@ -212,7 +212,7 @@ The TDM_LIBRARY LU holds utilities that must be copied to the project's LUs, as 
 
   Click for more information about [TDM Hierarchy implementation](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md).
 
-- **INSTANCE_TABLE_COUNT**, this table holds the number of records populated on each LU tables and is used to populate the [TDM execution Report](). 
+- **INSTANCE_TABLE_COUNT**, this table holds the number of records populated on each LU table and is used to populate the [TDM execution Report](). 
 
 ### LU Level Translations
 
@@ -239,7 +239,7 @@ The TDM_LIBRARY LU holds utilities that must be copied to the project's LUs, as 
 </td>
 <td valign="top" width="400pxl">
 <p>This translation must be added and populated on each <strong>parent LU</strong> and is used to populate TDM relationship tables. The child_lu field must be populated by the name of the child LU.</p>
-<p>Both SQLs populated in child_lu_eid_sql and child_lu_tar_eid_Sql fields must run on the parent LU and gets the source and target child IDs for each parent ID.</p>
+<p>Both SQLs populated in child_lu_eid_sql and child_lu_tar_eid_Sql fields must run on the parent LU and get the source and target child IDs for each parent ID.</p>
 <p><strong>Example:</strong><u><br /></u>Customer LU is the parent of the Order LU. <br />trnChildLink of the Customer LU must be populated as follows:</p>
 <ul>
 <li><strong>Child_lu = </strong>Customer</li>
