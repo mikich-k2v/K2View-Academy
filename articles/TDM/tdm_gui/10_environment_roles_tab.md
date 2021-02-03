@@ -104,7 +104,7 @@ Create TDM tasks to extract or load [Reference tables].
 
 #####  Task scheduling 
 
-Add [scheduling settings] in the TDM task to automatically execute it based on the scheduling parameters.
+Add [scheduling settings](22_task_execution_timing_tab.md) in the TDM task to automatically execute it based on the scheduling parameters.
 
 ##### Replace Sequences
 
