@@ -38,7 +38,7 @@ Note that Environment Owners cannot add or delete an environment and cannot add 
 
 ## Tester User
 
-A Tester can create, extract or load tasks based on their role. 
+Testers can create, extract or load tasks based on their role. 
 
 
 
