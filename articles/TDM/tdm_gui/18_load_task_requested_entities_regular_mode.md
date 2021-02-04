@@ -1,6 +1,6 @@
 # TDM Load Task - Regular Mode - Requested Entities Tab
 
-This tab defines the selection method to define the subset of entities of the task. See example below:
+This tab is used is used to define a subset of entities for a task.  
 
 ![requested entities](images/load_requested_entities_tab_regular.png)
 
@@ -10,88 +10,86 @@ The entities in the task can be selected using one of the following options:
 
 ### Entities List
 
-This is the default selection method. Populate a list of entity IDs, separated by a comma. This method is suitable for a limited number of entities. For example, the tester checks a defect, opened on given entities, and loads this entities to the testing environment to test them.
+(Default)  Populate a list of Entity IDs separated by a comma. This method is suitable for a limited number of entities. For example, when checking a defect opened on given entities and loading the entities to the testing environment for tests.
 
 Notes:
 
-- It is not allowed to populate entities that exist in one of the [exclusion lists](13_environment_exclusion_lists.md) of the task's environment and BE  into the entities list. For example, if customer 1 is excluded from copy, this customer cannot be populated in the entities list of a task.
-- It is not allowed to populate entities that are also populated in the task's **Exclusion List** setting.
-- An entity can be populated in the task even if it does not exists in Fabric yet. The entity is extracted from the the source environment, synchronized into Fabric, and loaded from Fabric to the target environment.
+- Entities in the [exclusion lists](13_environment_exclusion_lists.md) in a task's environment and BE cannot be populated into the entities list. For example, if Customer 1 is excluded from being copied, this customer cannot be populated in the entities list of a task.
+- Entities that are populated in the task's **Exclusion List** cannot be populated.
+- An entity can be populated in a task even if it does not exist in Fabric. The entity is extracted from the the source environment, synchronized into Fabric and loaded from Fabric to the target environment.
 
-### **Random selection** 
+### **Random Selection** 
 
-Get random list entities from the [LU PARAMS](/articles/TDM/tdm_architecture/02_tdm_database.md#lu_name_params) table, created  in the TDM DB for root LU of the task's BE.  Entities of the environment or task level exclusion lists, are excluded from the task.
+Get random list entities from the [LU PARAMS](/articles/TDM/tdm_architecture/02_tdm_database.md#lu_name_params) table, created  in the TDM DB for the root LU of the task's BE.  Entities in the environment or task level exclusion lists are excluded from the task.
 
-A tester can select this option only if his permitted to select this method by their role on the target environment.
+Testers can select this option only if their role in the target environment has the relevant permissions.
 
 ### Create Synthetic Entities
 
-Create X clones of the selected entity in the target environment.  You must populate the real entity ID to be replicated when selecting this selection method. See example:
+Create X clones of the selected entity in the target environment. When selecting this method, the real Entity ID must be populated to be replicated. 
 
 ![synthetic](images/requested_entities_synthetic_mode.png)
 
 
 
-For example, if the **Number of Entities** setting is populated by  5, and the **Entity ID** is set to 109, then the task creates five clones (replicas) of entity ID 109 in the target environment. 
+For example, if the **Number of Entities** setting is populated by  5 and the **Entity ID** is set to 109, the task creates 5 clones (replicas) of Entity ID 109 in the target environment. 
 
-The task replaces the sequences on each replica to avoid duplicated sequences in the target environment. 
+The task replaces the sequences of each replica to avoid duplicate sequences in the target environment. 
 
-A tester can select this option only if his permitted to select this method by their role on the target environment.
+Testers can select this option in the target environment only if their role has permissions.
 
 ### Parameters 
 
-- Select entities by a predefined list of parameters. Entities of the environment or task level exclusion lists, are excluded from the task. You can select one of several parameters. In addition, you can add the same parameter multiple times with different values.
+Select entities from a predefined list of parameters. Entities in the environment or task level exclusion lists are excluded from the task. You can select one of several parameters. In addition, you can add the same parameter multiple times with different values.
 
-- The parameters list must be [defined on each LU of the task BE](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md) in the Fabric project.
+The parameters list must be [defined for each LU in the task BE](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md) in the Fabric project.
 
   #### Use Parameters with Random Selection Checkbox
 
   The Parameters selection has two modes: 
 
-  - When this checkbox is checked (default value), the TDM randomly selects the entities from the list of all entities that match the selected parameters. This way, each task execution gets different list of entities that match the selected parameters. The **Selection Method** displayed in the Tasks List window is **Parameters- selection based on parameters with random selection**. 
+  - When checked (default), TDM randomly selects the entities from the list of all entities that match the selected parameters whereby each task execution gets different lists of entities that match the selected parameters. The **Selection Method** displayed in the Tasks List window is **Parameters - selection based on parameters with random selection**. 
 
     Example: 
 
-    - Creating a task to load 5 customers by selected parameters. There are 800 Customers that match the selected parameters. The task execution gets a random list of 5 Customers from the list of 800 Customers that match the selected parameters.  
+    - Creating a task to load 5 customers using selected parameters. There are 800 customers that match the selected parameters. The task execution gets a random list of 5 customers from the list of 800 customers that match the selected parameters.  
 
-  - When this checkbox is unchecked, gets the first entities that match the selected parameters. This way, each task execution gets the same list of entities that match the selected parameters. The **Selection Method** displayed in the Tasks List window is **Parameters - selection based only on Parameters**. 
+  - When unchecked, gets the first entities that match the selected parameters whereby each task execution gets the same list of entities that match the selected parameters. The **Selection Method** displayed in the Tasks List window is **Parameters - selection based only on Parameters**. 
 
     Example:
 
-    - Create a task to load 5 customers by selected parameters. There are 800 Customers that match the selected parameters. The task execution gets the first 5 Customers that match the selected parameters. 
+    - Create a task to load 5 customers with selected parameters. There are 800 customers that match the selected parameters. The task execution gets the first 5 customers that match the selected parameters. 
 
   #### How Do I Add a Condition? 
 
   To add a parameter:
 
-  -  Click the **Add Condition** button. 
-  - Select the required parameter and the operator from the dropdown lists, and populate the value of the parameter.
+  -  Click **Add Condition**. 
+  - Select the parameter and the operator from the dropdown lists and populate their values.
   - Add **AND/OR** operator to connect the parameter to the previous parameters or group.
-- The TDM GUI  displays the SQL query, built based on the selected parameters.
+The TDM GUI  displays the SQL query built based on the selected parameters.
   
-##### How Do I Populate the Parameter's Value?
+##### How Do I Populate a Parameter's Value?
   
 There are several types of parameters:
   
-- **Combo**: parameters with a limited number of values. The task window displays a dropdown list of the parameters values. Select a value from the dropdown list.
+- **Combo**, parameters with a limited number of values. The Task window displays a dropdown list of the parameters' values. Select a value from the dropdown list.
   
-  Click for more information about the [setting of a parameter as a combo parameter](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md#tdm-parameters-implementation-guidelines).
+  Click for more information about [setting a parameter as a combo parameter](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md#tdm-parameters-implementation-guidelines).
   
-- **Number**: the TDM GUI displays the minimum and maximum values on this parameter. If the populated values exceeds the parameter's range, an error message is displayed.
+- **Number**, the TDM GUI displays the minimum and maximum values on this parameter. If the populated values exceed a parameter's range, an error message is displayed.
   
-- **Date**: populate the value using the following format: **YYYYMMDD**.
+- **Date**, populate the value using the following format: **YYYYMMDD**.
   
-- **Text**: populate the value by a free text.
+- **Text**, populate the value using free text.
   
 #### How Do I Add a Group of Parameters?
   
-To add a group of parameters: 
+Click **Add Group**. 
   
-- Click the **Add Group** button.
+Note that nested groups of parameters can be added for example to define an inner group in an outer group.
   
-Note that you can add nested groups of parameters, i.e. define an inner group inside an outer group.
-  
-See the example below:
+
   
 
   
@@ -99,31 +97,30 @@ See the example below:
   
 #### How Do I Remove A Parameter or a Parameters Group?
   
-- Click the ![remove parameter](images/delete_parameters_icon.png) icon located on the right side of the parameter to delete a parameter.
-  - Click the **Remove Group** button to remove a parameters group.
+1.  Click ![remove parameter](images/delete_parameters_icon.png) next to the parameter to delete a parameter.
+2.  Click **Remove Group** to remove a parameter's group.
 
 #### Getting the Number of Matching Entities
 
-- Click the Refresh icon next to the **Entities Matched** to calculate the number of entities that match the selected parameters.
-- The Parameters selection supports the parent-child hierarchy relationship between the LUs of the selected BE. It can crosscheck the matching entities of parameters selective combination, taking into consideration parameters from different LUs on the same BE with hierarchy structure. For example, if the user selects Customers that live in New York and have scheduled visits (see the screenshot below), the TDM checks the related visits for each patient which lives in New York and checks for their status.
+Click Refresh next to the **Entities Matched** to calculate the number of entities that match the selected parameters.
+The Parameters selection supports the parent-child hierarchy relationship between the LUs of the selected BE. It can crosscheck the matching entities of a selective combination of parameters and takes into consideration parameters from different LUs on the same BE with hierarchy structure. For example, if customers that live in New York and have scheduled visits (see the screenshot below) are selected, TDM checks the related visits for each patient living in New York and checks for their status.
 
-- Clicking the ![refesh](images/parameters_refresh_icon.png) icon brings up the number of matching entities according to the parameters’ conditions.
+- Click ![refesh](images/parameters_refresh_icon.png) to display the number of matching entities according to the parameters’ conditions.
 
-See the example below:
 
 ![params example](images/parameters_example2.png)
 
 
 
-Click for more information about the [TDM parameters tables and View] created by the TDM on the TDM DB to display a hierarchical view on the TDM parameters. 
+Click for more information about the [TDM parameters tables and View] created by TDM in the TDM DB to display a hierarchical view of TDM parameters. 
 
 ### Exclusion List
 
-This is an optional setting. Populate entity IDs, separated by a comma, to be excluded from the task's entities. These entities are excluded from the task, even if they match selected criteria. This list can be populated for every selection method.
+(Optional). Populate Entity IDs separated by a comma to be excluded from the task's entities. These entities are excluded from the task, even if they match selected criteria. This list can be populated for each selection method.
 
 Notes:
 
-- You cannot populate an entity ID in both task's settings: **Entities List** and **Exclusion List**.
+- An Entity ID cannot be populated in both the **Entities List** and **Exclusion List** fields.
 - [Environment level exclusion lists](13_environment_exclusion_lists.md) are also excluded from the task's entities.
 
 
