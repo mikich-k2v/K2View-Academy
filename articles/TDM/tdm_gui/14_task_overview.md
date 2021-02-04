@@ -67,8 +67,9 @@ The TDM GUI displays a list of icons next to each task record:
 
 1. Click **New Task** in the right corner of the Tasks List window.
 2. To open a selected task, click the **Task Title** (task name) of the task.
-3. Click the **Back** of **Next** buttons to move between the tabs. Click **Finish** on the last tab to create the task.
-4. Once the task has been edited a new version with a new task_id is created. The old version is saved in the TDM DB for tracking purposes and its status is set to Inactive.
+3. Click the **Back** of **Next** buttons to move between the tabs. 
+4. Click **Finish** on the last tab to create the task.
+Once the task has been edited a new version with a new task_id is created. The old version is saved in the TDM DB for tracking purposes and its status is set to Inactive.
 
  [![Previous](/articles/images/Previous.png)](13_environment_exclusion_lists.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](15_data_flux_task.md)
 
