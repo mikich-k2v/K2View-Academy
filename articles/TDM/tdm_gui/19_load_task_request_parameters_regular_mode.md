@@ -1,6 +1,6 @@
 # TDM Load Task - Request Parameters Tab
 
-This tab defines the general parameters defined at a task level that impact all processed entities.  
+This tab defines the general parameters set at a task level that impact all processed entities.  
 
 ![request parameters](images/load_request_parameters_tab_regular.png)
 
@@ -14,7 +14,7 @@ By default the **Override Sync Mode** setting is unchecked. When checked, the de
 
 ![override sync](images/load_task_override_sync_mode.png)
 
-The following options can selected to override the Sync mode:
+The following options can be selected to override the Sync mode:
 
 - **Do not Sync Source Data**, get the data from Fabric and do not access the source environment.
 - **Request Up to Date Entity**, set the Sync mode of the task's execution to [Force](https://github.com/k2view-academy/K2View-Academy/blob/Academy_6.4_TDM/articles/TDM/tdm_gui/articles/14_sync_LU_instance/02_sync_modes.md) to get the most updated data of the processed entities. Testers can select this option only if their **Read** [role](10_environment_roles_tab.md#role-permissions) enables it.
@@ -29,7 +29,7 @@ Select an Operation Mode from the following options:
 
 #### Delete and Load Entity
 
-The selected entities are deleted from the target testing environment and are then reloaded into the environment. This option is required when a tester wishes to repeat a test for specific entities and needs a new copy of them in the target environment.
+The selected entities are deleted from the target testing environment and are then reloaded into the environment. This option is required when a tester wishes to repeat a test on specific entities and needs a new copy of them in the target environment.
 
 #### Delete Entity without Load
 
