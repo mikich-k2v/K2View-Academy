@@ -14,7 +14,7 @@ The following task types are supported by TDM:
 
 A task type can have either of the following task modes:
 
-- [Data Flux](15_data_flux_task.md), whereby users can backup versions of data and reload it to the testing environment. To do so, check **Entity Versioning** to create a Data Flux task. 
+- [Data Flux](15_data_flux_task.md), whereby users can backup versions of data and reload them to the testing environment. To do so, check **Entity Versioning** to create a Data Flux task. 
 - Regular, the default mode.
 
 
