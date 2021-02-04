@@ -16,11 +16,11 @@ Notes:
 
 - Entities in the [exclusion lists](13_environment_exclusion_lists.md) in a task's environment and BE cannot be populated into the entities list. For example, if Customer 1 is excluded from being copied, this customer cannot be populated in the entities list of a task.
 - Entities that are populated in the task's **Exclusion List** cannot be populated.
-- An entity can be populated in a task even if it does not exist in Fabric. The entity is extracted from the the source environment, synchronized into Fabric and loaded from Fabric to the target environment.
+- An entity can be populated in a task even if it does not exist in Fabric. The entity is extracted from the source environment, synchronized into Fabric and loaded from Fabric to the target environment.
 
 ### **Random Selection** 
 
-Get random list entities from the [LU PARAMS](/articles/TDM/tdm_architecture/02_tdm_database.md#lu_name_params) table, created  in the TDM DB for the root LU of the task's BE.  Entities in the environment or task level exclusion lists are excluded from the task.
+Get random list entities from the [LU PARAMS](/articles/TDM/tdm_architecture/02_tdm_database.md#lu_name_params) table created  in the TDM DB for the root LU of the task's BE.  Entities in the environment or task level exclusion lists are excluded from the task.
 
 Testers can select this option only if their role in the target environment has the relevant permissions.
 
@@ -103,7 +103,7 @@ Note that nested groups of parameters can be added for example to define an inne
 #### Getting the Number of Matching Entities
 
 Click Refresh next to the **Entities Matched** to calculate the number of entities that match the selected parameters.
-The Parameters selection supports the parent-child hierarchy relationship between the LUs of the selected BE. It can crosscheck the matching entities of a selective combination of parameters and takes into consideration parameters from different LUs on the same BE with hierarchy structure. For example, if customers that live in New York and have scheduled visits (see the screenshot below) are selected, TDM checks the related visits for each patient living in New York and checks for their status.
+The Parameters selection supports the parent-child hierarchy relationship between the LUs of the selected BE. It can crosscheck the matching entities of a selected combination of parameters and takes into consideration parameters from different LUs in the same BE hierarchy. For example, if customers living in New York with scheduled visits (see the screenshot below) are selected, TDM checks the visits of each patient living in New York and then checks their status.
 
 - Click ![refesh](images/parameters_refresh_icon.png) to display the number of matching entities according to the parameters’ conditions.
 
