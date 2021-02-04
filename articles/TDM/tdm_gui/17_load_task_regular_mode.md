@@ -10,7 +10,7 @@ A Load task has the following tabs:
 - [Execution Timing](22_task_execution_timing_tab.md), this tab is displayed for all task types and modes. The following options are available  for the task's execution:
 
   - **Execution by Request**, default option.
-  - **Scheduled execution**, set scheduling parameters to automatically execute the task based on the scheduling parameters. Note that a tester can select this option only if their role has a scheduling permission.
+  - **Scheduled execution**, set scheduling parameters to automatically execute the task based on the scheduling parameters. Note that testers can select this option only if their role has a scheduling permission.
 
 
 Check **Set Global Variables** to open the [Task Globals](23_task_globals_tab.md) tab.
@@ -22,7 +22,7 @@ Set **Reference** to **Reference Only** or **Both - reference and entities** to 
 
 ![general tab](images/load_general_tab_regular.png)
 
-The first tab in the the TDM Task window which holds general information about a task. 
+The first tab in the TDM Task window which holds general information about a task. 
 
 ### Task Title
 
@@ -56,9 +56,9 @@ This setting is displayed only for a regular mode task, that is when Entity Vers
 
   - Admin and Environment owners are set any number.
 
-  - Testers can set the number of entities that do not exceed the limited minimum number set for their roles for the selected source and target environments. For example, if a tester can read up to 100 entities from the source environment and write up to 5 entities into the target environment, then the maximal number of entities that can be set by the tester, is 5. 
+  - Testers can set the number of entities that do not exceed the limited minimum number set for their roles for the selected source and target environments. For example, if a tester can read up to 100 entities from the source environment and write up to 5 entities into the target environment, then the maximum number of entities that can be set by the tester is 5. 
 
-  - To validate the Number of Entities set by testers, click **Next** to move to the next tab. If the tester exceeds their permission, an error message is displayed. For example:
+  - To validate the Number of Entities set by testers, click **Next** to move to the next tab. If the tester exceeds their limitation, an error message is displayed. For example:
 
      
 
@@ -89,9 +89,9 @@ An LU cannot be selected without its parent LU.
 **Example:**
 
 A Customer BE has two levels of hierarchy: 
--  The  root LU is Customer Data,
--  Billing LU is a child of the Customer Data
--  Collection LU is a child of the Billing LU. 
+-  The  root LU is Customer Data.
+-  Billing LU is a child of Customer Data.
+-  Collection LU is a child of Billing LU. 
 
 When creating a task on the Customer BE, to select the Collection LU the Billing LU is also selected.
 
