@@ -1,6 +1,6 @@
 # TDM LU Implementation - Generic Guidelines
 
-A TDM task copies a selected [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (BE) from a selected source environment to a selected target environment. A BE can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md) with a flat or a hierarchical structure. For example, a Customer BE can consist of Customer Care, Billing, Ordering and Usage LUs. The ability to break a BE up into several LUs enables maximum flexibility and avoiding duplicate development. In addition, defining a hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
+A TDM task copies a [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md) (BE) from a source environment to a target environment. A BE can have multiple [LUs](/articles/03_logical_units/01_LU_overview.md) with a flat or a hierarchical structure. For example, a Customer BE can consist of Customer Care, Billing, Ordering and Usage LUs. The ability to break a BE up into several LUs enables maximum flexibility and avoiding duplicate development. In addition, defining a hierarchical structure of parent-child LUs enables creating LUs based on the natural root entity of the related data sources instead of forcefully setting unified root entities on all LUs related to a given BE.
 
 Each LU in a TDM project must have additional components to support TDM functionality.  
 
@@ -18,7 +18,7 @@ Each LU in a TDM project has the following structure:
 
   - **Target branch**, LU tables that extract the target keys of an entity. The keys are extracted from the target environment to enable deleting an entity from a target environment if required by the TDM task.
 
-    [Click for more information about delete entities from the target environment].
+    [Click for more information about deleting entities from the target environment].
 
 ### Step 1 - Copy the Objects from the TDM_LIBRARY LU into Each LU
 
@@ -38,7 +38,7 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 4. Add the LU_PARAMS LU table to each LU Schema (also when it is not required for defining LU parameters) whereby the LU_PARAM table only holds the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
-5. Edit **trnLuParams** and **LU_PARAMS** to enable a sub-set of entities from selected parameters for this LU. 
+5. Edit **trnLuParams** and **LU_PARAMS** to enable a subset of entities from selected parameters for this LU. 
 
    Click for more information about [Handling TDM Parameters](07_tdm_implementation_parameters_handling.md).
 
