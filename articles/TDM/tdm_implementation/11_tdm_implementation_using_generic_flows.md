@@ -27,7 +27,7 @@ The Delete flows are an important part of the TDM process and currently they nee
 
    ![image](images/11_tdm_impl_01.PNG)
 
-2. Save the flow as **Delete[Table Name].flow**, for example DeletePayment.flow. Then save it as Actor, in order to be able to invoke the flow as [Inner Flow](/articles/19_Broadway/22_broadway_flow_inner_flows.md#save-as-actor).
+2. Save the flow as **Delete[Table Name].flow**, for example **DeletePayment.flow**. Then save it as Actor, in order to be able to invoke the flow as [Inner Flow](/articles/19_Broadway/22_broadway_flow_inner_flows.md#save-as-actor).
 
 3. Create an envelop **DeleteAllTables.flow** that invokes all the Delete flows in the order opposite to the population order.
 
@@ -56,7 +56,7 @@ To create a sequence initiation flow, do the following:
 
    * Get the sequence value using the **MaskingSequence** Actor and setting its input arguments per the project requirements.
 
-     [Click fto learn how to set the input arguments of the MaskingSequence Actor](/articles/19_Broadway/actors/07_masking_and_sequence_actors.md#how-do-i-set-masking-input-arguments).
+     [Click to learn how to set the input arguments of the MaskingSequence Actor](/articles/19_Broadway/actors/07_masking_and_sequence_actors.md#how-do-i-set-masking-input-arguments).
 
    * Populate the TDM_SEQ_MAPPING table for reporting purpose.
 
