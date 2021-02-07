@@ -227,7 +227,9 @@ This table holds the following columns:
 -  **process_id** - a unique identifier of the process.  This is the link [tdm_be_post_exe_process](06_be_product_tdmdb_tables.md#tdm_be_post_exe_process) TDM DB table.
 -  **execution_order** - the  execution_order of the post execution process as defined in [tdm_be_post_exe_process](06_be_product_tdmdb_tables.md#tdm_be_post_exe_process) TDM DB table. 
 
+## Task_Globals
 
+This tables holds all [Globals that are overridden by the task](23_task_globals_tab.md). A separate record is created for each Global.
 
   [![Previous](/articles/images/Previous.png)](24_task_reference_tab.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
 
