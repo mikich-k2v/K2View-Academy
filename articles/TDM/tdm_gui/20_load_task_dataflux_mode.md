@@ -55,6 +55,7 @@ This is the first tab of the TDM task and holds a general information of the tas
 
 - When checked, all entities of the selected version will be re-loaded to the target environment.
 - Only Admin and Environment owner users can check the **Select All Entities** settings. Other users can only define a list of entities in the [Requested Entities] tab.
+- This setting is disabled on **Reference Only** tasks.
 
 ### Environment Names
 
