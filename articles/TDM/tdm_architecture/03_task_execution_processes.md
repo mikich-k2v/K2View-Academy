@@ -34,7 +34,7 @@ The task execution order of the related task's components is set as follows:
 
    Click for more information about the [execution order of hierarchical LUs](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
 
-2. Post Execution Processes: run the post execution processes after the execution of the LUs ends. The post execution processes are executed by their [execution order](04_tdm_gui_business_entity_window.md#post-execution-processes-tab) as defined in the task's BE. 
+2. Post Execution Processes: run the post execution processes after the execution of the LUs ends. The post execution processes are executed by their [execution order](/articles/TDM/tdm_gui/04_tdm_gui_business_entity_window.md#post-execution-processes-tab) as defined in the task's BE. 
 
 The following diagram describe the TDM Task execution process flow:
 
