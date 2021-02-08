@@ -15,7 +15,7 @@ Notes:
 ### Scheduled Execution Parameters
 
 - The execution time interval is kept in the TDM as a **crontab** value. You can populate the scheduling parameters either by:
-  - Check the **Advanced** setting and populate the crontab value manually.
+  - Check the **Advanced** setting and populate the crontab value manually. Set a **Quartz crontab expression**. 
   - Clear the **Advanced** setting (default option) and set the scheduling parameters using the TDM wizard. The following options are available:
 
 <table width="900pxl">
