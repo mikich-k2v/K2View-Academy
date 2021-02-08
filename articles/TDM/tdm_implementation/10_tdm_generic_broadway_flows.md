@@ -12,9 +12,9 @@ The Broadway folder in the Shared Objects includes the flows that are used acros
 
 The generic flows are the utilities required for the TDM execution. They handle the activities such as setting the global variables and sync mode, loading the reference, handling the errors, populating the execution statistics and more. All these flows must be copied from the TDM folder of the TDM library under the Shared Objects to your  project. They do not require any manual update.
 
-Below are the insights into some of the generic flows structure and functionality.
+Below are the insights into the structure and functionality of some of the generic flows.
 
-#### Initialization Handling
+#### Initialization
 
 TDM task initialization is performed using the **InitiateTDMLoad.flow** utility which includes several steps, such as:
 
@@ -22,11 +22,19 @@ TDM task initialization is performed using the **InitiateTDMLoad.flow** utility 
 * Setting the sync mode.
 * Cloning the entity, if needed.
 
-#### Reference Handling
+The **InitiateTDMLoad.flow** is performed as a first step of **TDMOrchestrator.flow** task envelop flow.
 
-The TDM library includes a set of 
+[Click to learn how to create the TDMOrchestrator.flow](11_tdm_implementation_using_generic_flows.md#step-4---create-the-tdmorchestratorflow-from-template).
 
-[Click to learn more details about TDM error handling and statistics flows](12_tdm_error_handling_and_statistics.md).
+#### Reference
+
+When TDM task is created in the TDM GUI, the user can select whether to include the Reference tables. The TDM library includes a set of utility flows to handle the reference data.
+
+#### Error Handling and Statistics
+
+The TDM library delivers a generic error handling and statistics gathering mechanism. It is based on the Broadway capabilities tailored per TDM business requirements. 
+
+[Click to learn more about TDM error handling and statistics flows](12_tdm_error_handling_and_statistics.md).
 
 ### TDM_LIBRARY LU Broadway Flows
 
