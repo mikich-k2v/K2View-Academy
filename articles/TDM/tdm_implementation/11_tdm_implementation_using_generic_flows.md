@@ -70,7 +70,7 @@ To create a sequence initiation flow, do the following:
 
 
 
-
+[![Previous](/articles/images/Previous.png)](10_tdm_generic_broadway_flows.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](12_tdm_error_handling_and_statistics.md)
 
 
 
