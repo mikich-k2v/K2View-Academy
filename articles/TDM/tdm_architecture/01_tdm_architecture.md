@@ -56,7 +56,7 @@ In general, data provisioning can be divided into two main sections:
     - **When**, When the task needs to be executed. Execute by request or by setting scheduling parameters to execute the task periodically.     
 -   Task execution, a task can be executed manually via the **TDM GUI** or periodically via the **TDM Scheduler** process based on predefined scheduling parameters. 
 
-The following diagram displays the TDM task creation and execution processes:
+The following diagram displays the TDM task creation and [execution processes](03_task_execution_processes.md):
 
   ![tdm execution](images/tdm_execution_flow.png)
 

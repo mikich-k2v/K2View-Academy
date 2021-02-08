@@ -217,7 +217,7 @@ This table holds the LUs list of each task. A separate record is created for eac
 
 -------------------------
 
-This tables holds all task's [post execution processes]() 
+This table holds all task's [post execution processes]() 
 
 A new record is created for each post execution process.
 
@@ -229,9 +229,13 @@ This table holds the following columns:
 
 ## Task_Globals
 
-This tables holds all [Globals that are overridden by the task](23_task_globals_tab.md). A separate record is created for each Global.
+This table holds all [Globals that are overridden by the task](23_task_globals_tab.md). A separate record is created for each Global.
 
-  [![Previous](/articles/images/Previous.png)](24_task_reference_tab.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
+## Task_Ref_Tables
+
+This table holds the list of task's [Reference tables](24_task_reference_tab.md). A separate record is created for each Reference table.
+
+  [![Previous](/articles/images/Previous.png)](24_task_reference_tab.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](26_task_execution.md)
 
 
 
