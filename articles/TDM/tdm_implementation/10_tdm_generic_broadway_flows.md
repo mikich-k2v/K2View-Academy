@@ -10,7 +10,7 @@ This article describes which flows should be copied from the TDM library into yo
 
 The Broadway folder in the Shared Objects includes the flows that are used across several Logical Units. These flows can be generic or specific. 
 
-The generic flows are the utilities required for the TDM execution. They handle the activities such as setting the global variables and sync mode, loading the reference, handling the errors, populating the execution statistics and more. All these flows must be copied from the TDM folder of the TDM library under the Shared Objects to your  project. They do not require any manual update.
+The generic flows are the utilities required for the TDM execution. They handle the activities such as setting the global variables and sync mode, loading the reference, handling the errors, populating the execution statistics and more. All these flows must be imported from the TDM library to your  project's Shared Objects. They do not require any manual update.
 
 Below are the insights into the structure and functionality of some of the generic flows.
 
@@ -18,9 +18,10 @@ Below are the insights into the structure and functionality of some of the gener
 
 TDM task initialization is performed using the **InitiateTDMLoad.flow** utility which includes several steps, such as:
 
-* Setting the values of the global variables to the session.
-* Setting the sync mode.
-* Cloning the entity, if needed.
+* Setting the values of the global variables to the session and the sync mode.
+* Setting the source environment based on the task source before getting the LUI.
+* Getting the LUI from Fabric.
+* Setting the target environment as a preparation step for delete and load.
 
 The **InitiateTDMLoad.flow** is performed as a first step of **TDMOrchestrator.flow** task envelop flow.
 
@@ -28,7 +29,9 @@ The **InitiateTDMLoad.flow** is performed as a first step of **TDMOrchestrator.f
 
 #### Reference
 
-When TDM task is created in the TDM GUI, the user can select whether to include the Reference tables. The TDM library includes a set of utility flows to handle the reference data.
+The TDM library includes a set of utility flows to handle the reference data.
+
+[Click to learn more about TDM reference](/articles/TDM/tdm_gui/24_task_reference_tab.md).
 
 #### Error Handling and Statistics
 
