@@ -1,4 +1,4 @@
-# Task Execution Timing Tab
+# Task Execution Timing Tab 
 
 This is the last tab in the Task window and enables setting the execution timing options. Select one of the following options:
 
