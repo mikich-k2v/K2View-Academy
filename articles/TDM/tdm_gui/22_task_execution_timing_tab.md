@@ -1,22 +1,22 @@
 # Task Execution Timing Tab
 
-This is the last tab of the task window and set the execution timing options. Select one of the following options:
+This is the last tab in the Task window and enables setting the execution timing options. Select one of the following options:
 
-- **Execution by Request**: the task is only executed when the user clicks the![execution](images/execute_task_icon.png)icon.
-- **Scheduled Execution**: defines an automatic task execution by the [TDM scheduler process] on predefined intervals.  For example, execute the task every Monday at 2:15 AM:
+- **Execution by Request**, click ![execution](images/execute_task_icon.png) to execute the task.
+- **Scheduled Execution**, sets the automatic execution of a task via a [TDM Scheduler process] on predefined intervals.  For example, execute the task every Monday at 2:15 AM.
 
 ![execution timing example1](images/task_scheduling_parameters_example1.png)
 
 Notes:
 
-- A tester can select the Scheduled Execution option only if is permitted to select this method by their [role](10_environment_roles_tab.md#role-permissions) on the target environment. 
-- A scheduled task can still be executed by request clicking the![execution](images/execute_task_icon.png)icon.
+- Testers can select Scheduled Execution only when their [role](10_environment_roles_tab.md#role-permissions) has permissions to select this method for the target environment. 
+- To execute a scheduled task, click ![execution](images/execute_task_icon.png).
 
 ### Scheduled Execution Parameters
 
-- The execution time interval is kept in the TDM as a **crontab** value. You can populate the scheduling parameters either by:
-  - Check the **Advanced** setting and populate the crontab value manually. Set a **Quartz crontab expression**. 
-  - Clear the **Advanced** setting (default option) and set the scheduling parameters using the TDM wizard. The following options are available:
+- The Execution Time Interval is saved in TDM as a **crontab** value. Scheduling parameters can be populated by either:
+  - Checking the **Advanced** setting and populating the **crontab** value manually. Set a **Quartz crontab expression**. 
+  - Clearing the **Advanced** setting (default option) and setting the scheduling parameters using the TDM Wizard. The following options are available:
 
 <table width="900pxl">
 <tbody>
@@ -47,7 +47,7 @@ Notes:
 <p>Hour</p>
 </td>
 <td width="350pxl">
-<p>select the number of minutes past the hour in gaps of 5 minutes: 0, 5, 10&hellip;</p>
+<p>Select the number of minutes past the hour in gaps of 5 minutes: 0, 5, 10&hellip;</p>
 </td>
 <td width="350pxl">
 <p>N/A</p>
@@ -100,7 +100,7 @@ Notes:
 </tbody>
 </table>
 
-- You can set the **End By** setting to run the task by a scheduler till a predefined date. For example, run the task every week till the end of Feb.
+- The **End By** setting can be set to run a task by the scheduler until a predefined date. For example, run the task every week till the end of February.
 
   
 
