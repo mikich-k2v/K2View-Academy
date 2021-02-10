@@ -41,6 +41,8 @@ The TDM library delivers a generic error handling and statistics gathering mecha
 
 ### TDM_LIBRARY LU Broadway Flows
 
+<!--the below is now also in the Shared, no need to copy per each LU-->
+
 TDM_LIBRARY LU contains the template flows which are used for the creation of a TDM implementation based on your project's data model. They are prepared using the Fabric [Templates](/articles/35_templates/01_templates_overview.md) functionality which enable the creation of various project's objects based on a predefined structure rather than creating them from scratch. 
 
 The following templates and flows must be copied from the TDM library to the Logical Unit of your TDM project:

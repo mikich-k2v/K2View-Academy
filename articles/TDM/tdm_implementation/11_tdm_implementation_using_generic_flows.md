@@ -8,17 +8,39 @@ Note that after the below steps are executed and the standard implementation is 
 
 Copy the generic Broadway flows and templates under each LU as described in the [TDM Generic Broadway Flows](10_tdm_generic_broadway_flows.md) article, then start performing the following steps:
 
-#### Step 1 - Execute the createLoadTableFlows.flow
+
+
+#### Step 1 - Set Global TDM_DEL_TABLE_PREFIX
+
+Manual procedure, to set in the Globals on the Shared Object level 
+
+
+
+#### Step 2 - Filter Out TDM and Delete Auxillary  Tables
+
+TDMFilterOutTargetTables.actor
+
+The library includes 5 generic tables to be excluded from the target load.
+
+
+
+#### Step 3 - createFlowsFromTemplates.flow
+
+<!--run one new flow - createFlowsFromTemplates that includes the creation of load and delete flows. This is in Shared, not in TDM_LIBRARY LU -->
+
+* Execute the createLoadTableFlows.flow
 
 The **createLoadTableFlows.flow** receives the Logical Unit name and retrieves the list of tables from the LU's Schema. Then for each one the tables, it creates a Broadway flow to load the data into this table in the target DB. The name of each of the newly creates flows is **Load[Table Name].flow**, for example LoadCustomer.flow.
 
 <!--check with Taha - regarding trnFilterOutTable ... -->
 
-#### Step 2 - Execute the createLoadAllTablesFlow.flow
+* Execute the createLoadAllTablesFlow.flow
 
 The **createLoadAllTablesFlow.flow** also receives the Logical Unit name and then it creates a new **LoadTables.flow** Broadway flow which purpose is to invoke all the flows created in Step 1 based on the LU's Schema execution order.
 
-#### Step 3 - Create the Delete Flows
+* Create the Delete Flows
+
+<!---->
 
 The Delete flows are an important part of the TDM process and currently they need to be implemented manually by creating a set of Broadway flows. 
 
