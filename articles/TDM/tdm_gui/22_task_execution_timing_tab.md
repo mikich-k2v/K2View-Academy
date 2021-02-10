@@ -1,6 +1,6 @@
 # Task Execution Timing Tab 
 
-This is the last tab in the Task window and enables setting the execution timing options. Select one of the following options:
+The Task Execution Timing tab is the last tab in the Task window and enables setting the execution timing options. Select one of the following options:
 
 - **Execution by Request**, click ![execution](images/execute_task_icon.png) to execute the task.
 - **Scheduled Execution**, sets the automatic execution of a task via a [TDM Scheduler process] on predefined intervals.  For example, execute the task every Monday at 2:15 AM.
@@ -100,7 +100,7 @@ Notes:
 </tbody>
 </table>
 
-- The **End By** setting can be set to run a task by the scheduler until a predefined date. For example, run the task every week till the end of February.
+- The **End By** setting can be set to run a task by the Scheduler until a predefined date. For example, run the task every week till the end of February.
 
   
 
