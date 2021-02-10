@@ -5,7 +5,7 @@ The TDM enables overriding [Globals](/articles/08_globals/01_globals_overview.md
 -  Setting Globals on a task level only impact the execution of a task. 
 -  Setting Globals on an environment impacts the execution of all tasks created on the environment.
 
-[Click to read more about overriding Fabric settings by the task execution].
+[Click to read more about overriding Fabric settings by a task's execution].
 
 ## How do I Override Globals on a Task?
 
