@@ -1,12 +1,50 @@
-# Override Sync Mode by Task Execution
+# Task Execution - Overridden Parameters
 
-When executing a TDM task on an environment, set the sync mode according to the following table:
+A task execution can override execution parameters based on the task's setting:
+
+- Setting the active environment based on the task's environments.
+- Setting key-value parameters on the session level.
+- Overriding Globals values on the session level.
+- Overriding the [Sync Mode]() of the task execution.
+
+### Setting the Active Environments
+
+#### Extract Tasks
+
+The [TDM Execution process](03_task_execution_processes.md#main-tdm-task-execution-process-tdmexecutetask-job) sets the task's environment as the [active environment](/articles/25_environments/05_set_and_list_commands.md) on the execution session.
+
+#### Load Tasks
+
+The [TDM Execution process](03_task_execution_processes.md#main-tdm-task-execution-process-tdmexecutetask-job) sets the [active environment](/articles/25_environments/05_set_and_list_commands.md):
+
+1. Sets the task's source environment as the active environment. 
+2. Gets the LUI from Fabric.
+3. Sets the the task's target environment as the active environment. 
+4. Runs the delete and/or load flows on the target environment.
+
+### Setting Key-Value Parameters
+
+Set execution parameters like replace sequence, delete before load, or insert to target indicators. These parameters are based on the task settings and set on the session level.
+
+### Overriding Globals Values
+
+It is possible to override the project's Globals on the [TDM environment](/articles/TDM/tdm_gui/12_environment_globals_tab.md) or [TDM task](/articles/TDM/tdm_gui/23_task_globals_tab.md) levels.
+
+The TDM execution process sets the values on these Globals on the [session level](/articles/08_globals/03_set_globals.md#how-do-i-use-the-set-command).
+
+Note that the task level Globals get a higher priority than the TDM environment level Globals, i.e. if a Global variable is set on both - the task and the related environment levels - the task's Global value is set.
+
+[To check what if the Global is set on both- source and target environment].
+
+### Overriding the Sync Mode on the Task Execution 
+
+When executing a TDM task, set the Sync mode according to the following table:
 
 <table width="900pxl">
 <tbody>
 <tr>
 <td valign="top" width="150pxl">
-<p><strong>Override Sync - Env Level</strong></p>
+<p><strong>Override Sync - Source Env Level</strong></p>
 </td>
 <td valign="top" width="130pxl">
 <p><strong>Override Sync - Task Level&nbsp;</strong></p>
@@ -274,7 +312,5 @@ When executing a TDM task on an environment, set the sync mode according to the 
 
 
 
+[![Previous](/articles/images/Previous.png)](03_task_execution_processes.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](05_tdm_reference_processes.md)
 
-
-
-  [![Previous](/articles/images/Previous.png)](06_be_product_tdmdb_tables.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
