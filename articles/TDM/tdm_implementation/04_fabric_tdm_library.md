@@ -115,6 +115,17 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 <p>Populate the list of Broadway flows and the LU of the Broadway flow. The LU can be empty if the post processes are defined under the Shared Objects. In this case the TDM task execution process will set the LU name parameter to TDM when running the BATCH commands to execute the post execution processes. </p>
 </td>
 </tr>
+<tr>
+<td valign="top" width="200pxl">
+<p><h4>trnTDMCleanUp</p>
+</td>
+<td valign="top" width="300pxl">
+<p>Define the list of the TDM DB tables that need to be cleaned by the <a href= "articles/TDM/tdm_architecture/06_tdmdb_cleanup_process.md">TDM clean-up process</a>. The translation defines the Delete statement on each table and a clean-up indicator to indicate if the table needs to be cleaned by the TDM clean-up process.</p>
+</td>
+<td valign="top" width="400pxl">
+  <p>Clear the <strong>cleanup_ind</strong> to remove a table from the clean-up process. It is also possible to add TDM tables or edit the Delete statements on the tables if needed. </p>
+</td>
+</tr>
 </tbody>
 </table>
 
