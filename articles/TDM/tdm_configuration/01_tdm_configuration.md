@@ -3,7 +3,7 @@
 The TDM configuration consists of the following:
 
 - [TDM GUI Configuration](#tdm-gui-configuration)
-- TDM DB - General Parameters
+- [TDM DB - General Parameters](#tdm-db---general-parameters)
 
 ## TDM GUI Configuration
 
