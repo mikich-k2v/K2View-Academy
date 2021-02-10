@@ -312,6 +312,5 @@ When executing a TDM task, set the Sync mode according to the following table:
 
 
 
-
-[![Previous](/articles/images/Previous.png)](03_task_execution_processes.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](05_tdm_ reference_processes.md)
+[![Previous](/articles/images/Previous.png)](03_task_execution_processes.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](05_tdm_reference_processes.md)
 
