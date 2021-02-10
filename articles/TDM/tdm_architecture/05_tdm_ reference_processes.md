@@ -121,7 +121,7 @@ The **PK** (primary key) of each Cassandra table consists of the following colum
   
 
 
-  [![Previous](/articles/images/Previous.png)](04_task_execution_overridden_parameters.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
+  [![Previous](/articles/images/Previous.png)](04_task_execution_overridden_parameters.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](06_tdmdb_cleanup_process.md)
 
   
 
