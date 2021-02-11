@@ -1,20 +1,20 @@
 # TDM Generic Broadway Flows
 
-### Overview
-
 The Fabric TDM library includes a set of built-in generic Broadway flows defined for easy adaptation of the TDM generic implementation per the specific data model. 
 
 This article describes which flows should be copied from the TDM library into your TDM project.
 
-### Shared Objects Broadway Flows
+<!--check with Taha - what is the process? need to copy or ...?-->
+
+## Shared Objects Flows and Templates
 
 The Broadway folder in the Shared Objects includes the flows that are used across several Logical Units. These flows can be generic or specific. 
 
-The generic flows are the utilities required for the TDM execution. They handle the activities such as setting the global variables and sync mode, loading the reference, handling the errors, populating the execution statistics and more. All these flows must be imported from the TDM library to your  project's Shared Objects. They do not require any manual update.
+The generic flows are the utilities required for the TDM execution. They handle the activities such as setting the global variables and sync mode, loading the reference, handling the errors, populating the execution statistics and more. All these flows must be imported from the TDM library to your project's Shared Objects. They do not require any manual update.
 
 Below are the insights into the structure and functionality of some of the generic flows.
 
-#### Initialization
+### Initialization
 
 TDM task initialization is performed using the **InitiateTDMLoad.flow** utility which includes several steps, such as:
 
@@ -27,41 +27,23 @@ The **InitiateTDMLoad.flow** is performed as a first step of **TDMOrchestrator.f
 
 [Click to learn how to create the TDMOrchestrator.flow](11_tdm_implementation_using_generic_flows.md#step-4---create-the-tdmorchestratorflow-from-template).
 
-#### Reference
+### Reference
 
 The TDM library includes a set of utility flows to handle the reference data.
 
 [Click to learn more about TDM reference](/articles/TDM/tdm_gui/24_task_reference_tab.md).
 
-#### Error Handling and Statistics
+### Load and Delete Generic Flows
+
+The TDM library contains the templates and the generic flows which should be used for creation of a TDM implementation based on your project's data model. The templates are prepared using the Fabric [Templates](/articles/35_templates/01_templates_overview.md) functionality which enables the creation of various project's objects based on a predefined structure rather than creating them from scratch. 
+
+[Click to learn how to create a TDM Implementation using the generic Broadway flows.](11_tdm_implementation_using_generic_flows.md)
+
+### Error Handling and Statistics
 
 The TDM library delivers a generic error handling and statistics gathering mechanism. It is based on the Broadway capabilities tailored per TDM business requirements. 
 
 [Click to learn more about TDM error handling and statistics flows](12_tdm_error_handling_and_statistics.md).
-
-### TDM_LIBRARY LU Broadway Flows
-
-<!--the below is now also in the Shared, no need to copy per each LU-->
-
-TDM_LIBRARY LU contains the template flows which are used for the creation of a TDM implementation based on your project's data model. They are prepared using the Fabric [Templates](/articles/35_templates/01_templates_overview.md) functionality which enable the creation of various project's objects based on a predefined structure rather than creating them from scratch. 
-
-The following templates and flows must be copied from the TDM library to the Logical Unit of your TDM project:
-
-**Templates:**
-
-- tdmLoadAllTables.flow.template
-- tdmLoadTable.flow.template
-- TDMOrchestrator.flow.template
-
-**Flows:**
-
-- createLoadAllTablesFlow.flow 
-- createLoadTableFlows.flow 
-- createLoadTableToTargetFlow.flow
-
-[Click to learn how to create a TDM Implementation using the generic Broadway flows.](11_tdm_implementation_using_generic_flows.md)
-
-
 
 
 

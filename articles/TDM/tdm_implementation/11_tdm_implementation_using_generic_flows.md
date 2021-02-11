@@ -1,6 +1,6 @@
 # TDM Implementation Using Generic Flows
 
-The TDM library provides a set of generic flows that enable the creation of a TDM standard implementation just in a couple of minutes.  Below steps should be done in order to create a TDM specific implementation using the generic flows.
+The TDM library provides a set of generic flows that enable the creation of a TDM standard implementation just in a couple of minutes.  Do the below steps in order to create a TDM standard implementation using the generic flows.
 
 Note that after the below steps are executed and the standard implementation is created, all the flows can be edited and tailored per your project's specific requirements.
 
