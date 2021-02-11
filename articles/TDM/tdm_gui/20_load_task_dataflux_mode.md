@@ -81,7 +81,7 @@ You cannot select an LU without its parent LU.
 
 **Example:**
 
-- Customer BE has two level in its hierarchy: the  root LU is the Customer Data, the Billing LU is a child of the Customer Data, and the Collection LU is the child of the Billing LU. You cannot select a the Collection LU without the Billing LU when creating a task on Customer BE.
+- Customer BE has two level in its hierarchy: the  root LU is the Customer Data, the Billing LU is a child of the Customer Data, and the Collection LU is the child of the Billing LU. You cannot select a Collection LU without the Billing LU when creating a task on Customer BE.
 
 Click for additional [examples of BE's hierarchies](/articles/TDM/tdm_overview/03_business_entity_overview.md).
 
