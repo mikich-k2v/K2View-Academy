@@ -17,7 +17,7 @@ By default the **Override Sync Mode** setting is unchecked. When checked, the de
 The following options can be selected to override the Sync mode:
 
 - **Do not Sync Source Data**, get the data from Fabric and do not access the source environment.
-- **Request Up to Date Entity**, set the Sync mode of the task's execution to [Force](https://github.com/k2view-academy/K2View-Academy/blob/Academy_6.4_TDM/articles/TDM/tdm_gui/articles/14_sync_LU_instance/02_sync_modes.md) to get the most updated data of the processed entities. Testers can select this option only if their **Read** [role](10_environment_roles_tab.md#role-permissions) enables it.
+- **Request Up to Date Entity**, set the Sync mode of the task's execution to [Force](/articles/TDM/tdm_gui/articles/14_sync_LU_instance/02_sync_modes.md) to get the most updated data of the processed entities. Testers can select this option only if their **Read** [role](10_environment_roles_tab.md#role-permissions) enables it.
 
 ### Operation Mode
 
@@ -25,7 +25,7 @@ Select an Operation Mode from the following options:
 
 #### Insert Entity without Delete
 
-(Default) The selected entities are inserted into the target environment without first deleting these entities. The processed Entity IDs already exist in the target environment and the task's execution fails due to violation of unique constraints. It is recommended to use this option if the target environment is empty, or if the task replaces the sequences of the processed entities before loading them to the target.
+(Default) The selected entities are inserted into the target environment without first deleting these entities. If the processed Entity IDs already exist in the target environment and the task does not replace their sequences, the task's execution will fail due to violation of unique constraints. Therefore it is recommended to use this option if the target environment is empty, or if the task replaces the sequences of the processed entities before loading them to the target.
 
 #### Delete and Load Entity
 
@@ -43,7 +43,7 @@ Notes:
 
 
 
-Click for more information on [how overriding the Sync mode and the Task Operation mode impact the task execution] process.
+Click for more information on [how overriding the Sync mode and the Task Operation mode impact the task execution process](/articles/TDM/tdm_architecture/04_task_execution_overridden_parameters.md#overriding-the-sync-mode-on-the-task-execution).
 
 ### Replace Sequences
 
@@ -52,8 +52,9 @@ When checked, the task execution process replaces the sequences of all selected 
 Notes:
 
 - Testers can check this setting if their **Write** [role](10_environment_roles_tab.md#role-permissions) enables it.
-- The Replaced Sequence setting is not displayed for a task with a [Create Synthetic Entities](18_load_task_requested_entities_regular_mode.md#create-synthetic-entities) selection method, since the Synthetic method creates new clones (replicas) of the selected entity and replaces the sequences on each clone.
--  The Replaced Sequence setting is not displayed when selecting **Delete Entity without Load** as an operation mode, since the TDM task only deletes the selected entities and does not load new data into the target environment.
+- The Replaced Sequence setting is not displayed in the following cases:
+ - A task with a [Create Synthetic Entities](18_load_task_requested_entities_regular_mode.md#create-synthetic-entities) selection method, since the Synthetic method creates new clones (replicas) of the selected entity and replaces the sequences on each clone.
+ - When selecting **Delete Entity without Load** as an operation mode, since the TDM task only deletes the selected entities and does not load new data into the target environment.
 - The Replace Sequence must be implemented in the Fabric implementation. Click for more information about [Delete implementation].
 
 
