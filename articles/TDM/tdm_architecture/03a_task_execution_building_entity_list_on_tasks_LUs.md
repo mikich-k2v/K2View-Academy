@@ -48,7 +48,8 @@ The entity list depends on the task's selection method in the [Requested Entitie
   - Get the full list of completed entities by the selected batch id: 
 
     ```sql
-    SELECT entityID FROM k2batchprocess.batchprocess_entities_info WHERE bid = <selected batch id> and status =  'COMPLETED' ALLOW FILTERING;
+    SELECT entityID FROM k2batchprocess.batchprocess_entities_info 
+    WHERE bid = <selected batch id> and status =  'COMPLETED' ALLOW FILTERING;
     ```
 
 - **Select All Entities** in unchecked - get the entities list from the task.
