@@ -117,7 +117,7 @@ The generation of the entity list is based on a JOIN of [task_execution_entities
 
 ##### Insert without Load Task
 
-Select the children IDs from task_execution_list and [tdm_lu_type_relation_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_relation_eid) tables:
+Select the children IDs from task_execution_entities and [tdm_lu_type_relation_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_relation_eid) tables:
 
 ```sql
 SELECT rel. rel.lu_type2_eid as child_entity_id
@@ -136,7 +136,7 @@ and rel.version_name = <empty string on a regular task and the selected version 
 
 ##### Delete before Load Task
 
-Select the children IDs from task_execution_list and both TDM relationship tables: [tdm_lu_type_relation_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_relation_eid) and [tdm_lu_type_rel_tar_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_rel_tar_eid) to get the children IDs from source and target environments: 
+Select the children IDs from task_execution_entities and both TDM relationship tables: [tdm_lu_type_relation_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_relation_eid) and [tdm_lu_type_rel_tar_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_rel_tar_eid) to get the children IDs from source and target environments: 
 
 ```sql
 SELECT rel. rel.lu_type2_eid as child_entity_id
@@ -165,7 +165,7 @@ and rel.lu_type_2= <child lu name>;
 
 ##### Delete Entity without Load Task
 
-Select the children IDs from task_execution_list and [tdm_lu_type_rel_tar_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_rel_tar_eid) to get the target children IDs: 
+Select the children IDs from task_execution_entities and [tdm_lu_type_rel_tar_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_rel_tar_eid) to get the target children IDs: 
 
 ```sql
 SELECT rel. rel.lu_type2_eid as child_entity_id
