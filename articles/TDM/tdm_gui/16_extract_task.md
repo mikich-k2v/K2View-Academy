@@ -21,11 +21,11 @@ This is the first tab in the TDM task and holds general information about the ta
 
 ### Task Title
 
-- A task name. A mandatory setting. Note that only one active task can have a specific Task Title. An error is displayed when an attempt is made to create several tasks with the same task title.
+A task name. A mandatory setting. Note that only one active task can have a specific Task Title. An error is displayed when an attempt is made to create several tasks with the same task title.
 
 ### Task Type
 
-- Load or Extract. Set the task type to **Extract**.
+Load or Extract. Set the task type to **Extract**.
 
 ### Entity Versioning
 
@@ -34,7 +34,7 @@ This is the first tab in the TDM task and holds general information about the ta
 
 ### Set Global Variables 
 
-- Check to [override Globals on a task level](22_task_globals_tab.md).
+Check to [override Globals on a task level](22_task_globals_tab.md).
 
 ### Reference 
 
@@ -42,7 +42,7 @@ This is the first tab in the TDM task and holds general information about the ta
 
 - **None**, default value. Do not include Reference tables in the task.
 - **Reference Only**, create a task to extract Reference tables only into Fabric. Do not include entities in the task.
-- **Both - reference and entities**, create a task to extract both - entities and Reference tables - into Fabric.
+- **Both - reference and entities**, create a task to extract both entities and Reference tables into Fabric.
 
 ### Select All Entities 
 
@@ -53,7 +53,7 @@ This is the first tab in the TDM task and holds general information about the ta
 ### Environment Name
 
 - Select a source environment from the dropdown list of active TDM environments with **Source** or **Both** [environment types](08_environment_window_general_information.md#environment-type). 
-- Note that tester users can only select an environment they are attached to by a a [role](10_environment_roles_tab.md).
+- Note that tester users can only select an environment they are attached to by a [role](10_environment_roles_tab.md).
 
 ### Retention Period
 
@@ -72,7 +72,7 @@ The start date of the retention period is the task's execution time. The **reten
 The **defaultPeriod** parameter is set to **5 days** and the **maxRetentionPeriod** parameter is set to **90 days**.
 
 The Retention Period window displays the following options:
-- When the Entity Versioning is checked, the period is set by default to five days.
+- When Entity Versioning is checked, the period is set by default to five days.
 - When Entity Versioning is cleared, the period is set by default to zero, i.e. no retention period is set for the extracted data. 
 - The maximum retention period can be set to 90 days or 12 weeks.  The Years option is not available since the maximum retention period is 90 days.
 
@@ -92,7 +92,7 @@ You cannot select an LU without its parent LU.
 
 **Example:**
 
-- Customer BE has two level in its hierarchy: the  root LU is the Customer Data, the Billing LU is a child of the Customer Data, and the Collection LU is the child of the Billing LU. You cannot select a the Collection LU without the Billing LU when creating a task on Customer BE.
+- Customer BE has two level in its hierarchy: the  root LU is the Customer Data, the Billing LU is a child of the Customer Data, and the Collection LU is the child of the Billing LU. You cannot select a Collection LU without the Billing LU when creating a task on Customer BE.
 
 Click for additional [examples of BE's hierarchies](/articles/TDM/tdm_overview/03_business_entity_overview.md).
 
@@ -110,12 +110,12 @@ Populate the list of entities to process separated by a comma.
 
 Notes:
 
-- The number of entities, populated by the tester user, is [limited by their role](10_environment_roles_tab.md#read-and-write-and-number-of-entities). 
+- The number of entities populated by the tester user is [limited by their role](10_environment_roles_tab.md#read-and-write-and-number-of-entities). 
 - Populate the Entity ID as populated in the source environment. For example, populate the Entities List with 1, 2 to extract Customers 1 and 2. The TDM execution process  [concatenates the required components](/articles/TDM/tdm_implementation/01_tdm_set_instance_per_env_and_version.md) to Each Entity ID when building its LUI.
 
 ## Request Parameters
 
-This tab is only displayed for a regular mode task, i.e. the **Entity Versioning** setting is unchecked.  This tab holds the following **optional setting: Request Up to Date Entity**. 
+This tab is only displayed for a regular mode task, i.e. the **Entity Versioning** setting is unchecked.  This tab holds the following optional setting: **Request Up to Date Entity**. 
 
 By default, the Requested Up to Date Entity is unchecked. You can check this setting to [override the Sync mode] on a task level and set the Sync mode of the task execution to [Force](articles/14_sync_LU_instance/02_sync_modes.md). A tester can select this option only if their **Read** [role](10_environment_roles_tab.md#role-permissions) enables it.
 
@@ -125,7 +125,7 @@ This is the last tab in the Task window and is available for all task types and 
 
 The following options are available for task execution:
 
-- **Execution by Request**, the default option
+- **Execution by Request**, the default option.
 
 - **Scheduled execution**, set scheduling parameters to automatically execute the task based on the scheduling parameters. Note that a tester can select this option only their  role has a scheduling permission.
 
