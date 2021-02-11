@@ -8,7 +8,7 @@ The **General tab** in the Extract and Load Task window displays Reference table
 
 When selecting **Reference Only** or **Both - reference and entities** modes the **Reference** tab is added to the Task window.   
 
-Extract tasks extract **Reference tables** from a source environment and store them in **Cassandra DB**.  Load tasks select data in Reference tables from the Cassandra DB and load them to the target environment.
+Extract tasks extract **Reference tables** from a source environment and stores them in the **Cassandra DB**.  Load tasks select data in Reference tables from the Cassandra DB and load them to the target environment.
 
 Unlike LUIs, a Load task does not activate an extraction from the source environment. Therefore, Reference tables must be loaded into Cassandra by the Extract task before loading them to the target.
 
