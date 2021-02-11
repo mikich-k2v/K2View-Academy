@@ -25,7 +25,8 @@ Select an Operation Mode from the following options:
 
 #### Insert Entity without Delete
 
-(Default) The selected entities are inserted into the target environment without first deleting these entities. If the processed Entity IDs already exist in the target environment and the task does not replace their sequences, the task's execution will fail due to violation of unique constraints. Therefore it is recommended to use this option if the target environment is empty, or if the task replaces the sequences of the processed entities before loading them to the target.
+(Default) The selected entities are inserted into the target environment before they are deleted. 
+If the processed Entity IDs already exist in the target environment and the task does not replace their sequences, the task's execution will fail due to violation of unique constraints. Therefore it is recommended to use this option if the target environment is empty, or if the task replaces the sequences of the processed entities before loading them to the target.
 
 #### Delete and Load Entity
 
