@@ -32,7 +32,7 @@ This table holds all [TDM tasks](14_task_overview.md) defined in  the TDM GUI.
   ### Requested Entities Columns
 
   - **selection method**: populated based on the selection method in the [Requested Entities tab](18_load_task_requested_entities_regular_mode.md). This column can be populated by either:
-    - **L** - [Entities List](https://github18_load_task_requested_entities_regular_mode.md#entities-list) 
+    - **L** - [Entities List](18_load_task_requested_entities_regular_mode.md#entities-list) 
     - **R** - [Random Selection](18_load_task_requested_entities_regular_mode.md#random-selection)
     - **S** - [Create Synthetic Entities](18_load_task_requested_entities_regular_mode.md#create-synthetic-entities).
     - **PR** - [Parameters with a random selection checkbox](18_load_task_requested_entities_regular_mode.md#use-parameters-with-random-selection-checkbox).
@@ -104,7 +104,7 @@ This table holds all [TDM tasks](14_task_overview.md) defined in  the TDM GUI.
   </table>
   <p>&nbsp;</p>
 
-  ​		This column is used by the [TDM task execution process] to create the entities list of the root LUs on each task.
+  ​		This column is used by the [TDM task execution process](/articles/TDM/tdm_architecture/03_task_execution_processes.md) to create the entities list of the root LUs on each task.
 
    
 
@@ -217,7 +217,7 @@ This table holds the LUs list of each task. A separate record is created for eac
 
 -------------------------
 
-This table holds a task's [post execution processes](). A new record is created for each post execution process.
+This table holds a task's [post execution processes](04_tdm_gui_business_entity_window.md#post-execution-processes-tab). A new record is created for each post execution process.
 
 This table holds the following columns:
 
