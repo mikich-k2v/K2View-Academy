@@ -1,7 +1,7 @@
 # TDM - Handling Parameters 
 
 
-## TDM Task - Selecting Parameters
+## TDM Task - Selecting Entities Based on Parameters
 
 A TDM task enables you to select a subset of entities based on a predefined list of parameters. For example, copy ten business customers that belong to Billing Cycle 1 and that are located in NY.  
 The parameters that are available for the task are attached to the LUs of the task's [Business Entity](/articles/TDM/tdm_overview/03_business_entity_overview.md). Parameters are defined at an LU level. 
@@ -47,7 +47,7 @@ The LU_PARAMS table copied from the TDM_LIBRARY holds the following columns:
 5. The **fnEnrichmentLuParams** enrichment function runs the SQL queries of the **trnLuParams** and populates each column in the LU_PARAMS with the results of its related SQL query. Each parameter's column holds a JSON with the values of the parameter. Each parameter can hold several values that are separated by a comma. For example:
 
   ![lu params](images/populated_lu_params_example.png)
-  
+
  6. The **fnEnrichmentLuParams** enrichment function also creates and populates the `<LU Name>_PARAMS` table in the TDM DB.
 
 **Notes:**
