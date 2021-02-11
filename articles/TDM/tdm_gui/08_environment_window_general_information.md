@@ -71,7 +71,7 @@ Click for more information about [environment roles and permissions](10_environm
 
 #### Who is an Environment Owner?  
 
-Environment owner users are usually Testing Team leaders and are defined under a dedicated group in the **LDAP** system.
+Environment owner users are usually Testing team leaders and are defined under a dedicated group in the **LDAP** system.
 
 To enable setting authorized users as environment owners in the TDM GUI, the Group Name must be also defined in the **TDM GUI configuration file** [config.js] in **ownersGroupName**.
 
