@@ -6,7 +6,7 @@ The settings in the Requested Entities tab depend on the [Select All Entities](2
 
 ### Select All Entities is Checked
 
-Display all available versions created in the source environment for the task;s LUs. For example:
+Displays all available versions created in the source environment for the task's LUs. For example:
 
 ![requested entities- All entities](images/load_task_requested_entities_dataflux.png)
 
@@ -14,7 +14,7 @@ Select a version and click **Next**.
 
 ### Select All Entities is Unchecked
 
-Populate the list of entities separated by a comma in the **Entities List** setting.
+Populates the list of entities separated by a comma in the **Entities List** setting.
 
 The TDM displays all available versions created in the source environment for the task's LUs and the selected entities. For example:
 
