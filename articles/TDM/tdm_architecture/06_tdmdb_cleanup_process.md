@@ -20,7 +20,6 @@ Click for more information about the [Jobs table](/articles/20_jobs_and_batch_se
 
 
 
-
-  [![Previous](/articles/images/Previous.png)](05_tdm_ reference_processes.md)
+[![Previous](/articles/images/Previous.png)](05_tdm_ reference_processes.md)
 
   
