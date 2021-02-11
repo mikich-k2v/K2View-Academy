@@ -16,12 +16,12 @@ This table holds all [TDM tasks](14_task_overview.md) defined in  the TDM GUI.
 
   - **task_title**  - the task name. To prevent creating several active tasks with the same name, the **task_title** column has a **unique index** when the status is **Active**.
   - **task_type** - **Extract** or **Load**.
-  - **be_id** - the task's BE. The be_id can be linked to **product_logical_units** TDM DB table. 
+  - **be_id** - the task's BE. The be_id can be linked to the **product_logical_units** TDM DB table. 
   - **number_of_entities_to_copy** - populated by the [Number of Entities setting](17_load_task_regular_mode.md#number-of-entities) of load tasks.
-  - **task_created_by**, and  **task_last_updated_by** - populated by the user name who creates the task.
-  - **task_creation_date** and **task_last_updated_date** - populated by the task creation datetime.
+  - **task_created_by**, and  **task_last_updated_by** - populated by the name of the user who creates the task.
+  - **task_creation_date** and **task_last_updated_date** - populated by the task's creation datetime.
 
-  ### Task Statuses
+  ### Task Status
 
   - **task_status**: each task is created in **Active** task_status. Deleted tasks have an **Inactive** task_status and are not physically deleted from this table.
   - **task_execution_status**: 
@@ -35,8 +35,8 @@ This table holds all [TDM tasks](14_task_overview.md) defined in  the TDM GUI.
     - **L** - [Entities List](https://github18_load_task_requested_entities_regular_mode.md#entities-list) 
     - **R** - [Random Selection](18_load_task_requested_entities_regular_mode.md#random-selection)
     - **S** - [Create Synthetic Entities](18_load_task_requested_entities_regular_mode.md#create-synthetic-entities).
-    - **PR** - [Parameters with random selection checkbox](18_load_task_requested_entities_regular_mode.md#use-parameters-with-random-selection-checkbox).
-    - **P** - [Parameters when random selection checkbox is cleared](18_load_task_requested_entities_regular_mode.md#use-parameters-with-random-selection-checkbox).
+    - **PR** - [Parameters with a random selection checkbox](18_load_task_requested_entities_regular_mode.md#use-parameters-with-random-selection-checkbox).
+    - **P** - [Parameters when a random selection checkbox is cleared](18_load_task_requested_entities_regular_mode.md#use-parameters-with-random-selection-checkbox).
     - **ALL** - select all entities on [Extract](16_extract_task.md#select-all-entities) or [Load Data Flux](20_load_task_dataflux_mode.md#select-all-entities) tasks.
     - **REF** - create a [Reference Only](24_task_reference_tab.md) task.
   - **selection_param_value**: populated when the task selection method is Entities List, Parameters, or Synthetic Data:
@@ -108,12 +108,12 @@ This table holds all [TDM tasks](14_task_overview.md) defined in  the TDM GUI.
 
    
 
-  -  **entity_exclusion_list** - populated by the list of entities, separated by a comma, if the [task level exclusion list](18_load_task_requested_entities_regular_mode.md#exclusion-list) is set on load task.
+  -  **entity_exclusion_list** - populated by the list of entities separated by a comma, if the [task level exclusion list](18_load_task_requested_entities_regular_mode.md#exclusion-list) is set on load task.
 
   ### Data Flux Parameters
 
-  - **version_ind** - populated by **true** on a [Data Flux task](15_data_flux_task.md).
-  - **selected_version_task_name** ,  **selected_version_datetime**,  and **selected_version_task_exe_id** - the selected entity's when creating a load Data Flux task to re-load a selected version of entities into the target environment.
+  - **version_ind** - populated by **true** in a [Data Flux task](15_data_flux_task.md).
+  - **selected_version_task_name**, **selected_version_datetime**, and **selected_version_task_exe_id** - the selected entities when creating a load Data Flux task to re-load a selected version of entities into the target environment.
   - **selected_ref_version_task_name, selected_ref_version_datetime**, and **selected_ref_version_task_exe_id** - the selected Reference's version when creating a Data Flux task to copy [a selected version of Reference tables](24_task_reference_tab.md) into the target environment.
 
   ### Environments Columns
@@ -134,9 +134,9 @@ This table holds all [TDM tasks](14_task_overview.md) defined in  the TDM GUI.
 
 #### Scheduling Parameters
 
-- **scheduler** - set based on the task's [Execution Timing](22_task_execution_timing_tab.md):
-  - **Execution by Request**: populate by **immediate**.
-  - **Scheduled Execution**: populate by a **crontab** based on the selected scheduling parameters of the task.
+- **Scheduler** - set based on the task's [Execution Timing](22_task_execution_timing_tab.md):
+  - **Execution by Request**, populated by **immediate**.
+  - **Scheduled Execution**, populated by a **crontab** based on the selected scheduling parameters of the task.
 - **scheduling_end_date** - populated by the **End Date** if set on scheduled tasks.
 
 #### Extract Tasks - [Retention Period](16_extract_task.md#retention-period)
@@ -217,15 +217,13 @@ This table holds the LUs list of each task. A separate record is created for eac
 
 -------------------------
 
-This table holds all task's [post execution processes]() 
-
-A new record is created for each post execution process.
+This table holds a task's [post execution processes](). A new record is created for each post execution process.
 
 This table holds the following columns:
 
--  **task_id** - a unique identifier of the task. This is the link to **Tasks** TDM DB table.
--  **process_id** - a unique identifier of the process.  This is the link [tdm_be_post_exe_process](06_be_product_tdmdb_tables.md#tdm_be_post_exe_process) TDM DB table.
--  **execution_order** - the  execution_order of the post execution process as defined in [tdm_be_post_exe_process](06_be_product_tdmdb_tables.md#tdm_be_post_exe_process) TDM DB table. 
+-  **task_id** - a unique identifier of the task which links to the **Tasks** TDM DB table.
+-  **process_id** - a unique identifier of the process which links [tdm_be_post_exe_process](06_be_product_tdmdb_tables.md#tdm_be_post_exe_process) TDM DB table.
+-  **execution_order** - the  execution_order of the post execution process as defined in the [tdm_be_post_exe_process](06_be_product_tdmdb_tables.md#tdm_be_post_exe_process) TDM DB table. 
 
 ## Task_Globals
 
@@ -233,7 +231,7 @@ This table holds all [Globals that are overridden by the task](23_task_globals_t
 
 ## Task_Ref_Tables
 
-This table holds the list of task's [Reference tables](24_task_reference_tab.md). A separate record is created for each Reference table.
+This table holds a list of the task's [Reference tables](24_task_reference_tab.md). A separate record is created for each Reference table.
 
   [![Previous](/articles/images/Previous.png)](24_task_reference_tab.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](26_task_execution.md)
 
