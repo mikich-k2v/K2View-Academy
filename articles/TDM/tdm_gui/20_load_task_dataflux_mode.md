@@ -10,38 +10,38 @@ A Load Data Flux task contains the following tabs:
 
 - [General](#general)
 - [Requested Entities](21_load_task_requested_entities_dataflux_mode.md)
-- [Execution Timing](22_task_execution_timing_tab.md):   this is the last tab of the Task window and is available for all task types and modes. The following options are available  for the task execution:
+- [Execution Timing](22_task_execution_timing_tab.md): the last tab in the Task window and available for all task types and modes. The following options are available for the task execution:
 - **Execution by Request**: the default option.
-  - **Scheduled execution**: set scheduling parameters to automatically execute the task based on the scheduling parameters. Note that a tester can select this option only is its role has a scheduling permission.
+  - **Scheduled execution**: set scheduling parameters to automatically execute the task based on the scheduling parameters. Note that a tester can select this option only if its role has a scheduling permission.
 
 
-When checking the **Set Global Variables** setting, a new tab is opened: [Task Globals](23_task_globals_tab.md).
+When checking the **Set Global Variables** setting, a new [Task Globals](23_task_globals_tab.md) tab opens.
 
-When setting the **Reference** setting to **Reference Only** or **Both - reference and entities**, a new tab is opened: [Reference].
+When setting the **Reference** setting to **Reference Only** or **Both - reference and entities**, a new [Reference] tab opens.
 
 ## General
 
-This is the first tab of the TDM task and holds a general information of the task. See example below:
+The first tab in the TDM task that holds general information about the task. For example:
 
 ![general tab](images/load_general_tab_dataflux.png)
 
 ### Task Title
 
-- A task name. A mandatory setting. Note that only one active task can have a specific Task Title. An error is displayed when an attempt is made to create several tasks with the same task title.
+A task name. A mandatory setting. Note that only one active task can have a specific Task Title. An error is displayed when an attempt is made to create several tasks with the same task title.
 
 ### Task Type
 
-- Load or Extract. Set the task type to **Load**.
+Load or Extract. Set the task type to **Load**.
 
 ### Entity Versioning
 
-- Check to set the task mode to [Data Flux](15_data_flux_task.md).  A tester can create check this setting and create a Data Flux load task only if is permitted to select this method by their [role](10_environment_roles_tab.md#role-permissions) on the target environment.
+Check to set the task mode to [Data Flux](15_data_flux_task.md). Testers can check this setting and create a Data Flux load task only only if their [role](10_environment_roles_tab.md#role-permissions) has permissions.
 
   
 
 ### Set Global Variables 
 
-- Check to [override Globals on a task level](23_task_globals_tab.md).
+Check to [override Globals on a task level](23_task_globals_tab.md).
 
 ### Reference 
 
@@ -49,21 +49,21 @@ This is the first tab of the TDM task and holds a general information of the tas
 
 - **None**: default value. Do not include Reference tables in the task.
 - **Reference Only**: create a task to extract Reference tables only into Fabric. Do not include entities in the task.
-- **Both - reference and entities**: create a task to extract both - entities and Reference tables - into Fabric.
+- **Both - reference and entities**: create a task to extract both entities and Reference tables into Fabric.
 
 ### Select All Entities
 
-- When checked, all entities of the selected version will be re-loaded to the target environment.
+- When checked, all entities of the selected version are reloaded to the target environment.
 - Only Admin and Environment owner users can check the **Select All Entities** settings. Other users can only define a list of entities in the [Requested Entities] tab.
-- This setting is disabled on **Reference Only** tasks.
+- This setting is disabled for **Reference Only** tasks.
 
 ### Environment Names
 
-- Select a **source environment** from the dropdown list of the active TDM environments with [environment type](08_environment_window_general_information.md#environment-type) **Source** or **Both**. 
-- Select a **target environment** from the dropdown list of the active TDM environments with [environment type](08_environment_window_general_information.md#environment-type) **Target** or **Both**. 
-- Notes:
-  - Tester users can only select source environment they are attached to by a Read [role](10_environment_roles_tab.md) and target environment they are attached to by a Write [role](10_environment_roles_tab.md). 
-  - The tester will usually select the testing environment as both - source and target environments - when creating a Data Flux load task to re-load the previously created version of the testing data on the environment.
+- Select a **source environment** from the dropdown list of active TDM environments with a **Source** or **Both** [environment type](08_environment_window_general_information.md#environment-type). 
+- Select a **target environment** from the dropdown list of active **Source** or **Both** TDM environments with a **Target** or **Both**[environment type](08_environment_window_general_information.md#environment-type). 
+Notes:
+  - Tester users can only select a source environment they are attached to by a Read [role](10_environment_roles_tab.md) and target environment they are attached to by a Write [role](10_environment_roles_tab.md). 
+  - A tester will usually select the testing environment as both - source and target environments - when creating a Data Flux load task to reload the previously created version of the testing data on the environment.
 
 ### Business Entity
 
@@ -81,9 +81,9 @@ You cannot select an LU without its parent LU.
 
 **Example:**
 
-- Customer BE has two level in its hierarchy: the  root LU is the Customer Data, the Billing LU is a child of the Customer Data, and the Collection LU is the child of the Billing LU. You cannot select a Collection LU without the Billing LU when creating a task on Customer BE.
+Customer BE has two levels in its hierarchy: the  root LU is the Customer Data, the Billing LU is a child of the Customer Data, and the Collection LU is the child of the Billing LU. You cannot select a Collection LU without the Billing LU when creating a task on Customer BE.
 
-Click for additional [examples of BE's hierarchies](/articles/TDM/tdm_overview/03_business_entity_overview.md).
+Click for additional [examples of BE hierarchies](/articles/TDM/tdm_overview/03_business_entity_overview.md).
 
 ### Post Execution Processes
 
