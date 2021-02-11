@@ -1,6 +1,6 @@
 # TDM Load Task - Regular Mode - Requested Entities Tab
 
-This tab is used is used to define a subset of entities for a task.  
+This tab is used to define a subset of entities for a task.  
 
 ![requested entities](images/load_requested_entities_tab_regular.png)
 
