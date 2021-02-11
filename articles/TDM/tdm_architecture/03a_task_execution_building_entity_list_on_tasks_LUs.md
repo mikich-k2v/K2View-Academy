@@ -1,4 +1,4 @@
-# Building Entities List on the Tasks LUs
+# Building Entity Lists on the Tasks LUs
 
 ## Root LUs
 
