@@ -38,7 +38,7 @@ The Product window displays information about a selected product. It has two mai
 
 The General Information section has the following settings:
 
-- Name. Populated by the product name.
+- Name, populated by the product name.
 
 - Vendor and Description, optional settings.
 
