@@ -2,7 +2,7 @@
 
 A [Data Flux Load task] gets the selected entities or Reference tables from the selected version created on the source environment and loads them to the selected target environment. A load task deletes the selected entities from the target environment and then loads them from the selected version.
 
-A load task is set to a Data Flux task by checking the **Entity Versioning** setting.
+To set a load task to a Data Flux task, check the **Entity Versioning** setting.
 
 Click for more information about [Data Flux tasks](15_data_flux_task.md).
 
@@ -35,7 +35,7 @@ Load or Extract. Set the task type to **Load**.
 
 ### Entity Versioning
 
-Check to set the task mode to [Data Flux](15_data_flux_task.md). Testers can check this setting and create a Data Flux load task only only if their [role](10_environment_roles_tab.md#role-permissions) has permissions.
+Check to set the task mode to [Data Flux](15_data_flux_task.md). Testers can check this setting and create a Data Flux load task only if their [role](10_environment_roles_tab.md#role-permissions) has permissions.
 
   
 
@@ -60,7 +60,9 @@ Check to [override Globals on a task level](23_task_globals_tab.md).
 ### Environment Names
 
 - Select a **source environment** from the dropdown list of active TDM environments with a **Source** or **Both** [environment type](08_environment_window_general_information.md#environment-type). 
-- Select a **target environment** from the dropdown list of active **Source** or **Both** TDM environments with a **Target** or **Both**[environment type](08_environment_window_general_information.md#environment-type). 
+- Select a **target environment** from the dropdown list of active **Source** or **Both** TDM environments with a **Target** or **Both** [environment type](08_environment_window_general_information.md#environment-type). 
+
+
 Notes:
   - Tester users can only select a source environment they are attached to by a Read [role](10_environment_roles_tab.md) and target environment they are attached to by a Write [role](10_environment_roles_tab.md). 
   - A tester will usually select the testing environment as both - source and target environments - when creating a Data Flux load task to reload the previously created version of the testing data on the environment.
