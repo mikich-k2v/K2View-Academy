@@ -18,7 +18,7 @@ The execution of the related task components runs in the following order:
 
 ## Holding Task Execution
 
-Occasionally you may need to temporarily set a task on-hold. For example, if the testing environment is temporarily down, to hold all task executions on an environment until the testing environment is up again and to then reactivate the tasks for this environment.
+Occasionally you may need to temporarily set a task to on-hold. For example, if the testing environment is temporarily down, to hold all task executions on an environment until the testing environment is up again and to then reactivate the tasks for this environment.
 
 Hold or Activate task activities are enabled only for Active tasks. When a task is deleted (set to Inactive), its task execution status cannot be modified.
 
@@ -41,7 +41,7 @@ Hold and Activate task buttons are displayed on the Tasks screen of each task:
 
 - To execute a scheduled task on demand, click ![task execution icon](images/execute_task_icon.png). 
 
-- Both the TDM GUI or TDM Scheduling processes initiate an execution request in the TDM DB. The TDM task execution process gets pending execution requests and executes the tasks.
+- Both the TDM GUI and TDM Scheduling processes initiate an execution request in the TDM DB. The TDM task execution process gets pending execution requests and executes the tasks.
 
   Click for more information about the [TDM task execution process].
 
