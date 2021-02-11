@@ -15,90 +15,81 @@ Notes:
 ### Scheduled Execution Parameters
 
 - The Execution Time Interval is saved in TDM as a **crontab** value. Scheduling parameters can be populated by either:
-  - Checking the **Advanced** setting and populating the **crontab** value manually. Set a **Quartz crontab expression**. 
-  - Clearing the **Advanced** setting (default option) and setting the scheduling parameters using the TDM Wizard. The following options are available:
-
-<table width="900pxl">
+  - Selecting the **Advanced** tab and populating the **crontab** value manually. Set a **Quartz crontab expression**. 
+  - Selecting other tab and setting the scheduling parameters using the TDM Wizard. The following options are available:
+  
+ <table width="900pxl">
 <tbody>
 <tr>
-<td width="200pxl">
-<p><strong>Every setting</strong></p>
-</td>
-<td width="350pxl">
-<p><strong>At setting</strong></p>
-</td>
-<td width="350pxl">
-<p><strong>On setting</strong></p>
+<td valign="top" width="300pxl"><strong>Time Interval</strong></td>
+<td valign="top" width="600pxl"><strong>Scheduling Parameters</strong></td>
+</tr>
+<tr>
+<td valign="top" width="300pxl">Minutes</td>
+<td valign="top" width="600pxl">
+<ul>
+<li>Minutes</li>
+<li>Seconds</li>
+</ul>
 </td>
 </tr>
 <tr>
-<td width="200pxl">
-<p>Minute</p>
-</td>
-<td width="350pxl">
-<p>N/A</p>
-</td>
-<td width="350pxl">
-<p>N/A</p>
-</td>
-</tr>
-<tr>
-<td width="200pxl">
-<p>Hour</p>
-</td>
-<td width="350pxl">
-<p>Select the number of minutes past the hour in gaps of 5 minutes: 0, 5, 10&hellip;</p>
-</td>
-<td width="350pxl">
-<p>N/A</p>
+<td valign="top" width="300pxl">Hourly</td>
+<td valign="top" width="600pxl">
+<ul>
+<li>Hours</li>
+<li>Minutes</li>
+<li>Seconds</li>
+</ul>
 </td>
 </tr>
 <tr>
-<td width="200pxl">
-<p>Day</p>
-</td>
-<td width="350pxl">
-<p>Select hour and minutes</p>
-</td>
-<td width="350pxl">
-<p>N/A</p>
-</td>
-</tr>
-<tr>
-<td width="200pxl">
-<p>Week</p>
-</td>
-<td width="350pxl">
-<p>Select an hour and minutes</p>
-</td>
-<td width="350pxl">
-<p>Select a day of the week: Sunday, Monday&hellip;</p>
+<td valign="top" width="300pxl">Daily</td>
+<td valign="top" width="600pxl">
+<ul>
+<li>Day interval. For example, every 1 day</li>
+<li>Hours</li>
+<li>Minutes</li>
+<li>Seconds</li>
+</ul>
 </td>
 </tr>
 <tr>
-<td width="200pxl">
-<p>Month</p>
-</td>
-<td width="350pxl">
-<p>Select hour and minutes</p>
-</td>
-<td width="350pxl">
-<p>Select a day in the month: 1<sup>st</sup>, 2<sup>nd</sup> &hellip;</p>
+<td valign="top" width="300pxl">Weekly</td>
+<td valign="top" width="600pxl">
+<ul>
+<li>Day. For example, Monday</li>
+</ul>
 </td>
 </tr>
 <tr>
-<td width="200pxl">
-<p>Year</p>
+<td valign="top" width="300pxl">Monthly</td>
+<td valign="top" width="600pxl">
+<ul>
+<li>A Day in the month. For example, 1st, 2nd, First Monday, Second Thursday...</li>
+<li>Months interval. For example, every 2 months</li>
+<li>Hours</li>
+<li>Minutes</li>
+<li>Seconds</li>
+</ul>
 </td>
-<td width="350pxl">
-<p>Select hour and minutes</p>
-</td>
-<td width="350pxl">
-<p>Select a month and a day in the month. For example, 1<sup>st</sup> of February.</p>
+</tr>
+<tr>
+<td valign="top" width="300pxl">Yearly</td>
+<td valign="top" width="600pxl">
+<ul>
+<li>Month</li>
+<li>A Day in the month. For example, 1st, 2nd, First Monday, Second Thursday...</li>
+<li>Months interval. For example, every 2 months</li>
+<li>Hours</li>
+<li>Minutes</li>
+<li>Seconds</li>
+</ul>
 </td>
 </tr>
 </tbody>
 </table>
+    
 
 - The **End By** setting can be set to run a task by the Scheduler until a predefined date. For example, run the task every week till the end of February.
 
