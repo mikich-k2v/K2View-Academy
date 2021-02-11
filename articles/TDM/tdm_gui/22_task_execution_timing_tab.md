@@ -14,9 +14,9 @@ Notes:
 
 ### Scheduled Execution Parameters
 
-- The Execution Time Interval is saved in TDM as a **crontab** value. Scheduling parameters can be populated by either:
-  - Selecting the **Advanced** tab and populating the **crontab** value manually. Set a **Quartz crontab expression**. 
-  - Selecting other tab and setting the scheduling parameters using the TDM Wizard. The following options are available:
+The Execution Time Interval is saved in TDM as a **crontab** value. Scheduling parameters can be populated by either:
+ - Selecting the **Advanced** tab and populating the **crontab** value manually. Set a **Quartz crontab expression**. 
+ - Selecting another tab and setting the scheduling parameters using the TDM Wizard. The following options are available:
   
  <table width="900pxl">
 <tbody>
@@ -66,7 +66,7 @@ Notes:
 <td valign="top" width="300pxl">Monthly</td>
 <td valign="top" width="600pxl">
 <ul>
-<li>A Day in the month. For example, 1st, 2nd, First Monday, Second Thursday...</li>
+<li>A day in the month. For example, 1st, 2nd, First Monday, Second Thursday...</li>
 <li>Months interval. For example, every 2 months</li>
 <li>Hours</li>
 <li>Minutes</li>
@@ -79,7 +79,7 @@ Notes:
 <td valign="top" width="600pxl">
 <ul>
 <li>Month</li>
-<li>A Day in the month. For example, 1st, 2nd, First Monday, Second Thursday...</li>
+<li>A day in the month. For example, 1st, 2nd, First Monday, Second Thursday...</li>
 <li>Months interval. For example, every 2 months</li>
 <li>Hours</li>
 <li>Minutes</li>
@@ -91,7 +91,7 @@ Notes:
 </table>
     
 
-- The **End By** setting can be set to run a task by the Scheduler until a predefined date. For example, run the task every week till the end of February.
+The **End By** setting can be set to run a task by the Scheduler until a predefined date. For example, run the task every week till the end of February.
 
   
 
