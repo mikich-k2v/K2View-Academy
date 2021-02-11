@@ -2,11 +2,11 @@
 
 This tab displays a list of available versions that can be selected and reloaded to the target environment. By default, the TDM GUI displays a list of the versions created during the last month. To set a different period, edit the **From Date** and **To Date** settings.
 
-The settings in the Requested Entities tab depend on the [Select All Entities] settings in the General tab:
+The settings in the Requested Entities tab depend on the [Select All Entities](20_load_task_dataflux_mode.md#select-all-entities) settings in the General tab:
 
 ### Select All Entities is Checked
 
-Display all available versions created in the source environment and that load a task's LUs. For example:
+Display all available versions created in the source environment for the task;s LUs. For example:
 
 ![requested entities- All entities](images/load_task_requested_entities_dataflux.png)
 
@@ -16,7 +16,7 @@ Select a version and click **Next**.
 
 Populate the list of entities separated by a comma in the **Entities List** setting.
 
-The TDM displays all available versions created in the source environment and that loads the task's LUs and the selected entities. For example:
+The TDM displays all available versions created in the source environment for the task's LUs and the selected entities. For example:
 
 ------------------99999999999999900----------------------
 
@@ -29,7 +29,7 @@ The available versions are selected based on the following criteria:
 
 Each update on the entities list may change the list of available versions for the task. 
 
-Select a version and click **Next**. TDM revalidates the entities list and checks whether each entity has been successfully migrated into Fabric by the extract task of the selected version. 
+Select a version and click **Next**. TDM revalidates the entities list and checks whether each entity has been successfully synchronized into Fabric by the extract task that created the selected version. 
 
 #### Notes:
 
