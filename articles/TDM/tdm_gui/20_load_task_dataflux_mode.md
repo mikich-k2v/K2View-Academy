@@ -1,6 +1,6 @@
 # TDM Load Task - Data Flux Mode
 
-A [Data Flux Load task] gets the selected entities or Reference tables from the selected version created on the source environment and loads them to the selected target environment. A load task deletes the selected entities from the target environment and then loads them from the selected version.
+A [Data Flux Load task](20_load_task_dataflux_mode.md) gets the selected entities or Reference tables from the selected version created on the source environment and loads them to the selected target environment. A load task deletes the selected entities from the target environment and then loads them from the selected version.
 
 To set a load task to a Data Flux task, check the **Entity Versioning** setting.
 
@@ -11,13 +11,8 @@ A Load Data Flux task contains the following tabs:
 - [General](#general)
 - [Requested Entities](21_load_task_requested_entities_dataflux_mode.md)
 - [Execution Timing](22_task_execution_timing_tab.md): the last tab in the Task window and available for all task types and modes. The following options are available for the task execution:
-- **Execution by Request**: the default option.
+  - **Execution by Request**: the default option.
   - **Scheduled execution**: set scheduling parameters to automatically execute the task based on the scheduling parameters. Note that a tester can select this option only if its role has a scheduling permission.
-
-
-When checking the **Set Global Variables** setting, a new [Task Globals](23_task_globals_tab.md) tab opens.
-
-When setting the **Reference** setting to **Reference Only** or **Both - reference and entities**, a new [Reference] tab opens.
 
 ## General
 
@@ -36,12 +31,13 @@ Load or Extract. Set the task type to **Load**.
 ### Entity Versioning
 
 Check to set the task mode to [Data Flux](15_data_flux_task.md). Testers can check this setting and create a Data Flux load task only if their [role](10_environment_roles_tab.md#role-permissions) has permissions.
-
   
 
 ### Set Global Variables 
 
 Check to [override Globals on a task level](23_task_globals_tab.md).
+
+When checking the **Set Global Variables** setting, a new [Task Globals tab](23_task_globals_tab.md) opens.
 
 ### Reference 
 
@@ -50,6 +46,8 @@ Check to [override Globals on a task level](23_task_globals_tab.md).
 - **None**: default value. Do not include Reference tables in the task.
 - **Reference Only**: create a task to extract Reference tables only into Fabric. Do not include entities in the task.
 - **Both - reference and entities**: create a task to extract both entities and Reference tables into Fabric.
+
+When setting the **Reference** setting to **Reference Only** or **Both - reference and entities**, a new [Reference tab](24_task_reference_tab.md) opens.
 
 ### Select All Entities
 
@@ -77,13 +75,13 @@ Select all, partial, or one LU of the selected BE.
 
 The following validations are set on the selected LUs:
 
-The selected LUs must include at least one [root LU](/articles/TDM/tdm_overview/03_business_entity_overview.md#root-lu) of the selected BE. 
+- The selected LUs must include at least one [root LU](/articles/TDM/tdm_overview/03_business_entity_overview.md#root-lu) of the selected BE. 
 
-You cannot select an LU without its parent LU. 
+- You cannot select an LU without its parent LU. 
 
 **Example:**
 
-Customer BE has two levels in its hierarchy: the  root LU is the Customer Data, the Billing LU is a child of the Customer Data, and the Collection LU is the child of the Billing LU. You cannot select a Collection LU without the Billing LU when creating a task on Customer BE.
+Customer BE has two levels in its hierarchy: the  root LU is the Customer LU, the Billing LU is a child of the Customer LU, and the Collection LU is the child of the Billing LU. You cannot select a Collection LU without the Billing LU when creating a task on Customer BE.
 
 Click for additional [examples of BE hierarchies](/articles/TDM/tdm_overview/03_business_entity_overview.md).
 
