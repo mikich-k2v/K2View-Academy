@@ -205,7 +205,7 @@ The task operation mode is set based on the combination of **load_entity** and *
 - **replace_sequences**
 - **sync_mode** - 
   - If the task does not override the sync mode, this column remains empty.
-  - If the task overrides the [sync mode](19_load_task_request_parameters_regular_mode.md#override-sync-mode): populated by **FORCE** or **OFF**. 
+  - If the task overrides the [sync mode](19_load_task_request_parameters_regular_mode.md#override-sync-mode), populated by **FORCE** or **OFF**. 
 
  
 
