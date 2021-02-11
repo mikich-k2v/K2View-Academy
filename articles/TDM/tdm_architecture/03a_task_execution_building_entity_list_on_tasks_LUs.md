@@ -1,5 +1,9 @@
 # Building Entity Lists on the Tasks LUs
 
+The task execution process executes the task's LUs from parent to child. Click for more information about the [execution order of hierarchical LUs](03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
+
+The task execution process build the entity list of each LU: 
+
 ## Root LUs
 
 ### Extract Tasks
