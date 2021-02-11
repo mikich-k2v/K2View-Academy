@@ -43,7 +43,7 @@ Hold and Activate task buttons are displayed on the Tasks screen of each task:
 
 - Both the TDM GUI and TDM Scheduling processes initiate an execution request in the TDM DB. The TDM task execution process gets pending execution requests and executes the tasks.
 
-  Click for more information about the [TDM task execution process].
+  Click for more information about the [TDM task execution process](/articles/TDM/tdm_architecture/03_task_execution_processes.md).
 
 - A task cannot be executed several times in parallel. An additional execution can be initiated only if the previous execution has ended.
 
