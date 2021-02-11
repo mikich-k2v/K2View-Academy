@@ -89,7 +89,7 @@ Unlike for LUs, post-execution processes are optional. A BE can be defined witho
 
   
 
-Click for more information about [BE TDM DB tables and hold the BE and post-execution processes relationship](06_be_product_tdmdb_tables.md).
+Click for more information about [BE TDM DB tables and the hold BE and post-execution processes relationship](06_be_product_tdmdb_tables.md).
 
  
 
