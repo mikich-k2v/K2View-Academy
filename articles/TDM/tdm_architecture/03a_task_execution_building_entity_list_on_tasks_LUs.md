@@ -10,22 +10,22 @@ The task execution process build the entity list of each LU:
 
 The entity list depends on the task:
 
-- The [Select All Entities](/articles/TDM/tdm_gui/16_extract_task.md#select-all-entities) setting is checked: run the SQL query defined in [trnMigrateList](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnmigratelist) translation object for the LU.
-- The **Selected All Entities** setting is unchecked: build the entity list based on the entities in the task's  [Requested Entities](/articles/TDM/tdm_gui/16_extract_task.md#requested-entities) tab.
+- **[Select All Entities](/articles/TDM/tdm_gui/16_extract_task.md#select-all-entities)** is checked, run the SQL query defined in the [trnMigrateList](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnmigratelist) translation object for the LU.
+- **Selected All Entities** is unchecked, build the entity list based on the entities in the task's [Requested Entities](/articles/TDM/tdm_gui/16_extract_task.md#requested-entities) tab.
 
 ### Load Tasks - Regular Mode
 
 The entity list depends on the task's selection method in the [Requested Entities](/articles/TDM/tdm_gui/18_load_task_requested_entities_regular_mode.md) tab: 
 
-- **Entities List** - build the entity list based on the entities in the task's Requested Entities tab.
+- **Entities List**, build the entity list based on the entities in the task's Requested Entities tab.
 
-- **Random Selection** - randomly select the entities from the  [`<LU Name>_<params>`](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md#tdm-parameter-tables) table.
+- **Random Selection**, randomly select the entities from the  [`<LU Name>_<params>`](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md#tdm-parameter-tables) table.
 
-- **Create Synthetic Entities** - duplicate the entity ID, set in the task. Attach a different clone_id on each clone. 
+- **Create Synthetic Entities**, duplicate the Entity ID, set in the task. Attach a different clone_id on each clone. 
 
   Example: 
 
-  Select Customer #1 from ENV1 source environment and clone it four times. The following LUIs will be generated: 
+  Select Customer 1 from the ENV1 source environment and clone it four times. The following LUIs are generated: 
 
   - ENV1_1#params#{"clone_id"=1}
 
@@ -36,14 +36,13 @@ The entity list depends on the task's selection method in the [Requested Entitie
   - ENV1_1#params#{"clone_id"=4}
 
     
-
-- **Parameters** - select the entities based on the task's parameters from a [DB view], created in TDM DB on each combination of BE and source environment.  
+- **Parameters**, select the entities based on the task's parameters from a [DB view], created in the TDM DB for each BE and source environment combination.  
 
 ### Load Tasks - Data Flux Mode
 
--  [Select All Entities](/articles/TDM/tdm_gui/20_load_task_dataflux_mode.md#select-all-entities) is checked  -  copy the full list of the LUIs successfully synced into Fabric by the selected version. The full list it taken from Cassandra table:
+-  [Select All Entities](/articles/TDM/tdm_gui/20_load_task_dataflux_mode.md#select-all-entities) is checked, copy the full list of successfully synced LUIs into Fabric by the selected version. The full list it taken from the Cassandra table:
 
-  - Get the **batch_id** of the extract task that created the selected version from task_execution_list TDM DB table.
+  - Get the **batch_id** of the extract task that created the selected version from the task_execution_list in the TDM DB table.
 
   - Get the full list of completed entities by the selected batch id: 
 
@@ -52,19 +51,19 @@ The entity list depends on the task's selection method in the [Requested Entitie
     WHERE bid = <selected batch id> and status =  'COMPLETED' ALLOW FILTERING;
     ```
 
-- **Select All Entities** in unchecked - get the entities list from the task.
+- **Select All Entities** in unchecked, get the entities list from the task.
 
 ## Children LUs
 
-The entity list of a child LU must include all the IDs related to the parent IDs, successfully processed by the task execution.
+The entity list of a child LU must include all IDs related to parent IDs that have been successfully processed by the task execution.
 
-Click for example of an [execution of hierarchical BE](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
+Click for an example [execution of hierarchical BE](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
 
-The generation of the entity list is based on a JOIN of [task_execution_entities](02_tdm_database.md#task_execution_entities) and the [TDM relationship tables](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm-relationship-tables):
+The generated entity list is based on a JOIN of the [task_execution_entities](02_tdm_database.md#task_execution_entities) and the [TDM relationship tables](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm-relationship-tables):
 
 ### Insert without Load Task
 
-Select the children IDs from task_execution_entities and [tdm_lu_type_relation_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_relation_eid) tables:
+Select the children IDs from the task_execution_entities and [tdm_lu_type_relation_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_relation_eid) tables:
 
 ```sql
 SELECT rel. rel.lu_type2_eid as child_entity_id
@@ -83,7 +82,7 @@ and rel.version_name = <empty string on a regular task and the selected version 
 
 ### Delete before Load Task
 
-Select the children IDs from task_execution_entities and both TDM relationship tables: [tdm_lu_type_relation_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_relation_eid) and [tdm_lu_type_rel_tar_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_rel_tar_eid) to get the children IDs from source and target environments: 
+Select the children IDs from the task_execution_entities and TDM relationship tables: [tdm_lu_type_relation_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_relation_eid) and [tdm_lu_type_rel_tar_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_rel_tar_eid) to get the children IDs from the source and target environments: 
 
 ```sql
 SELECT rel. rel.lu_type2_eid as child_entity_id
@@ -112,7 +111,7 @@ and rel.lu_type_2= <child lu name>;
 
 ### Delete Entity without Load Task
 
-Select the children IDs from task_execution_entities and [tdm_lu_type_rel_tar_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_rel_tar_eid) to get the target children IDs: 
+Select the children IDs from the task_execution_entities and [tdm_lu_type_rel_tar_eid](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm_lu_type_rel_tar_eid) to get the target children IDs: 
 
 ```sql
 SELECT rel. rel.lu_type2_eid as child_entity_id
