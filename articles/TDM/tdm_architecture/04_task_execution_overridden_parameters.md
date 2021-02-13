@@ -1,13 +1,13 @@
 # Task Execution - Overridden Parameters
 
-A task execution can override execution parameters based on the task's setting:
+A task execution can override execution parameters, as follows:
 
 - Setting the active environment based on the task's environments.
-- Setting key-value parameters on the session level.
-- Overriding Globals values on the session level.
+- Setting key-value parameters on a session level.
+- Overriding Globals values on a session level.
 - Overriding the [Sync Mode]() of the task execution.
 
-### Setting the Active Environments
+### Setting Active Environments
 
 #### Extract Tasks
 
@@ -24,17 +24,17 @@ The [TDM Execution process](03_task_execution_processes.md#main-tdm-task-executi
 
 ### Setting Key-Value Parameters
 
-Set execution parameters like replace sequence, delete before load, or insert to target indicators. These parameters are based on the task settings and set on the session level.
+Set execution parameters like replace sequence, delete before load or insert to target indicators. These parameters are based on the task's settings and are set on a session level.
 
 ### Overriding Globals Values
 
-It is possible to override the project's Globals on the [TDM environment](/articles/TDM/tdm_gui/12_environment_globals_tab.md) or [TDM task](/articles/TDM/tdm_gui/23_task_globals_tab.md) levels.
+A project's Globals can be overridden on a [TDM environment](/articles/TDM/tdm_gui/12_environment_globals_tab.md) or [TDM task](/articles/TDM/tdm_gui/23_task_globals_tab.md) level.
 
-The TDM execution process sets the values on these Globals on the [session level](/articles/08_globals/03_set_globals.md#how-do-i-use-the-set-command).
+The TDM execution process sets the values on the Globals on a [session level](/articles/08_globals/03_set_globals.md#how-do-i-use-the-set-command).
 
-Note that the task level Globals get a higher priority than the TDM environment level Globals, i.e. if a Global variable is set on both - the task and the related environment levels - the task's Global value is set.
+Note that task level Globals get a higher priority than TDM environment level Globals, i.e. if a Global variable is set on both - the task and the related environment levels - the task's Global value is set.
 
-[To check what if the Global is set on both- source and target environment].
+[To check if the Global is set on both- source and target environment].
 
 ### Overriding the Sync Mode on the Task Execution 
 
