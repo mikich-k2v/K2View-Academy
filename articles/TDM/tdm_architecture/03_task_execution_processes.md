@@ -1,22 +1,18 @@
 # Task Execution Processes
 
-The task execution process has several steps:
+The Task Execution process has the following steps:
 
-1. Creating task execution request.
-2. Initiating a Batch process on each task's LU and post execution process in a-synchronic mode.
+1. Creating a task execution request.
+2. Initiating a Batch process on the task's LU and implementing post execution processes in asynchronous mode.
 3. Updating the status of the completed processes.
 
-The [first step](/articles/TDM/tdm_gui/26_task_execution.md) can be initiated either by the TDM GUI or the TDM Scheduling process.
+A [Task Execution process](/articles/TDM/tdm_gui/26_task_execution.md) can be can be initiated either from the TDM GUI or via a TDM Scheduling process.  
 
-This article focuses on the 2nd and 3rd steps.
+This article discusses initiating a batch process on a task's LUs and updating the status of the completed process. 
 
-The task can include the following:
+A task can include Entities, Reference tables and post-execution processes. For example, sending a mail to a user after a task has been executed. 
 
-- Entities
-- Reference tables
-- Post Execution processes. For example, sending a mail to the user after the execution ends. 
-
-The following diagram displays the task execution flow:
+The following diagram displays the task execution process:
 
 ![task execution process](images/tdm_task_execution_processes.png)
 
@@ -24,58 +20,56 @@ The following diagram displays the task execution flow:
 
 ## Main TDM Task Execution Process: tdmExecuteTask Job
 
-This job runs every ten seconds and scans [task_execution_list](02_tdm_database.md#task_execution_list) TDM DB table and gets pending task execution requests.
+This job runs every 10 seconds and scans the [task_execution_list](02_tdm_database.md#task_execution_list) in the TDM DB table to get pending task execution requests.
 
-Every task execution gets a unique identifier: **task_execution_id**. A task execution may include several LUs and post execution processes and each one has a separate record in task_execution_list. However, all the related records that belong to a given task execution, have the same **task_execution_id**. 
+Each task execution gets a unique **task_execution_id** identifier. A task execution may include several LUs and post execution processes, each with a separate record in the task_execution_list. All records related to a given task execution have the same **task_execution_id** . 
 
-The task execution order of the related task's components is set as follows:
+The task execution order of the related task's components is as follows:
 
-1. LUs: run the LUs from parent to child.  Process all the related entities on each LU before moving to its child LU.
+1. LUs, run the LUs from parent to child. Process all the related entities on each LU before moving to its child LU. Click for more information about the [execution order of the hierarchical LUs](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
 
-   Click for more information about the [execution order of hierarchical LUs](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
+2. Post Execution Processes, run the post execution processes after the execution of the LUs ends. Post execution processes are executed according to their [execution order](/articles/TDM/tdm_gui/04_tdm_gui_business_entity_window.md#post-execution-processes-tab) as defined in the task's BE. 
 
-2. Post Execution Processes: run the post execution processes after the execution of the LUs ends. The post execution processes are executed by their [execution order](/articles/TDM/tdm_gui/04_tdm_gui_business_entity_window.md#post-execution-processes-tab) as defined in the task's BE. 
-
-The following diagram describe the TDM Task execution process flow:
+The following diagram describes the TDM Task execution process:
 
 ![task execution job](images/tdmExcuteTask_job_flow.png)
 
-The execution is done on asynchrony mode: the **tdmExecuteTask** job starts the execution on each LU or post execution process and a separate job - **checkMigrateAndUpdateTDMDB** - checks and updates the execution status of each process.
+The execution is implemented in an asynchronous  mode, the **tdmExecuteTask** job starts the execution on each LU or post execution process and a separate **checkMigrateAndUpdateTDMDB** job checks and updates the execution status of each process.
 
-Both jobs must work in parallel. 
+Both jobs must be executed in parallel. 
 
 **Example:**
 
-1. Execute a task with **Customer and Billing LUs** and with a post execution process which sends a mail when the task execution ends. Customer is the parent LU of Billing. 
-2. Three records are created in task_execution_list on this task. All of them have the same task_execution_id.
-3. **tdmExecuteTask** job executes the Batch process on **Customer LU**. 
-4. **checkMigrateAndUpdateTDMDB** job updates the status of **Customer LU** when the execution is completed.
-5. **tdmExecuteTask** job starts the execution of **Billing LU**, since its parent LU - Customer - is marked as completed.
-6.  **checkMigrateAndUpdateTDMDB** job updates the status of **Billing LU** when the execution is completed.
-7. **tdmExecuteTask** job can start the execution of the **post execution process** after the execution of all task's LU ends.
+1. Execute a task with **Customer** and **Billing LUs** and with a post execution process that sends a mail when the task execution ends. The Customer is the parent LU of Billing. 
+2. Three records are created in the task_execution_list on this task. All have the same task_execution_id.
+3. The **tdmExecuteTask** job executes the Batch process on **Customer LU**. 
+4. The **checkMigrateAndUpdateTDMDB** job updates the status of **Customer LU** when the execution is completed.
+5. The **tdmExecuteTask** job starts executing **Billing LU** since Customer,its parent LU is marked as completed.
+6. The **checkMigrateAndUpdateTDMDB** job updates the status of **Billing LU** when the execution is completed.
+7. The **tdmExecuteTask** job can start executing the **post execution process** after the execution of all the task's LUs.
 
 
 
 ## checkMigrateAndUpdateTDMDB Job
 
-This job runs every ten seconds and check the execution status of running process. It select records from **task_execution_list** TDM DB table where execution_status is **running**.
+This job runs every 10 seconds and checks the execution status of the running process. It selects records from the **task_execution_list** in the TDM DB table where the execution_status is **running**.
 
 The execution status is checked  as follows:
 
-- Reference tables: check the execution status or all related Reference tables in [task_exe_ref_stats](02_tdm_database.md#task_ref_exe_stats) TDM DB table.
-- Processed entities of each LU: check the batch status based on the **batch_id**, populated in **task_execution_list.fabric_execution_id** column by the tdmExecuteTask job. 
+1. Reference tables, check the execution status or all related Reference tables in [task_exe_ref_stats](02_tdm_database.md#task_ref_exe_stats) in the TDM DB table.
+2. Processed entities of each LU, check the batch status based on the **batch_id** populated in **task_execution_list.fabric_execution_id** column by the tdmExecuteTask job. 
 
-When the process is completed, update the following TDM DB tables:
+When the process is completed, the following TDM DB tables are updated:
 
-- **task_execution_list**: update the execution_status and additional data.
-- [task_execution_entities](02_tdm_database.md#task_execution_entities): populate each entity or Reference table and its status. Set the **id_type** to **ENTITY** or **REFERENCE** according the data type: entity or Reference table.
-- [task_exe_error_detailed](02_tdm_database.md#task_exe_error_detailed): populate the execution errors on Extract tasks. Note that the execution errors of Load tasks are reported to this table by the **PopulateTableErrors** Actor.
+- **task_execution_list**, update the execution_status and additional data.
+- [task_execution_entities](02_tdm_database.md#task_execution_entities), populate each entity or Reference table and its status. Set the **id_type** to **ENTITY** or **REFERENCE** according the entity or Reference table data type.
+- [task_exe_error_detailed](02_tdm_database.md#task_exe_error_detailed), populate the execution errors on Extract tasks. Note that the execution errors of Load tasks are reported to this table by the **PopulateTableErrors** Actor.
 
 ### Handling Completed Task Executions
 
-A task execution is completed when it does not have pending or running executions.  The **checkMigrateAndUpdateTDMDB** Job handles completed task executions as follows:
+A task execution is completed when it does not have pending or running executions. The **checkMigrateAndUpdateTDMDB** job handles completed task executions as follows:
 
-1. Updates the execution summary TDM DB tables.
+1. Updates the execution summary in the TDM DB tables.
 2. Synchronizes the task execution details to Fabric. 
 
 #### Updating Execution Summary TDM Tables
@@ -89,7 +83,7 @@ Updates the following TDM DB tables:
 
 The TDM LU holds the execution details of each task execution. The TDM's **instance ID** is the **task_execution_id** generated by the TDM GUI for each task execution.
 
-A completed task execution is synchronized into the TDM LU.  The execution information and the TDM execution reports are extracted from the TDM LUI data.
+A completed task execution is synchronized into the TDM LU. The execution information and the TDM execution reports are extracted from the TDM LUI data.
 
 
 
