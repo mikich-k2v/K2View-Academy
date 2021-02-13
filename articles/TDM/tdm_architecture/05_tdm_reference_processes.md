@@ -6,12 +6,12 @@ The Cassandra table of each Reference table must be created before running TDM E
 
 ### TDM LU - fnValidateAndRebuildRefTables Job 
 
-This job creates the **schema** of each Reference table in **Cassandra DB** under the **k2view_tdm keyspace**. 
+This job creates the **schema** of each Reference table in the **Cassandra DB** under the **k2view_tdm keyspace**. 
 
 The job scans the trnRefList and checks whether a table exists in Cassandra: 
 
-1.  If the table does not exist in Cassandra, it gets the table structure from the source DB based on theinterface name, schema name and table name in  the trnRefList, and creates the table in the Cassandra DB.
-2. If the table exists in the Cassandra, it compares the structure of the Cassandra table to the structure of the source table. If the structure of the tables does not match, it expires the related TDM versions for this table by populating the version_expiration_date of task_execution_list TDM DB table with the current date and re-creates this table in the Cassandra DB.
+1.  If the table does not exist in Cassandra, it gets the table structure from the source DB based on the interface name, schema name and table name in  the trnRefList, and creates the table in the Cassandra DB.
+2. If the table exists in the Cassandra DB, it compares the structure of the Cassandra table to the structure of the source table. If the structure of the tables does not match, it terminates the related TDM versions for this table by populating the version_expiration_date of task_execution_list TDM DB table with the current date and re-creates this table in the Cassandra DB.
 
 ### TDM LU - tdmCopyRefTablesForTDM Job
 
