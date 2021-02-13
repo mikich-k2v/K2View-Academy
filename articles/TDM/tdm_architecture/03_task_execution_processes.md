@@ -6,9 +6,9 @@ The Task Execution process has the following steps:
 2. Initiating a Batch process on the task's LU and implementing post execution processes in asynchronous mode.
 3. Updating the status of the completed processes.
 
-A [Task Execution process](/articles/TDM/tdm_gui/26_task_execution.md) can be can be initiated either from the TDM GUI or via a TDM Scheduling process.  
+A [Task Execution process](/articles/TDM/tdm_gui/26_task_execution.md) can be initiated either from the TDM GUI or via a TDM Scheduling process.  
 
-This article discusses initiating a batch process on a task's LUs and updating the status of the completed process. 
+This article discusses initiating a Batch process on a task's LUs and updating the status of the completed process. 
 
 A task can include Entities, Reference tables and post-execution processes. For example, sending a mail to a user after a task has been executed. 
 
@@ -22,15 +22,15 @@ The following diagram displays the task execution process:
 
 This job runs every 10 seconds and scans the [task_execution_list](02_tdm_database.md#task_execution_list) in the TDM DB table to get pending task execution requests.
 
-Each task execution gets a unique **task_execution_id** identifier. A task execution may include several LUs and post execution processes, each with a separate record in the task_execution_list. All records related to a given task execution have the same **task_execution_id** . 
+Each task execution gets a unique **task_execution_id** identifier. A task execution may include several LUs and post execution processes, each with a separate record in the task_execution_list. All records related to a given task execution have the same **task_execution_id**. 
 
 The task execution order of the related task's components is as follows:
 
-1. LUs, run the LUs from parent to child. Process all the related entities on each LU before moving to its child LU. Click for more information about the [execution order of the hierarchical LUs](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
+1. LUs, run the LUs from parent to child. Process all related entities on each LU before moving to its child LU. Click for more information about the [execution order of the hierarchical LUs](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
 
 2. Post Execution Processes, run the post execution processes after the execution of the LUs ends. Post execution processes are executed according to their [execution order](/articles/TDM/tdm_gui/04_tdm_gui_business_entity_window.md#post-execution-processes-tab) as defined in the task's BE. 
 
-The following diagram describes the TDM Task execution process:
+The following diagram describes the TDM Task Execution process:
 
 ![task execution job](images/tdmExcuteTask_job_flow.png)
 
@@ -42,9 +42,9 @@ Both jobs must be executed in parallel.
 
 1. Execute a task with **Customer** and **Billing LUs** and with a post execution process that sends a mail when the task execution ends. The Customer is the parent LU of Billing. 
 2. Three records are created in the task_execution_list on this task. All have the same task_execution_id.
-3. The **tdmExecuteTask** job executes the Batch process on **Customer LU**. 
+3. The **tdmExecuteTask** job executes the Batch process on the **Customer LU**. 
 4. The **checkMigrateAndUpdateTDMDB** job updates the status of **Customer LU** when the execution is completed.
-5. The **tdmExecuteTask** job starts executing **Billing LU** since Customer,its parent LU is marked as completed.
+5. The **tdmExecuteTask** job starts executing **Billing LU** since **Customer**, its parent LU, is marked as completed.
 6. The **checkMigrateAndUpdateTDMDB** job updates the status of **Billing LU** when the execution is completed.
 7. The **tdmExecuteTask** job can start executing the **post execution process** after the execution of all the task's LUs.
 
@@ -63,7 +63,7 @@ When the process is completed, the following TDM DB tables are updated:
 
 - **task_execution_list**, update the execution_status and additional data.
 - [task_execution_entities](02_tdm_database.md#task_execution_entities), populate each entity or Reference table and its status. Set the **id_type** to **ENTITY** or **REFERENCE** according the entity or Reference table data type.
-- [task_exe_error_detailed](02_tdm_database.md#task_exe_error_detailed), populate the execution errors on Extract tasks. Note that the execution errors of Load tasks are reported to this table by the **PopulateTableErrors** Actor.
+- [task_exe_error_detailed](02_tdm_database.md#task_exe_error_detailed), populate the execution errors in Extract tasks. Note that the execution errors of Load tasks are reported to this table by the **PopulateTableErrors** Actor.
 
 ### Handling Completed Task Executions
 
