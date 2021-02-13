@@ -1,4 +1,4 @@
-# Task Execution - Overridden Parameters
+# Task Execution - Overriding Parameters
 
 A task execution can override execution parameters, as follows:
 
@@ -11,7 +11,7 @@ A task execution can override execution parameters, as follows:
 
 #### Extract Tasks
 
-The [TDM Execution process](03_task_execution_processes.md#main-tdm-task-execution-process-tdmexecutetask-job) sets the task's environment as the [active environment](/articles/25_environments/05_set_and_list_commands.md) on the execution session.
+The [TDM Execution process](03_task_execution_processes.md#main-tdm-task-execution-process-tdmexecutetask-job) sets the task's environment as the [active environment](/articles/25_environments/05_set_and_list_commands.md) on the executed task.
 
 #### Load Tasks
 
@@ -19,7 +19,7 @@ The [TDM Execution process](03_task_execution_processes.md#main-tdm-task-executi
 
 1. Sets the task's source environment as the active environment. 
 2. Gets the LUI from Fabric.
-3. Sets the the task's target environment as the active environment. 
+3. Sets the task's target environment as the active environment. 
 4. Runs the delete and/or load flows on the target environment.
 
 ### Setting Key-Value Parameters
@@ -32,7 +32,7 @@ A project's Globals can be overridden on a [TDM environment](/articles/TDM/tdm_g
 
 The TDM execution process sets the values on the Globals on a [session level](/articles/08_globals/03_set_globals.md#how-do-i-use-the-set-command).
 
-Note that task level Globals get a higher priority than TDM environment level Globals, i.e. if a Global variable is set on both - the task and the related environment levels - the task's Global value is set.
+Note that task level Globals have a higher priority than TDM environment level Globals, i.e. if a Global variable is set on both - the task and the related environment levels - the task's Global value is set.
 
 [To check if the Global is set on both- source and target environment].
 
