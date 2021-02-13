@@ -1,8 +1,8 @@
-# Building Entity Lists on the Tasks LUs
+# Building Entity Lists on a Task's LUs
 
 The task execution process executes the task's LUs from parent to child. Click for more information about the [execution order of hierarchical LUs](03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
 
-The task execution process build the entity list of each LU: 
+The task execution process builds an entity list for each LU: 
 
 ## Root LUs
 
@@ -51,13 +51,13 @@ The entity list depends on the task's selection method in the [Requested Entitie
     WHERE bid = <selected batch id> and status =  'COMPLETED' ALLOW FILTERING;
     ```
 
-- **Select All Entities** in unchecked, get the entities list from the task.
+- **Select All Entities** is unchecked, get the entities list from the task.
 
 ## Children LUs
 
 The entity list of a child LU must include all IDs related to parent IDs that have been successfully processed by the task execution.
 
-Click for an example [execution of hierarchical BE](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
+Click for an [execution of hierarchical BE](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities) example.
 
 The generated entity list is based on a JOIN of the [task_execution_entities](02_tdm_database.md#task_execution_entities) and the [TDM relationship tables](/articles/TDM/tdm_implementation/06_tdm_implementation_support_hierarchy.md#tdm-relationship-tables):
 
