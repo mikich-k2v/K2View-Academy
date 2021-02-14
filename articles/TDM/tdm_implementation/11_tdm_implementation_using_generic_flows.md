@@ -4,63 +4,58 @@ The TDM library provides a set of generic flows that enable the creation of a TD
 
 Note that after the below steps are executed and the standard implementation is created, all the flows can be edited and tailored per your project's specific requirements.
 
-### How Do I Create TDM Implementation?
+## How Do I Create TDM Implementation?
 
-Copy the generic Broadway flows and templates under each LU as described in the [TDM Generic Broadway Flows](10_tdm_generic_broadway_flows.md) article, then start performing the following steps:
+### Step 1 - Set TDM_DEL_TABLE_PREFIX Global
 
+Before starting the TDM implementation process, define the prefix of TDM tables that are used by the DELETE and LOAD mechanisms. 
 
+To do so, perform a manual one-time update of the **TDM_DEL_TABLE_PREFIX** global on the Shared Object level. This step is optional since TDM_DEL_TABLE_PREFIX has a default value TAR.
 
-#### Step 1 - Set Global TDM_DEL_TABLE_PREFIX
-
-Manual procedure, to set in the Globals on the Shared Object level 
-
-
-
-#### Step 2 - Filter Out TDM and Delete Auxillary  Tables
-
-TDMFilterOutTargetTables.actor
-
-The library includes 5 generic tables to be excluded from the target load.
+![image](images/11_tdm_impl_00.PNG)
 
 
 
-#### Step 3 - createFlowsFromTemplates.flow
+### Step 2 - Define Tables to Filter Out
 
-<!--run one new flow - createFlowsFromTemplates that includes the creation of load and delete flows. This is in Shared, not in TDM_LIBRARY LU -->
+Another preparation step that must be performed prior to starting the TDM implementation process is to define the tables to be filtered out from the TDM load to target process. The library includes a definition of the following auxiliary tables that must be filtered:
 
-* Execute the createLoadTableFlows.flow
+![image](images/11_tdm_impl_actor_1.PNG)
 
-The **createLoadTableFlows.flow** receives the Logical Unit name and retrieves the list of tables from the LU's Schema. Then for each one the tables, it creates a Broadway flow to load the data into this table in the target DB. The name of each of the newly creates flows is **Load[Table Name].flow**, for example LoadCustomer.flow.
+This definition is done using the **TDMFilterOutTargetTables.actor**. If you need more tables to be filtered out from the TDM load, edit this Actor's definition. 
 
-<!--check with Taha - regarding trnFilterOutTable ... -->
+<!--check with Taha - where is the actor? -->
 
-* Execute the createLoadAllTablesFlow.flow
-
-The **createLoadAllTablesFlow.flow** also receives the Logical Unit name and then it creates a new **LoadTables.flow** Broadway flow which purpose is to invoke all the flows created in Step 1 based on the LU's Schema execution order.
-
-* Create the Delete Flows
-
-<!---->
-
-The Delete flows are an important part of the TDM process and currently they need to be implemented manually by creating a set of Broadway flows. 
-
-To implement the delete functionality, do the following:
-
-1. Create a flow per each table in your LU's Schema under your specific LU, using the following pattern:
-
-   * Get the data from the [Fabric TAR_* tables]. For example, TAR_PAYMENT table.
-   * Delete the data from the table in the target DB. For example. PAYMENT table.
-
-   ![image](images/11_tdm_impl_01.PNG)
-
-2. Save the flow as **Delete[Table Name].flow**, for example **DeletePayment.flow**. Then save it as Actor, in order to be able to invoke the flow as [Inner Flow](/articles/19_Broadway/22_broadway_flow_inner_flows.md#save-as-actor).
-
-3. Create an envelop **DeleteAllTables.flow** that invokes all the Delete flows in the order opposite to the population order, considering the target DB's foreign keys. 
+![image](images/11_tdm_impl_actor_2.PNG)
 
 
-#### Step 4 - Create the TDMOrchestrator.flow from Template
 
-The purpose of the **TDMOrchestrator.flow** is to serve as an envelop that encapsulates all Broadway flows of the TDM task. It includes the invocation of all steps such as:
+### Step 3 - Create Load and Delete Flows
+
+<!-- This is executed from the Shared, correct ??? -->
+
+Now you are ready to create your TDM implementation using the library flows. Do it by running the generic **createFlowsFromTemplates.flow** that includes the following inner flows:
+
+* **Create a LOAD flow per table**
+
+Performed by the **createLoadTableFlows.flow** that receives the Logical Unit name, target interface and target schema and retrieves the list of tables from the LU's Schema. Then for each one of the tables, it creates a Broadway flow to load the data into this table in the target DB. The name of each of the newly creates flows is **Load[Table Name].flow**, for example LoadCustomer.flow. The tables defined in Step 2 are filtered out and the flow is not created for them. <!--is the name Load[table] or load_[table]??-->
+
+* **Create the main LOAD flow**
+
+Performed by the **createLoadAllTablesFlow.flow** that receives the Logical Unit name and creates an envelope **LoadTables.flow** Broadway flow. The purpose of this flow is to invoke all the LOAD flows based on the LU's Schema execution order.
+
+* **Create a DELETE flow per table**
+
+Performed by the **createDeleteTableFlows.flow** that receives the Logical Unit name, target interface and target schema and retrieves the list of tables from the LU's Schema. Then for each one of the tables, it creates a Broadway flow to delete the data from this table in the target DB. The name of each of the newly creates flows is **Delete[Table Name].flow**, for example DeleteCustomer.flow. The tables defined in Step 2 are filtered out and the flow is not created for them. <!--is the name Delete[table] or delete_[table]??-->
+
+* **Create the main DELETE flow**
+
+Performed by the **createDeleteAllTablesFlow.flow** that receives the Logical Unit name and creates an envelope **DeleteAllTables.flow** Broadway flow. The purpose of this flow is to invoke all the DELETE flows in the order opposite to the population order, considering the target DB's foreign keys. 
+
+
+### Step 4 - Create the TDMOrchestrator.flow from Template
+
+Once all LOAD and DELETE flows are ready, you need to create an orchestrator. The purpose of the **TDMOrchestrator.flow** is to encapsulate all Broadway flows of the TDM task. It includes the invocation of all steps such as:
 
 * Initiate of the TDM load.
 * Delete the target data, if required by the task's [operation mode](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#operation-mode) or the [Data Flux load task](/articles/TDM/tdm_gui/20_load_task_dataflux_mode.md[).
@@ -72,7 +67,9 @@ The **TDMOrchestrator.flow** should be created from the template as follows:
 
 ![image](images/11_tdm_impl_02.PNG)
 
-#### Step 5 - Create the Sequence Initiation Flows
+<!-- should the template be copied to the LU?? -->
+
+### Step 5 - Create the Sequence Initiation Flows
 
 The sequences are required when populating the target DB, thus the sequences definition and initiation is a mandatory part of the TDM implementation creation. These flows need to be defined in the Shared Objects of your project since they need to be available across various Logical Units. 
 
