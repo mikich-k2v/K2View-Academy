@@ -29,7 +29,7 @@ The **InitiateTDMLoad.flow** is performed as a first step of **TDMOrchestrator.f
 
 The TDM library includes a set of utility flows to handle the reference data.
 
-[Click to learn more about TDM reference](09_tdm_reference_implementation).
+[Click to learn more about TDM reference](09_tdm_reference_implementation.md).
 
 ### Load and Delete Generic Flows
 
