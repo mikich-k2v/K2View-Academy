@@ -35,9 +35,9 @@ The TDM library includes a utility flows to gather the statistics during the TDM
 
 This utility populates the statistics details into the **task_exe_stats_detailed** table, including the data such as the count of the records in the source and the target per each table. 
 
-The stats gathering utility is invoked from each Load flow's **Report Statistics** Stage. 
+The stats gathering utility is invoked from each Load flow's **Get Statistics** Stage to gather the statistics and then **Report Statistics** Stages to load it to TDM DB tables. 
 
-<!--take the image from Taha-->
+![image](images/12_tdm_err_stat_02.PNG)
 
 
 

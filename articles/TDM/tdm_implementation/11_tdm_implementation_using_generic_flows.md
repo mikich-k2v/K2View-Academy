@@ -23,7 +23,7 @@ To do so, open the **TDMFilterOutTargetTables** Actor and edit its table input a
 
 
 
-### Step 3 - Create Load and Delete Flows
+### Step 2 - Create Load and Delete Flows
 
 Now you are ready to create your TDM implementation using the library flows. Do it by running the generic **createFlowsFromTemplates.flow** from the Shared Objects Broadway folder. The flow is comprised of the following inner flows:
 
@@ -49,7 +49,7 @@ The following two updates must be performed manually:
 
   ![images](images/11_tdm_impl_delete1.PNG)
 
-* Populate the **keys** input argument of the **DbDelete** Actor.
+* Populate the **keys** input argument of the **DbDelete** Actor. These should correlate with the table's key.
 
   ![images](images/11_tdm_impl_delete2.PNG)
 
@@ -60,7 +60,7 @@ The following two updates must be performed manually:
 Performed by the **createDeleteAllTablesFlow.flow** that receives the Logical Unit name and creates an envelope **DeleteAllTables.flow** Broadway flow. The purpose of this flow is to invoke all the DELETE flows in the order opposite to the population order, considering the target DB's foreign keys. 
 
 
-### Step 4 - Create the TDMOrchestrator.flow from Template
+### Step 3 - Create the TDMOrchestrator.flow from Template
 
 Once all LOAD and DELETE flows are ready, you need to create an orchestrator. The purpose of the **TDMOrchestrator.flow** is to encapsulate all Broadway flows of the TDM task. It includes the invocation of all steps such as:
 
@@ -74,7 +74,7 @@ The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway 
 
 ![image](images/11_tdm_impl_02.PNG)
 
-### Step 5 - Create the Sequence Initiation Flows
+### Step 4 - Create the Sequence Initiation Flows
 
 The sequences are required when populating the target DB, thus the sequences definition and initiation is a mandatory part of the TDM implementation creation. These flows need to be defined in the Shared Objects of your project since they need to be available across various Logical Units. 
 
@@ -100,7 +100,7 @@ To create a sequence initiation flow, do the following:
 
 2. Save the flow. Then save it as Actor, in order to be able to invoke the flow as [Inner Flow](/articles/19_Broadway/22_broadway_flow_inner_flows.md#save-as-actor).
 
-3. Edit the Load flow of the related table. For example, create a sequence initiation flow for the Payment table. Then edit the **LoadPayment.flow** by adding the sequence flow to the **Transformation** Stage and connecting its input and output arguments to the relevant columns.
+3. Edit the Load flow of the related table. For example, create a sequence initiation flow for the Payment table. Then edit the **load_PAYMENT.flow** by adding the sequence flow to the **Transformation** Stage and connecting its input and output arguments to the relevant columns.
 
    ![image](images/11_tdm_impl_04.PNG)
 
