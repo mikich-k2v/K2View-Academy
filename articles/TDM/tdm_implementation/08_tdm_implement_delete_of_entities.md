@@ -46,7 +46,7 @@ Do the following steps to run the target LU tables on the target environment:
 
 2. Create the population object of the **main target LU tables** based on **Broadway flow**. 
 
-3. Edit the population Broadway flow and set the active environment based on **TDM_TARGET_ENV_NAME** key which is set by InitiateTDMLoad flow based on the task's target environment. Add the following actors before the Query actor:
+3. Edit the population Broadway flow and set the active environment based on **TDM_TARGET_ENV_NAME** key which is set by **InitiateTDMLoad** flow based on the task's target environment. Add the following actors before the Query actor:
 
    - **FabricSetRead** actor to get the value of **TDM_TARGET_ENV_NAME**. Set the **key** to **TDM_TARGET_ENV_NAME** and connect the output to the **FabricSet** actor.
    - **FabricSet** actor to get the output of **FabricSetRead** actor and set the active environment to the target environment based on the input value. Populate the key by **environment** and get the **value** as an input parameter.
@@ -67,4 +67,4 @@ Click for more information how to add [Broadway Load and Delete flows to each LU
 
 
 
-[![Previous](/articles/images/Previous.png)](07_tdm_implementation_parameters_handling.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
+[![Previous](/articles/images/Previous.png)](07_tdm_implementation_parameters_handling.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](09_tdm_reference_implementation.md)
