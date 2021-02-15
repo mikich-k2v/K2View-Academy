@@ -82,7 +82,7 @@ The examples of sequence initiation flow can be found in the TDM demo project.
 
 Each sequence initiation flow must include the steps of getting the task execution ID and the original IID from the Fabric, retrieving the next sequence value and populating the TDM_SEQ_MAPPING table. You need to create a flow per each table in your LU's schema. 
 
-[Click for the Sequence Implementation Guidelines](/actors/08_sequence_implementation_guide.md). 
+[Click for the Sequence Implementation Guidelines](/articles/19_Broadway/actors/08_sequence_implementation_guide.md). 
 
 To create a sequence initiation flow, do the following:
 
