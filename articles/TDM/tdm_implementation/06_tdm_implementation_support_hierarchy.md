@@ -12,17 +12,17 @@ TDM relationship tables hold the links between the parent ID and their children 
 
 ### TDM_LU_TYPE_RELATION_EID
 
-This table holds the link between the parent-child **source IDs**. The relationship is saved per source environment. In addition, each [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) extract task creates separate records in the TDM_LU_TYPE_RELATION_EID table with the version name, date and the time of the extracted version of entities.
+This table holds the link between the **parent-child source IDs**. The relationship is saved per source environment. In addition, each [Data Flux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) extract task creates separate records in the TDM_LU_TYPE_RELATION_EID table with the version name, date and the time of the extracted version of entities.
 
 This table is used for the following:
-- Building the list of entities (entity inclusion) of child LUs when executing extract or load tasks. The TDM execution process gets the children entities of the parent entities that have been successfully processed by the executed task.
+- [Building the list of entities of child LUs](/articles/TDM/tdm_architecture/03a_task_execution_building_entity_list_on_tasks_LUs.md#children-lus) when executing TDM tasks on a [BE with a hierarchical structure](/articles/TDM/tdm_overview/03_business_entity_overview.md#task-execution-of-hierarchical-business-entities). The TDM execution process gets the children entities of the parent entities that have been successfully processed by the executed task.
 - Displays the hierarchy of the processed entities by the executed task.
 
 #### Which Process Populates the TDM_LU_TYPE_RELATION_EID? 
 
 The TDM_LU_TYPE_RELATION_EID is populated by the sync on the parent LUI. The **fnEnrichmentChildLink** enrichment function is attached to the root table of each parent LU and populates the TDM_LU_TYPE_RELATION_EID table if the TDM task copies (inserts) entities to the target environment. This function runs on the parent LU. The SQL queries are populated in the [trnChildLink](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnchildlink) translation to get the child IDs of each parent LUI.
 
-Click for more information about the [TDM task operation modes].
+Click for more information about the [TDM task operation modes](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#operation-mode).
 
 #### TDM_LU_TYPE_RELATION_EID Structure
 
@@ -169,13 +169,13 @@ Customer 1 has orders 10, 12 and 13 in the Production environment. The user crea
 
 ### TDM_LU_TYPE_REL_TAR_EID
 
-This table holds the link between the parent-child **target IDs**. The relationship is maintained per target environment. The table is used to build a list of entities (entity inclusion) of child LUs when executing a delete task. 
+This table holds the link between the parent-child **target IDs**. The relationship is maintained per target environment. The table is used to [build a list of entities of child LUs](/articles/TDM/tdm_architecture/03a_task_execution_building_entity_list_on_tasks_LUs.md#children-lus) when executing a delete or [Data Flux](/articles/TDM/tdm_gui/20_load_task_dataflux_mode.md) load task. 
 
 #### Which Process Populates the TDM_LU_TYPE_REL_TAR_EID? 
 
 The TDM_LU_TYPE_REL_TAR_EID is populated by the sync of the parent LU which populates the related child IDs on each parent entity before deleting the parent entity from the target environment.  The **fnEnrichmentChildLink** enrichment function is attached to the root table of each parent LU and populates the TDM_LU_TYPE_REL_TAR_EID table if the TDM task deletes entities from the target environment. This function runs on the parent LU. The SQL queries are populated in the [trnChildLink](/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnchildlink) translation to get the target child IDs of each parent LUI.
 
-Click for more information about the [TDM task operation modes]. 
+Click for more information about the [TDM task operation modes](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#operation-mode).
 
 #### TDM_LU_TYPE_RELATION_EID Structure
 

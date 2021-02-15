@@ -18,7 +18,7 @@ Each LU in a TDM project has the following structure:
 
   - **Target branch**, LU tables that extract the target keys of an entity. The keys are extracted from the target environment to enable deleting an entity from a target environment if required by the TDM task.
 
-    [Click for more information about deleting entities from the target environment].
+    Click for more information about the [Fabric implementation to support deleting entities from the target environment](08_tdm_implement_delete_of_entities.md).
 
 ### Step 1 - Copy the Objects from the TDM_LIBRARY LU into Each LU
 
@@ -27,14 +27,16 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 ### Step 2 - Add the TDM Root Table and the Generic TDM Tables to the LU Schema
 
 1. Add the **FABRIC_TDM_ROOT** LU table to the LU Schema and set it as a [Root table](/articles/03_logical_units/08_define_root_table_and_instance_ID_LU_schema.md). 
-
 2.  Set the **Instance PK** column to **k2_tdm_eid** and verify that the **fnCheckInsFound** enrichment function under Shared Objects is attached to the LU table. 
     This function validates that the entity (IID) exists in the main source LU tables if the TDM task inserts the entity to the target, and therefore must extract its data from the data source. If the validation fails and entity is not found in the source table, the entity is rejected. 
-3. Add the **LU_PARAMS**, **INSTANCE_TABLE_COUNT**, **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** to the LU Schema and link the tables to the **FABRIC_TDM_ROOT.IID**.
+3. Add the **LU_PARAMS** and  **INSTANCE_TABLE_COUNT**, **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** to the LU Schema and link the tables to the **FABRIC_TDM_ROOT.IID**.
+4. On Parent LUs, add the **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** relationship tables to the LU Schema and link the tables to the **FABRIC_TDM_ROOT.IID**.
+
+
 
 ![tdm lu example](images/tdm_lu_example1.png)
 
-
+​	Click for more information about supporting [hierarchy in the TDM implementation](06_tdm_implementation_support_hierarchy.md).
 
 4. Add the LU_PARAMS LU table to each LU Schema (also when it is not required for defining LU parameters) whereby the LU_PARAM table only holds the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
@@ -54,13 +56,33 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 3. Create the population of the main source LU tables based on the [Root function](/articles/07_table_population/11_1_creating_or_editing_a_root_function.md).  
 
-4. Edit the Root function of the main source LU tables based on the [TBD- add the template when its ready] template. The updated Root function populates the main source LU table under the following conditions:
+4. Edit the Root functions generated for the LU tables based on **fnPop_RootTable** function under the [TDM_LIBRARY LU](04_fabric_tdm_library.md#tdm_library-lu):
+   
+   - Copy the code of **fnPop_RootTable** into the newly generated Root function of the LU table.
+   
+   - Edit the **String sql** variable to include the DB query on the DB table.
+
+   - Edit the **db parameter** of the **fetch** command.
+   
+   - Example:
+   
+     ```java
+     	String sql = "SELECT CUSTOMER_ID, SSN, FIRST_NAME, LAST_NAME FROM main.CUSTOMER where customer_id = ?";
+     	db("CRM_DB").fetch(sql, input).each(row->{
+     		yield(row.cells());
+     	});
+     ```
+   
+5. The updated Root function populates the main source LU table under the following conditions:
+
    - The TDM task loads (inserts) the entities to the target environment.
    - The user does not set the Override Sync Mode to avoid synchronizing the entities from the source.  
-   
-   Click to view the [Override Sync Mode summary table].
 
-5. Link the remaining source LU tables to the main LU tables so that if the main source LU table is not populated the remaining source LU table also remains empty.
+   Click to view the [Override Sync Mode summary table](/articles/TDM/tdm_architecture/04_task_execution_overridden_parameters.md#overriding-the-sync-mode-on-the-task-execution).
+
+6. As a result, if the Sync mode is set to **Do not sync** by the user, or the task is a [delete only](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#delete-entity-without-load) task, the source LU tables are not populated by the LUI sync.
+
+7. Link the remaining source LU tables to the main LU tables so that if the main source LU table is not populated the remaining source LU table also remains empty.
 
 ### Step 4 - Add the Target LU Tables to the LU Schema
 
@@ -68,11 +90,11 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 2. Link the main target LU table to the FABRIC_TDM_ROOT table.
 
-3. Add the **fnDecisionDeleteFromTarget** Decision function to the main target root table. Note that this Decision function is under Shared Objects and is imported from the [TDM Library](04_fabric_tdm_library.md).
+3. Add the **fnDecisionDeleteFromTarget** Decision function to the main target LU tables. Note that this Decision function is under Shared Objects and is imported from the [TDM Library](04_fabric_tdm_library.md).
 
 4. Link the remaining target LU tables to the main target LU table.
 
-Click for more information about [deleting entities] from a target environment using a TDM task.
+Click for more information about [deleting entities](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#operation-mode) from a target environment using a TDM task.
 
 ### LU Debug
 

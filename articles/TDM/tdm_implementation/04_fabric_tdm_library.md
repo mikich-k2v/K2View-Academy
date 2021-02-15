@@ -130,6 +130,12 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 </table>
 
 
+### Broadway Templates
+
+The Fabric TDM library includes a set of built-in generic Broadway flows defined for easy adaptation of the TDM generic implementation per the specific data model. 
+
+Click for more information about the [TDM Generic Broadway Flows](10_tdm_generic_broadway_flows.md).
+
 ## TDM LU
 
 The TDM Logical Unit must be deployed to the Fabric project. It has the following tasks:
@@ -251,9 +257,9 @@ The TDM_LIBRARY LU holds utilities that must be copied to the project's LUs, as 
 <td valign="top" width="400pxl">
 <p>This translation must be added and populated on each <strong>parent LU</strong> and is used to populate TDM relationship tables. The child_lu field must be populated by the name of the child LU.</p>
 <p>Both SQLs populated in child_lu_eid_sql and child_lu_tar_eid_Sql fields must run on the parent LU and get the source and target child IDs for each parent ID.</p>
-<p><strong>Example:</strong><u><br /></u>Customer LU is the parent of the Order LU. <br />trnChildLink of the Customer LU must be populated as follows:</p>
+<p><strong>Example:</strong><u><br /></u>Customer LU is the parent of the Orders LU. <br />trnChildLink of the Customer LU must be populated as follows:</p>
 <ul>
-<li><strong>Child_lu = </strong>Customer</li>
+<li><strong>Child_lu = </strong>Orders</li>
 <li><strong>Child_lu_eid_sql = </strong>select order_id from subscriber</li>
 <li><strong>Child_lu_tar_eid_sql = </strong>select order_id from tar_subscriber</li>    
 </ul>
@@ -284,6 +290,7 @@ The TDM_LIBRARY LU holds utilities that must be copied to the project's LUs, as 
 </tr>
 </tbody>
 </table>
+
 
 
 ### Split Large Files
