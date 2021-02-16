@@ -15,7 +15,7 @@ The TDM implementation contains the following steps:
 The list of Reference tables available for [TDM extract tasks](/articles/TDM/tdm_gui/24_task_reference_tab.md#reference-tab---extract-task) is populated in the [trnRefList](04_fabric_tdm_library.md#trnreflist) translation object. Populate trnRefList by the list of available Reference tables for each LU. The following settings must be populated on each record:
 
 - **lu_name** - populated by the LU name
-- **ID**- populated by a sequence
+- **ID** - populated by a sequence
 - **reference_table_name** - populated by the Reference table
 - **schema_name** - populated by the source DB schema name where the Reference table is stored
 - **interface_name** - the Reference table's source interface
