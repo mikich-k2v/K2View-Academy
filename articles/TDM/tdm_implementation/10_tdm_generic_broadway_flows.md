@@ -23,7 +23,7 @@ TDM task initialization is performed using the **InitiateTDMLoad.flow** utility 
 
 The **InitiateTDMLoad.flow** is performed as a first step of **TDMOrchestrator.flow** task envelop flow.
 
-[Click to learn how to create the TDMOrchestrator.flow](11_tdm_implementation_using_generic_flows.md#step-4---create-the-tdmorchestratorflow-from-template).
+[Click to learn how to create the TDMOrchestrator.flow](11_tdm_implementation_using_generic_flows.md#step-3---create-the-tdmorchestratorflow-from-template).
 
 ### Reference
 
