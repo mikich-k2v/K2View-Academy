@@ -1,10 +1,10 @@
-# TDM Implementation Using Generic Flows
+# Implement Broadway Flows
 
 The TDM library provides a set of generic flows that enable the creation of a TDM standard implementation just in a couple of minutes.  Do the below steps in order to create a TDM standard implementation using the generic flows.
 
 Note that after the below steps are executed and the standard implementation is created, all the flows can be edited and tailored per your project's specific requirements.
 
-## How Do I Create TDM Implementation?
+## How Do I Create TDM Broadway Flows?
 
 ### Step 1 - Define Tables to Filter Out
 
@@ -41,7 +41,7 @@ Performed by the **createDeleteTableFlows.flow** that receives the Logical Unit 
 
 The following two updates must be performed manually:
 
-* Populate the **sql** input argument with the SELECT query that retrieves which data should be deleted.
+* Populate the **sql** input argument of **Get Table Data** Actor with the SELECT query that retrieves they keys of the data to be deleted. For example, in the delete_ADDRESS.flow you can write the following query because CUSTOMER_ID is the key of ADDRESS table.
 
   ~~~sql
   SELECT CUSTOMER_ID FROM TAR_CUSTOMER;
@@ -70,11 +70,11 @@ Once all LOAD and DELETE flows are ready, you need to create an orchestrator. Th
 * Manage the TDM process as one transaction.
 * Perform the [error handling and the statistics gathering](12_tdm_error_handling_and_statistics.md). 
 
-The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway template using a template as follows:
+The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway folder using a template as follows:
 
 ![image](images/11_tdm_impl_02.PNG)
 
-### Step 4 - Create the Sequence Initiation Flows
+### Step 4 - Create the Sequence Creation Flows
 
 The sequences are required when populating the target DB, thus the sequences definition and initiation is a mandatory part of the TDM implementation creation. These flows need to be defined in the Shared Objects of your project since they need to be available across various Logical Units. 
 
@@ -103,6 +103,20 @@ To create a sequence initiation flow, do the following:
 3. Edit the Load flow of the related table. For example, create a sequence initiation flow for the Payment table. Then edit the **load_PAYMENT.flow** by adding the sequence flow to the **Transformation** Stage and connecting its input and output arguments to the relevant columns.
 
    ![image](images/11_tdm_impl_04.PNG)
+
+
+
+### Step 5 - Mask the Sensitive Data
+
+TDM systems often handle sensitive data. To be compliant with Data Privacy laws, Fabric provides an ability to mask sensitive fields like SSN, credit card numbers and email addresses before they are loaded either to the Fabric or into the target DB.
+
+* To mask a sensitive field prior to loading it into Fabric, create a Broadway population flow for the table that includes this field and use one of the **Masking** Actors. 
+
+  ![image](images/11_tdm_impl_05.PNG)
+
+* To mask a sensitive field as part of the load to the target DB, add a Masking Actor to the relevant **load_[Table Name].flow**. 
+
+[Click to learn how to use the Masking Actors](/articles/19_Broadway/actors/07_masking_and_sequence_actors.md#).
 
 
 
