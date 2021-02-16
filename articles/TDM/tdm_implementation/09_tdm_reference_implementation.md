@@ -6,6 +6,8 @@ In addition it enables to save different versions on given Reference table and s
 
 You can later create and execute TDM load tasks to copy the Reference tables from Cassandra DB to your target environment. 
 
+Note that the TDM Reference solution is not based on [Fabric Reference (common) tables](/articles/22_reference(commonDB)_tables/01_fabric_commonDB_overview.md), but the tables are saved in Cassandra. 
+
 The TDM implementation contains the following steps:
 
 ### Step 1 - Populate trnRefList Translation
@@ -25,30 +27,30 @@ See example:
 <table width="900pxl">
 <thead>
 <tr>
-<td colspan="2" width="169">
+<td colspan="2" width="150pxl">
 <p><strong>Input</strong></p>
 </td>
-<td colspan="5" width="436">
+<td colspan="5" width="750pxl">
 <p><strong>Output</strong></p>
 </td>
 </tr>
 <tr>
-<td width="127">
+<td width="100pxl">
 <p><strong>lu_name</strong></p>
 </td>
-<td width="42">
+<td width="50pxl">
 <p><strong>ID</strong></p>
 </td>
-<td width="199">
+<td width="150pxl">
 <p><strong>reference_table_name</strong></p>
 </td>
-<td width="125pxl">
+<td width="150pxl">
 <p><strong>schema_name</strong></p>
 </td>
 <td width="150pxl">
 <p><strong>interface_name</strong></p>
 </td>
-<td width="125pxl">
+<td width="150pxl">
 <p><strong>target_schema_name</strong></p>
 </td> 
 <td width="150pxl">
