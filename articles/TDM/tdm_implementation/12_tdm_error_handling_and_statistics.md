@@ -25,7 +25,7 @@ By default, the **PopulateTableErrorsWithFailed.flow** is invoked. If the record
 
 ![image](images/12_tdm_err_stat_01.PNG)
 
-[Click to learn how to use the ErrorHandling Actor](/actors/06_error_handling_actors.md#how-do-i-use-the-errorhandler-actor).
+[Click to learn how to use the ErrorHandling Actor](/articles/19_Broadway/actors/06_error_handling_actors.md#how-do-i-use-the-errorhandler-actor).
 
 ### How Do I Gather the Statistics in TDM?
 
