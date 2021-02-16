@@ -130,7 +130,7 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 </table>
 
 
-### Broadway Templates
+### Broadway Generic Flows and Templates
 
 The Fabric TDM library includes a set of built-in generic Broadway flows defined for easy adaptation of the TDM generic implementation per the specific data model. 
 
