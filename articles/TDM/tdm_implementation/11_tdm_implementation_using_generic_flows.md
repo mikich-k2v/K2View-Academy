@@ -1,4 +1,4 @@
-# Implement Broadway Flows
+# Broadway Flows Implementation
 
 The TDM library provides a set of generic flows that enable the creation of a TDM standard implementation just in a couple of minutes.  Do the below steps in order to create a TDM standard implementation using the generic flows.
 
@@ -114,7 +114,11 @@ TDM systems often handle sensitive data. To be compliant with Data Privacy laws,
 
   ![image](images/11_tdm_impl_05.PNG)
 
-* To mask a sensitive field as part of the load to the target DB, add a Masking Actor to the relevant **load_[Table Name].flow**. 
+* To mask a sensitive field as part of the load to the target DB, add a Masking Actor to the relevant **load_[Table Name].flow**. However the TDM infrastructure controls enabling or disabling of the masking based on the settings of the global variables. There are three possible scenarios of masking handling:
+
+  * When the TDM task is for the synthetic data creation, the masking is always enabled.
+  * When The TDM task is for Data Flux, the masking is always disabled.
+  * In all other cases the masking behavior depends on the setting of the MASK_FLAG.
 
 [Click to learn how to use the Masking Actors](/articles/19_Broadway/actors/07_masking_and_sequence_actors.md#).
 
