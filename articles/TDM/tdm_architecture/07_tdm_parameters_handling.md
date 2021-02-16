@@ -233,10 +233,10 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   <tr>
   <td>65</td>
   <td width="173">{214.0,16.0,351.0, <br />&nbsp;387.0,333.0,178.0,<br />&nbsp;276.0,197.0,144.0, <br />&nbsp;308.0,30.0,154.0,<br />&nbsp;303.0,417.0,497.0,<br />&nbsp;257.0,61.0,317.0, <br />&nbsp;56.0,177.0,480.0,<br />&nbsp;492.0,202.0,499.0,<br />&nbsp;207.0, 144.0,364.0, <br />&nbsp;304.0,475.0,68.0, <br />&nbsp;70.0,263.0,395.0, <br />&nbsp;216.0,406.0,301.0, <br />&nbsp;378.0,108.0,329.0, <br />&nbsp;52.0,274.0,157.0, <br />&nbsp;93.0,488.0,497.0, <br />&nbsp;11.0,422.0,146.0, <br />&nbsp;240.0,268.0,42.0, <br />&nbsp;440.0,333.0,91.0,<br />&nbsp;377.0,204.0,50.0,<br />&nbsp;467.0,188.0,208.0,<br />&nbsp;411.0,27.0, 168.0,<br />&nbsp;393.0, 490.0,43.0}</td>
-  <td>{2,2,0,0,1}</td>
-  <td>{2,2,1,4,3,4}</td>
+  <td>{2,0,1}</td>
+  <td>{2,1,4,3,4}</td>
   <td>{3789,824,1898}</td>
-  <td>{Gold,Silver,Gold,Gold,Platinum}</strong></td>
+  <td>{Gold,Silver,Platinum}</strong></td>
   <td>{Maisie}</td>
   <td>{Berger}</td>
   <td>{719 764 1363,404 376 5891,(248) 143-7235,342-203-6253,+1 (929) 454-2178}</td>
