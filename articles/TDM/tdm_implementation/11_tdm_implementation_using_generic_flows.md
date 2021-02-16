@@ -66,9 +66,9 @@ Once all LOAD and DELETE flows are ready, you need to create an orchestrator. Th
 
 * Initiate of the TDM load.
 * Delete the target data, if required by the task's [operation mode](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#operation-mode) or the [Data Flux load task](/articles/TDM/tdm_gui/20_load_task_dataflux_mode.md[).
-* Load the new data into the target, if required by the task's [operation mode](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#operation-mode) or the [Data Flux load task](/articles/TDM/tdm_gui/20_load_task_dataflux_mode.md[). 
+* Load the new data into the target, if required by the task's [operation mode](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#operation-mode) or the [Data Flux load task](/articles/TDM/tdm_gui/20_load_task_dataflux_mode.md). 
 * Manage the TDM process as one transaction.
-* Perform the [error handling and the statistics gathering](12_tdm_error_handling_and_statistics). 
+* Perform the [error handling and the statistics gathering](12_tdm_error_handling_and_statistics.md). 
 
 The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway template using a template as follows:
 
