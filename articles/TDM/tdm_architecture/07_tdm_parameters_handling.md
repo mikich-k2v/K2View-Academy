@@ -229,6 +229,8 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
       <td width="173"><strong>CUSTOMER.NO_OF_OPEN_CASES</strong></td>
       <td width="173"><strong>CUSTOMER.NO_OF_SUBSCRIBERS</strong></td>
       <td width="173"><strong>CUSTOMER.OPEN_CASE_DATE</strong></td>
+   <td><strong>ORDERS.ORDER_TYPE</strong></td>
+  <td><strong>ORDERS.ORDER_STATUS</strong></td>
   </tr>
   <tr>
   <td>65</td>
@@ -243,6 +245,8 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   <td>{3}</td>
   <td>{5}</td>
   <td>{2015-09-16 06:14:40,2016-01-13 04:27:36,2017-02-10 20:44:54}</td>
+  <td>{Device, Network, Billing}</td>
+  <td>{New, Closed, In Progress}</td>
   </tr>
   </tbody>
   </table>
