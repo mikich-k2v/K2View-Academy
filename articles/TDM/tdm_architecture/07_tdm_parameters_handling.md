@@ -82,8 +82,7 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   <tr>
   <td width="100pxl"><strong>entity_id</strong></td>
   <td width="100pxl"><strong>source_environment</strong></td>
-  <td width="200pxl"><strong>BILLING.BALANCE_AMOUNT</strong></td>
-      <td width="125pxl"><strong>BILLING.NO_OF_OPEN_INVOICES</strong></td>
+       <td width="125pxl"><strong>BILLING.NO_OF_OPEN_INVOICES</strong></td>
       <td width="125pxl"><strong>BILLING.VIP_STATUS</strong></td>
       <td width="125pxl"><strong>BILLING.TOTAL_PAYMENT_AMOUNT</strong></td>
       <td width="125pxl"><strong>BILLING.SUBSCRIBER_TYPE</strong></td>
@@ -91,14 +90,7 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   <tr>
   <td width="100pxl">169</td>
   <td width="100pxl">SRC</td>
-  <td width="200pxl">{"214.0","16.0","351.0",
-      "387.0","333.0","178.0",
-   	"276.0","197.0","144.0",
-      "308.0","30.0","154.0",
-      "303.0","417.0","497.0",
-      "257.0","61.0","317.0",
-      "56.0","177.0"}</td>
-  <td width="125pxl">{"2"}</td>
+   <td width="125pxl">{"2"}</td>
   <td width="125pxl">{"Gold"}</td>
   <td width="125pxl">{"3789"}</td>
   <td width="125pxl">{"2"}</td>
@@ -106,9 +98,6 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   <tr>
   <td width="100pxl">170</td>
   <td width="100pxl">SRC</td>
-  <td width="200pxl">{"480.0","492.0","202.0",
-      "499.0","207.0",
-      "144.0","364.0"}</td>
   <td width="125pxl">{"2"}</td>
   <td width="125pxl">{"Silver"}</td>
   <td width="125pxl">{"824"}</td>
@@ -117,10 +106,7 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   <tr>
   <td width="100pxl">171</td>
   <td width="100pxl">SRC</td>
-  <td width="200pxl">{"304.0","475.0","68.0",
-      "70.0","263.0","395.0",
-      "216.0","406.0","301.0"}</td>
-  <td width="125pxl">{"0"}</td>
+   <td width="125pxl">{"0"}</td>
   <td width="125pxl">{"Gold"}</td>
   <td width="125pxl">&nbsp;</td>
   <td width="125pxl">{"4"}</td>
@@ -128,13 +114,6 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   <tr>
   <td width="100pxl">172</td>
   <td width="100pxl">SRC</td>
-  <td width="200pxl">{"378.0","108.0","329.0",
-      "52.0","274.0","157.0",
-      "93.0","488.0","497.0",
-      "11.0","422.0","146.0",
-      "240.0","268.0","42.0",
-      "440.0","333.0","91.0",
-      "377.0","204.0"}</td>
   <td width="125pxl">{"0"}</td>
   <td width="125pxl">{"Gold"}</td>
   <td width="125pxl">&nbsp;</td>
@@ -143,10 +122,6 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   <tr>
   <td width="100pxl">173</td>
   <td width="100pxl">SRC</td>
-  <td width="200pxl">{"50.0","467.0","188.0",
-      "208.0","411.0","27.0",
-      "168.0","393.0",
-      "490.0","43.0"}</td>
   <td width="125pxl">{"1"}</td>
   <td width="125pxl">{"Platinum"}</td>
   <td width="125pxl">{"1898"}</td>
@@ -155,7 +130,7 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   </tbody>
   </table>
 
-- Synching Billing IDs #169, #170, #171, #172, and #173 inserts the following records into **ORDER_PARAMS** TDM DB table:
+- Synching Order IDs #279, #280, #281, #282, and #283. #284, and #285 inserts the following records into **ORDER_PARAMS** TDM DB table:
 
   <table width="900pxl">
   <tr>
@@ -218,7 +193,6 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   <tbody>
   <tr>
   <td width="173"><strong>customer_root_id</strong></td>
-  <td width="173"><strong>BILLING.BALANCE_AMOUNT</strong></td>
   <td width="173"><strong>BILLING.NO_OF_OPEN_INVOICES</strong></td>
   <td width="173"><strong>BILLING.SUBSCRIBER_TYPE</strong></td>
       <td width="173"><strong>BILLING.TOTAL_PAYMENT_AMOUNT</strong></td>
@@ -234,7 +208,6 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   </tr>
   <tr>
   <td>65</td>
-  <td width="173">{214.0,16.0,351.0, <br />&nbsp;387.0,333.0,178.0,<br />&nbsp;276.0,197.0,144.0, <br />&nbsp;308.0,30.0,154.0,<br />&nbsp;303.0,417.0,497.0,<br />&nbsp;257.0,61.0,317.0, <br />&nbsp;56.0,177.0,480.0,<br />&nbsp;492.0,202.0,499.0,<br />&nbsp;207.0, 144.0,364.0, <br />&nbsp;304.0,475.0,68.0, <br />&nbsp;70.0,263.0,395.0, <br />&nbsp;216.0,406.0,301.0, <br />&nbsp;378.0,108.0,329.0, <br />&nbsp;52.0,274.0,157.0, <br />&nbsp;93.0,488.0,497.0, <br />&nbsp;11.0,422.0,146.0, <br />&nbsp;240.0,268.0,42.0, <br />&nbsp;440.0,333.0,91.0,<br />&nbsp;377.0,204.0,50.0,<br />&nbsp;467.0,188.0,208.0,<br />&nbsp;411.0,27.0, 168.0,<br />&nbsp;393.0, 490.0,43.0}</td>
   <td>{2,0,1}</td>
   <td>{2,1,4,3,4}</td>
   <td>{3789,824,1898}</td>
