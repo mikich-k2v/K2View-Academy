@@ -108,7 +108,7 @@ Add [scheduling settings](22_task_execution_timing_tab.md) in the TDM task to au
 
 ##### Replace Sequences
 
-[Replace the sequences] of the entities when loading them to the target environment. This permission applies only when the role has **Write** access.
+[Replace the sequences](/articles/TDM/tdm_implementation/11_tdm_implementation_using_generic_flows.md#step-4---create-the-sequence-creation-flows) of the entities when loading them to the target environment. This permission applies only when the role has **Write** access.
 
 ##### Entity Versioning 
 
