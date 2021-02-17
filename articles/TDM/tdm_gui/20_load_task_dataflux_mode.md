@@ -41,7 +41,7 @@ When checking the **Set Global Variables** setting, a new [Task Globals tab](23_
 
 ### Reference 
 
-[Reference handling]. Select a value from the dropdown list:
+[Reference handling](24_task_reference_tab.md). Select a value from the dropdown list:
 
 - **None**: default value. Do not include Reference tables in the task.
 - **Reference Only**: create a task to extract Reference tables only into Fabric. Do not include entities in the task.
@@ -52,7 +52,7 @@ When setting the **Reference** setting to **Reference Only** or **Both - referen
 ### Select All Entities
 
 - When checked, all entities of the selected version are reloaded to the target environment.
-- Only Admin and Environment owner users can check the **Select All Entities** settings. Other users can only define a list of entities in the [Requested Entities] tab.
+- Only Admin and Environment owner users can check the **Select All Entities** settings. Other users can only define a list of entities in the [Requested Entities](21_load_task_requested_entities_dataflux_mode.md) tab.
 - This setting is disabled for **Reference Only** tasks.
 
 ### Environment Names
