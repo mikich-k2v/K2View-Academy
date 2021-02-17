@@ -91,5 +91,5 @@ Select all, partial, or one [post execution process](04_tdm_gui_business_entity_
 
 
 
- [![Previous](/articles/images/Previous.png)](19_load_task_request_parameters_regular_mode)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](21_load_task_requested_entities_dataflux_mode.md)
+ [![Previous](/articles/images/Previous.png)](19_load_task_request_parameters_regular_mode.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](21_load_task_requested_entities_dataflux_mode.md)
 
