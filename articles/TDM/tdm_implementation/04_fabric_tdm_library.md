@@ -1,6 +1,6 @@
 # Fabric TDM Library
 
-The TDM Library contains all the utilities required to implement a TDM project and to run TDM execution processes.  It holds the following:
+The TDM Library has all the utilities required to implement a TDM project and to run TDM execution processes.  It holds the following:
 
 - [Shared Objects](#tdm-library---shared-objects).
 - [TDM LU](#tdm-lu).
@@ -25,7 +25,7 @@ Import and deploy the following [interfaces](/articles/05_DB_interfaces/01_inter
 
 ### Shared Globals
 
-Import the list of shared [global variables](/articles/08_globals/01_globals_overview.md) required to execute TDM on your project.
+Import the list of shared [global variables](/articles/08_globals/01_globals_overview.md) required to execute TDM in your project.
 
 ### Shared Functions
 
@@ -151,7 +151,7 @@ The TDM_LIBRARY LU holds utilities that must be copied to the project's LUs, as 
 
 ### Globals
 
-- LU level [Globals](/articles/08_globals/01_globals_overview.md). Populate the **ROOT_TABLE_NAME**  Global using the main source table or tables. Several source tables can be populated when separated by a comma. For example: CUSTOMER, ACCOUNT.
+- LU level [Globals](/articles/08_globals/01_globals_overview.md), populate the **ROOT_TABLE_NAME**  Global using the main source table or tables. Several source tables can be populated when separated by a comma. For example: CUSTOMER, ACCOUNT.
 - The **fnCheckInsFound** [enrichment function](/articles/10_enrichment_function/01_enrichment_function_overview.md) (attached to the root LU table) validates the source data and verifies that the entity (IID) exists in the main source tables. If the entity is not found in the main source tables, this function throws an Exception and the entity is rejected.
 
 ### LU Tables
@@ -161,8 +161,8 @@ The TDM_LIBRARY LU holds utilities that must be copied to the project's LUs, as 
   - K2_TDM_EID, populated by the LU instance ID. 
   - IID, populated by the entity ID without the concatenation of the source environment, version name and version datetime.
   - SOURCE_ENV, populated by the source environment name of the TDM task.
-  - TASK_NAME, version name. Populated by a [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) task by the task name.
-  - TIMESTAMP, version datetime. Populated by a [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) task. 
+  - TASK_NAME, version name, populated by a [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) task by the task name.
+  - TIMESTAMP, version datetime, populated by a [DataFlux](/articles/TDM/tdm_overview/02_tdm_glossary.md#data-flux) task. 
 
   **Example:** 
 
