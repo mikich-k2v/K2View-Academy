@@ -1,10 +1,10 @@
 # TDM - Reference Implementation
 
-TDM enables users to extract Reference tables from several source environments and to save them into the Cassandra DB. It also enables saving different versions of a given Reference table and source environment into the Cassandra DB and then later creating and executing TDM load tasks to copy the Reference tables from the Cassandra DB into the target environment. 
+TDM enables users to extract Reference tables from several source environments and to save them into the Cassandra DB. It also enables saving different versions of a Reference table and source environment into the Cassandra DB and creating and executing TDM load tasks to copy them from the Cassandra DB into the target environment. 
 
 Note that the TDM Reference solution is not based on common [Fabric Reference tables](/articles/22_reference(commonDB)_tables/01_fabric_commonDB_overview.md) and that the tables are saved in Cassandra. 
-A
-The TDM implementation has the following steps:
+
+A TDM implementation has the following steps:
 
 ### Step 1 - Populate trnRefList Translation
 
