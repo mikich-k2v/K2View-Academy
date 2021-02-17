@@ -8,17 +8,17 @@ Each LU in a TDM project must have additional components to support TDM function
 
 Each LU in a TDM project has the following structure:
 
-- Dummy root table: FABRIC_TDM_ROOT. 
+- Dummy root table, FABRIC_TDM_ROOT. 
 
 - Generic TDM LU tables that are linked to the root table. 
 
-- Two main branches that are linked to the root table:
+- Two main branches that are linked to the root table -
 
   - **Source branch**, LU tables that extract an entity's source data. Source LU tables are populated when a TDM task needs to load (insert) entities to a target environment and therefore must extract the source data of these entities.
 
   - **Target branch**, LU tables that extract the target keys of an entity. The keys are extracted from the target environment to enable deleting an entity from a target environment if required by the TDM task.
 
-    Click for more information about the [Fabric implementation to support deleting entities from the target environment](08_tdm_implement_delete_of_entities.md).
+    Click for more information about [Fabric implementation and deleting entities from the target environment](08_tdm_implement_delete_of_entities.md).
 
 ### Step 1 - Copy the Objects from the TDM_LIBRARY LU into Each LU
 
@@ -30,7 +30,7 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 2.  Set the **Instance PK** column to **k2_tdm_eid** and verify that the **fnCheckInsFound** enrichment function under Shared Objects is attached to the LU table. 
     This function validates that the entity (IID) exists in the main source LU tables if the TDM task inserts the entity to the target, and therefore must extract its data from the data source. If the validation fails and entity is not found in the source table, the entity is rejected. 
 3. Add the **LU_PARAMS** and  **INSTANCE_TABLE_COUNT**, **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** to the LU Schema and link the tables to the **FABRIC_TDM_ROOT.IID**.
-4. On Parent LUs, add the **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** relationship tables to the LU Schema and link the tables to the **FABRIC_TDM_ROOT.IID**.
+4. In Parent LUs, add the **TDM_LU_TYPE_RELATION_EID** and **TDM_LU_TYPE_REL_TAR_EID** relationship tables to the LU Schema and link the tables to the **FABRIC_TDM_ROOT.IID**.
 
 
 
@@ -56,9 +56,9 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
 
 3. Create the population of the main source LU tables based on the [Root function](/articles/07_table_population/11_1_creating_or_editing_a_root_function.md).  
 
-4. Edit the Root functions generated for the LU tables based on **fnPop_RootTable** function under the [TDM_LIBRARY LU](04_fabric_tdm_library.md#tdm_library-lu):
+4. Edit the Root functions generated for the LU tables based on the **fnPop_RootTable** function under the [TDM_LIBRARY LU](04_fabric_tdm_library.md#tdm_library-lu):
    
-   - Copy the code of **fnPop_RootTable** into the newly generated Root function of the LU table.
+   - Copy the code of the **fnPop_RootTable** into the newly generated Root function of the LU table.
    
    - Edit the **String sql** variable to include the DB query on the DB table.
 
@@ -100,7 +100,7 @@ Click for more information about [deleting entities](/articles/TDM/tdm_gui/19_lo
 
 The LUI must include the source environment which must be set as the [active environment](/articles/25_environments/01_environments_overview.md) in Fabric. When running a [Data Viewer](/articles/13_LUDB_viewer_and_studio_debug_capabilities/01_data_viewer.md) on the LU to debug its implementation, do either:
 
-- Populate the source environment of the LUI using `_dev_`. For example, **_dev_1**.
+- Populate the source environment of the LUI using `_dev_`.  For example, **_dev_1**.
 - Create and deploy the environment to the Fabric Debug server, set the source environment as an active environment in the Fabric Debug server and populate the deployed environment name in the LUI. For example, **UAT_1**.  
 
 [![Previous](/articles/images/Previous.png)](04_fabric_tdm_library.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](06_tdm_implementation_support_hierarchy.md)
