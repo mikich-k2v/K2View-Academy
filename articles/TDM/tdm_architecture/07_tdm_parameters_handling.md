@@ -55,7 +55,6 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   </table>
 
   
-
 - Synching Collection ID #1 inserts the following records into **COLLECTION_PARAMS** TDM DB table:
 
   <table width="900pxl">
@@ -74,7 +73,6 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   </table>
 
   
-
 - Synching Billing IDs #169, #170, #171, #172, and #173 inserts the following records into **BILLING_PARAMS** TDM DB table:
 
   <table width="950pxl">
@@ -189,42 +187,48 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
 
 - **wsGetNumberOfMatchingEntities** Fabric Web-Service generates a new **MATERIALIZED VIEW** in the TDM DB named **lu_relations_Customer_SRC**:
 
-  <table width="2076">
+  <table width="2997">
   <tbody>
   <tr>
-  <td width="173"><strong>customer_root_id</strong></td>
-  <td width="173"><strong>BILLING.NO_OF_OPEN_INVOICES</strong></td>
-  <td width="173"><strong>BILLING.SUBSCRIBER_TYPE</strong></td>
-      <td width="173"><strong>BILLING.TOTAL_PAYMENT_AMOUNT</strong></td>
-      <td width="173"><strong>BILLING.VIP_STATUS</strong></td>
-      <td width="173"><strong>CUSTOMER.FIRST_NAME</strong></td>
-      <td width="173"><strong>CUSTOMER.LAST_NAME</strong></td>
-      <td width="173"><strong>CUSTOMER.LINE_NUMBER</strong></td>
-      <td width="173"><strong>CUSTOMER.NO_OF_OPEN_CASES</strong></td>
-      <td width="173"><strong>CUSTOMER.NO_OF_SUBSCRIBERS</strong></td>
-      <td width="173"><strong>CUSTOMER.OPEN_CASE_DATE</strong></td>
-   <td><strong>ORDERS.ORDER_TYPE</strong></td>
-  <td><strong>ORDERS.ORDER_STATUS</strong></td>
+  <td width="111"><strong>customer_root_id</strong></td>
+  <td width="212"><strong>BILLING.NO_OF_OPEN_INVOICES</strong></td>
+  <td width="191"><strong>BILLING.SUBSCRIBER_TYPE</strong></td>
+  <td width="191"><strong>BILLING.TOTAL_BALANCE_AMOUNT</strong></td>
+  <td width="191"><strong>BILLING.TOTAL_PAYMENT_AMOUNT</strong></td>
+  <td width="191"><strong>BILLING.VIP_STATUS</strong></td>
+  <td width="191"><strong>CUSTOMER.FIRST_NAME</strong></td>
+  <td width="191"><strong>CUSTOMER.LAST_NAME</strong></td>
+  <td width="191"><strong>CUSTOMER.LINE_NUMBER</strong></td>
+  <td width="191"><strong>CUSTOMER.NO_OF_OPEN_CASES</strong></td>
+  <td width="191"><strong>CUSTOMER.NO_OF_SUBSCRIBERS</strong></td>
+  <td width="191"><strong>CUSTOMER.OPEN_CASE_DATE</strong></td>
+  <td width="191"><strong>ORDERS.ORDER_STATUS</strong></td>
+  <td width="191"><strong>ORDERS.ORDER_TYPE</strong></td>
+  <td width="191"><strong>collection_root_id</strong></td>
+  <td width="191"><strong>COLLECTION.COLLECTION_STATUS</strong></td>
   </tr>
   <tr>
   <td>65</td>
-  <td>{2,0,1}</td>
-  <td>{2,1,4,3,4}</td>
-  <td>{3789,824,1898}</td>
-  <td>{Gold,Silver,Platinum}</strong></td>
+  <td>{0,1,1,1,1,2,2,2,2,0,0,1}</td>
+  <td>{1,2,2,4,4,1,2,2,1,4,3,4}</td>
+  <td>{1644.0,179.0,3215.0,2720.0,3138.0,2178.0,4350.0,4673.0,2388.0,2498.0,4950.0,2445.0}</td>
+  <td>{1154,1343,541,3989,1221,1961,3789,824,1898}</td>
+  <td>{Gold,Silver,Platinum,Bronze}</td>
   <td>{Maisie}</td>
   <td>{Berger}</td>
   <td>{719 764 1363,404 376 5891,(248) 143-7235,342-203-6253,+1 (929) 454-2178}</td>
   <td>{3}</td>
   <td>{5}</td>
   <td>{2015-09-16 06:14:40,2016-01-13 04:27:36,2017-02-10 20:44:54}</td>
-  <td>{Device, Network, Billing}</td>
-  <td>{New, Closed, In Progress}</td>
+  <td>{Closed,Closed,Closed,Closed,New,New,In Progress}</td>
+<td>{Network,Billing,Billing,Network,Billing,Billing,Device}</td>
+  <td>65</td>
+<td>{5,4,3,1,2}</td>
   </tr>
-  </tbody>
+</tbody>
   </table>
 
-   
+  
 
   
 
@@ -233,9 +237,9 @@ This VIEW is refreshed by the [checkMigrateAndUpdateTDMDB](03_task_execution_pro
   
 
     
-
   
-
   
-
+  
+  
+  
   
