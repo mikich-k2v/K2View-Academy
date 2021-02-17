@@ -1,28 +1,24 @@
 # TDM - Reference Implementation
 
-TDM enables the user to extract Reference tables from several source environments and save them into Cassandra DB. 
+TDM enables users to extract Reference tables from several source environments and to save them into the Cassandra DB. It also enables saving different versions of a given Reference table and source environment into the Cassandra DB and then later creating and executing TDM load tasks to copy the Reference tables from the Cassandra DB into the target environment. 
 
-In addition it enables to save different versions on given Reference table and source environment into Cassandra DB.
-
-You can later create and execute TDM load tasks to copy the Reference tables from Cassandra DB to your target environment. 
-
-Note that the TDM Reference solution is not based on [Fabric Reference (common) tables](/articles/22_reference(commonDB)_tables/01_fabric_commonDB_overview.md), but the tables are saved in Cassandra. 
-
-The TDM implementation contains the following steps:
+Note that the TDM Reference solution is not based on common [Fabric Reference tables](/articles/22_reference(commonDB)_tables/01_fabric_commonDB_overview.md) and that the tables are saved in Cassandra. 
+A
+The TDM implementation has the following steps:
 
 ### Step 1 - Populate trnRefList Translation
 
-The list of Reference tables available for [TDM extract tasks](/articles/TDM/tdm_gui/24_task_reference_tab.md#reference-tab---extract-task) is populated in the [trnRefList](04_fabric_tdm_library.md#trnreflist) translation object. Populate trnRefList by the list of available Reference tables for each LU. The following settings must be populated on each record:
+The list of Reference tables available for [TDM extract tasks](/articles/TDM/tdm_gui/24_task_reference_tab.md#reference-tab---extract-task) is populated in the [trnRefList](04_fabric_tdm_library.md#trnreflist) translation object. Populate trnRefList using the list of available Reference tables for each LU. The following settings must be populated for each record:
 
-- **lu_name** - populated by the LU name
-- **ID** - populated by a sequence
-- **reference_table_name** - populated by the Reference table
-- **schema_name** - populated by the source DB schema name where the Reference table is stored
-- **interface_name** - the Reference table's source interface
-- **target_schema_name** - populated by the target DB schema name where the Reference table is stored
-- **target_interface_name** - the Reference table's target interface name. 
+- **lu_name**, populated by the LU name.
+- **ID**, populated by a sequence.
+- **reference_table_name**, populated by the Reference table.
+- **schema_name**, populated by the source DB schema name that stores the Reference table.
+- **interface_name**, the Reference table's source interface.
+- **target_schema_name**, populated by the target DB Schema's name that stores the Reference table.
+- **target_interface_name**, name of the Reference table's target interface. 
 
-See example:
+Example:
 
 <table width="900pxl">
 <thead>
@@ -101,21 +97,21 @@ See example:
 </tbody>
 </table> 
 
-### Step 2 - Creating Cassandra Tables for the Reference Tables
+### Step 2 - Creating Cassandra Tables for Reference Tables
 
-Run [fnValidateAndRebuildRefTables](/articles/TDM/tdm_architecture/05_tdm_reference_processes.md#tdm-lu---fnvalidateandrebuildreftables-job)  job to create an empty Cassandra table for each Reference table in **trnRefList**. The tables are created in  **k2view_tdm** keyspace.
+Run the [fnValidateAndRebuildRefTables](/articles/TDM/tdm_architecture/05_tdm_reference_processes.md#tdm-lu---fnvalidateandrebuildreftables-job) job to create an empty Cassandra table for each Reference table in **trnRefList**. The tables are created in the **k2view_tdm** keyspace.
 
 ### Step 3 - Create and Execute TDM Extract Tasks
 
 TDM extract tasks store the selected Reference data in the related Cassandra DB table.
 
-Click for more information how the [TDM stores the Reference tables in Cassandra DB](/articles/TDM/tdm_architecture/05_tdm_reference_processes.md#reference-cassandra-table).
+Click for more information on how the [TDM stores Reference tables in the Cassandra DB](/articles/TDM/tdm_architecture/05_tdm_reference_processes.md#reference-cassandra-table).
 
 ### Step 4 - Create and Execute TDM Load Tasks
 
-The TDM GUI enables creating [TDM load tasks](/articles/TDM/tdm_gui/24_task_reference_tab.md#reference-tab---load-task) to copy Reference tables that have been successfully extracted to Cassandra DB. The execution of the load task runs the **TDMReferenceLoader** Broadway flow to copy the task's reference tables to the target environment.
+The TDM GUI enables creating [TDM load tasks](/articles/TDM/tdm_gui/24_task_reference_tab.md#reference-tab---load-task) to copy Reference tables that have been successfully extracted into the Cassandra DB. The execution of a load task runs the **TDMReferenceLoader** Broadway flow to copy the task's reference tables to the target environment.
 
-Click for more information about the [TDM generic Broadway flows](10_tdm_generic_broadway_flows).
+Click for more information about generic [TDM Broadway flows](10_tdm_generic_broadway_flows).
 
 [![Previous](/articles/images/Previous.png)](08_tdm_implement_delete_of_entities.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](10_tdm_generic_broadway_flows.md)
 
