@@ -78,11 +78,11 @@ Import the [TDM_LIBRARY LU](/articles/TDM/tdm_implementation/04_fabric_tdm_libra
    - The TDM task loads (inserts) the entities to the target environment.
    - The user does not set the Override Sync Mode to avoid synchronizing the entities from the source.  
 
-   Click to view the [Override Sync Mode summary table](/articles/TDM/tdm_architecture/04_task_execution_overridden_parameters.md#overriding-the-sync-mode-on-the-task-execution).
+   Click to view the [Override Sync Mode Summary Table](/articles/TDM/tdm_architecture/04_task_execution_overridden_parameters.md#overriding-the-sync-mode-on-the-task-execution).
 
 6. As a result, if the Sync mode is set to **Do not sync** by the user, or the task is a [delete only](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#delete-entity-without-load) task, the source LU tables are not populated by the LUI sync.
 
-7. Link the remaining source LU tables to the main LU tables so that if the main source LU table is not populated the remaining source LU table also remains empty.
+7. Link the remaining source LU tables to the main LU tables so that if the main source LU table is not populated. The remaining source LU table also remains empty.
 
 ### Step 4 - Add the Target LU Tables to the LU Schema
 
