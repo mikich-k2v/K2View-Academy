@@ -14,7 +14,7 @@ Note that the TDM Library must be imported to the Fabric project created for TDM
 
 Import and deploy the Web Services to Fabric and then define the **tdm-WS** token in Fabric for the WS.
 
-Note that it is recommended to add the project's Web Services to a separate category to simplify upgrading the TDM version since the TDM category contains the product's Web Services.
+Note that since the TDM category contains the product's Web Services, it is recommended to add the project's Web Services to a separate category to simplify upgrading the TDM version.
 
 ### Generic TDM Interfaces
 
@@ -31,7 +31,7 @@ Import the list of shared [global variables](/articles/08_globals/01_globals_ove
 
 TDM shared functions are saved in the **TDM** [Logic file](/articles/04_fabric_studio/09_logic_files_and_categories.md). 
 
-Import the TDM shared functions to your project. Note that it is recommended to add the project's shared functions to a separate category (Logic file) to simplify upgrading the TDM version since the TDM category contains the product's functions.
+Import the TDM shared functions to your project. Note that since the TDM category contains the product's functions, it is recommended to add the project's shared functions to a separate category (Logic file) to simplify upgrading the TDM version.
 
 ### Shared Translations
 
@@ -112,7 +112,7 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 <p>Each process is implemented as a Broadway flow.</p>
 </td>
 <td valign="top" width="400pxl">
-<p>Populate the list of Broadway flows and the LU of the Broadway flow. The LU can be empty if the post processes are defined under the Shared Objects. In this case the TDM task execution process will set the LU name parameter to TDM when running the BATCH commands to execute the post execution processes. </p>
+<p>Populate the list of Broadway flows and the LU of the Broadway flow. The LU can be empty if the post processes are defined under Shared Objects whereby the TDM task execution process sets the LU Name to TDM when running Batch commands to execute post execution processes. </p>
 </td>
 </tr>
 <tr>
@@ -120,10 +120,10 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 <p><h4>trnTDMCleanUp</p>
 </td>
 <td valign="top" width="300pxl">
-<p>Define the list of the TDM DB tables that need to be cleaned by the <a href= "articles/TDM/tdm_architecture/06_tdmdb_cleanup_process.md">TDM clean-up process</a>. The translation defines the Delete statement on each table and a clean-up indicator to indicate if the table needs to be cleaned by the TDM clean-up process.</p>
+<p>Define the list of the TDM DB tables to be cleaned by the <a href= "articles/TDM/tdm_architecture/06_tdmdb_cleanup_process.md">TDM clean-up process</a>. The translation defines the Delete statement on each table and a clean-up indicator indicating whether the table should be cleaned by the TDM clean-up process.</p>
 </td>
 <td valign="top" width="400pxl">
-  <p>Clear the <strong>cleanup_ind</strong> to remove a table from the clean-up process. It is also possible to add TDM tables or edit the Delete statements on the tables if needed. </p>
+  <p>Clear the <strong>cleanup_ind</strong> to remove a table from the clean-up process. TDM tables can be added and Delete statements can be edited. </p>
 </td>
 </tr>
 </tbody>
@@ -132,9 +132,9 @@ Import the TDM shared functions to your project. Note that it is recommended to 
 
 ### Broadway Generic Flows and Templates
 
-The Fabric TDM library includes a set of built-in generic Broadway flows defined for easy adaptation of the TDM generic implementation per the specific data model. 
+The Fabric TDM library includes a set of built-in generic Broadway flows defined for easy adaptation of a generic TDM implementation for a specific data model. 
 
-Click for more information about the [TDM Generic Broadway Flows](10_tdm_generic_broadway_flows.md).
+Click for more information about [Generic TDM Broadway Flows](10_tdm_generic_broadway_flows.md).
 
 ## TDM LU
 
@@ -221,7 +221,7 @@ The TDM_LIBRARY LU holds utilities that must be copied to the project's LUs, as 
   </tr>
   </table>
 
-- **LU_PARAMS**, parameters table.  Must be added to each LU schema even when it is not required for defining parameters on the LU whereby the LU_PARAM table only holds the ENTITY_ID and SOURCE_ENVIRONMENT fields.
+- **LU_PARAMS**, parameters table.  Must be added to each LU schema even when it is not required for defining parameters on the LU, whereby the LU_PARAM table only holds the ENTITY_ID and SOURCE_ENVIRONMENT fields.
 
   Click for more information about [TDM parameters handling](/articles/TDM/tdm_implementation/07_tdm_implementation_parameters_handling.md).
 
