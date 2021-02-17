@@ -16,6 +16,37 @@ The execution of the related task components runs in the following order:
 
 2. Post Execution Processes: run the post execution processes after the execution of the LUs ends. The post execution processes are executed according to their [execution order](04_tdm_gui_business_entity_window.md#post-execution-processes-tab) as defined in the task's BE. 
 
+## Monitoring Task Execution
+
+You can view the execution status of the running task via the TDM GUI. The TDM GUi displays the list of the LUs and post execution processes related to the task and their execution status.
+
+**Example:**
+
+- Executing and extract task with the following LUs:
+  - Customer - this is the root LU
+  - Billing and Orders - these are the children LUs of Customer LU.
+
+- The Customer LU is executed before the Billing and Orders LUs:
+
+  ![monitor execution](images/extract_task_execution_monitor.png)
+
+- The Billing and Orders LUs are executed after the execution of the Customer LU is completed:
+
+  ![monitor execution](images/extract_task_execution_monitor_2.png)
+
+- The **Logical Units Execution Summary** window displays the summary execution details of each LU or post execution process:
+
+  ![LU execution summary](images/extract_task_execution_lu_summary.png)
+
+## Stop and Resume a Task Execution
+
+You can stop the task execution if the processed entities fail due to an error, fix the error, and then resume the task execution. The resumed execution starts from the last point when the task has stopped:
+
+- Click the ![stop](images/stop_execution_icon.png)in the right corner of the **Running Execution** window to stop the task execution.
+- Click the ![resume](images/resume_execution_icon.png) next to one of the records in the **Logical Unit Summary**  with **stopped** execution status to resume the execution of **all** the stopped task's LUs and post execution processes. 
+
+
+
 ## Holding Task Execution
 
 Occasionally you may need to temporarily set a task to on-hold. For example, if the testing environment is temporarily down, to hold all task executions on an environment until the testing environment is up again and to then reactivate the tasks for this environment.
