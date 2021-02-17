@@ -8,7 +8,7 @@ An environment's roles are displayed in the **Roles tab** in the Environment win
 
 - To create a new role, click **New Role**, populate the role's settings and then click **Add**.
 - To open a role, click the **Name** of the role and then click **Save Changes**. 
-- To delete a role, click the [![be_Example](https://github.com/k2view-academy/K2View-Academy/raw/Academy_6.4_TDM/articles/TDM/tdm_gui/images/delete_icon.png)](https://github.com/k2view-academy/K2View-Academy/blob/Academy_6.4_TDM/articles/TDM/tdm_gui/images/delete_icon.png) icon in the right corner of the Role window.
+- To delete a role, click the [![be_Example](/articles/TDM/tdm_gui/images/delete_icon.png) icon in the right corner of the Role window.
 
 ## Role Window 
 
@@ -49,7 +49,7 @@ When an Environment Type is Both it can have both read and write access to both 
     - Select the environment as a source environment and create a task on up to 1000 entities.
     - Select the environment as a target environment and create a task on up to 10 entities.
 
-  Click for more information about [setting the number of entities on a TDM task]. 
+  Click for more information about [setting the number of entities on a TDM load task](17_load_task_regular_mode.md#number-of-entities). 
 
   ### Testers
 
@@ -84,23 +84,23 @@ TDM tests the connections of the source and target environments at the beginning
 
 ##### **Delete Entity from Target** 
 
-[Delete an entity] from the target's testing environment using a [TDM Load task]. This permission applies only when the role has **Write** access.
+[Delete an entity](19_load_task_request_parameters_regular_mode.md#operation-mode) from the target's testing environment using a TDM Load task. This permission applies only when the role has **Write** access.
 
 ##### Create Synthetic Data 
 
-[Create replicas] of a real entity in a testing environment using a [TDM Load task]. This permission applies only when the role has **Write** access.  
+[Create replicas](18_load_task_requested_entities_regular_mode.md#create-synthetic-entities) of a real entity in a testing environment using a TDM Load task. This permission applies only when the role has **Write** access.  
 
 ##### Random Entity Selection
 
-[Randomly select entities] using a [TDM Load task]. This permission applies only when the role has **Write** access.
+[Randomly select entities](18_load_task_requested_entities_regular_mode.md#random-selection)( using a [TDM Load task]. This permission applies only when the role has **Write** access.
 
 ##### Request up to Date Entities
 
-Ask to [sync the entities] from the source when executing the task. 
+Ask to sync the entities from the source when executing [extract](16_extract_task.md#request-parameters) or [load](19_load_task_request_parameters_regular_mode.md#override-sync-mode) tasks. 
 
 ##### Refresh Reference Data
 
-Create TDM tasks to extract or load [Reference tables].
+Create TDM tasks to extract or load [Reference tables](24_task_reference_tab.md).
 
 #####  Task scheduling 
 
