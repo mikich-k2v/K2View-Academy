@@ -12,8 +12,6 @@ TDM environments must be defined in the following TDM components:
 
 Fabric environments are used to run TDM processes on various environments by switching between them according to the task's environments.  The connection details of each environment's data sources are taken from the Fabric environment's data.
 
-The TDM implementation must include the creation and deployment of all the TDM environments with their connection details to enable the execution of the TDM tasks. 
-
 **Example:**
 
 Running a TDM task to copy selected entities from the **Production** environment to the **UAT** environment. Fabric must extract the source data from Production and load it to UAT. Each environment can have different connection details for its data sources. 
@@ -27,4 +25,11 @@ To save a separate LUI for each source environment, the TDM concatenates the sou
 
 Click for more information about the [TDM LUI format](01_tdm_set_instance_per_env_and_version.md). 
 
+
+
+The TDM implementation must include the **creation and deployment** of all the TDM environments with their connection details to enable the execution of the TDM tasks. 
+
+Note that **every change of a Global or an Interface in the project requires a redeployment of the environments** to Fabric to be aligned with the updated project's Interfaces and Globals.
+
 Click for more information about [Fabric environments](/articles/25_environments/02_create_new_environment.md).
+
