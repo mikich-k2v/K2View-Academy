@@ -12,15 +12,11 @@ Extract tasks extract **Reference tables** from a source environment and store t
 
 Unlike LUIs, a Load task does not activate an extraction from the source environment. Therefore, Reference tables must be loaded into Cassandra by the Extract task before loading them to the target.
 
-Click for more information about [-Reference tables implementation].
+Click for more information about [Reference tables implementation](/articles/TDM/tdm_implementation/09_tdm_reference_implementation.md).
 
 ## Reference Tab - Extract Task
 
-Display a list of all Reference tables defined in [trnRefList](articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnreflist) Fabric translation object for the task's LUs. The Reference tab displays its **Source Interface Name**, **Schema Name** on each table and **LU Name**. You can **Select All**, **Unselect All**, or check a selected list of Reference tables:
-
-------------------------------------99999999999999999999999---------------------------------------------
-
-![reference](images/task_reference_tab.png)
+Display a list of all Reference tables defined in [trnRefList](articles/TDM/tdm_implementation/04_fabric_tdm_library.md#trnreflist) Fabric translation object for the task's LUs. The Reference tab displays its **Source Interface Name**, **Schema Name** on each table and **LU Name**. You can **Select All**, **Unselect All**, or check a selected list of Reference tables.
 
 The Extract task extracts the selected Reference tables and [saves them into the Cassandra DB](/articles/TDM/tdm_architecture/05_tdm_%20reference_processes.md#tdm-lu---tdmcopyreftablesfortdm-job). 
 
@@ -35,13 +31,6 @@ Display a list of all Reference tables [extracted into Cassandra for the task's 
 ### Data Flux Mode
 
 Displays the list of available versions created on Reference tables and a source environment, and a load task's LU. The versions created during the last month are displayed. To select another period, edit the **From Date** and **To Date** settings.
-
-For example:
-
-------------------------------------99999999999999999999999---------------------------------------------
-
-![reference](images/task_reference_tab_dataflux.png)
-
 
 
 
