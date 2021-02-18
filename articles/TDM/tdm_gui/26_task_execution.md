@@ -4,6 +4,20 @@ A task can be executed multiple times either by clicking ![task execution icon](
 
 The TDM Scheduling process checks the **End Date** of the task's scheduling parameters. If the End Date is earlier than the current date, the process cleans the task's  **Scheduled Execution parameters** and skips the task execution. 
 
+## Who Can Execute a Task?
+
+The following users can execute a TDM task:
+
+- **Admin users**
+- **Environment owners** of the task's environment:
+  - **Extract tasks**: the environment owner of the source environment
+  - **Load tasks**: the environment owner of the target environment
+- **Testers**:
+  - The task's creator
+  - Other testers:  that are related to the same role of the task's creator:
+    - **Load tasks**: testers that are related to the same role of the target environment as  the task's creator.
+    - **Extract tasks**: testers that are related to the same role of the source environment as  the task's creator. 
+
 ## Task Execution Order
 
 A TDM task can include multiple LUs with a flat or hierarchical structure and post execution processes.
@@ -18,7 +32,7 @@ The execution of the related task components runs in the following order:
 
 ## Monitoring Task Execution
 
-You can view the execution status of the running task via the TDM GUI. The TDM GUi displays the list of the LUs and post execution processes related to the task and their execution status.
+You can view the execution status of the running task via the TDM GUI. The TDM GUI displays the list of the LUs and post execution processes related to the task and their execution status.
 
 **Example:**
 
@@ -87,5 +101,5 @@ Hold and Activate task buttons are displayed on the Tasks screen of each task:
 
 
 
-  [![Previous](/articles/images/Previous.png)](25_task_tdmdb_tables.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">]()
+  [![Previous](/articles/images/Previous.png)](25_task_tdmdb_tables.md)[<img align="right" width="60" height="54" src="/articles/images/Next.png">](27_task_execution_history.md)
 
