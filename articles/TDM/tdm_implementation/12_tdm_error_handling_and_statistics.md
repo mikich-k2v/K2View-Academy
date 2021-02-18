@@ -11,7 +11,7 @@ The TDM library includes two utility flows that handle errors during the executi
 * PopulateTableErrorsWithFailed.flow
 * PopulateTableErrorsWithReject.flow
 
-Both utilities invoke the internal **PopulateTableErrors.flow** to populate data on errors into the **task_exe_error_detailed** table. The difference between the utilities is that PopulateTableErrorsWithFailed.flow is set on a session level:
+Both utilities invoke the internal **PopulateTableErrors.flow** to populate data about errors into the **task_exe_error_detailed** table. The difference between the utilities is that PopulateTableErrorsWithFailed.flow is set on a session level:
 
 ~~~
 ENTITY_STATUS = failed 
@@ -21,7 +21,7 @@ PopulateTableErrorsWithFailed.flow also sets the error category as *Entity Faile
 
 The error handling utility is invoked from each Load flow's **Load Data To Target** Stage. An error is suppressed in order to continue a task execution in the middle and to gather statistics.
 
-By default, the **PopulateTableErrorsWithFailed.flow** is invoked. If a record rejection is needed instead of failing an entire entity, replace the Inner flow name with **PopulateTableErrorsWithReject.flow**. 
+By default, the **PopulateTableErrorsWithFailed.flow** is invoked. If a record needs to be rejected instead of failing an entire entity, replace the Inner flow name with **PopulateTableErrorsWithReject.flow**. 
 
 ![image](images/12_tdm_err_stat_01.PNG)
 
