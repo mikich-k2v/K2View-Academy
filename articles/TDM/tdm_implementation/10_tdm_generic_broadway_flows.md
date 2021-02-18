@@ -1,4 +1,4 @@
-# TDM Generic Broadway Flows
+# TDM - Generic Broadway Flows
 
 
 The Fabric TDM library has built-in generic Broadway flows that can be easily adapted for the TDM of each specific data model. This article describes the generic flows that are available in a project after the [TDM Library](04_fabric_tdm_library.md) is imported. 
