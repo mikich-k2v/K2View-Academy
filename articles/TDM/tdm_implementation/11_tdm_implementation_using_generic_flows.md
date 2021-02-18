@@ -51,7 +51,6 @@ The following two updates must be performed manually:
 
   ![images](images/11_tdm_impl_delete2.PNG)
 
-input and output arguments
 
 4. #### Create the main DELETE flow
 
@@ -74,7 +73,7 @@ The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway 
 
 ### Step 4 - Create the Sequence Creation Flows
 
-Since sequences are required when populating a target DB, setting and intiating sequences is a mandatory part of creating a TDM implementation. These flows must be defined in the Shared Objects of your project since they must be available across various Logical Units. 
+Since sequences are required when populating a target DB, setting and initiating sequences is a mandatory part of creating a TDM implementation. These flows must be defined in the Shared Objects of your project since they must be available across various Logical Units. 
 
 Examples of sequence flow initiations can be found in the TDM demo project. 
 
@@ -84,7 +83,7 @@ Each sequence flow initiation must include steps for getting the task execution 
 
 To create a sequence flow initiation, do the following:
 
-1. Create a flow for each table in the LU Schema, using the following pattern:
+1. Create a flow for each table in the LU Schema using the following pattern:
 
    * Get the task execution ID, original IID and LU type from the session.
 
