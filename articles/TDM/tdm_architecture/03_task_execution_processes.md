@@ -30,7 +30,7 @@ The task execution order of the related task's components is as follows:
 
 2. Post Execution Processes, run the post execution processes after the execution of the LUs ends. Post execution processes are executed according to their [execution order](/articles/TDM/tdm_gui/04_tdm_gui_business_entity_window.md#post-execution-processes-tab) as defined in the task's BE. 
 
-The following diagram describes the TDM Task Execution process:
+The following diagram describes the main TDM Task Execution process:
 
 ![task execution job](images/tdmExcuteTask_job_flow.png)
 
