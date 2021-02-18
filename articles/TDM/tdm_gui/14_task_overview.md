@@ -59,7 +59,7 @@ The TDM GUI displays a list of icons next to each task record:
 - ![task icon](images/execute_task_icon.png)[Execute Task](26_task_execution.md). 
 - ![task icon](images/hold_task_icon.png) [Hold Task](26_task_execution.md#holding-task-execution), set the task on-hold temporarily.
 - ![task icon](images/save_as_icon.png) Save As, copy the task into a new task.
-- ![task icon](images/task_execution_history_icon.png)[Task Execution History], display the execution history of the selected task.
+- ![task icon](images/task_execution_history_icon.png)[Task Execution History](27_task_execution_history.md), display the execution history of the selected task.
 
 
 
