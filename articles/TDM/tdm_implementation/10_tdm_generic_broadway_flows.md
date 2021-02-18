@@ -1,11 +1,11 @@
 # TDM Generic Broadway Flows
 
 
-The Fabric TDM library has built-in generic Broadway flows that can be easily adapted for TDM for each specific data model. This article describes the generic flows that are available in a project after the [TDM Library](04_fabric_tdm_library.md) is imported. 
+The Fabric TDM library has built-in generic Broadway flows that can be easily adapted for the TDM of each specific data model. This article describes the generic flows that are available in a project after the [TDM Library](04_fabric_tdm_library.md) is imported. 
 
 ## Broadway Flows and Templates
 
-The **TDM** folder in the Broadway Shared Objects folder includes generic flows that can be used to execute TDM tasks in several Logical Units. These flows handle activities like setting global variables and sync mode, loading a reference, handling errors, populating execution statistics and do not require manual updates.
+The **TDM** folder in the Broadway Shared Objects folder includes generic flows that can be used to execute TDM tasks in several Logical Units. These flows do not require manual updates and handle activities like setting global variables and sync mode, loading a reference, handling errors, populating execution statistics.
 
 The **Templates** folder holds the flows used for creating DELETE and LOAD flows. Since the flows receive the Logical Unit Name as an input parameter, they can be run several times for each LU.
 
@@ -38,7 +38,7 @@ The TDM library holds templates and generic flows that can used to create a TDM 
 
 ### Error Handling and Statistics
 
-The TDM library offers a generic error handling and statistics gathering mechanism, based on Broadway capabilities tailored for TDM business requirements. 
+The TDM library offers a generic error handling and statistics gathering mechanism based on Broadway capabilities tailored for TDM business requirements. 
 
 [Click to learn more about TDM error handling and statistics flows](12_tdm_error_handling_and_statistics.md).
 
