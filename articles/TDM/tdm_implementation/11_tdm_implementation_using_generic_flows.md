@@ -6,16 +6,16 @@ The TDM library has sets of generic flows that enable creating a standard TDM im
 
 ### Step 1 - Define Tables to Filter Out
 
-Before starting the TDM implementation process, define the tables that are filtered out during the TDM Load to Target process. The library includes settings for the following filtered auxiliary tables:
+Before starting the TDM implementation process, define the tables that are filtered out during the DELETE and LOAD flows. The library includes settings for the following filtered auxiliary tables:
 
 ![image](images/11_tdm_impl_actor_1.PNG)
 
-This setting is implemented using the **TDMFilterOutTargetTables** Actor. To filter more tables from the TDM load, edit the Actor's settings. 
+This setting is implemented using the **TDMFilterOutTargetTables** Actor. To filter more tables, open the **TDMFilterOutTargetTables** Actor and edit its **table** object. The **lu_name** column should be populated as follows:
 
-To do so, open the **TDMFilterOutTargetTables** Actor and edit its table input argument. The **lu_name** column should be populated as follows:
-
-* ALL_LUS, when a table is relevant for all TDM Logical Units.
+* ALL_LUS, when a filtered table is relevant for all TDM Logical Units.
 * [LU name], when a table belongs to a specific LU.
+
+Note that you must refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMFilterOutTargetTables** Actor.
 
 ![image](images/11_tdm_impl_actor_2.PNG)
 
@@ -27,7 +27,7 @@ In this step you will run the generic **createFlowsFromTemplates.flow** from the
 
 1. #### Create a LOAD flow per table
 
-Performed by the **createLoadTableFlows.flow** that receives the Logical Unit name, target interface and target schema and retrieves the list of tables from the LU Schema. It then creates a Broadway flow to load the data into each table in the target DB. The name of each newly created flow is **load_[Table Name].flow**. For example, load_Customer.flow. The tables defined in this step are filtered out and the flow is not created for them. 
+Performed by the **createLoadTableFlows.flow** that receives the Logical Unit name, target interface and target schema and retrieves the list of tables from the LU Schema. It then creates a Broadway flow to load the data into each table in the target DB. The name of each newly created flow is **load_[Table Name].flow**. For example, load_Customer.flow. The tables defined in Step 1 are filtered out and the flow is not created for them. 
 
 2. #### Create the main LOAD flow
 
@@ -35,19 +35,19 @@ Performed by the **createLoadAllTablesFlow.flow** that receives the Logical Unit
 
 3. #### Create a DELETE flow per table
 
-Performed by the **createDeleteTableFlows.flow** that receives the Logical Unit name, target interface and target schema and retrieves the list of tables from the LU Schema. It then creates a Broadway flow to delete the data from this table in the target DB. The name of each newly created flow is **delete_[Table Name].flow**. For example, delete_CUSTOMER.flow. The tables defined in Step 2 are filtered out and the flow is not created for them. 
+Performed by the **createDeleteTableFlows.flow** that receives the Logical Unit name, target interface and target schema and retrieves the list of tables from the LU Schema. It then creates a Broadway flow to delete the data from this table in the target DB. The name of each newly created flow is **delete_[Table Name].flow**. For example, delete_CUSTOMER.flow. The tables defined in Step 1 are filtered out and the flow is not created for them. 
 
 The following two updates must be performed manually:
 
-* Populate the **sql** input argument of the **Get Table Data** Actor with the SELECT query that retrieves the keys of the data to be deleted. For example, in the delete_ADDRESS.flow, write the following query since the CUSTOMER_ID is the key of the ADDRESS table.
+* Populate the **sql** input argument of the **Get Table Data** Actor with the SELECT query that retrieves the keys of the data to be deleted. For example, in the delete_ACTIVITY.flow, write the following query since the CUSTOMER_ID and ACTIVITY_ID are the keys of the ACTIVITY table.
 
   ~~~sql
-  SELECT CUSTOMER_ID FROM TAR_CUSTOMER;
+  SELECT CUSTOMER_ID, ACTIVITY_ID FROM TAR_ACTIVITY;
   ~~~
 
   ![images](images/11_tdm_impl_delete1.PNG)
 
-* Populate the **keys** input argument of the **DbDelete** Actor. These should correlate with the table's key.
+* Populate the **keys** input argument of the **DbDelete** Actor. These should correlate with the table's keys.
 
   ![images](images/11_tdm_impl_delete2.PNG)
 
@@ -59,7 +59,7 @@ Performed by the **createDeleteAllTablesFlow.flow** that receives the Logical Un
 
 ### Step 3 - Create the TDMOrchestrator.flow from the Template
 
-Once all LOAD and DELETE flows are ready, create an orchestrator. The purpose of the **TDMOrchestrator.flow** is to encapsulate all Broadway flows in the TDM task. It includes the invocation of all steps such as:
+Once all LOAD and DELETE flows are ready, create an orchestrator. The purpose of the **TDMOrchestrator.flow** is to encapsulate all Broadway flows of the TDM task into a single flow. It includes the invocation of all steps such as:
 
 * Initiate the TDM load.
 * Delete the target data, if required by the task's [operation mode](/articles/TDM/tdm_gui/19_load_task_request_parameters_regular_mode.md#operation-mode) or the [Data Flux load task](/articles/TDM/tdm_gui/20_load_task_dataflux_mode.md[).
@@ -106,11 +106,11 @@ To create a sequence flow initiation, do the following:
 
 TDM systems often handle sensitive data. To be compliant with Data Privacy laws, Fabric enables masking sensitive fields like SSN, credit card numbers and email addresses before they are loaded either to Fabric or into the target DB.
 
-* To mask a sensitive field prior to loading it into Fabric, create a Broadway population flow for the table that includes this field and a **Masking** Actor. 
+* To mask a sensitive field prior to loading it into Fabric, create a Broadway population flow for the table that includes this field and add one or more **Masking** Actors. 
 
   ![image](images/11_tdm_impl_05.PNG)
 
-* To mask a sensitive field as part of Load to the Target DB, add a Masking Actor to the relevant **load_[Table Name].flow**. The TDM infrastructure controls enabling or disabling masking based on the settings in the global variables. There are three possible scenarios for handling masking:
+* To mask a sensitive field as part of Load to the Target DB, add a Masking Actor to the relevant **load_[Table Name].flow**. The TDM infrastructure controls enabling or disabling masking based on the settings of the global variables. There are three possible scenarios for handling masking:
 
   * When the TDM task is for synthetic data creation, masking is always enabled.
   * When The TDM task is for Data Flux, masking is always disabled.

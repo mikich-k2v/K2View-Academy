@@ -5,9 +5,9 @@ The Fabric TDM library has built-in generic Broadway flows that can be easily ad
 
 ## Broadway Flows and Templates
 
-The **TDM** folder in the Broadway Shared Objects folder includes generic flows that can be used to execute TDM tasks in several Logical Units. These flows do not require manual updates and handle activities like setting global variables and sync mode, loading a reference, handling errors, populating execution statistics.
+The **TDM** folder in the Broadway Shared Objects folder includes generic flows that can be used to execute TDM tasks in several Logical Units. These flows do not require manual updates and handle activities like setting global variables and sync mode, loading reference tables, handling errors, populating execution statistics.
 
-The **Templates** folder holds the flows used for creating DELETE and LOAD flows. Since the flows receive the Logical Unit Name as an input parameter, they can be run several times for each LU.
+The **Templates** folder holds the flows used for creating DELETE and LOAD flows. Since the flows receive the Logical Unit name as an input parameter, they can be run several times for each LU.
 
 The following discusses the structure and functionality of various generic flows.
 
@@ -15,7 +15,7 @@ The following discusses the structure and functionality of various generic flows
 
 TDM task initialization is performed using the **InitiateTDMLoad.flow** utility which includes several steps like:
 
-* Setting the values of global variables of a session and sync mode.
+* Setting the values of global variables on a session level and setting sync mode.
 * Setting the source environment based on the task's source before getting the LUI.
 * Getting the LUI from Fabric.
 * Setting the target environment as a preparation step for Delete and Load.
@@ -28,7 +28,7 @@ The **InitiateTDMLoad.flow** is performed as the first step of the **TDMOrchestr
 
 The TDM library includes a set of flows that handle reference data.
 
-[Click to learn more about TDM references](09_tdm_reference_implementation.md).
+[Click to learn more about TDM Reference Implementation](09_tdm_reference_implementation.md).
 
 ### Load and Delete Generic Flows
 

@@ -1,8 +1,8 @@
 # TDM Error Handling and Statistics Flows
 
-The TDM library has a generic Error Handling and Statistics Gathering mechanism based on Broadway capabilities that can be tailored for TDM business requirements. 
+The TDM library includes a set of generic flows for error handling and statistics gathering that are based on Broadway capabilities and are tailored for TDM business requirements. 
 
-The mechanism includes a set of generic flows that gather errors and statistics during task execution and populates them into dedicated tables. This data is used for monitoring  TDM tasks and creating TDM execution reports.
+These generic flows gather errors and statistics during task execution and populate them into dedicated tables. This data is used for monitoring  TDM tasks and creating TDM execution reports.
 
 ### How Do I Perform Error Handling in TDM?
 
@@ -11,7 +11,7 @@ The TDM library includes two utility flows that handle errors during the executi
 * PopulateTableErrorsWithFailed.flow
 * PopulateTableErrorsWithReject.flow
 
-Both utilities invoke the internal **PopulateTableErrors.flow** to populate data about errors into the **task_exe_error_detailed** table. The difference between the utilities is that PopulateTableErrorsWithFailed.flow is set on a session level:
+Both utilities invoke the internal **PopulateTableErrors.flow** to populate data about errors into the **task_exe_error_detailed** table. The difference between the utilities is that PopulateTableErrorsWithFailed.flow sets on a session level:
 
 ~~~
 ENTITY_STATUS = failed 
@@ -19,9 +19,9 @@ ENTITY_STATUS = failed
 
 PopulateTableErrorsWithFailed.flow also sets the error category as *Entity Failed* in the **task_exe_error_detailed** table, while PopulateTableErrorsWithReject.flow sets a record as *Record Rejected*.
 
-The error handling utility is invoked from each Load flow's **Load Data To Target** Stage. An error is suppressed in order to continue a task execution in the middle and to gather statistics.
+The error handling utility is invoked from each Load flow's **Load Data To Target** Stage. An error is suppressed in order to continue a task execution and reach the statistics gathering step.
 
-By default, the **PopulateTableErrorsWithFailed.flow** is invoked. If a record needs to be rejected instead of failing an entire entity, replace the Inner flow name with **PopulateTableErrorsWithReject.flow**. 
+By default, the **PopulateTableErrorsWithFailed** is invoked. If a record needs to be rejected instead of failing an entire entity, replace the Inner flow name with **PopulateTableErrorsWithReject**. 
 
 ![image](images/12_tdm_err_stat_01.PNG)
 
