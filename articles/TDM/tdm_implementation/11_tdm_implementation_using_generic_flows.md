@@ -35,7 +35,7 @@ Performed by the **createLoadAllTablesFlow.flow** that receives the Logical Unit
 
 3. #### Create a DELETE flow per table
 
-Performed by the **createDeleteTableFlows.flow** that receives the Logical Unit name, target interface and target schema and retrieves the list of tables from the LU Schema. It then creates a Broadway flow to delete the data from this table in the target DB. The name of each newly created flows is **delete_[Table Name].flow**. For example, delete_CUSTOMER.flow. The tables defined in Step 2 are filtered out and the flow is not created for them. 
+Performed by the **createDeleteTableFlows.flow** that receives the Logical Unit name, target interface and target schema and retrieves the list of tables from the LU Schema. It then creates a Broadway flow to delete the data from this table in the target DB. The name of each newly created flow is **delete_[Table Name].flow**. For example, delete_CUSTOMER.flow. The tables defined in Step 2 are filtered out and the flow is not created for them. 
 
 The following two updates must be performed manually:
 
@@ -57,7 +57,7 @@ The following two updates must be performed manually:
 Performed by the **createDeleteAllTablesFlow.flow** that receives the Logical Unit name and creates an envelope **DeleteAllTables.flow** Broadway flow. The purpose of this flow is to invoke all DELETE flows in the opposite order of the population order, considering the target DB's foreign keys. 
 
 
-### Step 3 - Create the TDMOrchestrator.flow from Template
+### Step 3 - Create the TDMOrchestrator.flow from the Template
 
 Once all LOAD and DELETE flows are ready, create an orchestrator. The purpose of the **TDMOrchestrator.flow** is to encapsulate all Broadway flows in the TDM task. It includes the invocation of all steps such as:
 
@@ -75,7 +75,7 @@ The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway 
 
 Since sequences are required when populating a target DB, setting and initiating sequences is a mandatory part of creating a TDM implementation. These flows must be defined in the Shared Objects of your project since they must be available across various Logical Units. 
 
-Examples of sequence flow initiations can be found in the TDM demo project. 
+Examples of initiating sequence flows can be found in the TDM demo project. 
 
 Each sequence flow initiation must include steps for getting the task execution ID and the original IID from Fabric, retrieving the next sequence value and populating the TDM_SEQ_MAPPING table. A flow must be created for each table in the LU schema. 
 
@@ -106,11 +106,11 @@ To create a sequence flow initiation, do the following:
 
 TDM systems often handle sensitive data. To be compliant with Data Privacy laws, Fabric enables masking sensitive fields like SSN, credit card numbers and email addresses before they are loaded either to Fabric or into the target DB.
 
-* To mask a sensitive field prior to loading it into Fabric, create a Broadway population flow for the table that includes this field and use one of the **Masking** Actors. 
+* To mask a sensitive field prior to loading it into Fabric, create a Broadway population flow for the table that includes this field and a **Masking** Actor. 
 
   ![image](images/11_tdm_impl_05.PNG)
 
-* To mask a sensitive field as part of the load to the target DB, add a Masking Actor to the relevant **load_[Table Name].flow**. The TDM infrastructure controls enabling or disabling masking based on the settings in the global variables. There are three possible scenarios for handling masking:
+* To mask a sensitive field as part of Load to the Target DB, add a Masking Actor to the relevant **load_[Table Name].flow**. The TDM infrastructure controls enabling or disabling masking based on the settings in the global variables. There are three possible scenarios for handling masking:
 
   * When the TDM task is for synthetic data creation, masking is always enabled.
   * When The TDM task is for Data Flux, masking is always disabled.
