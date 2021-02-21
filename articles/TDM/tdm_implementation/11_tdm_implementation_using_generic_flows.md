@@ -15,13 +15,37 @@ This setting is implemented using the **TDMFilterOutTargetTables** Actor. To fil
 * ALL_LUS, when a filtered table is relevant for all TDM Logical Units.
 * [LU name], when a table belongs to a specific LU.
 
-Note that you must refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMFilterOutTargetTables** Actor.
+After the Actor's update is completed, you must refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMFilterOutTargetTables** Actor.
 
 ![image](images/11_tdm_impl_actor_2.PNG)
 
 
 
-### Step 2 - Create Load and Delete Flows
+### Step 2 - Create the Sequences
+
+Sequences are required when populating a target DB, thus setting and initiating sequences is a mandatory part of creating a TDM implementation. 
+
+If the **k2masking** keyspace does not exist in the DB interface defined for caching the masked values, create it using the **masking-create-cache-table.flow** from the library of Broadway examples or using the installation SQL script provided as part of the Masking library. 
+
+Do the following steps to create the sequences relevant for your TDM implementation:
+
+1. TDM library includes a **TDMSeqList** Actor that holds a list of sequences. Populate the Actor's  **table** object with the information relevant for your TDM implementation, for example:
+
+   ![image](images/11_tdm_impl_03.PNG)
+
+   The table's values are used by the **MaskingSequence** Actors. [Click to learn how to set the input arguments of the MaskingSequence Actor](/articles/19_Broadway/actors/07_masking_and_sequence_actors.md#how-do-i-set-masking-input-arguments). 
+
+   After the Actor's update is completed, you must refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMSeqList** Actor.
+
+2. Run **createSeqFlowsOnlyFromTemplates.flow** from from the Shared Objects ScriptsforTemplates folder. The flow has two [Inner Flows](/articles/19_Broadway/22_broadway_flow_inner_flows.md) that first create a Broadway flow for each sequence and then creates an Actor out of each flow.
+
+   Note that this flow should run once per TDM implementation and not per each LU because the sequences are used across several LUs of TDM project.
+
+3. Edit each Load flow of the TDM project by adding a newly created sequence Actor to the Transformation Stage. For example,edit **load_PAYMENT.flow** by adding the sequence to the **Transformation** Stage and connecting its input and output arguments to the relevant columns. 
+
+   ![image](images/11_tdm_impl_04.PNG)
+
+### Step 3 - Create Load and Delete Flows
 
 In this step you will run the generic **createFlowsFromTemplates.flow** from the Shared Objects Broadway folder. The flow has the following inner flows:
 
@@ -57,7 +81,7 @@ The following two updates must be performed manually:
 Performed by the **createDeleteAllTablesFlow.flow** that receives the Logical Unit name and creates an envelope **DeleteAllTables.flow** Broadway flow. The purpose of this flow is to invoke all DELETE flows in the opposite order of the population order, considering the target DB's foreign keys. 
 
 
-### Step 3 - Create the TDMOrchestrator.flow from the Template
+### Step 4 - Create the TDMOrchestrator.flow from the Template
 
 Once all LOAD and DELETE flows are ready, create an orchestrator. The purpose of the **TDMOrchestrator.flow** is to encapsulate all Broadway flows of the TDM task into a single flow. It includes the invocation of all steps such as:
 
@@ -67,40 +91,9 @@ Once all LOAD and DELETE flows are ready, create an orchestrator. The purpose of
 * Manage the TDM process as one transaction.
 * Perform [error handling and gather statistics](12_tdm_error_handling_and_statistics.md). 
 
-The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway folder using a template as follows:
+The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway folder and it is created for each Logical Unit of the TDM project. [Deploy the Logical Unit](/articles/16_deploy_fabric/01_deploy_Fabric_project.md) to debug server and then create the Orchestrator flow using a template as follows:
 
 ![image](images/11_tdm_impl_02.PNG)
-
-### Step 4 - Create the Sequence Creation Flows
-
-Since sequences are required when populating a target DB, setting and initiating sequences is a mandatory part of creating a TDM implementation. These flows must be defined in the Shared Objects of your project since they must be available across various Logical Units. 
-
-Examples of initiating sequence flows can be found in the TDM demo project. 
-
-Each sequence flow initiation must include steps for getting the task execution ID and the original IID from Fabric, retrieving the next sequence value and populating the TDM_SEQ_MAPPING table. A flow must be created for each table in the LU schema. 
-
-[Click for Sequence Implementation Guidelines](/articles/19_Broadway/actors/08_sequence_implementation_guide.md). 
-
-To create a sequence flow initiation, do the following:
-
-1. Create a flow for each table in the LU Schema using the following pattern:
-
-   * Get the task execution ID, original IID and LU type from the session.
-
-   * Get the sequence value using the **MaskingSequence** Actor and setting its input arguments for the project's requirements.
-
-     [Click to learn how to set the input arguments of the MaskingSequence Actor](/articles/19_Broadway/actors/07_masking_and_sequence_actors.md#how-do-i-set-masking-input-arguments).
-
-   * Populate the TDM_SEQ_MAPPING table for reporting purposes.
-
-   ![image](images/11_tdm_impl_03.PNG)
-
-2. Save the flow and then save it as an Actor to enable invoking the flow as an [Inner Flow](/articles/19_Broadway/22_broadway_flow_inner_flows.md#save-as-actor).
-
-3. Edit the Load flow of the related table. For example, create a sequence flow initiation for the Payment table. Then edit **load_PAYMENT.flow** by adding the sequence flow to the **Transformation** Stage and connecting its input and output arguments to the relevant columns. 
-   ![image](images/11_tdm_impl_04.PNG)
-
-
 
 ### Step 5 - Mask the Sensitive Data
 
