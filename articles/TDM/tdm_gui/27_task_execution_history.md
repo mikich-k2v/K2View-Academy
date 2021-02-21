@@ -73,7 +73,7 @@ Click the![task execution summary report](images/task_execution_summary_report_i
 
 ## Task Execution - Detailed Statistics
 
-Displays the detailed information about the number of copied and failed entities and Reference tables in a given task execution, the hierarchical structure of the LUs and their entities, and a sample list of copied and failed entities and Reference tables.
+Displays the detailed information about the number of copied and failed entities and Reference tables in a given task execution, the hierarchical structure of the LUs and their entities, and a sample list of copied and failed entities and Reference tables. You can also search for a given entity in the **Search** setting.
 
 Click ![entities list](images/entities_list_icon.png)icon in the right corner of the **Logical Units Execution Summary** window to open the **Task Execution - Detailed Statistics** window.
 
