@@ -1,22 +1,22 @@
 # Task Execution
 
-A task can be executed multiple times either by clicking ![task execution icon](images/execute_task_icon.png) or by a TDM scheduling process if the task's [Execution Timing](22_task_execution_timing_tab.md) is **Scheduled Execution**.
+A task can be executed multiple times by either clicking ![task execution icon](images/execute_task_icon.png) or via a TDM scheduling process if the task's [Execution Timing](22_task_execution_timing_tab.md) is is defined as **Scheduled Execution**.
 
-The TDM Scheduling process checks the **End Date** of the task's scheduling parameters. If the End Date is earlier than the current date, the process cleans the task's  **Scheduled Execution parameters** and skips the task execution. 
+The TDM Scheduling process checks the **End Date** of the task's scheduling parameters. If the End Date is earlier than the current date, the process cleans the task's  **Scheduled Execution** parameters and skips the task execution. 
 
 ## Who Can Execute a Task?
 
 The following users can execute a TDM task:
 
-- **Admin users**
+- **Admin users**.
 - **Environment owners** of the task's environment:
-  - **Extract tasks**: the environment owner of the source environment
-  - **Load tasks**: the environment owner of the target environment
+  - **Extract tasks**, the environment owner of the source environment.
+  - **Load tasks**, the environment owner of the target environment.
 - **Testers**:
-  - The task's creator
-  - Other testers:  that are related to the same role of the task's creator:
-    - **Load tasks**: testers that are related to the same role of the target environment as  the task's creator.
-    - **Extract tasks**: testers that are related to the same role of the source environment as  the task's creator. 
+  - The task's creator.
+  - Other testers that are related to the same role as the task's creator:
+    - **Load tasks**, testers that are related to the same role in the target environment as the task's creator.
+    - **Extract tasks**, testers that are related to the same role in the source environment as the task's creator. 
 
 ## Task Execution Order
 
@@ -24,27 +24,28 @@ A TDM task can include multiple LUs with a flat or hierarchical structure and po
 
 The execution of the related task components runs in the following order:
 
-1. LUs: run the LUs from parent to child.  
+1. LUs, run the LUs from parent to child.  
 
    Click for more information about the [execution order of hierarchical LUs](03_business_entity_overview.md#task-execution-of-hierarchical-business-entities).
 
-2. Post Execution Processes: run the post execution processes after the execution of the LUs ends. The post execution processes are executed according to their [execution order](04_tdm_gui_business_entity_window.md#post-execution-processes-tab) as defined in the task's BE. 
+2. Post Execution Processes, run the post execution processes after the execution of the LUs ends. The post execution processes are executed according to their [execution order](04_tdm_gui_business_entity_window.md#post-execution-processes-tab) as defined in the task's BE. 
 
 ## Monitoring Task Execution
 
-You can view the execution status of the running task via the TDM GUI. The TDM GUI displays the list of the LUs and post execution processes related to the task and their execution status.
+The TDM GUI displays a list of LUs and the status of the currently running task and its post execution processes.
+
 
 **Example:**
 
-- Executing and extract task with the following LUs:
-  - Customer - this is the root LU
-  - Billing and Orders - these are the children LUs of Customer LU.
+- Execute and extract the task with the following LUs:
+  - Customer, the root LU.
+  - Billing and Orders, the children LUs of the Customer LU.
 
 - The Customer LU is executed before the Billing and Orders LUs:
 
   ![monitor execution](images/extract_task_execution_monitor.png)
 
-- The Billing and Orders LUs are executed after the execution of the Customer LU is completed:
+- The Billing and Orders LUs are executed after the execution of the Customer LU has ended:
 
   ![monitor execution](images/extract_task_execution_monitor_2.png)
 
@@ -54,11 +55,11 @@ You can view the execution status of the running task via the TDM GUI. The TDM G
 
 ## Stop and Resume a Task Execution
 
-You can stop the task execution if the processed entities fail due to an error, fix the error, and then resume the task execution. The resumed execution starts from the last point when the task has stopped:
+A task can be stopped if the processed entities fail due to an error and can be resumed from the same point once the error has been fixed.  
 
-- Click the ![stop](images/stop_execution_icon.png)in the right corner of the **Running Execution** window to stop the task execution. The stop execution stops the execution of running or pending task's LUs or post execution processes and sets their execution status to **stopped**.
+- Click ![stop](images/stop_execution_icon.png)in the right corner of the **Running Execution** window to stop the execution of the running or pending task's LUs or post execution processes and to set the status of the task to **stopped**.
 
-- Click the ![resume](images/resume_execution_icon.png) next to one of the records in the **Logical Unit Summary**  with **stopped** execution status to resume the execution of **all** the stopped task's LUs and post execution processes:
+- Click ![resume](images/resume_execution_icon.png) next to a record in **stopped** execution status in the **Logical Unit Summary** to resume the execution of **all** stopped task LUs and post execution processes:
 
   ![stopped LUs](images/stopped_task_lu_summary.png)
 
