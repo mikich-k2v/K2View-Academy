@@ -25,7 +25,7 @@
 <li><a href="24_task_reference_tab.md">Task Window - Reference Tab</a></li>  
 <li><a href="25_task_tdmdb_tables.md">Task - TDM DB Tables</a></li>  
 <li><a href="26_task_execution.md">Task Execution</a></li> 
-<li><a href="27_task_execution_history.md"></a>Task Execution Histiry</li>
+<li><a href="27_task_execution_history.md">Task Execution History</a></li>
 
 ​    
 
