@@ -29,13 +29,23 @@ If the **k2masking** keyspace does not exist in the DB interface defined for cac
 
 Do the following steps to create the sequences relevant for your TDM implementation:
 
-1. TDM library includes a **TDMSeqList** Actor that holds a list of sequences. Populate the Actor's  **table** object with the information relevant for your TDM implementation, for example:
+1. TDM library includes a **TDMSeqList** Actor that holds a list of sequences. Populate the Actor's  **table** object with the information relevant for your TDM implementation:
+   - **SEQUENCE_NAME**: the sequence name must be identical to the DB's sequence name if the next value is taken from the DB.
+   - **CACHE_DB_NAME**: populate this settings by **DB_CASSANDRA** where the Sequence Cache tables are stored.
+   - **SEQUENCE_REDIS_OR_DB**: indicates if the next value is taken from Redis or the tagret DB interface. Populate this setting  by **FabricRedis** or by the **target DB ineterface name**.
+   - **INITIATE_VALUE_OR_FLOW**: set a initial value of the sequence or populate the name of an inner flow to apply a logic when getting the initial value. For example, setting the initial value from the max value of the.
 
-   ![image](images/11_tdm_impl_03.PNG)
+   Example of tdmSeqList:
 
-   The table's values are used by the **MaskingSequence** Actors. [Click to learn how to set the input arguments of the MaskingSequence Actor](/articles/19_Broadway/actors/07_masking_and_sequence_actors.md#how-do-i-set-masking-input-arguments). 
+   ![image](images/tdmSeqListExample.png)
 
-   After the Actor's update is completed, you must refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMSeqList** Actor.
+   Example of an inner flow to get the sequence initial value:
+   
+   ![image](images/CustomerIdInitFlow.png)
+   
+   The table's values are used by the **createSeqFlowsOnlyFromTemplates** flow that generates the Sequences' Actors. 
+
+   After the Actor's update is completed, you must refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMSeqList** Actor and deploy the **TDM LU**.
 
 2. Run **createSeqFlowsOnlyFromTemplates.flow** from from the Shared Objects ScriptsforTemplates folder. The flow has two [Inner Flows](/articles/19_Broadway/22_broadway_flow_inner_flows.md) that first create a Broadway flow for each sequence and then creates an Actor out of each flow.
 
