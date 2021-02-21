@@ -101,12 +101,12 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>task_globals</td>
-<td>List of Global parameters set on a task level.</td>
+<td>List of <a href="/articles/TDM/tdm_gui/23_task_globals_tab.md">Global parameters set on a task level</a>.</td>
 <td>Task</td>
 </tr>
 <tr>
 <td><h4>task_ref_tables</td>
-<td>List of Reference tables included in each TDM task.</td>
+  <td>List of <a href="/articles/TDM/tdm_gui/24_task_reference_tab.md">Reference tables</a> included in each TDM task.</td>
 <td>Task</td>
 </tr>
 <tr>
@@ -116,7 +116,7 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>instance_table_count</td>
-<td>Holds the records added to each LU table in each LU and LUI. The table is populated by a Fabric sync and is used to generate the TDM Statistics report.</td>
+<td>Holds the records added to each LU table in each LU and LUI. The table is populated by a Fabric sync and is used to generate the TDM Statistics details in the execution report.</td>
 <td>Task Execution</td>
 </tr>
 <tr>
@@ -131,7 +131,9 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>task_execution_entities</td>
-<td>Detailed list of entities and the execution status of each task's execution.</td>
+  <td><p>Detailed list of entities and the execution status of each task's execution.</p>
+    <p>This table is used to generate the <a href="03a_task_execution_building_entity_list_on_tasks_LUs.md">entity list of the children LU of a task execution</a>.</p>
+    <p>This table is also copied and stored in the <a href="/articles/TDM/tdm_implementation/04_fabric_tdm_library.md#tdm-lu>TDM LU</a> to display the <a href="/articles/TDM/tdm_gui/27_task_execution_history.md#task-execution---detailed-statistics">list of copied and failed entities and Reference tables</a> of the task execution.</p></td>
 <td>Task Execution</td>
 </tr>
 <tr>
@@ -146,7 +148,7 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>task_ref_exe_stats</td>
-<td>List of reference tables to be processed by the execution of a given task.</td>
+<td>List of <a href="05_tdm_reference_processes.md#tdm-lu---tdmcopyreftablesfortdm-job">Reference tables</a> to be processed by the execution of a given task.</td>
 <td>Task Execution</td>
 </tr>
 <tr>
@@ -156,7 +158,8 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>tdm_seq_mapping</td>
-<td>Mapping of source and target sequences.</td>
+  <td><p>Mapping of source and target sequences.</p>
+    <p><a href="/articles/19_Broadway/actors/08_sequence_implementation_guide.md">Click for more information about sequence implementation</a>.</p></td>
 <td>Task Execution</td>
 </tr>
 <tr>
@@ -171,7 +174,7 @@ The following table lists the TDM tables and their description.
 </tr>
 <tr>
 <td><h4>tdm_general_parameters</td>
-<td>TDM general parameters.</td>
+<td><a href="/articles/TDM/tdm_configuration/02_tdmdb_general_parameters.md">TDM general parameters.</a></td>
 <td>General TDM Parameters</td>
 </tr>
 </tbody>
