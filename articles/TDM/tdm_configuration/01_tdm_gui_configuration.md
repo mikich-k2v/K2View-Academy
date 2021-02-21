@@ -190,6 +190,12 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 <td valign="top" width="200pxl">http://62.90.46.136:3213/ws?format=json&amp;token=tdm-WS</td>
 </tr>
 <tr>
+<td valign="top" width="200pxl">getEntitiesList</td>
+<td valign="top" width="200pxl">entitiesArrarySize</td>
+<td valign="top" width="200pxl">Maximum number of sample entities to be displayed in the <a href="/articles/TDM/tdm_gui/27_task_execution_history.md#task-execution---detailed-statistics">copied and failed entity list of a task execution</a>.</td>
+<td valign="top" width="200pxl">100</td>
+</tr>  
+<tr>
 <td valign="top" width="200pxl">retentionPeriod</td>
 <td valign="top" width="200pxl">maxRetentionPeriod</td>
 <td valign="top" width="200pxl">Maximum <a href="/articles/TDM/tdm_gui/16_extract_task.md#retention-period">retention period</a> in days to define on Extract tasks.</td>
