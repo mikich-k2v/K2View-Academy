@@ -16,9 +16,10 @@ Note that the iid_separator setting impacts all LUs in a project.
 
 Insert the following record to tdm_general_parameters to set the separator to @ : 
 
-    ```sql
-    insert into tdm_general_parameters (param_name, param_value) values ('iid_separator', '@');
-    ```
+```sql
+insert into tdm_general_parameters (param_name, param_value) values ('iid_separator', '@');
+```
+  
 The LUI of Customer 123_4 and environment ENV1 is **ENV1@123_4**.
 
 
