@@ -120,7 +120,7 @@ The main configuration file of the TDM GUI is the **config.js** file which is lo
 <tr>
 <td valign="top" width="200pxl">ldap</td>
 <td valign="top" width="200pxl">MC_AD</td>
-<td valign="top" width="200pxl">Set to <strong>true</strong> to connect the Microsoft Active Directory as LDAP system</td>
+<td valign="top" width="200pxl">Set to <strong>true</strong> to connect the Microsoft Active Directory as an LDAP system.</td>
 <td valign="top" width="200pxl">false</td>
 </tr>
 <tr>
@@ -221,9 +221,9 @@ The main configuration file of the TDM GUI is the **config.js** file which is lo
 
 The constants.js configuration file is used by the TDM GUI and is located under the ~/TDM//k2vtdmfe/app/js/constants directory.
 
-Edit the **url** of **BE_BASE_URL** as follows:
+Edit the **url** of the **BE_BASE_URL** as follows:
 
-- Edit the IP address to the TDM server IP address.
+- Set the IP address to the TDM server IP address.
 
 - Replace **http** with **https** to connect the TDM GUI in https mode.
 
