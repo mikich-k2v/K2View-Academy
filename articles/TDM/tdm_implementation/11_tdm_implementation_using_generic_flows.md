@@ -6,7 +6,7 @@ The TDM library has sets of generic flows that enable creating a standard TDM im
 
 ### Step 1 - Define Tables to Filter Out
 
-Before beginning to create the Broadway flows, define the tables that are filtered out during the DELETE and LOAD flows. The library includes settings for the following filtered auxiliary tables:
+Before beginning to create Broadway flows, define the tables that are filtered out during the DELETE and LOAD flows. The library includes settings for the following filtered auxiliary tables:
 
 ![image](images/11_tdm_impl_actor_1.PNG)
 
@@ -15,7 +15,7 @@ This setting is implemented using the **TDMFilterOutTargetTables** Actor. To fil
 * ALL_LUS, when a filtered table is relevant for all TDM LUs.
 * [LU name], when a table belongs to a specific LU.
 
-After the Actor's update is completed, refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMFilterOutTargetTables** Actor, and deploy the LU.
+After the Actor's update is completed, refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMFilterOutTargetTables** Actor and deploy the LU.
 
 ![image](images/11_tdm_impl_actor_2.PNG)
 
@@ -31,9 +31,9 @@ Do the following to create the sequences for your TDM implementation:
 
 1. TDM library includes a **TDMSeqList** Actor that holds a list of sequences. Populate the Actor's  **table** object with the information relevant for your TDM implementation:
    - **SEQUENCE_NAME**, the sequence name must be identical to the DB's sequence name if the next value is taken from the DB.
-   - **CACHE_DB_NAME**, populate this settings using **DB_CASSANDRA** where the Sequence Cache tables are stored.
-   - **SEQUENCE_REDIS_OR_DB**, indicates if the next value is taken from Redis or the tagret DB interface. Populate this setting using the **FabricRedis** interface (imported from the TDM library) or with the **target DB ineterface name**.
-   - **INITIATE_VALUE_OR_FLOW**, set a initial value of the sequence or populate the name of an inner flow to apply logic when getting the initial value. For example, setting the initial value from the max value of the XXXXX.
+   - **CACHE_DB_NAME**, populate this setting using **DB_CASSANDRA** where the Sequence Cache tables are stored.
+   - **SEQUENCE_REDIS_OR_DB**, indicates if the next value is taken from Redis or the target DB interface. Populate this setting using the **FabricRedis** interface (imported from the TDM library) or with the **target DB interface name**.
+   - **INITIATE_VALUE_OR_FLOW**, set an initial value for the sequence or populate the name of an inner flow to apply logic when getting the initial value. For example, setting the initial value from the max value of the XXXXX.
 
    Example of the tdmSeqList:
 
@@ -43,7 +43,7 @@ Do the following to create the sequences for your TDM implementation:
    
    ![image](images/CustomerIdInitFlow.png)
    
-   The table's values are used by the **createSeqFlowsOnlyFromTemplates** flow that generates the Sequences' Actors. 
+   The table's values are used by the **createSeqFlowsOnlyFromTemplates** flow that generates the Sequences Actors. 
 
    After the Actor's update is completed, refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMSeqList** Actor and deploy the **TDM LU**.
 
@@ -102,7 +102,7 @@ Once all LOAD and DELETE flows are ready, create an orchestrator. The purpose of
 * Manage the TDM process as one transaction.
 * Perform [error handling and gather statistics](12_tdm_error_handling_and_statistics.md). 
 
-The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway folder and is built for each Logical Unit in the TDM project. [Deploy the Logical Unit](/articles/16_deploy_fabric/01_deploy_Fabric_project.md) to debug server and then create the Orchestrator flow using a template as follows:
+The **TDMOrchestrator.flow** should be created from the Logical Unit's Broadway folder and is built for each Logical Unit in the TDM project. [Deploy the Logical Unit](/articles/16_deploy_fabric/01_deploy_Fabric_project.md) to the debug server and then create the Orchestrator flow using a template as follows:
 
 ![image](images/11_tdm_impl_02.PNG)
 
