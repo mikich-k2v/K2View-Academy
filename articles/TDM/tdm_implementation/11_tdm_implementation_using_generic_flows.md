@@ -6,7 +6,7 @@ The TDM library has sets of generic flows that enable creating a standard TDM im
 
 ### Step 1 - Define Tables to Filter Out
 
-Before starting the TDM implementation process, define the tables that are filtered out during the DELETE and LOAD flows. The library includes settings for the following filtered auxiliary tables:
+Before starting the the creation of the Broadway flows, define the tables that are filtered out during the DELETE and LOAD flows. The library includes settings for the following filtered auxiliary tables:
 
 ![image](images/11_tdm_impl_actor_1.PNG)
 
@@ -15,7 +15,7 @@ This setting is implemented using the **TDMFilterOutTargetTables** Actor. To fil
 * ALL_LUS, when a filtered table is relevant for all TDM Logical Units.
 * [LU name], when a table belongs to a specific LU.
 
-After the Actor's update is completed, you must refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMFilterOutTargetTables** Actor.
+After the Actor's update is completed, you must refresh the project by clicking the ![image](images/11_tdm_refresh.PNG) button on top of the project tree to apply the changes in the **TDMFilterOutTargetTables** Actor, and deploy the LU.
 
 ![image](images/11_tdm_impl_actor_2.PNG)
 
@@ -32,7 +32,7 @@ Do the following steps to create the sequences relevant for your TDM implementat
 1. TDM library includes a **TDMSeqList** Actor that holds a list of sequences. Populate the Actor's  **table** object with the information relevant for your TDM implementation:
    - **SEQUENCE_NAME**: the sequence name must be identical to the DB's sequence name if the next value is taken from the DB.
    - **CACHE_DB_NAME**: populate this settings by **DB_CASSANDRA** where the Sequence Cache tables are stored.
-   - **SEQUENCE_REDIS_OR_DB**: indicates if the next value is taken from Redis or the tagret DB interface. Populate this setting  by **FabricRedis** or by the **target DB ineterface name**.
+   - **SEQUENCE_REDIS_OR_DB**: indicates if the next value is taken from Redis or the tagret DB interface. Populate this setting  by **FabricRedis** interface (imported from the TDM library) or by the **target DB ineterface name**.
    - **INITIATE_VALUE_OR_FLOW**: set a initial value of the sequence or populate the name of an inner flow to apply a logic when getting the initial value. For example, setting the initial value from the max value of the.
 
    Example of tdmSeqList:
@@ -50,6 +50,7 @@ Do the following steps to create the sequences relevant for your TDM implementat
 2. Run **createSeqFlowsOnlyFromTemplates.flow** from from the Shared Objects ScriptsforTemplates folder. The flow has two [Inner Flows](/articles/19_Broadway/22_broadway_flow_inner_flows.md) that first create a Broadway flow for each sequence and then creates an Actor out of each flow.
 
    Note that this flow should run once per TDM implementation and not per each LU because the sequences are used across several LUs of TDM project.
+   The sequences' flows and Actors are created under the **Shared Objects** to enable using a sequence Actor by several LUs.
 
 3. Edit each Load flow of the TDM project by adding a newly created sequence Actor to the Transformation Stage. For example,edit **load_PAYMENT.flow** by adding the sequence to the **Transformation** Stage and connecting its input and output arguments to the relevant columns. 
 
@@ -57,7 +58,7 @@ Do the following steps to create the sequences relevant for your TDM implementat
 
 ### Step 3 - Create Load and Delete Flows
 
-In this step you will run the generic **createFlowsFromTemplates.flow** from the Shared Objects Broadway folder. The flow has the following inner flows:
+In this step you will run the generic **createFlowsFromTemplates.flow** from the Shared Objects Broadway folder to create the delete and load flows under the LU. The flow gets the **LU name**, **Target Interface**, and **Target Schema** as input parameters and executes the following inner flows:
 
 1. #### Create a LOAD flow per table
 
@@ -65,7 +66,7 @@ Performed by the **createLoadTableFlows.flow** that receives the Logical Unit na
 
 2. #### Create the main LOAD flow
 
-Performed by the **createLoadAllTablesFlow.flow** that receives the Logical Unit name and creates an envelope **LoadTables.flow** Broadway flow. The purpose of this flow is to invoke all LOAD flows based on the LU Schema's execution order.
+Performed by the **createLoadAllTablesFlow.flow** that receives the Logical Unit name and creates an envelope **LoadAllTables.flow** Broadway flow. The purpose of this flow is to invoke all LOAD flows based on the LU Schema's execution order.
 
 3. #### Create a DELETE flow per table
 
