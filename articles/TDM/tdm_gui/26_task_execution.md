@@ -32,7 +32,7 @@ The execution of the related task components runs in the following order:
 
 ## Monitoring Task Execution
 
-The TDM GUI displays a list of LUs and the status of the currently running task and its post execution processes.
+The TDM GUI displays a list of the task's LUs and post execution processes and the status of the currently running processes.
 
 
 **Example:**
