@@ -29,7 +29,7 @@ The following information is displayed for each executed task:
 
 ### Generating a Task Execution Summary Report
 
-Click![task execution summary report](images/task_execution_summary_report_icon.png) next to each executed task execution to generate and download a Summary Execution report.
+Click![task execution summary report](images/task_execution_summary_report_icon.png) next to each executed task to generate and download a Summary Execution report.
 
 Example of Summary Execution Report:
 
@@ -37,7 +37,7 @@ Example of Summary Execution Report:
 
 ## Logical Units Execution Summary
 
-Displays an executed task's LUs and post execution processes. To display the Logical Units Execution Summany, click a task's **Task Execution Id** setting in the **Task Execution Summary** window. 
+Displays an executed task's LUs and post execution processes. To display the Logical Units Execution Summary, click a task's **Task Execution Id** setting in the **Task Execution Summary** window. 
 
 ![lu_execution_summary](images/lu_execution_summary.png)
 
@@ -81,8 +81,8 @@ To generate and download a Summary Report on an LU's execution, click ![detailed
 
 The Task Execution - Detailed Statistics window displays the following:
 
--  Detailed information on the number of copied and failed entities and Reference tables in a task execution
--  The hierarchical structure of the LUs and their entities
+-  Detailed information on the number of copied and failed entities and Reference tables in a task execution.
+-  The hierarchical structure of the LUs and their entities.
 -  A sample list of copied and failed entities and Reference tables. 
 -  Search option used to search for an entity.
 
@@ -92,11 +92,12 @@ To display the Task Execution - Detailed Statistics window, click ![entities lis
 
 
 
-The left pane displays the [hierarchical tree of the task's LU](/articles/TDM/tdm_overview/03_business_entity_overview.md#building-an-lu-hierarchy-in-a-be) and the right pane displays the number of copied and failed entities and Reference tables and a sample of entities and Reference tables. 
+- The left pane displays the [hierarchical tree of the task's LU](/articles/TDM/tdm_overview/03_business_entity_overview.md#building-an-lu-hierarchy-in-a-be).
+- The right pane displays the number of copied and failed entities and Reference tables and a sample of entities and Reference tables. 
 
 By default, the root LU's list of entities and Reference tables is displayed. To view the entities and Reference tables in the **Logical Units Hierarchy**, click the LU.
 
-The following sequences are displayed for each entity ID: Source ID and Target ID. When the task [replaces the source sequences](19_load_task_request_parameters_regular_mode.md#replace-sequences), the Target ID and Source ID can be different. If an LU in the tree has failed entities it is marked in red.
+The Source ID and Target ID sequences are displayed for each entity ID. When the task [replaces the source sequences](19_load_task_request_parameters_regular_mode.md#replace-sequences), the Target ID and Source ID can be different. If an LU in the tree has failed entities it is marked in red.
 
 ### Failed Entities List Tab
 
