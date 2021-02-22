@@ -1,13 +1,13 @@
 # TDM GUI Configuration
 
-The TDM configuration consists of the following:
+A TDM configuration has the following:
 
 - [TDM GUI Configuration](#tdm-gui-configuration)
 - [TDM DB - General Parameters](#tdm-db---general-parameters)
 
 ## TDM GUI Configuration
 
-The main configuration file of the TDM GUI is the **config.js** file. This file is located under the ~/TDM/k2vtdmbe directory of the TDM server.
+The main configuration file of the TDM GUI is the **config.js** file which is located under the ~/TDM/k2vtdmbe directory of the TDM server.
 
 ### Config.js File
 
@@ -30,13 +30,13 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 <tr>
 <td valign="top" width="200pxl">N/A</td>
 <td valign="top" width="200pxl">sessionTimeout</td>
-<td valign="top" width="300pxl">The number of seconds till an idle session expires.</td>
+<td valign="top" width="300pxl">The number of seconds before an idle session expires.</td>
 <td valign="top" width="200pxl">3600</td>
 </tr>
 <tr>
 <td valign="top" width="200pxl">N/A</td>
 <td valign="top" width="200pxl">https</td>
-<td valign="top" width="300pxl">Configures the connection mode of the TDM GUI: http or https. To connect the TDM GUI in https mode set this parameter to true and set the <strong>url</strong> of the constants.js to https.</td>
+<td valign="top" width="300pxl">Configures the TDM GUI connection mode which can be either http or https. To connect the TDM GUI in https mode, set this parameter to True and set the <strong>url</strong> of the constants.js to https.</td>
 <td valign="top" width="200pxl">false</td>
 </tr>
 <tr>
@@ -48,7 +48,7 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 <tr>
 <td valign="top" width="200pxl">adminUsers</td>
 <td valign="top" width="200pxl">uid, displayName</td>
-<td valign="top" width="300pxl">Defines the list of admin users in the TDM GUI. Note that each user including the admin user must be defined in the LDAP system as well.</td>
+<td valign="top" width="300pxl">Defines the list of admin users in the TDM GUI. Note that each user including the admin user must also be defined in the LDAP system.</td>
 <td valign="top" width="200pxl">&nbsp;</td>
 </tr>
 <tr>
@@ -66,7 +66,7 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 <tr>
 <td valign="top" width="200pxl">postgres</td>
 <td valign="top" width="200pxl">host</td>
-<td valign="top" width="200pxl">The connection details of the <a href="/articles/TDM/tdm_architecture/02_tdm_database.md">TDM PostgreSQL DB</a>. Edit the host and populate it by the IP address of the TDM DB.</td>
+<td valign="top" width="200pxl">The connection details of the <a href="/articles/TDM/tdm_architecture/02_tdm_database.md">TDM PostgreSQL DB</a>. Edit the host and populate it using the IP address of the TDM DB.</td>
 <td valign="top" width="200pxl">&nbsp;</td>
 </tr>
 <tr>
@@ -108,7 +108,7 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 <tr>
 <td valign="top" width="200pxl">debug</td>
 <td valign="top" width="200pxl">status</td>
-<td valign="top" width="200pxl">Set to <strong>off</strong> to disable the debug messages.</td>
+<td valign="top" width="200pxl">Set to <strong>off</strong> to disable debug messages.</td>
 <td valign="top" width="200pxl">on</td>
 </tr>
 <tr>
@@ -126,7 +126,7 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 <tr>
 <td valign="top" width="200pxl">ldap</td>
 <td valign="top" width="200pxl">urlString</td>
-<td valign="top" width="200pxl">The LDAP's URL. Set the IP address and port of the LDAP system. Set the port to <strong>636</strong> to connect the LDAP in a secure mode (LDAPS). Note that the TDM server contains also an LDAP sever for the TDM development and testing. Populate the URL by the TDM server IP address to invoke the development LDAP server.</td>
+<td valign="top" width="200pxl">The LDAP's URL. Set the IP address and port of the LDAP system. Set the port to <strong>636</strong> to connect the LDAP in a secure mode (LDAPS). Note that the TDM server contains also an LDAP sever for TDM development and testing. Populate the URL with the TDM server IP address to invoke the development LDAP server.</td>
 <td valign="top" width="200pxl">ldap://62.90.46.136:10389</td>
 </tr>
 <tr>
@@ -168,13 +168,13 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 <tr>
 <td valign="top" width="200pxl">ldap</td>
 <td valign="top" width="200pxl">baseCN</td>
-<td valign="top" width="200pxl">The the value as follows to connect the Microsoft Active Directory: CN=Users,DC=k2vfabric,DC=local</td>
+<td valign="top" width="200pxl">To connect the Microsoft Active Directory, set the value as CN=Users,DC=k2vfabric,DC=local.</td>
 <td valign="top" width="200pxl">DC=training,DC=k2view,DC=com</td>
 </tr>
 <tr>
 <td valign="top" width="200pxl">fabricWsUrl</td>
 <td valign="top" width="200pxl">url</td>
-<td valign="top" width="200pxl">Edit the URL and set the IP address of Fabric. Create the [tdm-WS token] in Fabric and grant it permissions on all Fabric Web-Services.</td>
+<td valign="top" width="200pxl">Edit the URL and set the Fabric IP address. Create the [tdm-WS token] in Fabric and grant it permissions for all Fabric Web Services.</td>
 <td valign="top" width="200pxl">http://62.90.46.136:3213/ws?format=json&amp;token=tdm-WS</td>
 </tr>
 <tr>
@@ -186,7 +186,7 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 <tr>
 <td valign="top" width="200pxl">fabricWsUrlFormatHTML</td>
 <td valign="top" width="200pxl">url</td>
-<td valign="top" width="200pxl">Edit the URL and set the IP address of Fabric. Create the [tdm-WS token] in Fabric and grant it permissions on all Fabric Web-Services.</td>
+<td valign="top" width="200pxl">Edit the URL and set Fabric the IP address. Create the [tdm-WS token] in Fabric and grant it permissions for all Fabric Web Services.</td>
 <td valign="top" width="200pxl">http://62.90.46.136:3213/ws?format=json&amp;token=tdm-WS</td>
 </tr>
 <tr>
@@ -198,19 +198,19 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 <tr>
 <td valign="top" width="200pxl">retentionPeriod</td>
 <td valign="top" width="200pxl">maxRetentionPeriod</td>
-<td valign="top" width="200pxl">Maximum <a href="/articles/TDM/tdm_gui/16_extract_task.md#retention-period">retention period</a> in days to define on Extract tasks.</td>
+<td valign="top" width="200pxl">Maximum <a href="/articles/TDM/tdm_gui/16_extract_task.md#retention-period">retention period</a> in days to define for Extract tasks.</td>
 <td valign="top" width="200pxl">90</td>
 </tr>
 <tr>
 <td valign="top" width="200pxl">retentionPeriod</td>
 <td valign="top" width="200pxl">defaultPeriod</td>
-<td valign="top" width="200pxl">The default retention period of Extract task.</td>
+<td valign="top" width="200pxl">The default retention period of an Extract task.</td>
 <td valign="top" width="200pxl">"unit" : "Days", "value": 5</td>
 </tr>
 <tr>
 <td valign="top" width="200pxl">availableOptions</td>
 <td valign="top" width="200pxl">name, units</td>
-<td valign="top" width="200pxl">The available options to set the retention period on Extract tasks.</td>
+<td valign="top" width="200pxl">The available options for the retention period of an Extract task.</td>
 <td valign="top" width="200pxl">&nbsp;</td>
 </tr>
 </table>
@@ -219,13 +219,13 @@ The main configuration file of the TDM GUI is the **config.js** file. This file 
 
 ### Constants.js File
 
-The constants.js configuration file is used by the TDM GUI and located under ~/TDM//k2vtdmfe/app/js/constants directory.
+The constants.js configuration file is used by the TDM GUI and is located under the ~/TDM//k2vtdmfe/app/js/constants directory.
 
-Edit the **url** attribute of **BE_BASE_URL** as follows:
+Edit the **url** of **BE_BASE_URL** as follows:
 
 - Edit the IP address to the TDM server IP address.
 
-- Replace the **http** by **https** to connect the TDM GUI in https mode.
+- Replace **http** with **https** to connect the TDM GUI in https mode.
 
   
 
